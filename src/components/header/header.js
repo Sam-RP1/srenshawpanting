@@ -5,7 +5,6 @@ import {hot} from 'react-hot-loader';
 import '../../styles/root.scss';
 import '../../styles/header.scss';
 
-
 /**
 * HeaderBar() - Contains the HTML for the header component.
 * @return returns the HTML for the header component
