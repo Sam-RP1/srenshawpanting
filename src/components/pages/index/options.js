@@ -15,7 +15,7 @@ import contactIcon from '../../../assets/icons/contact.png';
 */
 function Options(props) {
   return (
-    <div className="container options-container">
+    <div className="options-container container ">
     <div id="portfolio" className="grid-square" data-aos="fade-up">
     <a href="portfolio.html">
     <img src={portfolioIcon} alt="Portfolio"></img>
