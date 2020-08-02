@@ -65,6 +65,7 @@ module.exports = {
       patterns: [
         { from: 'src/pages/index.html', to: '' },
         { from: 'src/assets/favicon', to: 'assets/favicon' },
+        { from: 'src/assets/animate.min.css', to: 'styles' },
       ],
     }),
     new BundleAnalyzerPlugin(),

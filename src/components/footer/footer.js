@@ -16,7 +16,7 @@ import githubIcon from '../../assets/icons/github.png';
 */
 function Footer(props) {
   return (
-    <div className="footerbar container">
+    <div className="footer container">
     <ul>
     <li>|</li>
     <li><a href="index.html#about">About</a></li>
@@ -28,8 +28,8 @@ function Footer(props) {
     <li><a href="contact.html">Contact</a></li>
     <li>|</li>
     </ul>
-    <div className="footerbar-icon-wrapper">
-    <a className="footerbar-icon-edge-l" href="https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q" target="_blank">
+    <div className="footer-icon-wrapper">
+    <a href="https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q" target="_blank">
     <img className="footer-icon" src={youtubeIcon} alt="SRP Designs YouTube"></img>
     </a>
     <a href="https://twitter.com/SRP_Designs" target="_blank">
@@ -38,7 +38,7 @@ function Footer(props) {
     <a href="https://www.instagram.com/_srpdesigns/" target="_blank">
     <img className="footer-icon" src={instagramIcon} alt="SRP Designs Instagram"></img>
     </a>
-    <a className="footerbar-icon-edge-r" href="https://github.com/Sam-RP1?tab=repositories" target="_blank">
+    <a className="footer-icon-l" href="https://github.com/Sam-RP1?tab=repositories" target="_blank">
     <img className="footer-icon" src={githubIcon} alt="SRP Designs GitHub"></img>
     </a>
     </div>
