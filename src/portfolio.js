@@ -32,7 +32,7 @@ const fredData = {
   title: "fred",
   purpose: "srp designs",
   description: "",
-  url: "fred.srenshawpanting.co.uk/",
+  url: "http://fred.srenshawpanting.co.uk/",
   button: "View Website",
 }
 

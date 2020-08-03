@@ -3,28 +3,13 @@ import ReactDOM from "react-dom";
 
 import Header from './components/header/header.js';
 import Splash from './components/splash.js';
+import RenderPortfolioItem from './components/pages/portfolio/portfolio-view.js'
 import Footer from './components/footer/footer.js';
 
 import logoDark from './assets/logo/logo-dark.png';
 import logoLight from './assets/logo/logo.png';
 
-const dssData = {
-  id: "dss-report",
-  title: "distributed systems & security",
-  purpose: "university research paper",
-  description: "A paper in which methods to detect and mitigate DDOS attacks are researched, compared and evaluated for their suitability to be used by IoT temperature sensing devices as a DDOS security mechanism. The paper presents a basic lightweight algorithm that was tested and can be used by IoT temperature sensing devices to detect high volume DDOS attacks and mitigate their effects.",
-  url: "assets/portfolio/distributed-systems/files/dss-report.pdf",
-  button: "View Paper",
-}
-
-const foodletteData = {
-  id: "foodlette",
-  title: "foodlette",
-  purpose: "web application",
-  description: "A web application that allows users to randomly choose their next meal or food item to eat. Users can select from a range of themed roulette wheels to spin that when spun will randomly determine what they should eat.",
-  url: "assets/portfolio/foodlette/files/___.pdf",
-  button: "View Application",
-}
+//
 
 const fredData = {
   id: "fred",
@@ -36,12 +21,23 @@ const fredData = {
 }
 
 const prpData = {
-  id: "peer-review-portal",
-  title: "peer review portal",
-  purpose: "university individual project",
-  description: "A web application created to allow both peer review and meta-review to be conducted comprehensively in an online environment. The web application has two types of users, students and teachers, both of which are provided with features that enable them to assume their respective role and carry out their respective processes. The web application is also equipped with with a number of functions that operate autonomously.",
-  url: "/portfolio-view.html?projectid=peerreviewportal",
-  button: "View Project",
+  title: "Peer Review Portal",
+  infoText: "Peer Review Portal is a web application designed and developed to allow the processes of both peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two levels of users, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application solves a number of issues identified by students and teachers that partake in traditional peer review and meta-review processes in order to provide an improved experience.\n \nIssues experienced by students include difficulty interpereting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work. The Peer Review Portal web application solves the student issues outlined by firstly using a simple informative set structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and removes the chances of losing work or the need to physically hand in work as the entire process is paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning peer reviewed work to its owner. These issues are solved by the Peer Review Portal web application by letting students hand-in work online, automatically redistributing shuffled work to students for peer reviewing online and automatically returning feedback from completed peer reviews or meta-reviews on work to students.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
+  tech: ["HTML", "CSS", "JS/JSX", "React", "Nodejs", "Express 4.X", "MySQL", "& More"],
+  listTwoTitle: "Features",
+  listTwo: ["Goolge Sign In", "Create & Join Classes", "Create Assignments", "PDF File Submissions",
+  "Automatic Shuffling & Distribution of Submitted Work for Assignments", "Peer & Meta Review Work", "& Many More"],
+  displayListTwo: true,
+  firstBtn: "assets/portfolio/peer-review-portal/files/prp.pdf",
+  secondBtn: "#",
+  secondBtnText: "",
+  displaySecondBtn: false,
+  pictures: [{src: "assets/portfolio/peer-review-portal/gifs/prp-join-class-test.gif", alt: "Picture One"},
+  {src: "assets/portfolio/peer-review-portal/gifs/prp-peer-review.gif", alt: "Peer Reviewing Work"},
+  {src: "assets/portfolio/peer-review-portal/gifs/prp-view-details.gif", alt: "View Class Details per Assignment"},
+  {src: "assets/portfolio/peer-review-portal/gifs/prp-results.gif", alt: "Viewing Results for an Assignment"}],
+  titles: ["Test One", "Peer & Meta Reviewing", "View Assignment Details", "View Results"],
+  texts: ["This is some text to test with.", "Example of a peer review being completed using the split view user interface design.", "Teachers are able to view the details for each assignment set for the classes they create.", "Peer Review Portal allows students and teachers alike to view the results for each assignment all in one place."],
 }
 
 const roboticsData = {
@@ -71,17 +67,45 @@ const pudData = {
   button: "View Project",
 }
 
-const reviewData = {
-  id: "litreview",
-  title: "mitigating corporate information exposure",
-  purpose: "university literature review",
-  description: "A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web with a specific focus on Bring Your Own Device. The literature review evaluates some of the risks posed to corporations and the mitigation techniques used or put in place by corporations in order to prevent the exposure of information on the web.",
-  url: "assets/portfolio/literature-review-2017/files/litrev.pdf",
-  button: "View Literature Review",
+const errData = {
+  title: "Stop it! Error!",
+  infoText: "Oi! Stop playing with my url!",
+  tech: ["Fiddling", "Exploring", "Adventure", "Testing"],
+  listTwoTitle: "",
+  listTwo: [],
+  displayListTwo: false,
+  firstBtn: "#",
+  secondBtn: "#",
+  secondBtnText: "",
+  displaySecondBtn: false,
+  pictures: [],
+  titles: [],
+  texts: [],
 }
 
-const portfolioArr = [dssData, fredData, prpData, roboticsData, sendwiData, pudData, reviewData];
+//
+
+function getProjectId() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('projectid');
+  return ((projectId !== null) ? projectId : 'error');
+}
+
+function renderProject() {
+  const projectId = getProjectId();
+  let project;
+
+  if (projectId === "peerreviewportal") {
+    project = prpData;
+  } else {
+    project = errData;
+  }
+
+  ReactDOM.render(<Splash title={project.title} />, document.getElementById('splash'));
+  ReactDOM.render(<RenderPortfolioItem data={project} />, document.getElementById('content'));
+}
 
 ReactDOM.render(<Header logoDark={logoDark} logoLight={logoLight} />, document.getElementById('global-header'));
-ReactDOM.render(<Splash title={"Portfolio"} />, document.getElementById('splash'));
 ReactDOM.render(<Footer />, document.getElementById('global-footer'));
+
+window.addEventListener("load", renderProject);

@@ -32,7 +32,7 @@ class Portfolio extends React.Component {
         </article>
         <div id={this.state.array[i].id} className={"portfolio-img bg-white " + this.state.sizing[i % 3][0]} data-aos={this.state.aos[i % 3][2]}>
         <div className="blur"></div>
-        <a href={this.state.array[i].url} target="_blank">
+        <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}>
         <button className="portfolio-btn">{this.state.array[i].button}
         <span className="btn-arrow">&#8618;</span>
         </button>

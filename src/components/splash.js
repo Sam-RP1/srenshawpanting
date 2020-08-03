@@ -16,7 +16,7 @@ class Splash extends React.Component {
   render() {
     return (
       <div className="splash-content-container container">
-      <div className="animate__animated animate__backInLeft animate__slow">
+      <div className="animate__animated animate__flipInX">
       <h1 id="splash-heading">{this.state.title}</h1>
       </div>
       <div className="splash-arrow-wrapper animate__animated animate__backInUp animate__slow">

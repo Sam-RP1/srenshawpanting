@@ -107,10 +107,11 @@
   padding: 6px 8px;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
+  @include transition(0.2s);
 }
 
-.info-btn:hover {
-  transform: scale(0.95);
+.info-btn:hover, .info-btn-a:hover {
+  @include transform(scale(0.95));
 }
 
 /*  */
@@ -160,11 +161,9 @@
   }
 }
 
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
 @media (min-width: 1368px) {
   .about-list-container {
