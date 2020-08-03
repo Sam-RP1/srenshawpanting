@@ -77,9 +77,11 @@ function addSmoothScroll() {
 async function runScripts() {
   scrolledNav();
   checkSize();
-  addSmoothScroll();
   window.addEventListener('scroll', scrolledNav);
   window.addEventListener('resize', checkSize);
+  if (document.title.substr(0, 7) === "Bespoke") {
+    addSmoothScroll();
+  }
 };
 
 function checkSize() {
