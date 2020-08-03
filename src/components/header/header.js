@@ -5,46 +5,79 @@ import {hot} from 'react-hot-loader';
 import '../../styles/root.scss';
 import '../../styles/header.scss';
 
+let prevWindowWidth;
+let prevWindowHeight;
+
 /**
 * HeaderBar() - Contains the HTML for the header component.
 * @return returns the HTML for the header component
 */
-function Header(props) {
-  return (
-    <div className="header-content-container container">
-    <a href="index.html" id="header-logo-wrapper">
-    <img id="header-logo" src={props.logoDark}></img>
-    <img id="header-logo-alt" src={props.logoLight}></img>
-    </a>
-    <nav id="nav" className="nav-container">
-    <div className="nav-menu-wrapper">
-    <ul id="nav-menu">
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="coming-soon.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </div>
-    <div id="nav-menu-btn">
-    <div id="bar-1"></div>
-    <div id="bar-2"></div>
-    <div id="bar-3"></div>
-    </div>
-    </nav>
-    </div>
-  );
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logoDark: props.logoDark,
+      logoLight: props.logoLight,
+    }
+  }
+
+  componentDidMount() {
+    document.getElementById('nav-menu-btn').addEventListener("click", navToggle);
+    document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
+    prevWindowWidth = window.innerWidth;
+    prevWindowHeight = window.innerHeight;
+    window.addEventListener('load', runScripts);
+  }
+
+  componentWillUnmount() {}
+
+  render() {
+    return (
+      <div className="header-content-container container">
+      <a href="index.html" id="header-logo-wrapper">
+      <img id="header-logo" src={this.state.logoDark}></img>
+      <img id="header-logo-alt" src={this.state.logoLight}></img>
+      </a>
+      <nav id="nav" className="nav-container">
+      <div className="nav-menu-wrapper">
+      <ul id="nav-menu">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="coming-soon.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+      </div>
+      <div id="nav-menu-btn">
+      <div id="bar-1"></div>
+      <div id="bar-2"></div>
+      <div id="bar-3"></div>
+      </div>
+      </nav>
+      </div>
+    );
+  }
 }
 
-let prevWindowWidth;
-let prevWindowHeight;
+function addSmoothScroll() {
+  $(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        let hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+    });
+  });
+};
 
-async function loadScripts() {
-  document.getElementById('nav-menu-btn').addEventListener("click", navToggle);
-  document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
-  prevWindowWidth = window.innerWidth;
-  prevWindowHeight = window.innerHeight;
+async function runScripts() {
   scrolledNav();
   checkSize();
+  addSmoothScroll();
   window.addEventListener('scroll', scrolledNav);
   window.addEventListener('resize', checkSize);
 };
@@ -142,7 +175,5 @@ function closeMenu() {
 function navToggle() {
   document.getElementById('nav-menu-btn').classList.toggle("change");
 };
-
-window.addEventListener('load', loadScripts);
 
 export default Header;

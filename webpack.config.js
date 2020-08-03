@@ -10,6 +10,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
   entry: {
     index: "./src/index.js",
+    portfolio: "./src/portfolio.js",
+    portfolio_view: "./src/portfolio-view.js"
   },
   mode: "development",
   module: {
@@ -64,8 +66,10 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/pages/index.html', to: '' },
+        { from: 'src/pages/portfolio.html', to: '' },
+        { from: 'src/pages/portfolio-view.html', to: '' },
         { from: 'src/assets/favicon', to: 'assets/favicon' },
-        { from: 'src/assets/animate.min.css', to: 'styles' },
+        { from: 'src/styles/animate.min.css', to: 'styles' },
       ],
     }),
     new BundleAnalyzerPlugin(),
@@ -80,7 +84,7 @@ module.exports = {
       })
     ],
     splitChunks: {
-      automaticNameDelimiter: '-',
+      automaticNameDelimiter: '.',
       chunks: 'all'
     },
     removeEmptyChunks: true,
