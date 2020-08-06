@@ -22,11 +22,17 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById('nav-menu-btn').addEventListener("click", navToggle);
-    document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
     prevWindowWidth = window.innerWidth;
     prevWindowHeight = window.innerHeight;
-    window.addEventListener('load', runScripts);
+    checkSize();
+    scrolledNav();
+    document.getElementById('nav-menu-btn').addEventListener("click", navToggle);
+    document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
+    window.addEventListener('scroll', scrolledNav);
+    window.addEventListener('resize', checkSize);
+    if (document.title.substr(0, 7) === "Bespoke") {
+      addSmoothScroll();
+    }
   }
 
   componentWillUnmount() {}
@@ -35,8 +41,8 @@ class Header extends React.Component {
     return (
       <div className="header-content-container container">
       <a href="index.html" id="header-logo-wrapper">
-      <img id="header-logo" src={this.state.logoDark}></img>
       <img id="header-logo-alt" src={this.state.logoLight}></img>
+      <img id="header-logo" src={this.state.logoDark}></img>
       </a>
       <nav id="nav" className="nav-container">
       <div className="nav-menu-wrapper">
@@ -74,16 +80,6 @@ function addSmoothScroll() {
   });
 };
 
-async function runScripts() {
-  scrolledNav();
-  checkSize();
-  window.addEventListener('scroll', scrolledNav);
-  window.addEventListener('resize', checkSize);
-  if (document.title.substr(0, 7) === "Bespoke") {
-    addSmoothScroll();
-  }
-};
-
 function checkSize() {
   if (window.innerWidth < 992 && window.innerWidth < prevWindowWidth) {
     document.getElementById("global-header").style.backgroundColor = "#fff";
@@ -108,19 +104,24 @@ function checkSize() {
     document.getElementById('nav-menu-btn').style.display = 'none';
     document.getElementById('nav-menu').classList.remove('nav-list');
   }
+  // Update to current width and height of window
   prevWindowWidth = window.innerWidth;
   prevWindowHeight = window.innerHeight;
 };
 
+let counter = 0;
+
 function scrolledNav() {
   // Header Colour & Height Handlers for window widths greater than or equal to 992px
   if ((window.scrollY > 50 || document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && window.innerWidth >= 992) {
-    document.getElementById("global-header").style.backgroundColor = "#fff";
-    document.getElementById("global-header").style.color = "#171717";
-    document.getElementById("global-header").style.height = "100px";
-    document.getElementById("header-logo-alt").style.display = "none";
-    document.getElementById("header-logo").style.display = "block";
-    document.getElementById("header-logo-wrapper").style.height = "50%";
+    if (document.getElementById("header-logo-wrapper").style.height !== "50%") {
+      document.getElementById("global-header").style.backgroundColor = "#fff";
+      document.getElementById("global-header").style.color = "#171717";
+      document.getElementById("global-header").style.height = "100px";
+      document.getElementById("header-logo-alt").style.display = "none";
+      document.getElementById("header-logo").style.display = "block";
+      document.getElementById("header-logo-wrapper").style.height = "50%";
+    }
   } else if (window.innerWidth >= 992) {
     document.getElementById("global-header").style.backgroundColor = "transparent";
     document.getElementById("global-header").style.color = "#fff";
@@ -131,20 +132,22 @@ function scrolledNav() {
   }
   // Header Colour & Height Handlers for window widths less than 992px
   if ((window.scrollY > 50 || document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && window.innerWidth < 992) {
-    document.getElementById("global-header").style.height = "100px";
-    document.getElementById("header-logo-wrapper").style.height = "50%";
+    if (document.getElementById("header-logo-wrapper").style.height !== "50%") {
+      document.getElementById("global-header").style.height = "100px";
+      document.getElementById("header-logo-wrapper").style.height = "50%";
+    }
   } else if (window.innerWidth < 992) {
     document.getElementById("global-header").style.height = "120px";
     document.getElementById("header-logo-wrapper").style.height = "40%";
   }
   // Header Drop Down Menu Handler
-  let navMenuTop = document.getElementById('nav-menu').style.top;
-  if (parseInt(navMenuTop, 10) > 1) {
-    if ((window.scrollY > 50 || document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && window.innerWidth < 768) {
+  if ((window.scrollY > 50 || document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && window.innerWidth < 768) {
+    if (document.getElementById("nav-menu").style.top !== "69px") {
+      console.log(document.getElementById("nav-menu").style.top)
       document.getElementById("nav-menu").style.top = "69px";
-    } else if (window.innerWidth < 768) {
-      document.getElementById("nav-menu").style.top = "79px";
     }
+  } else if (window.innerWidth < 768) {
+    document.getElementById("nav-menu").style.top = "79px";
   }
 };
 
