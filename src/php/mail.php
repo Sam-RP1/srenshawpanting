@@ -10,6 +10,11 @@ $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
 
-header("Location: ../contact-success.html");
+if(mail($recipient, $subject, $formcontent, $mailheader)) {
+  header("Location: ../contact.html?sent=success");
+} else {
+  header("Location: ../contact.html?sent=fail");
+}
+
 exit;
 ?>

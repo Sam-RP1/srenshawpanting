@@ -9,15 +9,18 @@ import Footer from './components/footer/footer.js';
 import logoDark from './assets/logo/logo-dark.png';
 import logoLight from './assets/logo/logo.png';
 
+// DSS
+import dssFile_1 from './assets/portfolio/distributed-systems/files/dss-report.pdf';
 const dssData = {
   id: "dss-report",
   title: "distributed systems & security",
   purpose: "university research paper",
   description: "A paper in which methods to detect and mitigate DDOS attacks are researched, compared and evaluated for their suitability to be used by IoT temperature sensing devices as a DDOS security mechanism. The paper presents a basic lightweight algorithm that was tested and can be used by IoT temperature sensing devices to detect high volume DDOS attacks and mitigate their effects.",
-  url: "assets/portfolio/distributed-systems/files/dss-report.pdf",
+  url: dssFile_1,
   button: "View Paper",
 }
 
+// Foodlette
 const foodletteData = {
   id: "foodlette",
   title: "foodlette",
@@ -27,6 +30,7 @@ const foodletteData = {
   button: "View Application",
 }
 
+// FRED
 const fredData = {
   id: "fred",
   title: "fred",
@@ -36,6 +40,7 @@ const fredData = {
   button: "View Website",
 }
 
+// Peer Review Portal
 const prpData = {
   id: "peer-review-portal",
   title: "peer review portal",
@@ -45,15 +50,18 @@ const prpData = {
   button: "View Project",
 }
 
+// Robotics
+import roboticsFile_1 from './assets/portfolio/robotics/files/robotics-report.pdf';
 const roboticsData = {
   id: "robotics",
   title: "robotics",
   purpose: "university individual project",
   description: "A individual project with the aim to improve the performance of a mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardwares to facilitate and enhance functionalities.",
-  url: "assets/portfolio/robotics/files/robotics-report.pdf",
+  url: roboticsFile_1,
   button: "View Paper",
 }
 
+// SENDWI
 const sendwiData = {
   id: "sendwi",
   title: "send wi",
@@ -63,24 +71,29 @@ const sendwiData = {
   button: "View Website",
 }
 
+// PUDHUB
+import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
 const pudData = {
   id: "pudhub",
   title: "pud hub",
   purpose: "university individual project",
   description: "The Portsmouth Unattended Displays Hub, a web application built to allow for the creation, customisation and management of unattended displays from a single place. In order for a display to be connected as an unattended display it must navigate to the web applications root address where it will be setup as. The web application has a number of features and functionalities like being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
-  url: "assets/portfolio/portsmouth-unattended-displays/files/README.md",
+  url: pudFile_1,
   button: "View Project",
 }
 
+// Review
+import reviewFile_1 from './assets/portfolio/literature-review-2017/files/litrev.pdf';
 const reviewData = {
   id: "litreview",
   title: "mitigating corporate information exposure",
   purpose: "university literature review",
   description: "A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web with a specific focus on Bring Your Own Device. The literature review evaluates some of the risks posed to corporations and the mitigation techniques used or put in place by corporations in order to prevent the exposure of information on the web.",
-  url: "assets/portfolio/literature-review-2017/files/litrev.pdf",
+  url: reviewFile_1,
   button: "View Literature Review",
 }
 
+//
 const portfolioArr = [dssData, fredData, prpData, roboticsData, sendwiData, pudData, reviewData];
 
 ReactDOM.render(<Header logoDark={logoDark} logoLight={logoLight} />, document.getElementById('global-header'));

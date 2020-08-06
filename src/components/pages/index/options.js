@@ -23,7 +23,7 @@ function Options(props) {
     </a>
     </div>
     <div id="services" className="grid-square" data-aos="fade-up" data-aos-delay="100">
-    <a href="coming-soon.html">
+    <a href="placeholder.html">
     <img src={servicesIcon} alt="Services"></img>
     <h2>Services</h2>
     </a>

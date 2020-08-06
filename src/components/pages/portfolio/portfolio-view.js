@@ -69,7 +69,7 @@ class RenderPortfolioItem extends React.Component {
 
       {this.state.pictures.map((n, i) =>
         <section key={i.toString()} className={"section-default h-auto padding-6016 " + this.state.colour[i % 2]}>
-        <div className={"container portfolio-container " + this.state.alignment[i % 2]} data-aos="fade">
+        <div className={"container portfolio-item-container " + this.state.alignment[i % 2]} data-aos="fade">
         <article className="wrapper-40 txt-wrapper">
         <h1>{this.state.pictureTitles[i]}</h1>
         <p>{this.state.pictureTexts[i]}</p>

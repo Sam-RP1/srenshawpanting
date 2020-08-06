@@ -43,7 +43,7 @@ class Header extends React.Component {
       <ul id="nav-menu">
       <li><a href="index.html#about">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="coming-soon.html">Services</a></li>
+      <li><a href="placeholder.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
       </ul>
       </div>

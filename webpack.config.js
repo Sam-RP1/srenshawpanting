@@ -11,7 +11,9 @@ module.exports = {
   entry: {
     index: "./src/index.js",
     portfolio: "./src/portfolio.js",
-    portfolio_view: "./src/portfolio-view.js"
+    portfolio_view: "./src/portfolio-view.js",
+    placeholder: "./src/placeholder.js",
+    contact: "./src/contact.js",
   },
   mode: "development",
   module: {
@@ -39,10 +41,18 @@ module.exports = {
         ],
       },
       {
-        test: /\.(pdf|png|jpe?g|svg|gif)$/i,
+        test: /\.(png|jpe?g|svg|gif)$/i,
         loader: 'file-loader',
         options: {
           outputPath: './assets/images',
+          esModule: false,
+        },
+      },
+      {
+        test: /\.(pdf|md)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: './assets/files',
           esModule: false,
         },
       },
@@ -68,6 +78,9 @@ module.exports = {
         { from: 'src/pages/index.html', to: '' },
         { from: 'src/pages/portfolio.html', to: '' },
         { from: 'src/pages/portfolio-view.html', to: '' },
+        { from: 'src/pages/placeholder.html', to: '' },
+        { from: 'src/pages/contact.html', to: '' },
+        { from: 'src/php/mail.php', to: 'php' },
         { from: 'src/assets/favicon', to: 'assets/favicon' },
         { from: 'src/styles/animate.min.css', to: 'styles' },
       ],
