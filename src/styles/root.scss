@@ -1,6 +1,24 @@
 @use 'base';
-@import 'mixins/transition';
 
+/*----------------------------------------*\
+   root.scss
+
+   ROOT
+
+   - Element Tags
+   - Container
+   - Sections
+   - Heights
+   - Padding
+   - Background Colors
+   - Content Colors
+   - @media
+\*----------------------------------------*/
+
+
+/*----------------------------------------*\
+   Element Tags
+\*----------------------------------------*/
 html {
   font-family: 'Open Sans', sans-serif;
   background-color: base.$srp-black;
@@ -10,7 +28,6 @@ body {
   height: auto;
   width: 100%;
   margin: 0px;
-  padding: 0px;
 }
 
 main {
@@ -18,7 +35,7 @@ main {
   width: 100%;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: 600;
 }
 
@@ -38,40 +55,16 @@ a:link, a:visited, a:hover  {
   text-decoration: none;
 }
 
-//
-
-.padding-default {
-  padding: 8px 16px;
-  box-sizing: border-box;
+/*----------------------------------------*\
+   Container
+\*----------------------------------------*/
+.container {
+  width: 90%;
 }
 
-.padding-6016 {
-  padding: 60px 16px;
-  box-sizing: border-box;
-}
-
-.padding-10016 {
-  padding: 100px 16px;
-  box-sizing: border-box;
-}
-
-.bg-white {
-  background-color: base.$srp-white;
-}
-
-.bg-black {
-  background-color: base.$srp-black;
-}
-
-.content-white {
-  color: base.$srp-white;
-}
-
-.content-black {
-  color: base.$srp-black;
-}
-
-/* */
+/*----------------------------------------*\
+   Sections
+\*----------------------------------------*/
 .section-default {
   display: flex;
   align-items: center;
@@ -87,27 +80,11 @@ a:link, a:visited, a:hover  {
     text-transform: uppercase;
     letter-spacing: 5px;
   }
-
-  h3 {
-    font-size: .9em;
-    margin: 0px 0px 15px 0px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    width: auto;
-  }
-
-  h3::before {
-    content: "";
-    width: 100%;
-    height: 3px;
-    background-color: #acacac;
-    position: relative;
-    display: block;
-    top: -15px;
-    margin: 0px;
-  }
 }
 
+/*----------------------------------------*\
+   Heights
+\*----------------------------------------*/
 .h-50 {
   height: 50vh;
 }
@@ -116,12 +93,44 @@ a:link, a:visited, a:hover  {
   height: auto;
 }
 
-.container {
-  width: 90%;
+/*----------------------------------------*\
+   Padding
+\*----------------------------------------*/
+.padding-default {
+  padding: 8px 16px;
+  box-sizing: border-box;
 }
 
-//
+.padding-6016 {
+  padding: 60px 16px;
+  box-sizing: border-box;
+}
 
+/*----------------------------------------*\
+   Backgrounds Colors
+\*----------------------------------------*/
+.bg-white {
+  background-color: base.$srp-white;
+}
+
+.bg-black {
+  background-color: base.$srp-black;
+}
+
+/*----------------------------------------*\
+   Content Colors
+\*----------------------------------------*/
+.content-white {
+  color: base.$srp-white;
+}
+
+.content-black {
+  color: base.$srp-black;
+}
+
+/*----------------------------------------*\
+   @media
+\*----------------------------------------*/
 @media (min-width: 576px) {
   .container {
     width: 85%;

@@ -2,6 +2,22 @@
 @import 'mixins/transition';
 @import 'mixins/transform';
 
+/*----------------------------------------*\
+   splash.scss
+
+   SPLASH
+
+   - Splash
+   - Containers
+   - Text
+   - General
+   - @keyframes
+   - @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+   Splash
+\*----------------------------------------*/
 #splash {
   display: flex;
   align-items: flex-end;
@@ -15,18 +31,28 @@
   overflow: hidden;
 }
 
+/*----------------------------------------*\
+   Containers
+\*----------------------------------------*/
 .splash-content-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   position: relative;
   height: auto;
   margin: 0px;
   color: base.$srp-white;
 }
 
+/*----------------------------------------*\
+   Text
+\*----------------------------------------*/
 .splash-content-container {
+  h1, p {
+    @include transition(2.0s);
+  }
+
   h1 {
+    height: auto;
     width: 100%;
     margin: 0px;
     padding: 0px 0px 0.2em 0px;
@@ -34,15 +60,16 @@
     font-size: 1.6em;
     letter-spacing: 5px;
     text-transform: uppercase;
-    @include transition(2.0s);
   }
 
   p {
     font-size: 1.1em;
-    @include transition(2.0s);
   }
 }
 
+/*----------------------------------------*\
+   General
+\*----------------------------------------*/
 .splash-arrow-wrapper {
   display: flex;
   justify-content: center;
@@ -53,7 +80,6 @@
 }
 
 .splash-down-arrow {
-  display: flex;
   -webkit-animation: action 1s infinite alternate;
   animation: action 1s infinite  alternate;
 }
@@ -61,7 +87,6 @@
 .splash-down-arrow::before {
   content: '';
   position: relative;
-  vertical-align: top;
   display: inline-block;
   height: 20px;
   width: 20px;
@@ -70,15 +95,22 @@
   @include transform(rotate(135deg));
 }
 
+/*----------------------------------------*\
+   @keyframes
+\*----------------------------------------*/
 @-webkit-keyframes action {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-@keyframes action {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% { @include transform(translateY(0)); }
+  100% { @include transform(translateY(-10px)); }
 }
 
+@keyframes action {
+  0% { @include transform(translateY(0)); }
+  100% { @include transform(translateY(-10px)); }
+}
+
+/*----------------------------------------*\
+   @media
+\*----------------------------------------*/
 @media (min-width: 576px) {
   .splash-content-container {
     h1 {

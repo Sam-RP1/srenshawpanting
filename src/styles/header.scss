@@ -1,6 +1,23 @@
 @use 'base';
 @import 'mixins/transition';
 
+/*----------------------------------------*\
+   header.scss
+
+   HEADER
+
+   - Header
+   - Containers & Wrappers
+   - Logo
+   - Lists
+   - Buttons
+   - General
+   - @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+   Header
+\*----------------------------------------*/
 #global-header {
   display: flex;
   align-items: center;
@@ -18,6 +35,9 @@
   @include transition(0.3s);
 }
 
+/*----------------------------------------*\
+   Containers & Wrappers
+\*----------------------------------------*/
 .header-content-container {
   display: flex;
   align-items: center;
@@ -31,15 +51,6 @@
   width: 130px;
   margin: 0px;
   padding: 0px;
-}
-
-#header-logo, #header-logo-alt {
-  height: 100%;
-  width: 100%;
-}
-
-#header-logo-alt {
-  display: none;
 }
 
 .nav-container {
@@ -73,6 +84,21 @@
   }
 }
 
+/*----------------------------------------*\
+   Logo
+\*----------------------------------------*/
+#header-logo, #header-logo-alt {
+  height: 100%;
+  width: 100%;
+}
+
+#header-logo-alt {
+  display: none;
+}
+
+/*----------------------------------------*\
+   Lists
+\*----------------------------------------*/
 .nav-list {
   display: flex;
   flex-direction: column;
@@ -112,6 +138,9 @@
   }
 }
 
+/*----------------------------------------*\
+   Buttons
+\*----------------------------------------*/
 #nav-menu-btn {
   display: none;
   height: 100%;
@@ -119,6 +148,9 @@
   cursor: pointer;
 }
 
+/*----------------------------------------*\
+   General
+\*----------------------------------------*/
 #bar-1, #bar-2, #bar-3 {
   width: 40px;
   height: 5px;
@@ -142,6 +174,9 @@
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
 }
 
+/*----------------------------------------*\
+   @media
+\*----------------------------------------*/
 @media (min-width: 576px) {}
 
 @media (min-width: 768px) {
@@ -152,7 +187,7 @@
 
 @media (min-width: 992px) {
   #global-header {
-    color: #fff;
+    color: base.$srp-white;
     background-color: transparent;
   }
 

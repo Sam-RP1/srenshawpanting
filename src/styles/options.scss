@@ -2,11 +2,30 @@
 @import 'mixins/transition';
 @import 'mixins/transform';
 
-.options-container {
-  display: flex;
-  flex-direction: column;
+/*----------------------------------------*\
+   options.scss
+
+   OPTIONS
+
+   - Options
+   - #'s
+   - Containers
+   - Lists
+   - General
+   - @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+   Options
+\*----------------------------------------*/
+#options {
+  color: base.$srp-black;
+  background-color: base.$srp-white;
 }
 
+/*----------------------------------------*\
+   #'s
+\*----------------------------------------*/
 #portfolio {
   justify-content: flex-start;
 }
@@ -27,6 +46,14 @@
 #portfolio, #services {
   border-bottom: 3px solid #171717;
   padding-bottom: 60px;
+}
+
+/*----------------------------------------*\
+   General
+\*----------------------------------------*/
+.options-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .grid-square {
@@ -52,9 +79,9 @@
   }
 
   h2 {
-    margin: 0.5em 0em 0em 0em;
+    font-size: 1.5em;
+    margin: 0.7em 0em 0em 0em;
     text-align: center;
-    color: #171717;
   }
 
   img {
@@ -63,7 +90,9 @@
   }
 }
 
-/*  */
+/*----------------------------------------*\
+   @media
+\*----------------------------------------*/
 @media (min-width: 576px) {
   .options-container {
     flex-direction: row;
@@ -86,14 +115,10 @@
   }
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
-@media (min-width: 1368px) {
-}
+@media (min-width: 1368px) {}
