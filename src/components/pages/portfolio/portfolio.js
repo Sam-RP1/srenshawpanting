@@ -5,45 +5,58 @@ import {hot} from 'react-hot-loader';
 import '../../../styles/root.scss';
 import '../../../styles/portfolio.scss';
 
+let counter = 0;
+
 class Portfolio extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       array: props.items,
-      bgColour: ["bg-black", "bg-white"],
-      contentColour: ["content-white", "content-black"],
-      alignment: ["align-left", "align-right", "align-center"],
-      sizing: [ ["wrapper-60", "wrapper-40"], ["wrapper-60", "wrapper-40"], ["wrapper-100", "wrapper-40"] ],
       aos: [ ["fade-right", "fade-up", "fade-left"], ["fade-left", "fade-up", "fade-right"], ["fade-down", "fade-down", "fade"] ],
     };
+
+    // this.handleTab = this.handleTab.bind(this)
   }
 
+  handleTab(id) {
+    const elem = document.getElementById(id);
+    if (elem.style.height === '' || elem.style.height === '75px') {
+      elem.style.height = "100%";
+      const deg = '135';
+      elem.childNodes[0].childNodes[0].style.webkitTransform = 'rotate('+deg+'deg)';
+      elem.childNodes[0].childNodes[0].style.msTransform     = 'rotate('+deg+'deg)';
+      elem.childNodes[0].childNodes[0].style.oTransform      = 'rotate('+deg+'deg)';
+      elem.childNodes[0].childNodes[0].style.transform       = 'rotate('+deg+'deg)';
+    } else {
+      elem.style.height = "75px";
+      const deg = '-45';
+      elem.childNodes[0].childNodes[0].style.webkitTransform = 'rotate('+deg+'deg)';
+      elem.childNodes[0].childNodes[0].style.msTransform     = 'rotate('+deg+'deg)';
+      elem.childNodes[0].childNodes[0].style.oTransform      = 'rotate('+deg+'deg)';
+      elem.childNodes[0].childNodes[0].style.transform       = 'rotate('+deg+'deg)';
+    }
+  }
 
   render() {
     return (
-      <React.Fragment>
+      <div className="portfolio-gallery-container container">
       {this.state.array.map((id, i) =>
-        <section key={i.toString()} className={"section-default h-auto padding-6016 " + this.state.bgColour[i % 2]}>
-        <div className={"container portfolio-item-container " + this.state.contentColour[i % 2] + " " + this.state.alignment[i % 3]}>
-        <article className={"txt-wrapper " + this.state.sizing[i % 3][0]}>
-        <h1 data-aos={this.state.aos[i % 3][0]}>{this.state.array[i].title}</h1>
-        <h3 data-aos={this.state.aos[i % 3][0]}>{this.state.array[i].purpose}</h3>
-        <p data-aos={this.state.aos[i % 3][1]}>{this.state.array[i].description}</p>
+        <div key={i.toString()} id={this.state.array[i].id} className="portfolio-gallery-item bg-white">
+        <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}></a>
+        <section id={"tab_" + i} className="gallery-item-tab">
+        <div onClick={() => this.handleTab("tab_" + i)}>
+        <span></span>
+        <h2>{this.state.array[i].title}</h2>
+        </div>
+        <article>
         </article>
-        <div id={this.state.array[i].id} className={"portfolio-img bg-white " + this.state.sizing[i % 3][0]} data-aos={this.state.aos[i % 3][2]}>
-        <div className="blur"></div>
-        <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}>
-        <button className="portfolio-btn">{this.state.array[i].button}
-        <span className="btn-arrow">&#8618;</span>
-        </button>
-        </a>
-        </div>
-        </div>
         </section>
+        </div>
       )}
-      </React.Fragment>
+      </div>
     );
   }
 }
 
+// {this.state.array[i].button}
 export default Portfolio;
