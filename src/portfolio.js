@@ -86,7 +86,7 @@ const pudData = {
 import reviewFile_1 from './assets/portfolio/literature-review-2017/files/litrev.pdf';
 const reviewData = {
   id: "litreview",
-  title: "mitigating corporate information exposure",
+  title: "mitigating information exposure",
   purpose: "university literature review",
   description: "A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web with a specific focus on Bring Your Own Device. The literature review evaluates some of the risks posed to corporations and the mitigation techniques used or put in place by corporations in order to prevent the exposure of information on the web.",
   url: reviewFile_1,

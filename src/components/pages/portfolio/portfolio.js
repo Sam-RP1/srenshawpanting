@@ -14,8 +14,6 @@ class Portfolio extends React.Component {
       array: props.items,
       aos: [ ["fade-right", "fade-up", "fade-left"], ["fade-left", "fade-up", "fade-right"], ["fade-down", "fade-down", "fade"] ],
     };
-
-    // this.handleTab = this.handleTab.bind(this)
   }
 
   handleTab(id) {
@@ -41,14 +39,14 @@ class Portfolio extends React.Component {
     return (
       <div className="portfolio-gallery-container container">
       {this.state.array.map((id, i) =>
-        <div key={i.toString()} id={this.state.array[i].id} className="portfolio-gallery-item bg-white">
+        <div key={i.toString()} id={this.state.array[i].id} className="gallery-item-container bg-white">
         <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}></a>
         <section id={"tab_" + i} className="gallery-item-tab">
-        <div onClick={() => this.handleTab("tab_" + i)}>
+        <div className="gallery-item-tab-btn" onClick={() => this.handleTab("tab_" + i)}>
         <span></span>
         <h2>{this.state.array[i].title}</h2>
         </div>
-        <article>
+        <article className="gallery-item-info">
         </article>
         </section>
         </div>
