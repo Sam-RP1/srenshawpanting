@@ -2,21 +2,21 @@
 @import 'mixins/transition';
 
 /*----------------------------------------*\
-   header.scss
+header.scss
 
-   HEADER
+HEADER
 
-   - Header
-   - Containers & Wrappers
-   - Logo
-   - Lists
-   - Buttons
-   - General
-   - @media
+- Header
+- Containers & Wrappers
+- Logo
+- Lists
+- Buttons
+- General
+- @media
 \*----------------------------------------*/
 
 /*----------------------------------------*\
-   Header
+Header
 \*----------------------------------------*/
 #global-header {
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 /*----------------------------------------*\
-   Containers & Wrappers
+Containers & Wrappers
 \*----------------------------------------*/
 .header-content-container {
   display: flex;
@@ -85,7 +85,7 @@
 }
 
 /*----------------------------------------*\
-   Logo
+Logo
 \*----------------------------------------*/
 #header-logo, #header-logo-alt {
   height: 100%;
@@ -97,7 +97,7 @@
 }
 
 /*----------------------------------------*\
-   Lists
+Lists
 \*----------------------------------------*/
 .nav-list {
   display: flex;
@@ -139,7 +139,7 @@
 }
 
 /*----------------------------------------*\
-   Buttons
+Buttons
 \*----------------------------------------*/
 #nav-menu-btn {
   display: none;
@@ -149,7 +149,7 @@
 }
 
 /*----------------------------------------*\
-   General
+General
 \*----------------------------------------*/
 #bar-1, #bar-2, #bar-3 {
   width: 40px;
@@ -175,7 +175,7 @@
 }
 
 /*----------------------------------------*\
-   @media
+@media
 \*----------------------------------------*/
 @media (min-width: 576px) {}
 

@@ -1,12 +1,37 @@
 @use 'base';
 @import 'mixins/transition';
-@import 'mixins/transform';
 
+/*----------------------------------------*\
+contact.scss
+
+CONTACT
+
+- Contact
+- Containers
+- Forms
+- Buttons
+- @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Contact
+\*----------------------------------------*/
+#contact {
+  color: base.$srp-white;
+  background-color: base.$srp-black;
+}
+
+/*----------------------------------------*\
+Containers
+\*----------------------------------------*/
 .contact-container {
   display: flex;
   flex-direction: column;
 }
 
+/*----------------------------------------*\
+Forms
+\*----------------------------------------*/
 #contactForm {
   display: flex;
   flex-direction: column;
@@ -40,6 +65,9 @@
   }
 }
 
+/*----------------------------------------*\
+Buttons
+\*----------------------------------------*/
 .form-btn {
   width: 100%;
   margin: 5px 0px;
@@ -55,6 +83,9 @@
   background-color: #d5d5d5;
 }
 
+/*----------------------------------------*\
+@media
+\*----------------------------------------*/
 @media (min-width: 576px) {}
 
 @media (min-width: 768px) {}

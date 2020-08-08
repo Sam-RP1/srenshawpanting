@@ -3,20 +3,20 @@
 @import 'mixins/transform';
 
 /*----------------------------------------*\
-   splash.scss
+splash.scss
 
-   SPLASH
+SPLASH
 
-   - Splash
-   - Containers
-   - Text
-   - General
-   - @keyframes
-   - @media
+- Splash
+- Containers
+- Text
+- General
+- @keyframes
+- @media
 \*----------------------------------------*/
 
 /*----------------------------------------*\
-   Splash
+Splash
 \*----------------------------------------*/
 #splash {
   display: flex;
@@ -32,7 +32,7 @@
 }
 
 /*----------------------------------------*\
-   Containers
+Containers
 \*----------------------------------------*/
 .splash-content-container {
   display: flex;
@@ -44,7 +44,7 @@
 }
 
 /*----------------------------------------*\
-   Text
+Text
 \*----------------------------------------*/
 .splash-content-container {
   h1, p {
@@ -68,7 +68,7 @@
 }
 
 /*----------------------------------------*\
-   General
+General
 \*----------------------------------------*/
 .splash-arrow-wrapper {
   display: flex;
@@ -96,7 +96,7 @@
 }
 
 /*----------------------------------------*\
-   @keyframes
+@keyframes
 \*----------------------------------------*/
 @-webkit-keyframes action {
   0% { @include transform(translateY(0)); }
@@ -109,7 +109,7 @@
 }
 
 /*----------------------------------------*\
-   @media
+@media
 \*----------------------------------------*/
 @media (min-width: 576px) {
   .splash-content-container {

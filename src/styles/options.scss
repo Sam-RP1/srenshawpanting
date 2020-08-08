@@ -3,20 +3,20 @@
 @import 'mixins/transform';
 
 /*----------------------------------------*\
-   options.scss
+options.scss
 
-   OPTIONS
+OPTIONS
 
-   - Options
-   - #'s
-   - Containers
-   - Lists
-   - General
-   - @media
+- Options
+- #'s
+- Containers
+- Lists
+- General
+- @media
 \*----------------------------------------*/
 
 /*----------------------------------------*\
-   Options
+Options
 \*----------------------------------------*/
 #options {
   color: base.$srp-black;
@@ -24,7 +24,7 @@
 }
 
 /*----------------------------------------*\
-   #'s
+#'s
 \*----------------------------------------*/
 #portfolio {
   justify-content: flex-start;
@@ -49,7 +49,7 @@
 }
 
 /*----------------------------------------*\
-   General
+General
 \*----------------------------------------*/
 .options-container {
   display: flex;
@@ -91,7 +91,7 @@
 }
 
 /*----------------------------------------*\
-   @media
+@media
 \*----------------------------------------*/
 @media (min-width: 576px) {
   .options-container {

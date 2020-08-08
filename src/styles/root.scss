@@ -1,23 +1,23 @@
 @use 'base';
 
 /*----------------------------------------*\
-   root.scss
+root.scss
 
-   ROOT
+ROOT
 
-   - Element Tags
-   - Container
-   - Sections
-   - Heights
-   - Padding
-   - Background Colors
-   - Content Colors
-   - @media
+- Element Tags
+- Container
+- Sections
+- Heights
+- Padding
+- Background Colors
+- Content Colors
+- @media
 \*----------------------------------------*/
 
 
 /*----------------------------------------*\
-   Element Tags
+Element Tags
 \*----------------------------------------*/
 html {
   font-family: 'Open Sans', sans-serif;
@@ -56,14 +56,14 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-   Container
+Container
 \*----------------------------------------*/
 .container {
   width: 90%;
 }
 
 /*----------------------------------------*\
-   Sections
+Sections
 \*----------------------------------------*/
 .section-default {
   display: flex;
@@ -83,7 +83,7 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-   Heights
+Heights
 \*----------------------------------------*/
 .h-50 {
   height: 50vh;
@@ -94,7 +94,7 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-   Padding
+Padding
 \*----------------------------------------*/
 .padding-default {
   padding: 8px 16px;
@@ -107,7 +107,7 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-   Backgrounds Colors
+Backgrounds Colors
 \*----------------------------------------*/
 .bg-white {
   background-color: base.$srp-white;
@@ -118,7 +118,7 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-   Content Colors
+Content Colors
 \*----------------------------------------*/
 .content-white {
   color: base.$srp-white;
@@ -129,7 +129,7 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-   @media
+@media
 \*----------------------------------------*/
 @media (min-width: 576px) {
   .container {

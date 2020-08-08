@@ -18,37 +18,32 @@ class Portfolio extends React.Component {
 
   handleTab(id) {
     const elem = document.getElementById(id);
-    if (elem.style.height === '' || elem.style.height === '75px') {
-      elem.style.height = "100%";
-      const deg = '135';
-      elem.childNodes[0].childNodes[0].style.webkitTransform = 'rotate('+deg+'deg)';
-      elem.childNodes[0].childNodes[0].style.msTransform     = 'rotate('+deg+'deg)';
-      elem.childNodes[0].childNodes[0].style.oTransform      = 'rotate('+deg+'deg)';
-      elem.childNodes[0].childNodes[0].style.transform       = 'rotate('+deg+'deg)';
-    } else {
-      elem.style.height = "75px";
-      const deg = '-45';
-      elem.childNodes[0].childNodes[0].style.webkitTransform = 'rotate('+deg+'deg)';
-      elem.childNodes[0].childNodes[0].style.msTransform     = 'rotate('+deg+'deg)';
-      elem.childNodes[0].childNodes[0].style.oTransform      = 'rotate('+deg+'deg)';
-      elem.childNodes[0].childNodes[0].style.transform       = 'rotate('+deg+'deg)';
-    }
+    elem.parentNode.classList.toggle('active');
   }
 
   render() {
+    console.log(this.state.array)
     return (
       <div className="portfolio-gallery-container container">
       {this.state.array.map((id, i) =>
-        <div key={i.toString()} id={this.state.array[i].id} className="gallery-item-container bg-white">
+        <div key={i.toString()} className="gallery-item-container">
+        <div id={this.state.array[i].id} className="gallery-item-inner">
+
+        <section className="gallery-item-front">
         <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}></a>
-        <section id={"tab_" + i} className="gallery-item-tab">
-        <div className="gallery-item-tab-btn" onClick={() => this.handleTab("tab_" + i)}>
+        <div className="gallery-item-tab-btn" onClick={() => this.handleTab(this.state.array[i].id)}>
         <span></span>
         <h2>{this.state.array[i].title}</h2>
         </div>
+        </section>
+
+        <section className="gallery-item-back">
         <article className="gallery-item-info">
+        <p>HELLO</p>
         </article>
         </section>
+
+        </div>
         </div>
       )}
       </div>
@@ -56,5 +51,4 @@ class Portfolio extends React.Component {
   }
 }
 
-// {this.state.array[i].button}
 export default Portfolio;

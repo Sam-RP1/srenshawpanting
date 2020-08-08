@@ -2,6 +2,20 @@
 @import 'mixins/transition';
 @import 'mixins/transform';
 
+/*----------------------------------------*\
+footer.scss
+
+FOOTER
+
+- Footer
+- Containers & Wrappers
+- Text
+- @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Footer
+\*----------------------------------------*/
 #global-footer {
   display: flex;
   align-items: center;
@@ -11,19 +25,22 @@
   margin: 0px;
   padding: 0.5em 1em;
   box-sizing: border-box;
-  background-color: #171717;
+  background-color: base.$srp-black;
 }
 
-.footer {
+/*----------------------------------------*\
+Containers & Wrappers
+\*----------------------------------------*/
+.footer-container {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   position: relative;
   height: 100%;
-  color: #d5d5d5;
+  color: base.$srp-footer-txt-color;
 }
 
-.footer{
+.footer-container {
   ul {
     display: flex;
     width: 100%;
@@ -61,13 +78,16 @@
   a:hover {
     @include transform(scale(0.95));
   }
+
+  img {
+    height: inherit;
+    width: inherit;
+  }
 }
 
-.footer-icon {
-  height: inherit;
-  width: inherit;
-}
-
+/*----------------------------------------*\
+Text
+\*----------------------------------------*/
 .footer-icon-text {
   display: flex;
   text-transform: uppercase;
@@ -75,7 +95,9 @@
   padding-bottom: 5px;
 }
 
-
+/*----------------------------------------*\
+@media
+\*----------------------------------------*/
 @media (min-width: 576px) {}
 
 @media (min-width: 768px) {
@@ -83,7 +105,7 @@
     height: 80px;
   }
 
-  .footer {
+  .footer-container {
     flex-direction: row;
   }
 

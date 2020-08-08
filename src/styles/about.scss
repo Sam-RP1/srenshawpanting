@@ -3,20 +3,20 @@
 @import 'mixins/transform';
 
 /*----------------------------------------*\
-   about.scss
+about.scss
 
-   ABOUT
+ABOUT
 
-   - About
-   - Containers
-   - Lists
-   - Icons
-   - Buttons
-   - @media
+- About
+- Containers
+- Lists
+- Icons
+- Buttons
+- @media
 \*----------------------------------------*/
 
 /*----------------------------------------*\
-   About
+About
 \*----------------------------------------*/
 #about {
   color: base.$srp-white;
@@ -30,7 +30,7 @@
 }
 
 /*----------------------------------------*\
-   Containers
+Containers
 \*----------------------------------------*/
 .about-info-container, .info-container {
   display: flex;
@@ -66,7 +66,7 @@
 }
 
 /*----------------------------------------*\
-   Lists
+Lists
 \*----------------------------------------*/
 .about-list, .info-list {
   height: auto;
@@ -90,7 +90,7 @@
 }
 
 /*----------------------------------------*\
-   Icons
+Icons
 \*----------------------------------------*/
 .icon-row {
   display: flex;
@@ -117,7 +117,7 @@
 }
 
 /*----------------------------------------*\
-   Buttons
+Buttons
 \*----------------------------------------*/
 #secondary-btn {
   margin-top: 15px;
@@ -151,7 +151,7 @@
 }
 
 /*----------------------------------------*\
-   @media
+@media
 \*----------------------------------------*/
 @media (min-width: 576px) {
   .about-list-container, .info-list-container {

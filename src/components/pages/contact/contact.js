@@ -11,7 +11,7 @@ import '../../../styles/contact.scss';
 */
 function Contact(props) {
   return (
-    <article className="container contact-container content-white">
+    <article className="container contact-container">
     <h1 data-aos="flip-down">Contact</h1>
     <p data-aos="fade-up">For any questions, queries or enquiries use the form below to get in touch.</p>
     <form id="contactForm" name="contactForm" action="php/mail.php" method="POST">
