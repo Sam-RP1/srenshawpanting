@@ -154,9 +154,13 @@ Containers & Wrappers
   }
 
   p {
+    width: 100%;
     font-size: 0.9em;
     margin: 0px;
     text-align: center;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
   }
 }
 
@@ -211,7 +215,7 @@ Containers & Wrappers
 .gallery-back-tab {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 75px;
   width: 100%;
   border-style: none;
@@ -219,7 +223,6 @@ Containers & Wrappers
   box-sizing: border-box;
   color: #fff;
   background-color: #0080b3;
-  cursor: pointer;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -232,8 +235,8 @@ Buttons
   font-size: 0.9em;
   box-sizing: border-box;
   padding: 5px 10px;
-  color: base.$srp-black;
-  background-color: #fff;
+  color: base.$srp-black!important;
+  background-color: #fff!important;
   border-radius: 5px;
   border: 2px solid #00597d;
   cursor: pointer;

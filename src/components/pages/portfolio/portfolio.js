@@ -46,7 +46,8 @@ class Portfolio extends React.Component {
         <p>{this.state.array[i].description}</p>
         </article>
         <div className="gallery-back-tab">
-        <div className="gallery-item-btn">{this.state.array[i].button}</div>
+        <div className="gallery-item-btn" onClick={() => this.handleTab(this.state.array[i].id)}>Close</div>
+        <a className="gallery-item-btn" href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}>{this.state.array[i].button}</a>
         </div>
         </section>
 

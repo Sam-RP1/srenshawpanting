@@ -94,7 +94,7 @@ const reviewData = {
 }
 
 //
-const portfolioArr = [dssData, fredData, prpData, roboticsData, sendwiData, pudData, reviewData];
+const portfolioArr = [prpData, dssData, fredData, roboticsData, sendwiData, pudData, reviewData];
 
 ReactDOM.render(<Header logoDark={logoDark} logoLight={logoLight} />, document.getElementById('global-header'));
 ReactDOM.render(<Splash title={"Portfolio"} />, document.getElementById('splash'));
