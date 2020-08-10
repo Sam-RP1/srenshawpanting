@@ -18,35 +18,7 @@ PORTFOLIO
 /*----------------------------------------*\
 #'s
 \*----------------------------------------*/
-#dss-report {
-  background-image: url('../assets/portfolio/distributed-systems/img/dss.png');
-}
-
-#fred {
-  background-image: url('../assets/portfolio/fred-2020/img/fred.png');
-}
-
-#peer-review-portal {
-  background-image: url('../assets/portfolio/peer-review-portal/img/prp.png');
-}
-
-#pudhub {
-  background-image: url('../assets/portfolio/portsmouth-unattended-displays/img/pud.png');
-}
-
-#sendwi {
-  background-image: url('../assets/portfolio/sendwi-2020/img/sendwi.png');
-}
-
-#robotics {
-  background-image: url('../assets/portfolio/robotics/img/robotics.png');
-}
-
-#litreview {
-  background-image: url('../assets/portfolio/literature-review-2017/img/litrev.png');
-}
-
-#info  {
+#info {
   p {
     white-space: pre-line;
   }
@@ -55,70 +27,6 @@ PORTFOLIO
 /*----------------------------------------*\
 Containers & Wrappers
 \*----------------------------------------*/
-.portfolio-gallery-container {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.gallery-item-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: calc((100vw - 32px) * 0.9);
-  width: calc((100vw - 32px) * 0.9);
-  overflow: hidden;
-  perspective: 1000px;
-}
-
-.gallery-item-container {
-  a {
-    display: flex;
-    flex-grow: 1;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.gallery-item-container.active {
-  .gallery-item-inner {
-    @include transform(rotateY(180deg));
-  }
-}
-
-.gallery-item-inner {
-  position: relative;
-  min-width: 100%;
-  min-height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  @include transition(0.7s);
-  transform-style: preserve-3d;
-}
-
-.gallery-item-front, .gallery-item-back {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.gallery-item-back {
-  background-color: #555;
-  color: white;
-  @include transform(rotateY(180deg));
-}
-
-.gallery-item-info {
-  display: flex;
-  flex-grow: 1;
-  width: 100%;
-}
-
 .portfolio-content-container {
   display: flex;
   flex-direction: column;
@@ -208,52 +116,6 @@ Images
 /*----------------------------------------*\
 Buttons
 \*----------------------------------------*/
-.gallery-item-tab-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 75px;
-  width: 100%;
-  border-style: none;
-  padding: 8px 16px;
-  box-sizing: border-box;
-  border: 1px solid #00597d;
-  color: #fff;
-  background-color: #0080b3;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.gallery-item-tab-btn {
-  span {
-    content: "";
-    position: relative;
-    display: inline-block;
-    min-height: 12px;
-    min-width: 12px;
-    margin-left: 10px;
-    border-style: solid;
-    border-width: 0.25em 0.25em 0 0;
-    @include transform(rotate(-135deg));
-    @include transition(0.2s);
-  }
-
-  h2 {
-    text-align: right;
-    margin: 0px 0px 0px 15px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    width: auto;
-  }
-}
-
-.gallery-item-tab-btn:hover {
-  span {
-    margin-left: 5px;
-  }
-}
-
 .btn-arrow {
   padding-left: 6px;
 }
@@ -261,33 +123,13 @@ Buttons
 /*----------------------------------------*\
 @media
 \*----------------------------------------*/
-@media (min-width: 576px) {
-  .gallery-item-container {
-    height: calc(((100vw - 50px) * 0.85) / 2);
-    width: calc(((100vw - 50px) * 0.85) / 2);
-  }
-}
+@media (min-width: 576px) {}
 
-@media (min-width: 768px) {
-  .gallery-item-container {
-    height: calc(((100vw - 50px) * 0.8) / 2);
-    width: calc(((100vw - 50px) * 0.8) / 2);
-  }
-}
+@media (min-width: 768px) {}
 
-@media (min-width: 992px) {
-  .gallery-item-container {
-    height: calc(((100vw - 50px) * 0.75) / 2);
-    width: calc(((100vw - 50px) * 0.75) / 2);
-  }
-}
+@media (min-width: 992px) {}
 
 @media (min-width: 1200px) {
-  .gallery-item-container {
-    height: calc(((100vw - 50px) * 0.7) / 3);
-    width: calc(((100vw - 50px) * 0.7) / 3);
-  }
-
   .wrapper-60 {
     width: 60%;
   }
@@ -325,9 +167,4 @@ Buttons
   }
 }
 
-@media (min-width: 1968px) {
-  .gallery-item-container {
-    height: calc(((100vw - 50px) * 0.7) / 4);
-    width: calc(((100vw - 50px) * 0.7) / 4);
-  }
-}
+@media (min-width: 1968px) {}

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import {hot} from 'react-hot-loader';
 import '../../../styles/root.scss';
-import '../../../styles/portfolio.scss';
+import '../../../styles/gallery.scss';
 
 let counter = 0;
 
@@ -30,8 +30,10 @@ class Portfolio extends React.Component {
         <div id={this.state.array[i].id} className="gallery-item-inner">
 
         <section className="gallery-item-front">
+        <div className="gallery-item-picture-container">
         <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}></a>
-        <div className="gallery-item-tab-btn" onClick={() => this.handleTab(this.state.array[i].id)}>
+        </div>
+        <div className="gallery-front-tab" onClick={() => this.handleTab(this.state.array[i].id)}>
         <span></span>
         <h2>{this.state.array[i].title}</h2>
         </div>
@@ -39,8 +41,13 @@ class Portfolio extends React.Component {
 
         <section className="gallery-item-back">
         <article className="gallery-item-info">
-        <p>HELLO</p>
+        <h2>{this.state.array[i].title}</h2>
+        <h3>{this.state.array[i].purpose}</h3>
+        <p>{this.state.array[i].description}</p>
         </article>
+        <div className="gallery-back-tab">
+        <div className="gallery-item-btn">{this.state.array[i].button}</div>
+        </div>
         </section>
 
         </div>
