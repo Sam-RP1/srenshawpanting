@@ -35,7 +35,7 @@ const fredData = {
   id: "fred",
   title: "fred",
   purpose: "srp designs",
-  description: "",
+  description: "A simplistic 'PowerPoint' like website designed, created and deployed for the patent pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for infomation, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve in order to improve current domestic and public fire prevention strategies.",
   url: "http://fred.srenshawpanting.co.uk/",
   button: "View Website",
 }
@@ -50,34 +50,13 @@ const prpData = {
   button: "View Project",
 }
 
-// Robotics
-import roboticsFile_1 from './assets/portfolio/robotics/files/robotics-report.pdf';
-const roboticsData = {
-  id: "robotics",
-  title: "robotics",
-  purpose: "university project",
-  description: "A individual project with the aim to improve the performance of a mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardwares to facilitate and enhance functionalities.",
-  url: roboticsFile_1,
-  button: "View Paper",
-}
-
-// SENDWI
-const sendwiData = {
-  id: "sendwi",
-  title: "send wi",
-  purpose: "srp designs",
-  description: "A simplistic and clean website created for the Send Womens Institute to give the group an online presence. As well as, to be a place for interested women or new members to go for information.",
-  url: "http://www.sendevewi.co.uk/",
-  button: "View Website",
-}
-
 // PUDHUB
 import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
 const pudData = {
   id: "pudhub",
   title: "pud hub",
   purpose: "university project",
-  description: "The Portsmouth Unattended Displays Hub, a web application built to allow for the creation, customisation and management of unattended displays from a single place. In order for a display to be connected as an unattended display it must navigate to the web applications root address where it will be setup as. The web application has a number of features and functionalities like being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
+  description: "The Portsmouth Unattended Displays Hub is a web application built to allow for the creation, customisation and management of unattended displays from a single place. Displays are turned into 'unattended displays' by simply connecting them to the PUDHUB web applications root address where the display will then be provided with the necessary files to maintain itself and communication with the application. The web application has a number of features and functionalities that include being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
   url: pudFile_1,
   button: "View Project",
 }
@@ -90,7 +69,28 @@ const reviewData = {
   purpose: "university literature",
   description: "A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web with a specific focus on Bring Your Own Device. The literature review evaluates some of the risks posed to corporations and the mitigation techniques used or put in place by corporations in order to prevent the exposure of information on the web.",
   url: reviewFile_1,
-  button: "View Literature Review",
+  button: "View Review",
+}
+
+// Robotics
+import roboticsFile_1 from './assets/portfolio/robotics/files/robotics-report.pdf';
+const roboticsData = {
+  id: "robotics",
+  title: "robotics",
+  purpose: "university project",
+  description: "A individual project with the aim to improve the performance of a mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardwares to facilitate and further enhance functionalities.",
+  url: roboticsFile_1,
+  button: "View Paper",
+}
+
+// SENDWI
+const sendwiData = {
+  id: "sendwi",
+  title: "send wi",
+  purpose: "srp designs",
+  description: "A simplistic and clean website created for the Send Womens Institute to give the group an online presence. The website also serves as a place for interested women or Institute members to go for the latest information.",
+  url: "http://www.sendevewi.co.uk/",
+  button: "View Website",
 }
 
 //
