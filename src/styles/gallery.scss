@@ -107,7 +107,7 @@ Containers & Wrappers
 
 .gallery-item-back {
   justify-content: space-between;
-  background-color: #0080b3;
+  background-color: base.$srp-blue;
   color: white;
   @include transform(rotateY(180deg));
 }
@@ -159,7 +159,7 @@ Containers & Wrappers
     margin: 0px;
     text-align: center;
     font-size: 0.9em;
-    @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 2.4em, $bgColor: #0080b3);
+    @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 2.4em, $bgColor: base.$srp-blue);
   }
 }
 
@@ -176,7 +176,7 @@ Containers & Wrappers
   border-style: solid;
   border-color: #00597d;
   color: #fff;
-  background-color: #0080b3;
+  background-color: base.$srp-blue;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
 }
@@ -242,7 +242,7 @@ Buttons
 }
 
 .gallery-item-btn:hover {
-  color: #0080b3;
+  color: base.$srp-blue!important;
   @include transform(scale(0.95));
 }
 
@@ -252,13 +252,13 @@ Buttons
 @media (min-width: 360px) {
   .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 7.2em, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 7.2em, $bgColor: base.$srp-blue);
     }
   }
 
   #litreview .gallery-item-info, #dss-report .gallery-item-info, #peer-review-portal .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 6em, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 6em, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -266,7 +266,7 @@ Buttons
 @media (min-width: 375px) {
   .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 8.4em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 8.4em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -274,7 +274,7 @@ Buttons
 @media (min-width: 411px) {
   .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 10.8em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 10.8em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -282,7 +282,7 @@ Buttons
 @media (min-width: 500px) {
   .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 14.4em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 14.4em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -302,7 +302,7 @@ Buttons
 
   .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 7.2em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 6em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -310,13 +310,13 @@ Buttons
 @media (min-width: 876px) {
   .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 9.6em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 9.6em!important, $bgColor: base.$srp-blue);
     }
   }
 
   #litreview .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 8.4em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 8.4em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -329,7 +329,7 @@ Buttons
 
   .gallery-item-info, #litreview .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 10.8em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 10.8em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -337,7 +337,7 @@ Buttons
 @media (min-width: 1100px) {
   .gallery-item-info, #litreview .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 14.4em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 14.4em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -357,7 +357,7 @@ Buttons
 
   .gallery-item-info, #litreview .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 7.2em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 7.2em!important, $bgColor: base.$srp-blue);
     }
   }
 }
@@ -365,7 +365,7 @@ Buttons
 @media (min-width: 1612px) {
   .gallery-item-info, #litreview .gallery-item-info {
     p {
-      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 18em!important, $bgColor: #0080b3);
+      @include multiLineEllipsis($lineHeight: 1.2em, $lineMaxHeight: 18em!important, $bgColor: base.$srp-blue);
     }
   }
 }

@@ -47,7 +47,7 @@ Forms
     padding: 3px;
     box-sizing: border-box;
     margin: 5px 0px;
-    border: 1px solid #171717;
+    border: 1px solid #000;
     border-radius: 4px;
     outline: none;
   }
@@ -61,7 +61,7 @@ Forms
   }
 
   input:focus, textarea:focus {
-    border: 1px solid #313ece;
+    border: 1px solid base.$srp-blue;
   }
 }
 
@@ -76,11 +76,14 @@ Buttons
   border: 1px solid #171717;
   border-radius: 4px;
   background-color: #fff;
-  @include transition(0.3s!important);
+  cursor: pointer;
+  @include transition(0.3s);
 }
 
 .form-btn:hover {
+  color: base.$srp-blue;
   background-color: #d5d5d5;
+  border: 1px solid base.$srp-blue;
 }
 
 /*----------------------------------------*\

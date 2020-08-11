@@ -56,10 +56,10 @@ class RenderPortfolioItem extends React.Component {
       </div>
       </div>
       <div className="info-btn-container">
-      <a id="report-btn" href={this.state.firstBtn} target="_blank" className="info-btn-a" data-aos="fade-left" data-aos-delay="100">
+      <a id="report-btn" href={this.state.firstBtn} target="_blank" className="info-btn-outer" data-aos="fade-left" data-aos-delay="100">
       <button className="info-btn">View Report<span className="btn-arrow">&#8618;</span></button>
       </a>
-      <a id="secondary-btn" href={this.state.secondBtn} target="_blank" className="info-btn-a" style={{display: this.state.displaySecondBtn ? "flex" : "none"}} data-aos="fade-left" data-aos-delay="250">
+      <a id="secondary-btn" href={this.state.secondBtn} target="_blank" className="info-btn-outer" style={{display: this.state.displaySecondBtn ? "flex" : "none"}} data-aos="fade-left" data-aos-delay="250">
       <button className="info-btn">View {this.state.secondBtnText}<span className="btn-arrow">&#8618;</span></button>
       </a>
       </div>

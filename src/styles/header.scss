@@ -81,6 +81,24 @@ Containers & Wrappers
     font-weight: 600;
     color: inherit;
     list-style: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  li::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: transparent;
+    position: relative;
+    display: block;
+    bottom: 0px;
+    margin: 0px;
+    @include transition(0.2s);
+  }
+
+  li:hover::after {
+    width: 100%;
+    background-color: base.$srp-blue;
   }
 }
 
@@ -119,7 +137,7 @@ Lists
 .nav-list {
   li {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     width: 100%;
     font-size: 1.2em;
     letter-spacing: 1px;

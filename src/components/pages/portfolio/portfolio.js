@@ -12,7 +12,7 @@ class Portfolio extends React.Component {
     super(props);
     this.state = {
       array: props.items,
-      aos: [ ["fade-right", "fade-up", "fade-left"], ["fade-left", "fade-up", "fade-right"], ["fade-down", "fade-down", "fade"] ],
+      aos: ["fade-right", "fade-up", "fade-left", "fade-down", "fade-right", "fade-left"],
     };
   }
 
@@ -26,7 +26,7 @@ class Portfolio extends React.Component {
     return (
       <div className="portfolio-gallery-container container">
       {this.state.array.map((id, i) =>
-        <div key={i.toString()} className="gallery-item-container">
+        <div key={i.toString()} className="gallery-item-container" data-aos={this.state.aos[i % 6]}>
         <div id={this.state.array[i].id} className="gallery-item-inner">
 
         <section className="gallery-item-front">
@@ -46,8 +46,8 @@ class Portfolio extends React.Component {
         <p>{this.state.array[i].description}</p>
         </article>
         <div className="gallery-back-tab">
-        <div className="gallery-item-btn" onClick={() => this.handleTab(this.state.array[i].id)}>Close</div>
-        <a className="gallery-item-btn" href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}>{this.state.array[i].button}</a>
+        <div className="gallery-item-btn" onClick={() => this.handleTab(this.state.array[i].id)}>&#10006; Close</div>
+        <a className="gallery-item-btn" href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}>{this.state.array[i].button} &#8618;</a>
         </div>
         </section>
 

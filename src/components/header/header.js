@@ -162,7 +162,7 @@ function openMenu() {
   } else if (window.innerWidth < 768) {
     document.getElementById("nav-menu").style.top = "79px";
   }
-  document.getElementById("nav-menu").style.height = "148px";
+  document.getElementById("nav-menu").style.height = "168px";
 };
 
 /**

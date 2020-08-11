@@ -19,8 +19,8 @@ function Contact(props) {
     <input type="text" name="email" placeholder="Email" maxLength="45" required className="txt-input" data-aos="fade-up" data-aos-delay="100"></input>
     <input type="text" name="subject" placeholder="Subject" maxLength="30" required className="txt-input" data-aos="fade-up" data-aos-delay="150"></input>
     <textarea name="message" placeholder="..." rows="10" cols="25" maxLength="500" required data-aos="fade-up" data-aos-delay="200"></textarea>
-    <input id="submitButton" type="submit" value="Submit" className="form-btn" data-aos="fade-up" data-aos-delay="250"></input>
-    <input type="reset" value="Reset" className="form-btn" data-aos="fade-up" data-aos-delay="300"></input>
+    <input id="submitButton" type="submit" value="Submit" className="form-btn" data-aos="fade-up" data-aos-delay="350"></input>
+    <input type="reset" value="Reset" className="form-btn" data-aos="fade-up" data-aos-delay="400"></input>
     </form>
     </article>
   );

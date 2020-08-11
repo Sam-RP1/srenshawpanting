@@ -52,8 +52,12 @@ Containers & Wrappers
     justify-content: space-between;
   }
 
+  ul li a {
+    @include transition(0.15s);
+  }
+
   ul li a:hover {
-    color: #fff!important;
+    color: base.$srp-blue!important;
   }
 }
 

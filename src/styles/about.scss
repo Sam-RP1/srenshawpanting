@@ -11,7 +11,6 @@ ABOUT
 - Containers
 - Lists
 - Icons
-- Buttons
 - @media
 \*----------------------------------------*/
 
@@ -114,40 +113,6 @@ Icons
   img:hover {
     @include transform(scale(0.95));
   }
-}
-
-/*----------------------------------------*\
-Buttons
-\*----------------------------------------*/
-#secondary-btn {
-  margin-top: 15px;
-}
-
-.info-btn-a {
-  height: auto;
-  width: 100%;
-}
-
-.info-btn {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  height: auto;
-  width: inherit;
-  font-size: 1em;
-  border-style: none;
-  box-sizing: border-box;
-  border-radius: 5px;
-  color: base.$srp-white;
-  background-color: #0080b3;
-  padding: 6px 8px;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  @include transition(0.2s);
-}
-
-.info-btn:hover, .info-btn-a:hover {
-  @include transform(scale(0.95));
 }
 
 /*----------------------------------------*\

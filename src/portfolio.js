@@ -88,7 +88,7 @@ const sendwiData = {
   id: "sendwi",
   title: "send wi",
   purpose: "srp designs",
-  description: "A simplistic and clean website created for the Send Womens Institute to give the group an online presence. The website also serves as a place for interested women or Institute members to go for the latest information.",
+  description: "A simplistic and clean single-page website created for the Send Womens Institute to give the group an online presence. The website also serves as a place for interested women or Institute members to go for the latest information.",
   url: "http://www.sendevewi.co.uk/",
   button: "View Website",
 }
