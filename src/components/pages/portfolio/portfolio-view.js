@@ -10,18 +10,13 @@ class RenderPortfolioItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      infoText: props.data.infoText,
+      description: props.data.description,
       tech: props.data.tech,
+      enableListTwo: props.data.enableListTwo,
       listTwoTitle: props.data.listTwoTitle,
-      listTwo: props.data.listTwo,
-      displayListTwo: props.data.displayListTwo,
-      firstBtn: props.data.firstBtn,
-      secondBtn: props.data.secondBtn,
-      secondBtnText: props.data.secondBtnText,
-      displaySecondBtn: props.data.displaySecondBtn,
-      pictures: props.data.pictures,
-      pictureTitles: props.data.titles,
-      pictureTexts: props.data.texts,
+      listTwoContents: props.data.listTwoContents,
+      buttons: props.data.buttons,
+      media: props.data.media,
       colour: ["bg-white content-black", "bg-black content-white"],
       alignment: ["align-left", "align-right"],
     };
@@ -33,7 +28,7 @@ class RenderPortfolioItem extends React.Component {
       <section id="info" className="section-default h-auto padding-6016 bg-black content-white">
       <article className="container column">
       <h1 data-aos="flip-down">Information</h1>
-      <p className="" data-aos="fade-right" data-aos-delay="150">{this.state.infoText}</p>
+      <p className="" data-aos="fade-right" data-aos-delay="150">{this.state.description}</p>
       <div className="info-container">
       <div className="info-list-container">
 
@@ -46,36 +41,37 @@ class RenderPortfolioItem extends React.Component {
       </ul>
       </div>
 
-      <div id="list-two" className="info-list" style={{display: this.state.displayListTwo ? "block" : "none"}} data-aos="fade-up" data-aos-delay="150">
+      <div id="list-two" className="info-list" style={{display: this.state.enableListTwo ? "block" : "none"}} data-aos="fade-up" data-aos-delay="150">
       <h2>{this.state.listTwoTitle}</h2>
       <ul>
-      {this.state.listTwo.map((name, i) =>
-        <li key={i.toString()}>{this.state.listTwo[i]}</li>
+      {this.state.listTwoContents.map((name, i) =>
+        <li key={i.toString()}>{this.state.listTwoContents[i]}</li>
       )}
       </ul>
       </div>
       </div>
+
       <div className="info-btn-container">
-      <a id="report-btn" href={this.state.firstBtn} target="_blank" className="info-btn-outer" data-aos="fade-left" data-aos-delay="100">
-      <button className="info-btn">View Report<span className="btn-arrow">&#8618;</span></button>
-      </a>
-      <a id="secondary-btn" href={this.state.secondBtn} target="_blank" className="info-btn-outer" style={{display: this.state.displaySecondBtn ? "flex" : "none"}} data-aos="fade-left" data-aos-delay="250">
-      <button className="info-btn">View {this.state.secondBtnText}<span className="btn-arrow">&#8618;</span></button>
-      </a>
+      {this.state.buttons.map((btn, i) =>
+        <a key={i.toString()} href={this.state.buttons[i].link} target="_blank" className="info-btn-outer" style={{marginTop: i > 0 ? "15px" : "0px"}} data-aos="fade-left" data-aos-delay={i.toString() + "50"}>
+        <div className="info-btn">{this.state.buttons[i].text}<span className="btn-arrow">&#8618;</span></div>
+        </a>
+      )}
       </div>
+
       </div>
       </article>
       </section>
 
-      {this.state.pictures.map((n, i) =>
+      {this.state.media.map((n, i) =>
         <section key={i.toString()} className={"section-default h-auto padding-6016 " + this.state.colour[i % 2]}>
         <div className={"container portfolio-item-container " + this.state.alignment[i % 2]} data-aos="fade">
         <article className="wrapper-40 txt-wrapper">
-        <h1>{this.state.pictureTitles[i]}</h1>
-        <p>{this.state.pictureTexts[i]}</p>
+        <h1>{this.state.media[i].title}</h1>
+        <p>{this.state.media[i].text}</p>
         </article>
         <div className="wrapper-60 portfolio-img bg-white" data-aos="fade">
-        <img src={this.state.pictures[i].src} alt={this.state.pictures[i].alt}></img>
+        <img src={this.state.media[i].src} alt={this.state.media[i].alt}></img>
         </div>
         </div>
         </section>

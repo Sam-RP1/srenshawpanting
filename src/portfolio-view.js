@@ -27,33 +27,73 @@ import prpGif_4 from './assets/portfolio/peer-review-portal/gifs/prp-results.gif
 import prpFile_1 from './assets/portfolio/peer-review-portal/files/prp.pdf';
 const prpData = {
   title: "Peer Review Portal",
-  infoText: "Peer Review Portal is a web application designed and developed to allow the processes of both peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two levels of users, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application solves a number of issues identified by students and teachers that partake in traditional peer review and meta-review processes in order to provide an improved experience.\n \nIssues experienced by students include difficulty interpereting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work. The Peer Review Portal web application solves the student issues outlined by firstly using a simple informative set structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and removes the chances of losing work or the need to physically hand in work as the entire process is paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning peer reviewed work to its owner. These issues are solved by the Peer Review Portal web application by letting students hand-in work online, automatically redistributing shuffled work to students for peer reviewing online and automatically returning feedback from completed peer reviews or meta-reviews on work to students.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
+  description: "Peer Review Portal is a web application designed and developed to allow both the processes of peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two user types, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application provides a more steamlined and improved peer review and meta-review experience as it solves a number of issues identified by students and teachers that partake or have partaken in traditional peer review and meta-review processes.\n \nIssues experienced by students include difficulty interpereting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work in. The Peer Review Portal web application solves these student issues outlined by using a simple intuitive standard structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and also removes the chances of losing work or the need to physically hand in work as the entire process is made paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning woth that has been peer reviewed to its owner. These teacher specific issues are solved by the Peer Review Portal web application letting students hand-in work online at anytime before the submission deadline set, automatically shuffling then redistributing submitted work to students for peer reviewing online and automatically returning feedback given to submitted work from completed peer reviews or meta-reviews to the works submitor.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
   tech: ["HTML", "CSS", "JS/JSX", "React", "Nodejs", "Express 4.X", "MySQL", "& More"],
+  enableListTwo: true,
   listTwoTitle: "Features",
-  listTwo: ["Google Sign In", "Create & Join Classes", "Create Assignments", "PDF File Submissions",
+  listTwoContents: ["Google Sign In", "Create & Join Classes", "Create Assignments", "PDF File Submissions",
   "Automatic Shuffling & Distribution of Submitted Work for Assignments", "Peer & Meta Review Work", "& Many More"],
-  displayListTwo: true,
-  firstBtn: prpFile_1,
-  secondBtn: "#",
-  secondBtnText: "",
-  displaySecondBtn: false,
-  pictures: [{src: prpGif_1, alt: "Picture One"},
-  {src: prpGif_2, alt: "Peer Reviewing Work"},
-  {src: prpGif_3, alt: "View Class Details per Assignment"},
-  {src: prpGif_4, alt: "Viewing Results for an Assignment"}],
-  titles: ["Test One", "Peer & Meta Reviewing", "View Assignment Details", "View Results"],
-  texts: ["This is some text to test with.", "Example of a peer review being completed using the split view user interface design.", "Teachers are able to view the details for each assignment set for the classes they create.", "Peer Review Portal allows students and teachers alike to view the results for each assignment all in one place."],
+  buttons: [
+    {
+      link: prpFile_1,
+      text: "View Report"
+    },
+  ],
+  media: [
+    {
+      title: "Test One",
+      src: prpGif_1,
+      alt: "Picture One",
+      text: "This is some text to test with."
+    },
+    {
+      title: "Peer & Meta Reviewing",
+      src: prpGif_2,
+      alt: "Peer Reviewing Work",
+      text: "Example of a peer review being completed using the split view user interface design."
+    },
+    {
+      title: "View Assignment Details",
+      src: prpGif_3,
+      alt: "View Class Details per Assignment",
+      text: "Teachers are able to view the details for each assignment set for the classes they create."
+    },
+    {
+      title: "View Results",
+      src: prpGif_4,
+      alt: "Viewing Results for an Assignment",
+      text: "Peer Review Portal allows students and teachers alike to view the results for each assignment all in one place."
+    },
+  ]
 }
 
 // Robotics
 import roboticsFile_1 from './assets/portfolio/robotics/files/robotics-report.pdf';
 const roboticsData = {
-  id: "robotics",
   title: "robotics",
-  purpose: "university individual project",
-  description: "A individual project with the aim to improve the performance of a mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardwares to facilitate and enhance functionalities.",
-  url: roboticsFile_1,
-  button: "View Paper",
+  description: "An individual university project with the aim to improve the performance of a mobile robot's object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment using the V-REP simulation software.\n \nThe focal point of the project was sorting objects in industrial environments using robotics to automate the process.\n\nTo achieve the aims for the project in an efficient manner the final mobile robot deployed in the simulation scenario needed to be capable of manipulating at least one object at a time, identifying an object's colour so that it can be sorted appropriately, avoiding collisions with nearby structures and as a result be able to calculate its navigational path dynamically.\n \nThe Kuka YouBot was the mobile robot selected as it can manipulate objects using its 5 degrees of freedom arm, carry multiple objects on its rear platform and could also be modified to be equipped with proximity sensors along with an RGB sensor. Therefore meaning that the final Kuka YouBot deployed could be capable of achieving the project's aim.\n \nFor the Kuka YouBot to be able to make use of the proximity sensors and RGB sensor attached to it a number of algorithms were designed and implemented so that it could identify objects colours and sort them appropriately, as well as to detect structures and avoid collisions by dynamically calculating its navigational path.\n \nThe Project report details the approach taken, the mobile robot selected, the procedure designed, the simulation system itself, the results obtained from simulation runs and the conclusions deduced.",
+  tech: ["Lua Script", "V-REP", "Kuka YouBot"],
+  enableListTwo: true,
+  listTwoTitle: "Features",
+  listTwoContents: ["Proximity Sensors", "Collision Detection", "RGB Vision Sensor", "Colour Sorting"],
+  buttons: [
+    {
+      link: roboticsFile_1,
+      text: "View Report"
+    },
+    {
+      link: "https://github.com/Sam-RP1/robotics-cw-2019",
+      text: "View Repository"
+    },
+  ],
+  media: [
+    {
+      title: "",
+      src: "",
+      alt: "",
+      text: ""
+    },
+  ]
 }
 
 // SENDWI
@@ -69,29 +109,42 @@ const sendwiData = {
 // PUDHUB
 import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
 const pudData = {
-  id: "pudhub",
   title: "pud hub",
-  purpose: "university individual project",
   description: "The Portsmouth Unattended Displays Hub, a web application built to allow for the creation, customisation and management of unattended displays from a single place. In order for a display to be connected as an unattended display it must navigate to the web applications root address where it will be setup as. The web application has a number of features and functionalities like being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
-  url: pudFile_1,
-  button: "View Project",
+  tech: [""],
+  enableListTwo: true,
+  listTwoTitle: "Features",
+  listTwoContents: ["", "", "", ""],
+  buttons: [
+    {
+      link: pudFile_1,
+      text: "View README",
+    },
+    {
+      link: "",
+      text: "View Repository",
+    }
+  ],
+  media: [
+    {
+      title: "",
+      src: "",
+      alt: "",
+      text: ""
+    },
+  ]
 }
 
 // ERR MSG
 const errData = {
   title: "Stop it! Error!",
-  infoText: "Oi! Stop playing with my url!",
+  description: "Oi! Stop playing with my url!",
   tech: ["Fiddling", "Exploring", "Adventure", "Testing"],
+  enableListTwo: false,
   listTwoTitle: "",
-  listTwo: [],
-  displayListTwo: false,
-  firstBtn: "#",
-  secondBtn: "#",
-  secondBtnText: "",
-  displaySecondBtn: false,
+  listTwoContents: [],
+  buttons: [],
   pictures: [],
-  titles: [],
-  texts: [],
 }
 
 // Functions
@@ -107,6 +160,8 @@ function renderProject() {
 
   if (projectId === "peerreviewportal") {
     project = prpData;
+  } else if (projectId === "robotics2019") {
+    project = roboticsData;
   } else {
     project = errData;
   }

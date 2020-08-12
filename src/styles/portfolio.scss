@@ -116,10 +116,6 @@ Images
 /*----------------------------------------*\
 Buttons
 \*----------------------------------------*/
-#secondary-btn {
-  margin-top: 15px;
-}
-
 .info-btn-outer {
   height: auto;
   width: 100%;
@@ -138,8 +134,11 @@ Buttons
   color: base.$srp-white;
   background-color: base.$srp-blue;
   padding: 6px 8px;
-  cursor: pointer;
   font-family: 'Open Sans', sans-serif;
+}
+
+.info-btn {
+  cursor: pointer;
   @include transition(0.2s);
 }
 
