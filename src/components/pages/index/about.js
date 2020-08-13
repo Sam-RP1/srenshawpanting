@@ -25,10 +25,11 @@ function About(props) {
     <h2>Competencies</h2>
     <ul>
     <li>HTML</li>
-    <li>CSS</li>
-    <li>ES6</li>
+    <li>CSS / SCSS</li>
+    <li>JS / JSX</li>
     <li>SQL</li>
     <li>React</li>
+    <li>Webpack</li>
     </ul>
     </div>
     <div className="about-list" data-aos="fade-up" data-aos-delay="150">

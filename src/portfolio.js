@@ -36,8 +36,8 @@ const fredData = {
   title: "fred",
   purpose: "srp designs",
   description: "A simplistic 'PowerPoint' like website designed, created and deployed for the patent pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for infomation, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve in order to improve current domestic and public fire prevention strategies.",
-  url: "http://fred.srenshawpanting.co.uk/",
-  button: "View Website",
+  url: "/portfolio-view.html?projectid=fred2020",
+  button: "View Project",
 }
 
 // Peer Review Portal
@@ -51,13 +51,12 @@ const prpData = {
 }
 
 // PUDHUB
-import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
 const pudData = {
   id: "pudhub",
   title: "pud hub",
   purpose: "university project",
   description: "The Portsmouth Unattended Displays Hub is a web application built to allow for the creation, customisation and management of unattended displays from a single place. Displays are turned into 'unattended displays' by simply connecting them to the PUDHUB web applications root address where the display will then be provided with the necessary files to maintain itself and communication with the application. The web application has a number of features and functionalities that include being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
-  url: pudFile_1,
+  url: "/portfolio-view.html?projectid=pudhub",
   button: "View Project",
 }
 

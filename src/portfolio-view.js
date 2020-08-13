@@ -10,13 +10,45 @@ import logoDark from './assets/logo/logo-dark.png';
 import logoLight from './assets/logo/logo.png';
 
 // FRED
+import fredGif_1 from './assets/portfolio/fred-2020/gifs/fred-ops.gif';
+import fredGif_2 from './assets/portfolio/fred-2020/gifs/fred-parallax.gif';
+import fredPic_1 from './assets/portfolio/fred-2020/img/fred-1.png';
+import fredPic_2 from './assets/portfolio/fred-2020/img/fred-2.png';
+import fredPic_3 from './assets/portfolio/fred-2020/img/fred-3.png';
+import fredPic_5 from './assets/portfolio/fred-2020/img/fred-5.png';
+import fredPic_6 from './assets/portfolio/fred-2020/img/fred-6.png';
+import fredPic_8 from './assets/portfolio/fred-2020/img/fred-8.png';
 const fredData = {
-  id: "fred",
   title: "fred",
-  purpose: "srp designs",
-  description: "",
-  url: "http://fred.srenshawpanting.co.uk/",
-  button: "View Website",
+  description: "The websites design was done to the clients request so that it takes on the feel of a 'PowerPoint' presentation, beyond this it is simple to navigate and features a number of 'pages' with parallax scrolling.",
+  tech: ["HTML", "SCSS", "JSX", "React", "Webpack"],
+  enableListTwo: true,
+  listTwoTitle: "Features",
+  listTwoContents: ["Horizontal One-Page Scrolling", "Parallax Vertical Scrolling"],
+  buttons: [
+    {
+      link: "http://fred.srenshawpanting.co.uk/",
+      text: "View Website"
+    },
+    {
+      link: "https://github.com/Sam-RP1/fred-2020",
+      text: "View Repository"
+    },
+  ],
+  media: [
+    {
+      title: "One Page Scrolling",
+      src: fredGif_1,
+      alt: "Horizontal Scrolling using buttons",
+      text: ""
+    },
+    {
+      title: "Parallax Scrolling",
+      src: fredGif_2,
+      alt: "Vertical Parallax Scrolling",
+      text: ""
+    },
+  ]
 }
 
 // Peer Review Portal
@@ -69,6 +101,7 @@ const prpData = {
 
 // Robotics
 import roboticsFile_1 from './assets/portfolio/robotics/files/robotics-report.pdf';
+import roboticsGif_1 from './assets/portfolio/robotics/gifs/robo-1.gif';
 const roboticsData = {
   title: "robotics",
   description: "An individual university project with the aim to improve the performance of a mobile robot's object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment using the V-REP simulation software.\n \nThe focal point of the project was sorting objects in industrial environments using robotics to automate the process.\n\nTo achieve the aims for the project in an efficient manner the final mobile robot deployed in the simulation scenario needed to be capable of manipulating at least one object at a time, identifying an object's colour so that it can be sorted appropriately, avoiding collisions with nearby structures and as a result be able to calculate its navigational path dynamically.\n \nThe Kuka YouBot was the mobile robot selected as it can manipulate objects using its 5 degrees of freedom arm, carry multiple objects on its rear platform and could also be modified to be equipped with proximity sensors along with an RGB sensor. Therefore meaning that the final Kuka YouBot deployed could be capable of achieving the project's aim.\n \nFor the Kuka YouBot to be able to make use of the proximity sensors and RGB sensor attached to it a number of algorithms were designed and implemented so that it could identify objects colours and sort them appropriately, as well as to detect structures and avoid collisions by dynamically calculating its navigational path.\n \nThe Project report details the approach taken, the mobile robot selected, the procedure designed, the simulation system itself, the results obtained from simulation runs and the conclusions deduced.",
@@ -88,8 +121,8 @@ const roboticsData = {
   ],
   media: [
     {
-      title: "",
-      src: "",
+      title: "Colour Detection & Sorting",
+      src: roboticsGif_1,
       alt: "",
       text: ""
     },
@@ -107,6 +140,9 @@ const sendwiData = {
 }
 
 // PUDHUB
+import pudGif_1 from './assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-1.gif';
+import pudGif_2 from './assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-2.gif';
+import pudGif_3 from './assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-3.gif';
 import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
 const pudData = {
   title: "pud hub",
@@ -127,9 +163,21 @@ const pudData = {
   ],
   media: [
     {
-      title: "",
-      src: "",
-      alt: "",
+      title: "Create & Delete Files",
+      src: pudGif_1,
+      alt: "Create Files & Delete Files",
+      text: ""
+    },
+    {
+      title: "Edit Files",
+      src: pudGif_2,
+      alt: "Edit Files in browser",
+      text: ""
+    },
+    {
+      title: "Configure Displays",
+      src: pudGif_3,
+      alt: "Configure unattended displays connected to the web application",
       text: ""
     },
   ]
@@ -139,12 +187,24 @@ const pudData = {
 const errData = {
   title: "Stop it! Error!",
   description: "Oi! Stop playing with my url!",
-  tech: ["Fiddling", "Exploring", "Adventure", "Testing"],
+  tech: ["Fiddling", "Exploring", "Adventure", "Testing", "Experimenting"],
   enableListTwo: false,
   listTwoTitle: "",
   listTwoContents: [],
-  buttons: [],
-  pictures: [],
+  buttons: [
+    {
+      link: "http://srenshawpanting.co.uk/",
+      text: "Go Home",
+    },
+  ],
+  media: [
+    {
+      title: "",
+      src: "",
+      alt: "",
+      text: ""
+    },
+  ],
 }
 
 // Functions
@@ -162,6 +222,10 @@ function renderProject() {
     project = prpData;
   } else if (projectId === "robotics2019") {
     project = roboticsData;
+  } else if (projectId === "fred2020") {
+    project = fredData;
+  } else if (projectId === "pudhub") {
+    project = pudData;
   } else {
     project = errData;
   }
