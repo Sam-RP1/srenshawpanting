@@ -20,7 +20,7 @@ import fredPic_6 from './assets/portfolio/fred-2020/img/fred-6.png';
 import fredPic_8 from './assets/portfolio/fred-2020/img/fred-8.png';
 const fredData = {
   title: "fred",
-  description: "The websites design was done to the clients request so that it takes on the feel of a 'PowerPoint' presentation, beyond this it is simple to navigate and features a number of 'pages' with parallax scrolling.",
+  description: "A clean and pure website that takes on the role of a 'PowerPoint' presentation. The website was commissioned by the inventors of the FRED device, a patent-pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for information, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve to improve current domestic and public fire prevention strategies.\n \nAs a result, the design of the website contains no clutter, is simple to navigate using the horizontal one-page scroll feature and has some 'pages' with vertical parallax scrolling.",
   tech: ["HTML", "SCSS", "JSX", "React", "Webpack"],
   enableListTwo: true,
   listTwoTitle: "Features",
@@ -40,13 +40,13 @@ const fredData = {
       title: "One Page Scrolling",
       src: fredGif_1,
       alt: "Horizontal Scrolling using buttons",
-      text: ""
+      text: "FRED's inventors specifically requested that the website needed to look like, feel like and operate like a 'PowerPoint' presentation when using it. This was because they wanted it to be familiar and intuitive to use.\n \nTo achieve this, the website makes use of a horizontal one-page scroll method. On mobile devices, the website can be navigated by swiping left, right, up and down or by using the dots present at the bottom of the interface. Whereas, on larger devices, the website can be navigated using the dots at the bottom of the interface and a mouse scroll wheel."
     },
     {
       title: "Parallax Scrolling",
       src: fredGif_2,
       alt: "Vertical Parallax Scrolling",
-      text: ""
+      text: "FRED's inventors intended for the website to contain numerous pieces of information, diagrams and statistics throughout. However, they did not want the website to have too many 'pages' for users to horizontally scroll through when using it.\n \nTo accomplish the goals set out it was decided that the website would make use vertical scrolling on some pages where the extra content was needed.\n \nParallax scrolling was specifically used where it would add value to the content of the page and have a high impact on the user through its added imagery."
     },
   ]
 }

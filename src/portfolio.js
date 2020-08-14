@@ -35,7 +35,7 @@ const fredData = {
   id: "fred",
   title: "fred",
   purpose: "srp designs",
-  description: "A simplistic 'PowerPoint' like website designed, created and deployed for the patent pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for infomation, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve in order to improve current domestic and public fire prevention strategies.",
+  description: "A clean 'PowerPoint' like website designed, created and deployed for the patent-pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for information, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve to improve current domestic and public fire prevention strategies.",
   url: "/portfolio-view.html?projectid=fred2020",
   button: "View Project",
 }
