@@ -52,19 +52,20 @@ const fredData = {
 }
 
 // Peer Review Portal
-import prpGif_1 from './assets/portfolio/peer-review-portal/gifs/prp-join-class-test.gif';
-import prpGif_2 from './assets/portfolio/peer-review-portal/gifs/prp-peer-review.gif';
-import prpGif_3 from './assets/portfolio/peer-review-portal/gifs/prp-view-details.gif';
-import prpGif_4 from './assets/portfolio/peer-review-portal/gifs/prp-results.gif';
+import prpGif_1 from './assets/portfolio/peer-review-portal/gifs/prp-create-join-class.gif';
+import prpGif_2 from './assets/portfolio/peer-review-portal/gifs/prp-create-assignment.gif';
+import prpGif_3 from './assets/portfolio/peer-review-portal/gifs/prp-peer-review.gif';
+import prpGif_4 from './assets/portfolio/peer-review-portal/gifs/prp-view-details.gif';
+import prpGif_5 from './assets/portfolio/peer-review-portal/gifs/prp-results.gif';
 import prpFile_1 from './assets/portfolio/peer-review-portal/files/prp.pdf';
 const prpData = {
   title: "Peer Review Portal",
-  description: "Peer Review Portal is a web application designed and developed to allow both the processes of peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two user types, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application provides a more steamlined and improved peer review and meta-review experience as it solves a number of issues identified by students and teachers that partake or have partaken in traditional peer review and meta-review processes.\n \nIssues experienced by students include difficulty interpereting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work in. The Peer Review Portal web application solves these student issues outlined by using a simple intuitive standard structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and also removes the chances of losing work or the need to physically hand in work as the entire process is made paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning woth that has been peer reviewed to its owner. These teacher specific issues are solved by the Peer Review Portal web application letting students hand-in work online at anytime before the submission deadline set, automatically shuffling then redistributing submitted work to students for peer reviewing online and automatically returning feedback given to submitted work from completed peer reviews or meta-reviews to the works submitor.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
-  tech: ["HTML", "CSS", "JS/JSX", "React", "Nodejs", "Express 4.X", "MySQL", "& More"],
+  description: "Peer Review Portal is a web application designed and developed to allow both the processes of peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two user types, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application provides a streamlined and improved peer review and meta-review experience as it solves a number of issues identified by students and teachers that partake or have partaken in traditional peer review and meta-review processes.\n \nIssues experienced by students include difficulty interpreting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work in. The Peer Review Portal web application solves these student issues outlined by using a simple intuitive standard structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and also removes the chances of losing work or the need to physically hand in work as the entire process is made paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning with that has been peer-reviewed to its owner. These teacher-specific issues are solved by the Peer Review Portal web application letting students hand-in work online at any time before the submission deadline set, automatically shuffling then redistributing submitted work to students for peer reviewing online and automatically returning feedback given to submitted work from completed peer reviews or meta-reviews to the works submitter.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
+  tech: ["HTML", "CSS", "JS/JSX", "Babel", "React", "Nodejs", "Express 4.X", "MySQL"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Google Sign In", "Create & Join Classes", "Create Assignments", "PDF File Submissions",
-  "Automatic Shuffling & Distribution of Submitted Work for Assignments", "Peer & Meta Review Work", "& Many More"],
+  "Automatic Shuffling & Distribution of Submitted Work for Assignments", "Peer & Meta Review Work", "& More"],
   buttons: [
     {
       link: prpFile_1,
@@ -73,28 +74,34 @@ const prpData = {
   ],
   media: [
     {
-      title: "Test One",
+      title: "Create & Join Classes",
       src: prpGif_1,
-      alt: "Picture One",
-      text: "This is some text to test with."
+      alt: "Create and Join classes",
+      text: "Teachers are able to create classes for students to join. When a class is created the Peer Review Portal web application will generate and assign a unique 8 character alphanumeric code to it. This code is the classes join code and is displayed to the teacher so that they can share it with students to allow them to join the class."
+    },
+    {
+      title: "Create Assignments",
+      src: prpGif_2,
+      alt: "Creating an assignment",
+      text: "Teachers are able to create assignments for their classes. When creating an assignment the teacher is provided with a comprehensive form that they will need to complete and submit.\n \nThis form enables teachers to fully customise their assignments by filling in numerous inputs ranging from a description through to separate work and review submissions due dates, link up to three external resources, upload and attach up to three pdf files and create the feedback form that will be used by the class when conducting their peer reviews."
     },
     {
       title: "Peer & Meta Reviewing",
-      src: prpGif_2,
-      alt: "Peer Reviewing Work",
-      text: "Example of a peer review being completed using the split view user interface design."
+      src: prpGif_3,
+      alt: "Peer & Meta reviewing work using a split view user interface",
+      text: "Both students and teachers are provided with the same 'split-view' user interface when carrying out a review, one half contains the work to be reviewed and the other half contains the feedback form to be filled in.\n \nThis design was implemented as it is space-efficient, removes the need for multiple tabs, is not cluttered, is understandable and allows users to efficiently review work.\n \nReviews can be saved, edited and submitted by users up until the due date set for the assignment has elapsed."
     },
     {
       title: "View Assignment Details",
-      src: prpGif_3,
+      src: prpGif_4,
       alt: "View Class Details per Assignment",
-      text: "Teachers are able to view the details for each assignment set for the classes they create."
+      text: "Teachers can view the details for every assignment they have created, allowing them immediate access to several critical pieces of information.\n \nTeachers can see the total number of students that have submitted their work, the total number of students that have completed all of their assigned peer reviews and how long there is left until the current deadline elapses.\n \nOn top of that, teachers can also view the individual work and peer reviews submitted for each student."
     },
     {
       title: "View Results",
-      src: prpGif_4,
+      src: prpGif_5,
       alt: "Viewing Results for an Assignment",
-      text: "Peer Review Portal allows students and teachers alike to view the results for each assignment all in one place."
+      text: "Students and teachers alike can view the results for an assignment all in one place.\n \nStudents are able to see every piece of peer review feedback they received along with whether it was given by a fellow student or their teacher.\n \nTeachers are provided with extra statistics compared to students. This means teachers have access to the average boundary selection and mark given per criterion, the highest/lowest mark achieved and each student's mark as a percentage.\n \nAs well as, teachers can look at the work submitted, peer reviews given and feedback received for every student in the class."
     },
   ]
 }

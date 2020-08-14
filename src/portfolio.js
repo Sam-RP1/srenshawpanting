@@ -45,7 +45,7 @@ const prpData = {
   id: "peer-review-portal",
   title: "peer review portal",
   purpose: "university project",
-  description: "A web application created to allow both peer review and meta-review to be conducted comprehensively in an online environment. The web application has two types of users, students and teachers, both of which are provided with features that enable them to assume their respective role and carry out their respective processes. The web application is also equipped with with a number of functions that operate autonomously.",
+  description: "A web application created to allow both peer review and meta-review to be conducted comprehensively in an online environment. The web application has two types of users, students and teachers, both of which are provided with features that enable them to assume their respective role and carry out their respective processes. The web application is also equipped with a number of functions that operate autonomously.",
   url: "/portfolio-view.html?projectid=peerreviewportal",
   button: "View Project",
 }
@@ -66,7 +66,7 @@ const reviewData = {
   id: "litreview",
   title: "mitigating data exposure",
   purpose: "university literature",
-  description: "A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web with a specific focus on Bring Your Own Device. The literature review evaluates some of the risks posed to corporations and the mitigation techniques used or put in place by corporations in order to prevent the exposure of information on the web.",
+  description: "A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web with a specific focus on Bring Your Own Device. The literature review evaluates some of the risks posed to corporations and the mitigation techniques used or put in place by corporations to prevent the exposure of information on the web.",
   url: reviewFile_1,
   button: "View Review",
 }
@@ -86,7 +86,7 @@ const sendwiData = {
   id: "sendwi",
   title: "send wi",
   purpose: "srp designs",
-  description: "A simplistic and clean single-page website created for the Send Womens Institute to give the group an online presence. The website also serves as a place for interested women or Institute members to go for the latest information.",
+  description: "A simplistic and clean single-page website created for the Send Women's Institute to give the group an online presence. The website also serves as a place for interested women or Institute members to go for the latest information.",
   url: "http://www.sendevewi.co.uk/",
   button: "View Website",
 }
