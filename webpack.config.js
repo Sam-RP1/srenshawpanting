@@ -104,3 +104,5 @@ module.exports = {
     mergeDuplicateChunks: true,
   },
 };
+
+// https://webpack.js.org/guides/development/

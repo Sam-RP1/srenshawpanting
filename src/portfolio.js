@@ -55,7 +55,7 @@ const pudData = {
   id: "pudhub",
   title: "pud hub",
   purpose: "university project",
-  description: "The Portsmouth Unattended Displays Hub is a web application built to allow for the creation, customisation and management of unattended displays from a single place. Displays are turned into 'unattended displays' by simply connecting them to the PUDHUB web applications root address where the display will then be provided with the necessary files to maintain itself and communication with the application. The web application has a number of features and functionalities that include being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
+  description: "The Portsmouth Unattended Displays Hub is a web application built to allow for the creation, customisation and management of unattended displays from a single place. Displays are turned into 'unattended displays' by simply connecting them to the PUDHUB web applications root address where the display will then be provided with the necessary files to maintain itself and communication with the application. The web application has several features and functionalities that include being able to create, edit and save HTML, CSS and JS files using a basic in-browser text editor.",
   url: "/portfolio-view.html?projectid=pudhub",
   button: "View Project",
 }

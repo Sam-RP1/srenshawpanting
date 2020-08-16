@@ -153,18 +153,18 @@ import pudGif_3 from './assets/portfolio/portsmouth-unattended-displays/gifs/pud
 import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
 const pudData = {
   title: "pud hub",
-  description: "The Portsmouth Unattended Displays Hub, a web application built to allow for the creation, customisation and management of unattended displays from a single place. In order for a display to be connected as an unattended display it must navigate to the web applications root address where it will be setup as. The web application has a number of features and functionalities like being able to create, edit and save HTML, CSS and JS files using a basic in browser text editor.",
-  tech: [""],
+  description: "The Portsmouth Unattended Displays Hub (PUDHUB) is a web application that allows for the creation, customisation and management of a network of unattended displays from a single place. The web application has a number of features and functionalities which include being able to create, edit and save HTML, CSS and JS files using a basic in-browser text editor, the capability to upload media files for use on unattended displays and the option to individually configure the settings for each unattended display connected to the PUDHUB web application.\n \nA display is turned into an unattended display by simply navigating it to the PUDHUB web applications root address. Once the request has been processed by the PUDHUB web application it will then serve the connecting display the necessary files to setup it up as an unattended display. From this point onwards the newly setup unattended display will maintain itself and communication with the PUDHUB web application in intervals. As well as, from this point, the unattended display can be completely customised and configured.",
+  tech: ["HTML", "CSS", "JS", "Nodejs", "Express 4.X", "MySQL"],
   enableListTwo: true,
   listTwoTitle: "Features",
-  listTwoContents: ["", "", "", ""],
+  listTwoContents: ["Create & Edit Files In-browser", "Configure & Customise Unattended Displays",  "Upload Media", "Self Updating Unattended Displays"],
   buttons: [
     {
       link: pudFile_1,
       text: "View README",
     },
     {
-      link: "",
+      link: "https://github.com/Sam-RP1/pudhub",
       text: "View Repository",
     }
   ],
@@ -173,19 +173,19 @@ const pudData = {
       title: "Create & Delete Files",
       src: pudGif_1,
       alt: "Create Files & Delete Files",
-      text: ""
+      text: "Users can create three different types of files, pages (HTML), styles (CSS) and scripts (JS) and give new files a name. Each file created comes preconfigured with its own default contents, which changes depending on the type of file created. This preconfigured default content provides a framework for the user to build on. Once a file is created it can be immediately selected for use on unattended displays.\n \nUsers can also delete files they no longer want. Before deletion takes place the PUDHUB web application checks if any of the unattended displays are currently using the file selected for deletion if so these unattended displays are automatically updated with a replacement file to ensure they can continue to operate without errors."
     },
     {
       title: "Edit Files",
       src: pudGif_2,
       alt: "Edit Files in browser",
-      text: ""
+      text: "Users can edit all of the default files that are provided with the PUDHUB web application as well as all of the files they have created themselves. This allows users the ability to maintain, correct, update and edit files as and when needed."
     },
     {
       title: "Configure Displays",
       src: pudGif_3,
       alt: "Configure unattended displays connected to the web application",
-      text: ""
+      text: "Users can configure and customise every unattended display connected to the PUDHUB web application. This allows users to change the name, refresh interval, page file to be displayed and that page files contents for each unattended display individually."
     },
   ]
 }
