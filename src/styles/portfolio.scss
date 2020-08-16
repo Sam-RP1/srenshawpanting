@@ -115,7 +115,7 @@ Images
   }
 
   img {
-    height: 100%;
+    max-height: 100%;
     width: 100%;
   }
 }
@@ -191,16 +191,25 @@ Buttons
     flex-flow: row;
   }
 
-  .align-center .portfolio-img {
-    margin-top: 30px;
+  .align-center {
+    article {
+      box-sizing: border-box;
+      padding-bottom: 30px;
+    }
   }
 
-  .align-right .portfolio-img {
-    margin-left: 10px;
+  .align-right {
+    article {
+      box-sizing: border-box;
+      padding-left: 10px;
+    }
   }
 
-  .align-right .portfolio-img {
-    margin-left: 10px;
+  .align-left {
+    article {
+      box-sizing: border-box;
+      padding-right: 10px;
+    }
   }
 }
 

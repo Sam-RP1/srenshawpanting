@@ -70,7 +70,7 @@ class RenderPortfolioItem extends React.Component {
         <h1>{this.state.media[i].title}</h1>
         <p>{this.state.media[i].text}</p>
         </article>
-        <div className="wrapper-60 portfolio-img bg-white" data-aos="fade">
+        <div className="wrapper-60 portfolio-img" data-aos="fade">
         <img src={this.state.media[i].src} alt={this.state.media[i].alt}></img>
         </div>
         </div>

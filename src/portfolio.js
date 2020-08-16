@@ -76,7 +76,7 @@ const roboticsData = {
   id: "robotics",
   title: "robotics",
   purpose: "university project",
-  description: "A individual project with the aim to improve the performance of a mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardwares to facilitate and further enhance functionalities.",
+  description: "An individual project with the aim to improve the performance of mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardware to facilitate and further enhance functionalities.",
   url: "/portfolio-view.html?projectid=robotics2019",
   button: "View Project",
 }
