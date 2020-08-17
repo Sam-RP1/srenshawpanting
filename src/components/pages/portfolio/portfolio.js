@@ -22,7 +22,6 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    console.log(this.state.array)
     return (
       <div className="portfolio-gallery-container container">
       {this.state.array.map((id, i) =>

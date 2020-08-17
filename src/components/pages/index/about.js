@@ -6,7 +6,7 @@ import '../../../styles/root.scss';
 import '../../../styles/about.scss';
 
 import youtubeIcon from '../../../assets/icons/youtube.png';
-import twitterIcon from '../../../assets/icons/twitter.png';
+import linkedinIcon from '../../../assets/icons/linkedin.png';
 import instagramIcon from '../../../assets/icons/instagram.png';
 import githubIcon from '../../../assets/icons/github.png';
 
@@ -18,7 +18,7 @@ function About(props) {
   return (
     <article className="container column">
     <h1 data-aos="flip-down">About</h1>
-    <p data-aos="fade-right" data-aos-delay="150">I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a motivated individual that looks to consistently improve my knowledge and abilities in numerous subject areas relating to technology such as distributed systems, cloud computing and web development. Alongside this, I am currently self-employed and operate SRP Designs, a business that provides bespoke design solutions for a variety of applications.</p>
+    <p data-aos="fade-right" data-aos-delay="150">I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a motivated individual that looks to consistently improve my knowledge and proficiency in numerous subject areas relating to information technology such as front end development, back end development, web development and cloud computing. Alongside this, I am currently self-employed and operate SRP Designs, a business that provides bespoke web design solutions for clients in Surrey.</p>
     <div className="about-info-container">
     <div className="about-list-container">
     <div className="about-list" data-aos="fade-up" data-aos-delay="250">
@@ -49,13 +49,13 @@ function About(props) {
     <a href="https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q" target="_blank" data-aos="fade-right" data-aos-delay="180">
     <img src={youtubeIcon} alt="SRP Designs YouTube"></img>
     </a>
-    <a href="https://twitter.com/SRP_Designs" target="_blank" data-aos="fade-down" data-aos-delay="220">
-    <img src={twitterIcon} alt="SRP Designs Twitter"></img>
+    <a href="https://www.instagram.com/_srpdesigns/" target="_blank" data-aos="fade-up" data-aos-delay="120">
+    <img src={instagramIcon} alt="SRP Designs Instagram"></img>
     </a>
     </div>
     <div className="icon-row">
-    <a href="https://www.instagram.com/_srpdesigns/" target="_blank" data-aos="fade-up" data-aos-delay="120">
-    <img src={instagramIcon} alt="SRP Designs Instagram"></img>
+    <a href="https://www.linkedin.com/in/samuel-renshaw-panting-99849b168/" target="_blank" data-aos="fade-down" data-aos-delay="220">
+    <img src={linkedinIcon} alt="Samuel Renshaw Panting Linkedin"></img>
     </a>
     <a href="https://github.com/Sam-RP1?tab=repositories" target="_blank" data-aos="fade-left" data-aos-delay="100">
     <img src={githubIcon} alt="SRP Designs GitHub"></img>

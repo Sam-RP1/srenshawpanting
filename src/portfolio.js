@@ -26,8 +26,8 @@ const foodletteData = {
   title: "foodlette",
   purpose: "web application",
   description: "A web application that allows users to randomly choose their next meal or food item to eat. Users can select from a range of themed roulette wheels to spin that when spun will randomly determine what they should eat.",
-  url: "assets/portfolio/foodlette/files/___.pdf",
-  button: "View Application",
+  url: "/portfolio-view.html?projectid=foodlette2020",
+  button: "In Development!",
 }
 
 // FRED
@@ -44,7 +44,7 @@ const fredData = {
 const prpData = {
   id: "peer-review-portal",
   title: "peer review portal",
-  purpose: "university project",
+  purpose: "web application",
   description: "A web application created to allow both peer review and meta-review to be conducted comprehensively in an online environment. The web application has two types of users, students and teachers, both of which are provided with features that enable them to assume their respective role and carry out their respective processes. The web application is also equipped with a number of functions that operate autonomously.",
   url: "/portfolio-view.html?projectid=peerreviewportal",
   button: "View Project",
@@ -92,7 +92,7 @@ const sendwiData = {
 }
 
 //
-const portfolioArr = [prpData, dssData, fredData, roboticsData, sendwiData, pudData, reviewData];
+const portfolioArr = [prpData, dssData, fredData, roboticsData, sendwiData, pudData, reviewData, foodletteData];
 
 ReactDOM.render(<Header logoDark={logoDark} logoLight={logoLight} />, document.getElementById('global-header'));
 ReactDOM.render(<Splash title={"Portfolio"} />, document.getElementById('splash'));

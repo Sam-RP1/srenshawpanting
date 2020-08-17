@@ -9,6 +9,20 @@ import Footer from './components/footer/footer.js';
 import logoDark from './assets/logo/logo-dark.png';
 import logoLight from './assets/logo/logo.png';
 
+// Foodlette
+const foodletteData = {
+  title: "foodlette",
+  description: "In development!",
+  tech: ["TBC"],
+  enableListTwo: false,
+  listTwoTitle: "",
+  listTwoContents: [""],
+  buttons: [
+  ],
+  media: [
+  ]
+}
+
 // FRED
 import fredGif_1 from './assets/portfolio/fred-2020/gifs/fred-ops.gif';
 import fredGif_2 from './assets/portfolio/fred-2020/gifs/fred-parallax.gif';
@@ -233,6 +247,8 @@ function renderProject() {
     project = fredData;
   } else if (projectId === "pudhub") {
     project = pudData;
+  } else if (projectId === "foodlette2020") {
+    project = foodletteData;
   } else {
     project = errData;
   }
