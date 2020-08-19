@@ -34,6 +34,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: process.env.NODE_ENV === 'development',
+              publicPath: '../',
             },
           },
           'css-loader',
@@ -72,7 +73,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+    }),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/pages/index.html', to: '' },

@@ -25,9 +25,9 @@ function About(props) {
     <h2>Competencies</h2>
     <ul>
     <li>HTML</li>
-    <li>CSS / SCSS</li>
+    <li>CSS / Sass</li>
     <li>JS / JSX</li>
-    <li>SQL</li>
+    <li>MySQL</li>
     <li>React</li>
     <li>Webpack</li>
     </ul>
