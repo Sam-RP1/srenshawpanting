@@ -9,7 +9,7 @@ let prevWindowWidth;
 let prevWindowHeight;
 
 /**
-* HeaderBar() - Contains the HTML for the header component.
+* Header() - Contains the HTML for the header component.
 * @return returns the HTML for the header component
 */
 class Header extends React.Component {

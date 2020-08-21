@@ -85,6 +85,7 @@ module.exports = {
         { from: 'src/pages/contact.html', to: '' },
         { from: 'src/php/mail.php', to: 'php' },
         { from: 'src/assets/favicon', to: 'assets/favicon' },
+        { from: 'src/assets/pictures/srp-designs-ex.png', to: 'assets/images' },
         { from: 'src/styles/animate.min.css', to: 'styles' },
       ],
     }),
@@ -107,5 +108,3 @@ module.exports = {
     mergeDuplicateChunks: true,
   },
 };
-
-// https://webpack.js.org/guides/development/

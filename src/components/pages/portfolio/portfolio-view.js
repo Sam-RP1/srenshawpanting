@@ -1,11 +1,17 @@
 'use strict';
 
 import React, { Component } from 'react';
+import LazyLoad from 'react-lazyload';
 import {hot} from 'react-hot-loader';
 import '../../../styles/root.scss';
 import '../../../styles/about.scss';
 import '../../../styles/portfolio.scss';
 
+const PlaceholderImg = (props) => <img src={props.src} alt={props.alt}></img>;
+
+/**
+* RenderPortfolioItem() - Class for rendering a portfolio item and its data on the portfolio-view page.
+*/
 class RenderPortfolioItem extends React.Component {
   constructor(props) {
     super(props);
@@ -71,7 +77,9 @@ class RenderPortfolioItem extends React.Component {
         <p>{this.state.media[i].text}</p>
         </article>
         <div className="wrapper-60 portfolio-img" data-aos="fade">
-        <img src={this.state.media[i].src} alt={this.state.media[i].alt}></img>
+        <LazyLoad offset={[0, 300]} placeholder={<PlaceholderImg src={this.state.media[i].placeholder} alt={this.state.media[i].alt} />}>
+          <img src={this.state.media[i].src} alt={this.state.media[i].alt}></img>
+        </LazyLoad>
         </div>
         </div>
         </section>

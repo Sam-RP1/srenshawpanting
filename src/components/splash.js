@@ -5,6 +5,9 @@ import {hot} from 'react-hot-loader';
 import '../styles/root.scss';
 import '../styles/splash.scss';
 
+/**
+* Splash() - Class for the splash component.
+*/
 class Splash extends React.Component {
   constructor(props) {
     super(props);

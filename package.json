@@ -6,7 +6,8 @@
   "scripts": {
     "start:dev": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "build-test": "webpack --mode production --profile --json > stats.json"
   },
   "author": "Samuel Renshaw-Panting",
   "license": "",
@@ -36,6 +37,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21"
+    "react-hot-loader": "^4.12.21",
+    "react-lazyload": "^3.0.0"
   }
 }

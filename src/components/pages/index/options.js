@@ -10,8 +10,8 @@ import servicesIcon from '../../../assets/icons/services.png';
 import contactIcon from '../../../assets/icons/contact.png';
 
 /**
-* Options() - Contains the HTML content for the Options page component.
-* @return returns the HTML content for the Options page component
+* Options() - Contains the HTML content for the Options component on the index page.
+* @return returns the HTML content for the Options component
 */
 function Options(props) {
   return (

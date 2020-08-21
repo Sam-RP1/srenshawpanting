@@ -35,7 +35,7 @@ function Footer(props) {
     <a href="https://www.instagram.com/_srpdesigns/" target="_blank">
     <img src={instagramIcon} alt="SRP Designs Instagram"></img>
     </a>
-    <a href="https://www.linkedin.com/in/samuel-renshaw-panting-99849b168/" target="_blank">
+    <a href="https://www.linkedin.com/in/samuel-renshaw-panting/" target="_blank">
     <img src={linkedinIcon} alt="Samuel Renshaw Panting Linkedin"></img>
     </a>
     <a className="footer-icon-l" href="https://github.com/Sam-RP1?tab=repositories" target="_blank">

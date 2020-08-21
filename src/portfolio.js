@@ -91,7 +91,7 @@ const sendwiData = {
   button: "View Website",
 }
 
-//
+// Portfolio array
 const portfolioArr = [prpData, dssData, fredData, roboticsData, sendwiData, pudData, reviewData, foodletteData];
 
 ReactDOM.render(<Header logoDark={logoDark} logoLight={logoLight} />, document.getElementById('global-header'));

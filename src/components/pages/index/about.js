@@ -11,8 +11,8 @@ import instagramIcon from '../../../assets/icons/instagram.png';
 import githubIcon from '../../../assets/icons/github.png';
 
 /**
-* About() - Contains the HTML content for the About page component.
-* @return returns the HTML content for the About page component
+* About() - Contains the HTML content for the About component on the index page.
+* @return returns the HTML content for the About component
 */
 function About(props) {
   return (
@@ -54,7 +54,7 @@ function About(props) {
     </a>
     </div>
     <div className="icon-row">
-    <a href="https://www.linkedin.com/in/samuel-renshaw-panting-99849b168/" target="_blank" data-aos="fade-down" data-aos-delay="220">
+    <a href="https://www.linkedin.com/in/samuel-renshaw-panting/" target="_blank" data-aos="fade-down" data-aos-delay="220">
     <img src={linkedinIcon} alt="Samuel Renshaw Panting Linkedin"></img>
     </a>
     <a href="https://github.com/Sam-RP1?tab=repositories" target="_blank" data-aos="fade-left" data-aos-delay="100">

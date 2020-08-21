@@ -6,8 +6,8 @@ import '../../../styles/root.scss';
 import '../../../styles/contact.scss';
 
 /**
-* Contact() - Contains the HTML content for the Contact component.
-* @return returns the HTML content for the Contact component
+* Contact() - Contains the HTML content and form for the Contact component.
+* @return returns the HTML content and form for the Contact component
 */
 function Contact(props) {
   return (

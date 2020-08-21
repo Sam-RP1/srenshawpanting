@@ -5,8 +5,9 @@ import {hot} from 'react-hot-loader';
 import '../../../styles/root.scss';
 import '../../../styles/gallery.scss';
 
-let counter = 0;
-
+/**
+* Portfolio() - Class for rendering portfolio items on the portfolio page.
+*/
 class Portfolio extends React.Component {
   constructor(props) {
     super(props);
