@@ -10,9 +10,9 @@ import '../../../styles/portfolio.scss';
 const PlaceholderImg = (props) => <img src={props.src} alt={props.alt}></img>;
 
 /**
-* RenderPortfolioItem() - Class for rendering a portfolio item and its data on the portfolio-view page.
+* RenderPortfolioItem - Class for rendering a portfolio item and its data on the portfolio-view page.
 */
-class RenderPortfolioItem extends React.Component {
+class RenderPortfolioItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,9 +22,7 @@ class RenderPortfolioItem extends React.Component {
       listTwoTitle: props.data.listTwoTitle,
       listTwoContents: props.data.listTwoContents,
       buttons: props.data.buttons,
-      media: props.data.media,
-      colour: ["bg-white content-black", "bg-black content-white"],
-      alignment: ["align-left", "align-right"],
+      media: props.data.media
     };
   }
 
@@ -36,56 +34,90 @@ class RenderPortfolioItem extends React.Component {
       <h1 data-aos="flip-down">Information</h1>
       <p className="" data-aos="fade-right" data-aos-delay="150">{this.state.description}</p>
       <div className="info-container">
-      <div className="info-list-container">
-
-      <div id="list-one" className="info-list" data-aos="fade-up" data-aos-delay="250">
-      <h2>Development</h2>
-      <ul>
-      {this.state.tech.map((id, i) =>
-        <li key={i.toString()}>{this.state.tech[i]}</li>
-      )}
-      </ul>
-      </div>
-
-      <div id="list-two" className="info-list" style={{display: this.state.enableListTwo ? "block" : "none"}} data-aos="fade-up" data-aos-delay="150">
-      <h2>{this.state.listTwoTitle}</h2>
-      <ul>
-      {this.state.listTwoContents.map((name, i) =>
-        <li key={i.toString()}>{this.state.listTwoContents[i]}</li>
-      )}
-      </ul>
-      </div>
-      </div>
-
-      <div className="info-btn-container">
-      {this.state.buttons.map((btn, i) =>
-        <a key={i.toString()} href={this.state.buttons[i].link} target="_blank" className="info-btn-outer" style={{marginTop: i > 0 ? "15px" : "0px"}} data-aos="fade-left" data-aos-delay={i.toString() + "50"}>
-        <div className="info-btn">{this.state.buttons[i].text}<span className="btn-arrow">&#8618;</span></div>
-        </a>
-      )}
-      </div>
-
+      <PortfolioItemList tech={this.state.tech} enableListTwo={this.state.enableListTwo} listTwoContents={this.state.listTwoContents} />
+      <PortfolioItemButton buttons={this.state.buttons} />
       </div>
       </article>
       </section>
+      <PortfolioItemSection media={this.state.media} />
+      </React.Fragment>
+    );
+  }
+}
 
-      {this.state.media.map((n, i) =>
-        <section key={i.toString()} className={"section-default h-auto padding-6016 " + this.state.colour[i % 2]}>
+/**
+* PortfolioItemList - Contains the List(s) for the RenderPortfolioItem component.
+*/
+class PortfolioItemList extends Component {
+  render() {
+    return (
+      <div className="info-list-container">
+      <div id="list-one" className="info-list" data-aos="fade-up" data-aos-delay="250">
+      <h2>Development</h2>
+      <ul>
+      {this.props.tech.map((item, i) => <li key={i}>{item}</li>)}
+      </ul>
+      </div>
+      <div id="list-two" className="info-list" style={{display: this.props.enableListTwo ? "block" : "none"}} data-aos="fade-up" data-aos-delay="150">
+      <h2>{this.props.listTwoTitle}</h2>
+      <ul>
+      {this.props.listTwoContents.map((item, i) => <li key={i}>{item}</li>)}
+      </ul>
+      </div>
+      </div>
+    )
+  }
+}
+
+/**
+* PortfolioItemButton - Contains the button(s) for the RenderPortfolioItem component.
+*/
+class PortfolioItemButton extends Component {
+  render() {
+    return (
+      <div className="info-btn-container">
+      {this.props.buttons.map((item, i) =>
+        <a key={i} href={item.link} target="_blank" className="info-btn-outer" style={{marginTop: i > 0 ? "15px" : "0px"}} data-aos="fade-left" data-aos-delay={i.toString() + "50"}>
+        <div className="info-btn">{item.text}<span className="btn-arrow">&#8618;</span></div>
+        </a>
+      )}
+      </div>
+    )
+  }
+}
+
+/**
+* PortfolioItemSection - Contains the Section(s) for the RenderPortfolioItem component.
+*/
+class PortfolioItemSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      colour: ["bg-white content-black", "bg-black content-white"],
+      alignment: ["align-left", "align-right"],
+    };
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+      {this.props.media.map((item, i) =>
+        <section key={i} className={"section-default h-auto padding-6016 " + this.state.colour[i % 2]}>
         <div className={"container portfolio-item-container " + this.state.alignment[i % 2]} data-aos="fade">
         <article className="wrapper-40 txt-wrapper">
-        <h1>{this.state.media[i].title}</h1>
-        <p>{this.state.media[i].text}</p>
+        <h1>{item.title}</h1>
+        <p>{item.text}</p>
         </article>
         <div className="wrapper-60 portfolio-img" data-aos="fade">
-        <LazyLoad offset={[0, 300]} placeholder={<PlaceholderImg src={this.state.media[i].placeholder} alt={this.state.media[i].alt} />}>
-          <img src={this.state.media[i].src} alt={this.state.media[i].alt}></img>
+        <LazyLoad offset={[0, 300]} once="true" placeholder={<PlaceholderImg src={item.placeholder} alt={item.alt} />}>
+          <img src={item.src} alt={item.alt}></img>
         </LazyLoad>
         </div>
         </div>
         </section>
       )}
       </React.Fragment>
-    );
+    )
   }
 }
 

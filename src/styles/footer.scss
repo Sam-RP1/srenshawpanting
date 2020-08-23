@@ -40,28 +40,28 @@ Containers & Wrappers
   color: base.$srp-footer-txt-color;
 }
 
-.footer-container {
-  ul {
-    display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 0.9em;
-    list-style: none;
-    align-items: center;
-    justify-content: space-between;
-  }
+.footer-link-container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  ul li a {
+.footer-link-container {
+  li a {
     @include transition(0.15s);
   }
 
-  ul li a:hover {
+  li a:hover {
     color: base.$srp-blue!important;
   }
 }
 
-.footer-icon-wrapper {
+.footer-icon-container {
   display: flex;
   height: auto;
   width: auto;
@@ -70,7 +70,7 @@ Containers & Wrappers
   padding-bottom: 15px;
 }
 
-.footer-icon-wrapper {
+.footer-icon-container {
   a {
     height: 32px;
     width: 32px;
@@ -117,13 +117,13 @@ Text
     display: none;
   }
 
-  .footer-icon-wrapper {
+  .footer-icon-container {
     padding-bottom: 0px;
     padding-left: 10px;
     justify-content: space-between;
   }
 
-  .footer-icon-wrapper {
+  .footer-icon-container {
     a {
       height: 26px;
       width: 26px;
@@ -138,11 +138,11 @@ Text
 }
 
 @media (min-width: 992px) {
-  .footer-icon-wrapper {
+  .footer-icon-container {
     padding-left: 15px;
   }
 
-  .footer-icon-wrapper {
+  .footer-icon-container {
     a {
       height: 30px;
       width: 30px;
@@ -153,7 +153,7 @@ Text
 }
 
 @media (min-width: 1200px) {
-  .footer-icon-wrapper {
+  .footer-icon-container {
     a {
       height: 32px;
       width: 32px;

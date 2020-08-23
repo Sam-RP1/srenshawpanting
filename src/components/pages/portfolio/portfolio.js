@@ -6,15 +6,17 @@ import '../../../styles/root.scss';
 import '../../../styles/gallery.scss';
 
 /**
-* Portfolio() - Class for rendering portfolio items on the portfolio page.
+* Portfolio - Class for rendering portfolio items on the portfolio page.
 */
-class Portfolio extends React.Component {
+class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
       array: props.items,
       aos: ["fade-right", "fade-up", "fade-left", "fade-down", "fade-right", "fade-left"],
     };
+
+    this.handleTab = this.handleTab.bind(this);
   }
 
   handleTab(id) {
@@ -25,32 +27,29 @@ class Portfolio extends React.Component {
   render() {
     return (
       <div className="portfolio-gallery-container container">
-      {this.state.array.map((id, i) =>
-        <div key={i.toString()} className="gallery-item-container" data-aos={this.state.aos[i % 6]}>
-        <div id={this.state.array[i].id} className="gallery-item-inner">
-
+      {this.state.array.map((item, i) =>
+        <div key={i} className="gallery-item-container" data-aos={this.state.aos[i % 6]}>
+        <div id={item.id} className="gallery-item-inner">
         <section className="gallery-item-front">
         <div className="gallery-item-picture-container">
-        <a href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}></a>
+        <a href={item.url} target={item.url.substr(0, 5) === "/port" ? "" : "_blank"}></a>
         </div>
-        <div className="gallery-front-tab" onClick={() => this.handleTab(this.state.array[i].id)}>
+        <div className="gallery-front-tab" onClick={() => this.handleTab(item.id)}>
         <span></span>
-        <h2>{this.state.array[i].title}</h2>
+        <h2>{item.title}</h2>
         </div>
         </section>
-
         <section className="gallery-item-back">
         <article className="gallery-item-info">
-        <h2>{this.state.array[i].title}</h2>
-        <h3>{this.state.array[i].purpose}</h3>
-        <p>{this.state.array[i].description}</p>
+        <h2>{item.title}</h2>
+        <h3>{item.purpose}</h3>
+        <p>{item.description}</p>
         </article>
         <div className="gallery-back-tab">
-        <div className="gallery-item-btn" onClick={() => this.handleTab(this.state.array[i].id)}>&#10006; Close</div>
-        <a className="gallery-item-btn" href={this.state.array[i].url} target={this.state.array[i].url.substr(0, 5) === "/port" ? "" : "_blank"}>{this.state.array[i].button} &#8618;</a>
+        <div className="gallery-item-btn" onClick={() => this.handleTab(item.id)}>&#10006; Close</div>
+        <a className="gallery-item-btn" href={item.url} target={item.url.substr(0, 5) === "/port" ? "" : "_blank"}>{item.button} &#8618;</a>
         </div>
         </section>
-
         </div>
         </div>
       )}

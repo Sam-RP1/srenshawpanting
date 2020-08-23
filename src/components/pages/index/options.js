@@ -10,32 +10,53 @@ import servicesIcon from '../../../assets/icons/services.png';
 import contactIcon from '../../../assets/icons/contact.png';
 
 /**
-* Options() - Contains the HTML content for the Options component on the index page.
-* @return returns the HTML content for the Options component
+* Options - Class for the Options component.
 */
-function Options(props) {
-  return (
-    <div className="options-container container ">
-    <div id="portfolio" className="grid-square" data-aos="fade-up">
-    <a href="portfolio.html">
-    <img src={portfolioIcon} alt="Portfolio"></img>
-    <h2>Portfolio</h2>
-    </a>
-    </div>
-    <div id="services" className="grid-square" data-aos="fade-up" data-aos-delay="100">
-    <a href="placeholder.html">
-    <img src={servicesIcon} alt="Services"></img>
-    <h2>Services</h2>
-    </a>
-    </div>
-    <div id="contact" className="grid-square" data-aos="fade-up" data-aos-delay="200">
-    <a href="contact.html">
-    <img src={contactIcon} alt="Contact"></img>
-    <h2>Contact</h2>
-    </a>
-    </div>
-    </div>
-  );
+class Options extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      icons: [
+        {
+          id: "portfolio",
+          href: "portfolio.html",
+          src: portfolioIcon,
+          alt: "Portfolio",
+          title: "Portfolio"
+        },
+        {
+          id: "services",
+          href: "placeholder.html",
+          src: servicesIcon,
+          alt: "Services",
+          title: "Services"
+        },
+        {
+          id: "contact",
+          href: "contact.html",
+          src: contactIcon,
+          alt: "Contact",
+          title: "Contact"
+        }
+      ],
+      aos_delay: ["0", "100", "200"]
+    };
+  }
+
+  render() {
+    return (
+      <div className="options-container container">
+      {this.state.icons.map((item, i) =>
+        <div key={item.id} id={item.id} className="grid-square" data-aos="fade-up" data-aos-delay={this.state.aos_delay[i]}>
+        <a href={item.href}>
+        <img src={item.src} alt={item.alt}></img>
+        <h2>{item.title}</h2>
+        </a>
+        </div>
+      )}
+      </div>
+    )
+  }
 };
 
 export default Options;

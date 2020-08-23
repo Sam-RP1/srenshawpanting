@@ -9,41 +9,42 @@ let prevWindowWidth;
 let prevWindowHeight;
 
 /**
-* Header() - Contains the HTML for the header component.
-* @return returns the HTML for the header component
+* Header - Class for the header component.
 */
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      logoDark: props.logoDark,
-      logoLight: props.logoLight,
-    }
-  }
-
+class Header extends Component {
   componentDidMount() {
     prevWindowWidth = window.innerWidth;
     prevWindowHeight = window.innerHeight;
-    checkSize();
-    scrolledNav();
+    checkWindowSize();
+    scrolledWindow();
     document.getElementById('nav-menu-btn').addEventListener("click", navToggle);
     document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
-    window.addEventListener('scroll', scrolledNav);
-    window.addEventListener('resize', checkSize);
+    window.addEventListener('scroll', scrolledWindow);
+    window.addEventListener('resize', checkWindowSize);
     if (document.title.substr(0, 7) === "Bespoke") {
       addSmoothScroll();
     }
   }
 
-  componentWillUnmount() {}
-
   render() {
     return (
       <div className="header-content-container container">
       <a href="index.html" id="header-logo-wrapper">
-      <img id="header-logo-alt" src={this.state.logoLight}></img>
-      <img id="header-logo" src={this.state.logoDark}></img>
+      <img id="header-logo-alt" src={this.props.logoLight}></img>
+      <img id="header-logo" src={this.props.logoDark}></img>
       </a>
+      <Navigation />
+      </div>
+    );
+  }
+}
+
+/**
+* Navigation - Contains the Navigation component for the header component.
+*/
+class Navigation extends Component {
+  render() {
+    return (
       <nav id="nav" className="nav-container">
       <div className="nav-menu-wrapper">
       <ul id="nav-menu">
@@ -59,11 +60,13 @@ class Header extends React.Component {
       <div id="bar-3"></div>
       </div>
       </nav>
-      </div>
-    );
+    )
   }
 }
 
+/**
+* addSmoothScroll() - Adds smooth scrolling to a target element using jQuery.
+*/
 function addSmoothScroll() {
   $(document).ready(function(){
     $("a").on('click', function(event) {
@@ -80,7 +83,10 @@ function addSmoothScroll() {
   });
 };
 
-function checkSize() {
+/**
+* checkWindowSize() - Checks the clients browser window size and styles the header accordingly.
+*/
+function checkWindowSize() {
   if (window.innerWidth < 992 && window.innerWidth < prevWindowWidth) {
     document.getElementById("global-header").style.backgroundColor = "#fff";
     document.getElementById("global-header").style.color = "#171717";
@@ -109,9 +115,10 @@ function checkSize() {
   prevWindowHeight = window.innerHeight;
 };
 
-let counter = 0;
-
-function scrolledNav() {
+/**
+* scrolledWindow() - Checks if the clients browser window is scrolled and styles the header accordingly.
+*/
+function scrolledWindow() {
   // Header Colour & Height Handlers for window widths greater than or equal to 992px
   if ((window.scrollY > 50 || document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && window.innerWidth >= 992) {
     if (document.getElementById("header-logo-wrapper").style.height !== "50%") {

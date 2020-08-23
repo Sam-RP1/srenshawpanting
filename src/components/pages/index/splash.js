@@ -6,9 +6,9 @@ import '../../../styles/root.scss';
 import '../../../styles/splash.scss';
 
 /**
-* SplashIndex() - Class for the splash component that is used specifically on the index page.
+* SplashIndex - Class for the splash component that is used specifically on the index page.
 */
-class SplashIndex extends React.Component {
+class SplashIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +17,9 @@ class SplashIndex extends React.Component {
     };
 
     this.counter = 0;
+
+    this.infoFadeOut = this.infoFadeOut.bind(this);
+    this.infoFadeIn = this.infoFadeIn.bind(this);
   }
 
   componentDidMount() {
