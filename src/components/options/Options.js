@@ -2,12 +2,12 @@
 
 import React, { Component } from 'react';
 import {hot} from 'react-hot-loader';
-import '../../../styles/root.scss';
-import '../../../styles/options.scss';
+import '../../styles/root.scss';
+import './Options.scss';
 
-import portfolioIcon from '../../../assets/icons/portfolio.png';
-import servicesIcon from '../../../assets/icons/services.png';
-import contactIcon from '../../../assets/icons/contact.png';
+import portfolioIcon from '../../assets/icons/portfolio.png';
+import servicesIcon from '../../assets/icons/services.png';
+import contactIcon from '../../assets/icons/contact.png';
 
 /**
 * Options - Class for the Options component.
@@ -44,16 +44,20 @@ class Options extends Component {
   }
 
   render() {
-    return (
-      <div className="options-container container">
-      {this.state.icons.map((item, i) =>
-        <div key={item.id} id={item.id} className="grid-square" data-aos="fade-up" data-aos-delay={this.state.aos_delay[i]}>
-        <a href={item.href}>
-        <img src={item.src} alt={item.alt}></img>
-        <h2>{item.title}</h2>
+    let icons = this.state.icons.map((icon, i) => {
+      return (
+        <div key={icon.id} id={icon.id} className="grid-square" data-aos="fade-up" data-aos-delay={this.state.aos_delay[i]}>
+        <a href={icon.href}>
+        <img src={icon.src} alt={icon.alt}></img>
+        <h2>{icon.title}</h2>
         </a>
         </div>
-      )}
+      )
+    });
+
+    return (
+      <div className="options-container container">
+      {icons}
       </div>
     )
   }

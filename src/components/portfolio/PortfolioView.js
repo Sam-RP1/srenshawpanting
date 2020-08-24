@@ -3,9 +3,9 @@
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazyload';
 import {hot} from 'react-hot-loader';
-import '../../../styles/root.scss';
-import '../../../styles/about.scss';
-import '../../../styles/portfolio.scss';
+import '../../styles/root.scss';
+import '../about/About.scss';
+import './PortfolioView.scss';
 
 const PlaceholderImg = (props) => <img src={props.src} alt={props.alt}></img>;
 
@@ -50,18 +50,21 @@ class RenderPortfolioItem extends Component {
 */
 class PortfolioItemList extends Component {
   render() {
+    let listOne = this.props.tech.map((item, i) => <li key={i}>{item}</li>);
+    let listTwo = this.props.listTwoContents.map((item, i) => <li key={i}>{item}</li>);
+
     return (
       <div className="info-list-container">
       <div id="list-one" className="info-list" data-aos="fade-up" data-aos-delay="250">
       <h2>Development</h2>
       <ul>
-      {this.props.tech.map((item, i) => <li key={i}>{item}</li>)}
+      {listOne}
       </ul>
       </div>
       <div id="list-two" className="info-list" style={{display: this.props.enableListTwo ? "block" : "none"}} data-aos="fade-up" data-aos-delay="150">
       <h2>{this.props.listTwoTitle}</h2>
       <ul>
-      {this.props.listTwoContents.map((item, i) => <li key={i}>{item}</li>)}
+      {listTwo}
       </ul>
       </div>
       </div>
@@ -74,13 +77,17 @@ class PortfolioItemList extends Component {
 */
 class PortfolioItemButton extends Component {
   render() {
-    return (
-      <div className="info-btn-container">
-      {this.props.buttons.map((item, i) =>
+    let buttons = this.props.buttons.map((item, i) => {
+      return (
         <a key={i} href={item.link} target="_blank" className="info-btn-outer" style={{marginTop: i > 0 ? "15px" : "0px"}} data-aos="fade-left" data-aos-delay={i.toString() + "50"}>
         <div className="info-btn">{item.text}<span className="btn-arrow">&#8618;</span></div>
         </a>
-      )}
+      )
+    });
+
+    return (
+      <div className="info-btn-container">
+      {buttons}
       </div>
     )
   }
@@ -110,7 +117,7 @@ class PortfolioItemSection extends Component {
         </article>
         <div className="wrapper-60 portfolio-img" data-aos="fade">
         <LazyLoad offset={[0, 300]} once="true" placeholder={<PlaceholderImg src={item.placeholder} alt={item.alt} />}>
-          <img src={item.src} alt={item.alt}></img>
+        <img src={item.src} alt={item.alt}></img>
         </LazyLoad>
         </div>
         </div>

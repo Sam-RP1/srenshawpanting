@@ -1,10 +1,10 @@
-@use 'base';
-@import 'mixins/transition';
-@import 'mixins/transform';
-@import 'mixins/multiLineEllipsis';
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+@import '../../styles/mixins/transform';
+@import '../../styles/mixins/multiLineEllipsis';
 
 /*----------------------------------------*\
-gallery.scss
+Gallery.scss
 
 GALLERY
 
@@ -18,35 +18,35 @@ GALLERY
 #'s
 \*----------------------------------------*/
 #dss-report .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/distributed-systems/img/dss.png');
+  background-image: url('../../assets/portfolio/distributed-systems/img/dss.png');
 }
 
 #fred .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/fred-2020/img/fred.png');
+  background-image: url('../../assets/portfolio/fred-2020/img/fred.png');
 }
 
 #peer-review-portal .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/peer-review-portal/img/prp.png');
+  background-image: url('../../assets/portfolio/peer-review-portal/img/prp.png');
 }
 
 #pudhub .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/portsmouth-unattended-displays/img/pud.png');
+  background-image: url('../../assets/portfolio/portsmouth-unattended-displays/img/pud.png');
 }
 
 #sendwi .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/sendwi-2020/img/sendwi.jpg');
+  background-image: url('../../assets/portfolio/sendwi-2020/img/sendwi.jpg');
 }
 
 #robotics .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/robotics/img/robotics.png');
+  background-image: url('../../assets/portfolio/robotics/img/robotics.png');
 }
 
 #litreview .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/literature-review-2017/img/litrev.png');
+  background-image: url('../../assets/portfolio/literature-review-2017/img/litrev.png');
 }
 
 #foodlette .gallery-item-picture-container {
-  background-image: url('../assets/portfolio/foodlette/img/foodlette.png');
+  background-image: url('../../assets/portfolio/foodlette/img/foodlette.png');
 }
 
 /*----------------------------------------*\

@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import {hot} from 'react-hot-loader';
-import '../styles/root.scss';
-import '../styles/splash.scss';
+import '../../styles/root.scss';
+import './Splash.scss';
 
 /**
 * Splash() - Class for the splash component.

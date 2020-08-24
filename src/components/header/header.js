@@ -3,7 +3,12 @@
 import React, { Component } from 'react';
 import {hot} from 'react-hot-loader';
 import '../../styles/root.scss';
-import '../../styles/header.scss';
+import './Header.scss';
+
+import HeaderNav from './HeaderNav.js';
+
+import logoDark from '../../assets/logo/logo-dark.png';
+import logoLight from '../../assets/logo/logo.png';
 
 let prevWindowWidth;
 let prevWindowHeight;
@@ -17,8 +22,6 @@ class Header extends Component {
     prevWindowHeight = window.innerHeight;
     checkWindowSize();
     scrolledWindow();
-    document.getElementById('nav-menu-btn').addEventListener("click", navToggle);
-    document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
     window.addEventListener('scroll', scrolledWindow);
     window.addEventListener('resize', checkWindowSize);
     if (document.title.substr(0, 7) === "Bespoke") {
@@ -30,39 +33,15 @@ class Header extends Component {
     return (
       <div className="header-content-container container">
       <a href="index.html" id="header-logo-wrapper">
-      <img id="header-logo-alt" src={this.props.logoLight}></img>
-      <img id="header-logo" src={this.props.logoDark}></img>
+      <img id="header-logo-alt" src={logoLight}></img>
+      <img id="header-logo" src={logoDark}></img>
       </a>
-      <Navigation />
+      <HeaderNav />
       </div>
     );
   }
 }
 
-/**
-* Navigation - Contains the Navigation component for the header component.
-*/
-class Navigation extends Component {
-  render() {
-    return (
-      <nav id="nav" className="nav-container">
-      <div className="nav-menu-wrapper">
-      <ul id="nav-menu">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="placeholder.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      </ul>
-      </div>
-      <div id="nav-menu-btn">
-      <div id="bar-1"></div>
-      <div id="bar-2"></div>
-      <div id="bar-3"></div>
-      </div>
-      </nav>
-    )
-  }
-}
 
 /**
 * addSmoothScroll() - Adds smooth scrolling to a target element using jQuery.
@@ -156,36 +135,6 @@ function scrolledWindow() {
   } else if (window.innerWidth < 768) {
     document.getElementById("nav-menu").style.top = "79px";
   }
-};
-
-/**
-* openMenu() - Styles the navigation menu to be visible.
-*/
-function openMenu() {
-  document.getElementById('nav-menu-btn').removeEventListener('click', openMenu);
-  document.getElementById('nav-menu-btn').addEventListener("click", closeMenu);
-  if ((window.scrollY > 50 || document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && window.innerWidth < 768) {
-    document.getElementById("nav-menu").style.top = "69px";
-  } else if (window.innerWidth < 768) {
-    document.getElementById("nav-menu").style.top = "79px";
-  }
-  document.getElementById("nav-menu").style.height = "168px";
-};
-
-/**
-* closeMenu() - Styles the navigation menu to be hidden.
-*/
-function closeMenu() {
-  document.getElementById('nav-menu-btn').removeEventListener('click', closeMenu);
-  document.getElementById('nav-menu-btn').addEventListener("click", openMenu);
-  document.getElementById("nav-menu").style.height = "0px";
-};
-
-/**
-* navToggle(x) - Toggles the menu button between icon and X.
-*/
-function navToggle() {
-  document.getElementById('nav-menu-btn').classList.toggle("change");
 };
 
 export default Header;

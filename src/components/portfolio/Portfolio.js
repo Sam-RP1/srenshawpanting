@@ -2,8 +2,10 @@
 
 import React, { Component } from 'react';
 import {hot} from 'react-hot-loader';
-import '../../../styles/root.scss';
-import '../../../styles/gallery.scss';
+import '../../styles/root.scss';
+import './Portfolio.scss';
+
+import { portfolioArr } from './Portfolio-data.js';
 
 /**
 * Portfolio - Class for rendering portfolio items on the portfolio page.
@@ -12,7 +14,7 @@ class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      array: props.items,
+      array: portfolioArr,
       aos: ["fade-right", "fade-up", "fade-left", "fade-down", "fade-right", "fade-left"],
     };
 

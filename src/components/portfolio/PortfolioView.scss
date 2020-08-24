@@ -1,11 +1,11 @@
-@use 'base';
-@import 'mixins/transition';
-@import 'mixins/transform';
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+@import '../../styles/mixins/transform';
 
 /*----------------------------------------*\
-portfolio.scss
+PortfolioView.scss
 
-PORTFOLIO
+PORTFOLIO VIEW
 
 - #'s
 - Containers & Wrappers

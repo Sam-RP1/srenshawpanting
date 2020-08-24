@@ -1,9 +1,9 @@
-@use 'base';
-@import 'mixins/transition';
-@import 'mixins/transform';
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+@import '../../styles/mixins/transform';
 
 /*----------------------------------------*\
-splash.scss
+Splash.scss
 
 SPLASH
 
@@ -24,7 +24,7 @@ Splash
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-image: url('../assets/pictures/splash-bg.jpg');
+  background-image: url('../../assets/pictures/splash-bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,16 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-import Header from './components/header/header.js';
-import Splash from './components/splash.js';
-import RenderPortfolioItem from './components/pages/portfolio/portfolio-view.js'
-import Footer from './components/footer/footer.js';
-
-import logoDark from './assets/logo/logo-dark.png';
-import logoLight from './assets/logo/logo.png';
-
 // Foodlette
-const foodletteData = {
+export const foodletteData = {
   title: "foodlette",
   description: "In development!",
   tech: ["TBC"],
@@ -24,11 +13,11 @@ const foodletteData = {
 }
 
 // FRED
-import fredGif_1 from './assets/portfolio/fred-2020/gifs/fred-ops.gif';
-import fredGif_2 from './assets/portfolio/fred-2020/gifs/fred-parallax.gif';
-import fredImg_1 from './assets/portfolio/fred-2020/img/fred-placeholder-min.png';
-import fredImg_2 from './assets/portfolio/fred-2020/img/fred-parallax-placeholder-min.png';
-const fredData = {
+import fredGif_1 from '../../assets/portfolio/fred-2020/gifs/fred-ops.gif';
+import fredGif_2 from '../../assets/portfolio/fred-2020/gifs/fred-parallax.gif';
+import fredImg_1 from '../../assets/portfolio/fred-2020/img/fred-placeholder-min.png';
+import fredImg_2 from '../../assets/portfolio/fred-2020/img/fred-parallax-placeholder-min.png';
+export const fredData = {
   title: "fred",
   description: "A clean and pure website that takes on the role of a 'PowerPoint' presentation. The website was commissioned by the inventors of the FRED device, a patent-pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for information, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve to improve current domestic and public fire prevention strategies.\n \nAs a result, the design of the website contains no clutter, is simple to navigate using the horizontal one-page scroll feature and has some 'pages' with vertical parallax scrolling.",
   tech: ["HTML", "SCSS", "JSX", "React", "Webpack"],
@@ -64,18 +53,18 @@ const fredData = {
 }
 
 // Peer Review Portal
-import prpGif_1 from './assets/portfolio/peer-review-portal/gifs/prp-create-join-class.gif';
-import prpGif_2 from './assets/portfolio/peer-review-portal/gifs/prp-create-assignment.gif';
-import prpGif_3 from './assets/portfolio/peer-review-portal/gifs/prp-peer-review.gif';
-import prpGif_4 from './assets/portfolio/peer-review-portal/gifs/prp-view-details.gif';
-import prpGif_5 from './assets/portfolio/peer-review-portal/gifs/prp-results.gif';
-import prpImg_1 from './assets/portfolio/peer-review-portal/img/prp-create-join-class-placeholder-min.png';
-import prpImg_2 from './assets/portfolio/peer-review-portal/img/prp-create-assignment-placeholder-min.png';
-import prpImg_3 from './assets/portfolio/peer-review-portal/img/prp-peer-review-placeholder-min.png';
-import prpImg_4 from './assets/portfolio/peer-review-portal/img/prp-view-details-placeholder-min.png';
-import prpImg_5 from './assets/portfolio/peer-review-portal/img/prp-results-placeholder-min.png';
-import prpFile_1 from './assets/portfolio/peer-review-portal/files/prp.pdf';
-const prpData = {
+import prpGif_1 from '../../assets/portfolio/peer-review-portal/gifs/prp-create-join-class.gif';
+import prpGif_2 from '../../assets/portfolio/peer-review-portal/gifs/prp-create-assignment.gif';
+import prpGif_3 from '../../assets/portfolio/peer-review-portal/gifs/prp-peer-review.gif';
+import prpGif_4 from '../../assets/portfolio/peer-review-portal/gifs/prp-view-details.gif';
+import prpGif_5 from '../../assets/portfolio/peer-review-portal/gifs/prp-results.gif';
+import prpImg_1 from '../../assets/portfolio/peer-review-portal/img/prp-create-join-class-placeholder-min.png';
+import prpImg_2 from '../../assets/portfolio/peer-review-portal/img/prp-create-assignment-placeholder-min.png';
+import prpImg_3 from '../../assets/portfolio/peer-review-portal/img/prp-peer-review-placeholder-min.png';
+import prpImg_4 from '../../assets/portfolio/peer-review-portal/img/prp-view-details-placeholder-min.png';
+import prpImg_5 from '../../assets/portfolio/peer-review-portal/img/prp-results-placeholder-min.png';
+import prpFile_1 from '../../assets/portfolio/peer-review-portal/files/prp.pdf';
+export const prpData = {
   title: "Peer Review Portal",
   description: "Peer Review Portal is a web application designed and developed to allow both the processes of peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two user types, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application provides a streamlined and improved peer review and meta-review experience as it solves a number of issues identified by students and teachers that partake or have partaken in traditional peer review and meta-review processes.\n \nIssues experienced by students include difficulty interpreting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work in. The Peer Review Portal web application solves these student issues outlined by using a simple intuitive standard structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and also removes the chances of losing work or the need to physically hand in work as the entire process is made paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning with that has been peer-reviewed to its owner. These teacher-specific issues are solved by the Peer Review Portal web application letting students hand-in work online at any time before the submission deadline set, automatically shuffling then redistributing submitted work to students for peer reviewing online and automatically returning feedback given to submitted work from completed peer reviews or meta-reviews to the works submitter.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
   tech: ["HTML", "CSS", "JS/JSX", "Babel", "React", "Nodejs", "Express 4.X", "MySQL"],
@@ -129,10 +118,10 @@ const prpData = {
 }
 
 // Robotics
-import roboticsFile_1 from './assets/portfolio/robotics/files/robotics-report.pdf';
-import roboticsGif_1 from './assets/portfolio/robotics/gifs/robo-1.gif';
-import roboticsImg_1 from './assets/portfolio/robotics/img/robo-placeholder-min.png';
-const roboticsData = {
+import roboticsFile_1 from '../../assets/portfolio/robotics/files/robotics-report.pdf';
+import roboticsGif_1 from '../../assets/portfolio/robotics/gifs/robo-1.gif';
+import roboticsImg_1 from '../../assets/portfolio/robotics/img/robo-placeholder-min.png';
+export const roboticsData = {
   title: "robotics",
   description: "An individual university project with the aim to improve the performance of a mobile robot's object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment using the V-REP simulation software.\n \nThe focal point of the project was sorting objects in industrial environments using robotics to automate the process.\n\nTo achieve the aims for the project in an efficient manner the final mobile robot deployed in the simulation scenario needed to be capable of manipulating at least one object at a time, identifying an object's colour so that it can be sorted appropriately, avoiding collisions with nearby obstacles and as a result be able to calculate its navigational path dynamically.\n \nThe Kuka YouBot was the mobile robot selected as it can manipulate objects using its 5 degrees of freedom arm, carry multiple objects on its rear platform and could also be modified to be equipped with proximity sensors along with an RGB sensor. Therefore meaning that the final Kuka YouBot deployed could be capable of achieving the project's aim.\n \nFor the Kuka YouBot to be able to make use of the proximity sensors and RGB sensor attached to it several algorithms were designed and implemented so that it could identify objects colours and sort them appropriately, as well as to detect structures or obstacles and avoid colliding with them by dynamically calculating its navigational path.\n \nThe project report details the approach taken, the mobile robot selected, the procedure designed, the simulation system itself, the results obtained from simulation runs and the conclusions deduced.",
   tech: ["V-REP", "Lua Script", "Kuka YouBot"],
@@ -161,14 +150,14 @@ const roboticsData = {
 }
 
 // PUDHUB
-import pudGif_1 from './assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-1.gif';
-import pudGif_2 from './assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-2.gif';
-import pudGif_3 from './assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-3.gif';
-import pudImg_1 from './assets/portfolio/portsmouth-unattended-displays/img/pudhub-1-placeholder-min.png';
-import pudImg_2 from './assets/portfolio/portsmouth-unattended-displays/img/pudhub-2-placeholder-min.png';
-import pudImg_3 from './assets/portfolio/portsmouth-unattended-displays/img/pudhub-3-placeholder-min.png';
-import pudFile_1 from './assets/portfolio/portsmouth-unattended-displays/files/README.md';
-const pudData = {
+import pudGif_1 from '../../assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-1.gif';
+import pudGif_2 from '../../assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-2.gif';
+import pudGif_3 from '../../assets/portfolio/portsmouth-unattended-displays/gifs/pudhub-3.gif';
+import pudImg_1 from '../../assets/portfolio/portsmouth-unattended-displays/img/pudhub-1-placeholder-min.png';
+import pudImg_2 from '../../assets/portfolio/portsmouth-unattended-displays/img/pudhub-2-placeholder-min.png';
+import pudImg_3 from '../../assets/portfolio/portsmouth-unattended-displays/img/pudhub-3-placeholder-min.png';
+import pudFile_1 from '../../assets/portfolio/portsmouth-unattended-displays/files/README.md';
+export const pudData = {
   title: "pud hub",
   description: "The Portsmouth Unattended Displays Hub (PUDHUB) is a web application that allows for the creation, customisation and management of a network of unattended displays from a single place. The web application has a number of features and functionalities which include being able to create, edit and save HTML, CSS and JS files using a basic in-browser text editor, the capability to upload media files for use on unattended displays and the option to individually configure the settings for each unattended display connected to the PUDHUB web application.\n \nA display is turned into an unattended display by simply navigating it to the PUDHUB web applications root address. Once the request has been processed by the PUDHUB web application it will then serve the connecting display the necessary files to setup it up as an unattended display. From this point onwards the newly setup unattended display will maintain itself and communication with the PUDHUB web application in intervals. As well as, from this point, the unattended display can be completely customised and configured.",
   tech: ["HTML", "CSS", "JS", "Nodejs", "Express 4.X", "MySQL"],
@@ -211,7 +200,7 @@ const pudData = {
 }
 
 // ERR MSG
-const errData = {
+export const errData = {
   title: "Stop it! Error!",
   description: "Oi! Stop playing with my url!",
   tech: ["Fiddling", "Exploring", "Adventure", "Testing", "Experimenting"],
@@ -235,36 +224,12 @@ const errData = {
   ],
 }
 
-// Functions
-function getProjectId() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const projectId = urlParams.get('projectid');
-  return ((projectId !== null) ? projectId : 'error');
+// Exports
+export default {
+  foodletteData,
+  fredData,
+  prpData,
+  roboticsData,
+  pudData,
+  errData,
 }
-
-function renderProject() {
-  const projectId = getProjectId();
-  let project;
-
-  if (projectId === "peerreviewportal") {
-    project = prpData;
-  } else if (projectId === "robotics2019") {
-    project = roboticsData;
-  } else if (projectId === "fred2020") {
-    project = fredData;
-  } else if (projectId === "pudhub") {
-    project = pudData;
-  } else if (projectId === "foodlette2020") {
-    project = foodletteData;
-  } else {
-    project = errData;
-  }
-
-  ReactDOM.render(<Splash title={project.title} />, document.getElementById('splash'));
-  ReactDOM.render(<RenderPortfolioItem data={project} />, document.getElementById('content'));
-}
-
-ReactDOM.render(<Header logoDark={logoDark} logoLight={logoLight} />, document.getElementById('global-header'));
-ReactDOM.render(<Footer />, document.getElementById('global-footer'));
-
-window.addEventListener("load", renderProject);
