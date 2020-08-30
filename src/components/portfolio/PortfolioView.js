@@ -1,11 +1,29 @@
 'use strict';
 
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazyload';
 import {hot} from 'react-hot-loader';
 import '../../styles/root.scss';
 import '../about/About.scss';
 import './PortfolioView.scss';
+
+let lazyOptions = {
+  root: null,
+  rootMargin: '0px 0px 400px 0px',
+  threshold: 0.01
+}
+
+const lazyLoad = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting === true) {
+      let lazyImg = new Image();
+      lazyImg.onload = function() {
+        entry.target.src = this.src;
+        observer.unobserve(entry.target);
+      }
+      lazyImg.src = entry.target.dataset.src;
+    }
+  });
+}
 
 const PlaceholderImg = (props) => <img src={props.src} alt={props.alt}></img>;
 
@@ -105,6 +123,13 @@ class PortfolioItemSection extends Component {
     };
   }
 
+  componentDidMount() {
+    let observer = new IntersectionObserver(lazyLoad, lazyOptions);
+    this.props.media.forEach((item, i) => {
+      observer.observe(document.getElementById(i))
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -116,9 +141,7 @@ class PortfolioItemSection extends Component {
         <p>{item.text}</p>
         </article>
         <div className="wrapper-60 portfolio-img" data-aos="fade">
-        <LazyLoad offset={[0, 300]} once="true" placeholder={<PlaceholderImg src={item.placeholder} alt={item.alt} />}>
-        <img src={item.src} alt={item.alt}></img>
-        </LazyLoad>
+        <img id={i} src={item.placeholder} data-src={item.src} alt={item.alt}></img>
         </div>
         </div>
         </section>

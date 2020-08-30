@@ -90,8 +90,7 @@ module.exports = {
         { from: 'src/assets/sitefiles/google084c1b47f0e0c49d.html', to: '' },
         { from: 'src/styles/animate.min.css', to: 'styles' },
       ],
-    }),
-    new BundleAnalyzerPlugin(),
+    })
   ],
   optimization: {
     minimize: true,
