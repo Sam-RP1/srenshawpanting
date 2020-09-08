@@ -1,9 +1,9 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -13,6 +13,27 @@ module.exports = {
     portfolio_view: "./src/portfolioView.js",
     placeholder: "./src/placeholder.js",
     contact: "./src/contact.js",
+  },
+  output: {
+    path: path.resolve(__dirname, "build/"),
+    filename: "bundles/[name].bundle.js"
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        terserOptions: {},
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+    splitChunks: {
+      automaticNameDelimiter: '.',
+      chunks: 'all'
+    },
+    removeEmptyChunks: true,
+    mergeDuplicateChunks: true,
   },
   module: {
     rules: [
@@ -31,7 +52,6 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development',
               publicPath: '../',
             },
           },
@@ -58,20 +78,10 @@ module.exports = {
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
-  output: {
-    path: path.resolve(__dirname, "build/"),
-    filename: "bundles/[name].bundle.js"
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "src/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/",
-    hotOnly: true
-  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: 'styles/[name].css',
+      chunkFilename: '[id].css'
     }),
     new CopyWebpackPlugin({
       patterns: [

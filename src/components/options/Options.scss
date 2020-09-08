@@ -26,19 +26,6 @@ Options
 /*----------------------------------------*\
 #'s
 \*----------------------------------------*/
-#portfolio {
-  justify-content: flex-start;
-}
-
-#services {
-  justify-content: center;
-}
-
-#contact {
-  justify-content: flex-end;
-  margin-bottom: 0px!important;
-}
-
 #portfolio, #services, #contact {
   justify-content: center;
 }
@@ -107,6 +94,18 @@ General
     a {
       width: 70%;
     }
+  }
+
+  #portfolio {
+    justify-content: flex-start;
+  }
+
+  #services {
+    justify-content: center;
+  }
+
+  #contact {
+    justify-content: flex-end;
   }
 
   #portfolio, #services {
