@@ -25,8 +25,6 @@ const lazyLoad = (entries, observer) => {
   });
 }
 
-const PlaceholderImg = (props) => <img src={props.src} alt={props.alt}></img>;
-
 /**
 * RenderPortfolioItem - Class for rendering a portfolio item and its data on the portfolio-view page.
 */
@@ -52,7 +50,7 @@ class RenderPortfolioItem extends Component {
       <h1 data-aos="flip-down">Information</h1>
       <p className="" data-aos="fade-right" data-aos-delay="150">{this.state.description}</p>
       <div className="info-container">
-      <PortfolioItemList tech={this.state.tech} enableListTwo={this.state.enableListTwo} listTwoContents={this.state.listTwoContents} />
+      <PortfolioItemList tech={this.state.tech} enableListTwo={this.state.enableListTwo} listTwoTitle={this.state.listTwoTitle} listTwoContents={this.state.listTwoContents} />
       <PortfolioItemButton buttons={this.state.buttons} />
       </div>
       </article>

@@ -80,8 +80,7 @@ module.exports = {
   resolve: { extensions: ["*", ".js", ".jsx"] },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
-      chunkFilename: '[id].css'
+      filename: 'styles/[name].css'
     }),
     new CopyWebpackPlugin({
       patterns: [

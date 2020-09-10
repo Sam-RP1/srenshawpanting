@@ -29,6 +29,16 @@ const fredData = {
   button: "View Project",
 }
 
+// Letter Detonator
+const letterDetonatorData = {
+  id: "letter-detonator",
+  title: "letter detonator",
+  purpose: "web game",
+  description: "A straightforward web game where users try to achieve a high score by surviving endless waves of randomly generated letters as long as possible. Users must detonate the approaching letters, causing them to explode, by pressing the corresponding letter key on their keyboard. The purpose of the game is twofold, have fun and help improve typing skills.",
+  url: "/portfolioView.html?projectid=letterdetonator",
+  button: "View Project",
+}
+
 // Peer Review Portal
 const prpData = {
   id: "peer-review-portal",
@@ -81,7 +91,7 @@ const sendwiData = {
 }
 
 // Portfolio array
-export const portfolioArr = [prpData, dssData, fredData, roboticsData, sendwiData, pudData, reviewData, foodletteData];
+export const portfolioArr = [prpData, letterDetonatorData, fredData, sendwiData, pudData, roboticsData, dssData, reviewData, foodletteData];
 
 // Exports
 export default portfolioArr;

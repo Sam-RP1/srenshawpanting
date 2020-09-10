@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer.js';
 
 import { foodletteData } from './components/portfolio/PortfolioView-data.js';
 import { fredData } from './components/portfolio/PortfolioView-data.js';
+import { letterDetonatorData } from './components/portfolio/PortfolioView-data.js'
 import { prpData } from './components/portfolio/PortfolioView-data.js';
 import { roboticsData } from './components/portfolio/PortfolioView-data.js';
 import { pudData } from './components/portfolio/PortfolioView-data.js';
@@ -26,6 +27,8 @@ function renderProject() {
 
   if (projectId === "peerreviewportal") {
     project = prpData;
+  } else if (projectId === 'letterdetonator') {
+    project = letterDetonatorData;
   } else if (projectId === "robotics2019") {
     project = roboticsData;
   } else if (projectId === "fred2020") {

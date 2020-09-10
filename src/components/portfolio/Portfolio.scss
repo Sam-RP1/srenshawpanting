@@ -25,6 +25,10 @@ GALLERY
   background-image: url('../../assets/portfolio/fred-2020/img/fred.png');
 }
 
+#letter-detonator .gallery-item-picture-container {
+  background-image: url('../../assets/portfolio/letter-detonator/img/letter-detonator.png');
+}
+
 #peer-review-portal .gallery-item-picture-container {
   background-image: url('../../assets/portfolio/peer-review-portal/img/prp.png');
 }
@@ -60,7 +64,7 @@ Containers & Wrappers
 .gallery-item-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  // align-items: flex-end;
   height: calc((100vw - 32px) * 0.9);
   width: calc((100vw - 32px) * 0.9);
   overflow: hidden;

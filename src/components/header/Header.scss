@@ -201,6 +201,12 @@ General
   .nav-container {
     width: 65%;
   }
+
+  .nav-container {
+    li:hover::after {
+      width: 102%;
+    }
+  }
 }
 
 @media (min-width: 992px) {

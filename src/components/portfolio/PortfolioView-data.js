@@ -52,6 +52,44 @@ export const fredData = {
   ]
 }
 
+// Letter Detonator
+import letterImg_1 from '../../assets/portfolio/letter-detonator/img/ld-menu-placeholder-min.png';
+import letterImg_2 from '../../assets/portfolio/letter-detonator/img/ld-game-placeholder-min.png';
+export const letterDetonatorData = {
+  title: "letter detonator",
+  description: "A small straightforward web game where users try to achieve high scores by surviving endless waves of randomly generated letters as long as possible. Users must detonate the approaching letters, causing them to explode, in order to survive. To detonate letters users must press the corresponding letter key on their keyboard. Each time a letter is successfully detonated the user's score will increase by 1. However, each time a letter that is not present is attempted to be detonated the user's score will decrease by 1.\n \nThe purpose of the game is twofold, for users to have fun and improve their typing skills. The game aims to help users improve their typing skills by its difficulty increasing when the user's score reaches certain thresholds. This difficulty increase means more letters will spawn and need to be detonated, in turn causing the user to have less time to look at their keys as they will need to pay more attention to the greater number of letters on the screen. Therefore, users will need to learn to type without looking at their keys and with more fingers to improve their chances of surviving.",
+  tech: ["HTML Canvas", "SCSS", "JS / JSX", "React", "Local Storage", "Webpack"],
+  enableListTwo: true,
+  listTwoTitle: "Features",
+  listTwoContents: ["Game Engine Looper", "Animations", "Local Highscores", "Changeable Settings"],
+  buttons: [
+    {
+      link: "http://letterdetonator.co.uk/",
+      text: "Play"
+    },
+    {
+      link: "https://github.com/Sam-RP1/letter-detonator",
+      text: "View Repository"
+    },
+  ],
+  media: [
+    {
+      title: "Menu",
+      src: "",
+      placeholder: letterImg_1,
+      alt: "The games menu interface",
+      text: "The Letter Detonator web game features a fully functional menu system. This menu system allows users to start a game, view their local high scores, learn how to play, view the controls of the game and change the game's settings .\n \nThe settings sub-menu allows users to change the letter font and font size for the randomly generated letters, as well as select one of three characters to play as."
+    },
+    {
+      title: "Detonate The Letters",
+      src: "",
+      placeholder: letterImg_2,
+      alt: "Example of game play",
+      text: "The objective of the game is simple, reach a high level and achieve a high score by surviving the endless waves of letters as long as possible. To survive users must protect their character found at the centre of the screen by detonating the letters they can see causing them to explode.\n \nCurrently the game has 11 levels and each time a new level is reached the game's difficulty will increase. This difficulty increase could result in a greater chance of a new letter spawning and/or the maximum number of letters that can be present at a time increasing."
+    },
+  ]
+}
+
 // Peer Review Portal
 import prpGif_1 from '../../assets/portfolio/peer-review-portal/gifs/prp-create-join-class.gif';
 import prpGif_2 from '../../assets/portfolio/peer-review-portal/gifs/prp-create-assignment.gif';
@@ -67,7 +105,7 @@ import prpFile_1 from '../../assets/portfolio/peer-review-portal/files/prp.pdf';
 export const prpData = {
   title: "Peer Review Portal",
   description: "Peer Review Portal is a web application designed and developed to allow both the processes of peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two user types, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application provides a streamlined and improved peer review and meta-review experience as it solves a number of issues identified by students and teachers that partake or have partaken in traditional peer review and meta-review processes.\n \nIssues experienced by students include difficulty interpreting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work in. The Peer Review Portal web application solves these student issues outlined by using a simple intuitive standard structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and also removes the chances of losing work or the need to physically hand in work as the entire process is made paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning with that has been peer-reviewed to its owner. These teacher-specific issues are solved by the Peer Review Portal web application letting students hand-in work online at any time before the submission deadline set, automatically shuffling then redistributing submitted work to students for peer reviewing online and automatically returning feedback given to submitted work from completed peer reviews or meta-reviews to the works submitter.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
-  tech: ["HTML", "CSS", "JS/JSX", "Babel", "React", "Nodejs", "Express 4.X", "MySQL"],
+  tech: ["HTML", "CSS", "JS / JSX", "Babel", "React", "Nodejs", "Express 4.X", "MySQL"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Google Sign In", "Create & Join Classes", "Create Assignments", "PDF File Submissions",
@@ -228,6 +266,7 @@ export const errData = {
 export default {
   foodletteData,
   fredData,
+  letterDetonatorData,
   prpData,
   roboticsData,
   pudData,
