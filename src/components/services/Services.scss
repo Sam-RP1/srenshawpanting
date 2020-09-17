@@ -1,10 +1,8 @@
 @use '../../styles/base';
 
-.portfolio-content-container {
+.services-item-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 0px;
 }
 
 #services {
@@ -25,37 +23,4 @@
 #hosting {
   color: base.$srp-black;
   background-color: base.$srp-white;
-}
-
-/*----------------------------------------*\
-Alignments
-\*----------------------------------------*/
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.align-left {
-  article {
-    align-items: flex-start;
-  }
-}
-
-.align-right {
-  article {
-    align-items: flex-end;
-  }
-}
-
-.align-center {
-  article {
-    align-items: center;
-  }
 }

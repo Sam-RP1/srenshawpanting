@@ -19,9 +19,9 @@ const Services = () => {
 
   return (
     <React.Fragment>
-    <section id="info" className="section-default h-auto padding-6016 bg-black content-white">
+    <section className="section-default h-auto padding-6016 bg-black content-white">
     <article className="container column">
-    <h1 data-aos="flip-down">Services</h1>
+    <h1 data-aos="flip-down">Information</h1>
     <p data-aos="fade-right" data-aos-delay="150">SRP Designs primarily offers web related services. These web related services include...</p>
     <div className="info-list-container">
     <div className="info-list" data-aos="fade-up" data-aos-delay="125">

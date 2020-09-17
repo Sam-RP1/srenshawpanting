@@ -28,6 +28,7 @@ class Portfolio extends Component {
 
   render() {
     return (
+      <section className="section-default h-auto padding-6016 bg-black">
       <div className="portfolio-gallery-container container">
       {this.state.array.map((item, i) =>
         <div key={i} className="gallery-item-container" data-aos={this.state.aos[i % 6]}>
@@ -56,6 +57,7 @@ class Portfolio extends Component {
         </div>
       )}
       </div>
+      </section>
     );
   }
 }

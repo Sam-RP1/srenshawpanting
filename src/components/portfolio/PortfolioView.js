@@ -138,7 +138,7 @@ class PortfolioItemSection extends Component {
         <h1>{item.title}</h1>
         <p>{item.text}</p>
         </article>
-        <div className="wrapper-60 portfolio-img" data-aos="fade">
+        <div className="wrapper-60 portfolio-img">
         <img id={i} src={item.placeholder} data-src={item.src} alt={item.alt}></img>
         </div>
         </div>

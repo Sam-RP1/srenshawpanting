@@ -4,18 +4,19 @@ import React from 'react';
 import {hot} from 'react-hot-loader';
 import '../../styles/root.scss';
 import './Services.scss';
-import '../about/About.scss';
 
 /**
 * Development - Development component.
 */
 const Development = () => {
   return (
-    <section id="info" className="section-default h-auto padding-6016 bg-black content-white">
-    <article className="container column">
-    <h1 data-aos="flip-down">Website Development</h1>
-    <p data-aos="fade-right" data-aos-delay="150">SRP Designs will develop your weebsite. This includes...</p>
+    <section className="section-default h-auto padding-6016 bg-black content-white">
+    <div className="container services-item-container align-left"  data-aos="fade">
+    <article className="wrapper-100">
+    <h1>Website Development</h1>
+    <p>Placeholder text for the development section.</p>
     </article>
+    </div>
     </section>
   );
 }

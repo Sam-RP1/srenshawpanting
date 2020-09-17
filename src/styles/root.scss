@@ -6,7 +6,8 @@ root.scss
 ROOT
 
 - Element Tags
-- Container
+- Containers & Wrappers
+- Alignments
 - Sections
 - Heights
 - Padding
@@ -56,10 +57,62 @@ a:link, a:visited, a:hover  {
 }
 
 /*----------------------------------------*\
-Container
+Container & Wrappers
 \*----------------------------------------*/
 .container {
   width: 90%;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px;
+}
+
+.wrapper-100, .wrapper-60, .wrapper-50, .wrapper-40 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.txt-wrapper {
+  box-sizing: border-box;
+  padding: 0px 0px 30px 0px;
+}
+
+.txt-wrapper {
+  p {
+    white-space: pre-line;
+  }
+}
+
+/*----------------------------------------*\
+Alignments
+\*----------------------------------------*/
+.align-left {
+  text-align: left;
+
+  article {
+    align-items: flex-start;
+  }
+}
+
+.align-right {
+  text-align: right;
+
+  article {
+    align-items: flex-end;
+  }
+}
+
+.align-center {
+  text-align: center;
+
+  article {
+    align-items: center;
+  }
 }
 
 /*----------------------------------------*\
@@ -158,5 +211,54 @@ Content Colors
 @media (min-width: 1200px) {
   .container {
     width: 70%;
+  }
+
+  .wrapper-100 {
+    width: 100%;
+  }
+
+  .wrapper-60 {
+    width: 60%;
+  }
+
+  .wrapper-50 {
+    width: 50%;
+  }
+
+  .wrapper-40 {
+    width: 40%;
+  }
+
+  .txt-wrapper {
+    padding: 0px;
+  }
+
+  .align-right {
+    flex-flow: row-reverse!important;
+  }
+
+  .align-left {
+    flex-flow: row!important;
+  }
+
+  .align-center {
+    article {
+      box-sizing: border-box;
+      padding-bottom: 30px;
+    }
+  }
+
+  .align-right {
+    article {
+      box-sizing: border-box;
+      padding-left: 10px;
+    }
+  }
+
+  .align-left {
+    article {
+      box-sizing: border-box;
+      padding-right: 10px;
+    }
   }
 }
