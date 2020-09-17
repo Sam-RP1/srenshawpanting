@@ -30,6 +30,10 @@ Options
   justify-content: center;
 }
 
+#contact {
+  margin-bottom: 0px;
+}
+
 #portfolio, #services {
   border-bottom: 3px solid #171717;
   padding-bottom: 60px;
@@ -49,9 +53,7 @@ General
   height: 100%;
   width: 100%;
   margin-bottom: 60px;
-}
 
-.grid-square {
   a {
     display: flex;
     height: 100%;
@@ -88,9 +90,7 @@ General
   .grid-square {
     width: 33.333333%;
     margin-bottom: 0px;
-  }
 
-  .grid-square {
     a {
       width: 70%;
     }
@@ -113,11 +113,3 @@ General
     padding-bottom: 0px;
   }
 }
-
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
-
-@media (min-width: 1368px) {}

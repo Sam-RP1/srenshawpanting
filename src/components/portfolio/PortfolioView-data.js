@@ -53,6 +53,7 @@ export const fredData = {
 }
 
 // Letter Detonator
+import letterGif_1 from '../../assets/portfolio/letter-detonator/gifs/ld-detonating-letters.gif';
 import letterImg_1 from '../../assets/portfolio/letter-detonator/img/ld-menu-placeholder-min.png';
 import letterImg_2 from '../../assets/portfolio/letter-detonator/img/ld-game-placeholder-min.png';
 export const letterDetonatorData = {
@@ -82,7 +83,7 @@ export const letterDetonatorData = {
     },
     {
       title: "Detonate The Letters",
-      src: "",
+      src: letterGif_1,
       placeholder: letterImg_2,
       alt: "Example of game play",
       text: "The objective of the game is simple, reach a high level and achieve a high score by surviving the endless waves of letters as long as possible. To survive users must protect their character found at the centre of the screen by detonating the letters they can see causing them to explode.\n \nCurrently the game has 11 levels and each time a new level is reached the game's difficulty will increase. This difficulty increase could result in a greater chance of a new letter spawning and/or the maximum number of letters that can be present at a time increasing."

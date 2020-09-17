@@ -1,0 +1,72 @@
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+
+/*----------------------------------------*\
+Form.scss
+
+FORM
+
+- Forms
+- Buttons
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Forms
+\*----------------------------------------*/
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  margin-top: 30px;
+}
+
+#contactForm {
+  .txt-input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    margin: 5px 0px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input, select {
+    height: 36px;
+  }
+
+  input:focus, textarea:focus {
+    border: 1px solid base.$srp-blue;
+  }
+}
+
+.drop-down {
+  cursor: pointer;
+}
+
+/*----------------------------------------*\
+Buttons
+\*----------------------------------------*/
+.form-btn {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 3px;
+  box-sizing: border-box;
+  border: 1px solid #171717;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  @include transition(0.3s);
+}
+
+.form-btn:hover {
+  color: base.$srp-blue;
+  background-color: #d5d5d5;
+  border: 1px solid base.$srp-blue;
+}

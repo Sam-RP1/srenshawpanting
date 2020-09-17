@@ -71,9 +71,7 @@ Lists
   height: auto;
   width: 100%;
   margin-bottom: 30px;
-}
 
-.about-list, .info-list {
   h2 {
     font-size: 1.5em;
     margin-top: 0px;
@@ -95,9 +93,7 @@ Icons
   display: flex;
   height: auto;
   width: auto;
-}
 
-.icon-row {
   a {
     height: 48px;
     width: 48px;
@@ -163,10 +159,6 @@ Icons
     width: 30%;
   }
 }
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
 
 @media (min-width: 1368px) {
   .about-list-container {

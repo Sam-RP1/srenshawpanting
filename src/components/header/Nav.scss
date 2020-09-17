@@ -1,0 +1,153 @@
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+@import '../../styles/mixins/transform';
+
+/*----------------------------------------*\
+Nav.scss
+
+NAV
+
+- Containers & Wrappers
+- Buttons
+- @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Containers & Wrappers
+\*----------------------------------------*/
+.nav-container {
+  display: flex;
+  position: relative;
+  width: calc(100% - 140px);
+  margin: 0px;
+  padding: 0px;
+
+  ul {
+    display: flex;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  li {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: inherit;
+    list-style: none;
+  }
+
+  li::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: transparent;
+    position: relative;
+    display: block;
+    bottom: 0px;
+    margin: 0px;
+    @include transition(0.2s);
+  }
+
+  li:hover::after {
+    width: 100%;
+    background-color: base.$srp-blue;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.nav-list {
+  flex-direction: column;
+  list-style: none;
+  position: absolute;
+  top: 79px;
+  right: 0px;
+  height: 0px;
+  color: base.$srp-black;
+  background-color: base.$srp-white;
+  overflow: hidden;
+  @include transition(0.3s);
+
+  li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: transparent;
+    @include transition(0.3s);
+  }
+
+  li:hover {
+    background-color: #dddddd;
+  }
+
+  li a {
+    width: 100%;
+  }
+}
+
+/*----------------------------------------*\
+Buttons
+\*----------------------------------------*/
+#nav-menu-btn {
+  display: none;
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+}
+
+#bar-1, #bar-2, #bar-3 {
+  width: 40px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: base.$srp-black;
+  margin: 6px 0px;
+  @include transition(0.3s);
+}
+
+.change #bar-1 {
+  @include transform-2(rotate(-45deg), translate(-9px, 6px));
+}
+
+.change #bar-2 {
+  opacity: 0;
+}
+
+.change #bar-3 {
+  @include transform-2(rotate(45deg), translate(-8px, -8px));
+}
+
+/*----------------------------------------*\
+@media
+\*----------------------------------------*/
+@media (min-width: 768px) {
+  .nav-container {
+    width: 65%;
+  }
+
+  .nav-container {
+    li:hover::after {
+      width: 102%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-container {
+    width: 55%;
+  }
+}

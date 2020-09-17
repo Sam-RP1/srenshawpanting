@@ -1,0 +1,61 @@
+@use '../../styles/base';
+
+.portfolio-content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px;
+}
+
+#services {
+  color: base.$srp-white;
+  background-color: base.$srp-black;
+}
+
+#design {
+  color: base.$srp-black;
+  background-color: base.$srp-white;
+}
+
+#development {
+  color: base.$srp-white;
+  background-color: base.$srp-black;
+}
+
+#hosting {
+  color: base.$srp-black;
+  background-color: base.$srp-white;
+}
+
+/*----------------------------------------*\
+Alignments
+\*----------------------------------------*/
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  article {
+    align-items: flex-start;
+  }
+}
+
+.align-right {
+  article {
+    align-items: flex-end;
+  }
+}
+
+.align-center {
+  article {
+    align-items: center;
+  }
+}

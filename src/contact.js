@@ -25,7 +25,7 @@ function getContactStatus() {
 }
 
 ReactDOM.render(<Header />, document.getElementById('global-header'));
-ReactDOM.render(<Contact />, document.getElementById('contact'));
+ReactDOM.render(<Contact />, document.getElementById('content'));
 ReactDOM.render(<Footer />, document.getElementById('global-footer'));
 
 window.addEventListener("load", getContactStatus);

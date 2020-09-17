@@ -9,7 +9,6 @@ SPLASH
 
 - Splash
 - Containers
-- Text
 - General
 - @keyframes
 - @media
@@ -54,12 +53,7 @@ Containers
   height: auto;
   margin: 0px;
   color: base.$srp-white;
-}
 
-/*----------------------------------------*\
-Text
-\*----------------------------------------*/
-.splash-content-container {
   h1, p {
     @include transition(2.0s);
   }

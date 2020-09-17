@@ -9,6 +9,10 @@ import Footer from './components/footer/Footer.js';
 
 ReactDOM.render(<Header />, document.getElementById('global-header'));
 ReactDOM.render(<SplashIndex />, document.getElementById('splash'));
-ReactDOM.render(<About />, document.getElementById('about'));
-ReactDOM.render(<Options />, document.getElementById('options'));
+ReactDOM.render(
+  <>
+  <About />
+  <Options />
+  </>
+  , document.getElementById('content'));
 ReactDOM.render(<Footer />, document.getElementById('global-footer'));

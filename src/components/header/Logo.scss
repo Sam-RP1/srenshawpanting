@@ -1,0 +1,35 @@
+/*----------------------------------------*\
+Logo.scss
+
+LOGO
+
+- Logo
+- Containers & Wrappers
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Logo
+\*----------------------------------------*/
+#header-logo, #header-logo-alt {
+  height: 100%;
+  width: 100%;
+}
+
+#header-logo-alt {
+  display: none;
+}
+
+/*----------------------------------------*\
+Containers & Wrappers
+\*----------------------------------------*/
+#logo-wrapper {
+  position: relative;
+  height: 40%;
+  width: 130px;
+  margin: 0px;
+  padding: 0px;
+
+  a {
+    height: 100%;
+  }
+}

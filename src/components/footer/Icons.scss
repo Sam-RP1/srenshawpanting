@@ -1,0 +1,89 @@
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+@import '../../styles/mixins/transform';
+
+/*----------------------------------------*\
+Icons.scss
+
+ICONS
+
+- Containers & Wrappers
+- @media
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Containers & Wrappers
+\*----------------------------------------*/
+.footer-icon-container {
+  display: flex;
+  height: auto;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+
+  a {
+    height: 32px;
+    width: 32px;
+    padding-left: 5px;
+    padding-right: 5px;
+    @include transition(0.2s);
+  }
+
+  a:hover {
+    @include transform(scale(0.95));
+  }
+
+  img {
+    height: inherit;
+    width: inherit;
+  }
+}
+
+/*----------------------------------------*\
+@media
+\*----------------------------------------*/
+@media (min-width: 768px) {
+  .footer-icon-container {
+    padding-bottom: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+  }
+
+  .footer-icon-container {
+    a {
+      height: 26px;
+      width: 26px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .footer-icon-l {
+    padding-right: 0px!important;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-icon-container {
+    padding-left: 15px;
+  }
+
+  .footer-icon-container {
+    a {
+      height: 30px;
+      width: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-icon-container {
+    a {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}

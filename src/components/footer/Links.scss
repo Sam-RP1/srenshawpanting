@@ -1,0 +1,40 @@
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+
+/*----------------------------------------*\
+Links.scss
+
+LINKS
+
+- Containers & Wrappers
+\*----------------------------------------*/
+
+/*----------------------------------------*\
+Containers & Wrappers
+\*----------------------------------------*/
+.footer-link-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 0.9em;
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li a {
+    @include transition(0.15s);
+  }
+
+  li a:hover {
+    color: base.$srp-blue!important;
+  }
+}

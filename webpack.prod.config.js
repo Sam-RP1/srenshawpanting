@@ -11,7 +11,7 @@ module.exports = {
     index: "./src/index.js",
     portfolio: "./src/portfolio.js",
     portfolio_view: "./src/portfolioView.js",
-    placeholder: "./src/placeholder.js",
+    services: "./src/services.js",
     contact: "./src/contact.js",
   },
   output: {
@@ -87,7 +87,7 @@ module.exports = {
         { from: 'src/pages/index.html', to: '' },
         { from: 'src/pages/portfolio.html', to: '' },
         { from: 'src/pages/portfolioView.html', to: '' },
-        { from: 'src/pages/placeholder.html', to: '' },
+        { from: 'src/pages/services.html', to: '' },
         { from: 'src/pages/contact.html', to: '' },
         { from: 'src/components/contact/Contact.php', to: 'php' },
         { from: 'src/assets/sitefiles/favicon', to: 'assets/favicon' },

@@ -59,6 +59,7 @@ Containers & Wrappers
 .portfolio-gallery-container {
   display: flex;
   flex-flow: wrap;
+  justify-content: center;
 }
 
 .gallery-item-container {

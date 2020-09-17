@@ -31,62 +31,13 @@ Footer
 /*----------------------------------------*\
 Containers & Wrappers
 \*----------------------------------------*/
-.footer-container {
+.footer-content-container {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   position: relative;
   height: 100%;
   color: base.$srp-footer-txt-color;
-}
-
-.footer-link-container {
-  display: flex;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 0.9em;
-  list-style: none;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-link-container {
-  li a {
-    @include transition(0.15s);
-  }
-
-  li a:hover {
-    color: base.$srp-blue!important;
-  }
-}
-
-.footer-icon-container {
-  display: flex;
-  height: auto;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 15px;
-}
-
-.footer-icon-container {
-  a {
-    height: 32px;
-    width: 32px;
-    padding-left: 5px;
-    padding-right: 5px;
-    @include transition(0.2s);
-  }
-
-  a:hover {
-    @include transform(scale(0.95));
-  }
-
-  img {
-    height: inherit;
-    width: inherit;
-  }
 }
 
 /*----------------------------------------*\
@@ -102,61 +53,16 @@ Text
 /*----------------------------------------*\
 @media
 \*----------------------------------------*/
-@media (min-width: 576px) {}
-
 @media (min-width: 768px) {
   #global-footer {
     height: 80px;
   }
 
-  .footer-container {
+  .footer-content-container {
     flex-direction: row;
   }
 
   .footer-icon-text {
     display: none;
-  }
-
-  .footer-icon-container {
-    padding-bottom: 0px;
-    padding-left: 10px;
-    justify-content: space-between;
-  }
-
-  .footer-icon-container {
-    a {
-      height: 26px;
-      width: 26px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-
-  .footer-icon-l {
-    padding-right: 0px!important;
-  }
-}
-
-@media (min-width: 992px) {
-  .footer-icon-container {
-    padding-left: 15px;
-  }
-
-  .footer-icon-container {
-    a {
-      height: 30px;
-      width: 30px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .footer-icon-container {
-    a {
-      height: 32px;
-      width: 32px;
-    }
   }
 }
