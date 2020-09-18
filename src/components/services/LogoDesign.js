@@ -6,19 +6,19 @@ import '../../styles/root.scss';
 import './Services.scss';
 
 /**
-* Design - Design component.
+* LogoDesign - LogoDesign component.
 */
-const Design = () => {
+const LogoDesign = () => {
   return (
-    <section className="section-default h-auto padding-6016 bg-white content-black">
+    <section id="logo-design" className="section-default h-auto padding-6016">
     <div className="container services-item-container align-right" data-aos="fade">
     <article className="wrapper-100">
-    <h1>Website Design</h1>
-    <p>Placeholder text for the design section.</p>
+    <h1>Logo Design</h1>
+    <p>Placeholder text for the logo design section.</p>
     </article>
     </div>
     </section>
   );
 }
 
-export default Design;
+export default LogoDesign;

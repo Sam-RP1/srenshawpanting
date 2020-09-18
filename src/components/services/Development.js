@@ -10,8 +10,8 @@ import './Services.scss';
 */
 const Development = () => {
   return (
-    <section className="section-default h-auto padding-6016 bg-black content-white">
-    <div className="container services-item-container align-left"  data-aos="fade">
+    <section id="development" className="section-default h-auto padding-6016">
+    <div className="container services-item-container align-right"  data-aos="fade">
     <article className="wrapper-100">
     <h1>Website Development</h1>
     <p>Placeholder text for the development section.</p>

@@ -15,7 +15,8 @@ const Form = () => {
     <input type="text" name="email" placeholder="Email" maxLength="45" required className="txt-input" data-aos="fade-up" data-aos-delay="100"></input>
     <input type="text" name="subject" placeholder="Subject" maxLength="30" required className="txt-input" data-aos="fade-up" data-aos-delay="150"></input>
     <select id="services" name="services" className="txt-input drop-down" data-aos="fade-up" data-aos-delay="200">
-    <option value="None">No Service</option>
+    <option value="None">Select a Service</option>
+    <option value="None">None</option>
     <option value="Logo Design">Logo Design</option>
     <option value="Website Design">Website Design</option>
     <option value="Website Development">Website Development</option>
