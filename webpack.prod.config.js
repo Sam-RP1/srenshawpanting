@@ -1,10 +1,9 @@
-const webpack = require("webpack");
-const path = require("path");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -15,8 +14,8 @@ module.exports = {
     contact: "./src/contact.js",
   },
   output: {
-    path: path.resolve(__dirname, "build/"),
-    filename: "bundles/[name].bundle.js"
+    path: path.join(__dirname, 'build/'),
+    filename: 'bundles/[name]-bundle.js'
   },
   optimization: {
     minimize: true,
@@ -29,7 +28,7 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})
     ],
     splitChunks: {
-      automaticNameDelimiter: '.',
+      automaticNameDelimiter: '-',
       chunks: 'all'
     },
     removeEmptyChunks: true,
@@ -38,11 +37,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.js|jsx$/,
+        exclude: /node_modules/,
         loader: "babel-loader",
         options: {
-          presets: ["@babel/env", "@babel/preset-react"],
           plugins: ["@babel/plugin-transform-runtime"]
         }
       },
@@ -50,52 +48,71 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-            },
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
       {
-        test: /\.(png|jpe?g|svg|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          outputPath: './assets/images',
-          esModule: false,
-        },
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader'
+          }
+        ]
       },
       {
         test: /\.(pdf|md)$/i,
         loader: 'file-loader',
         options: {
-          outputPath: './assets/files',
-          esModule: false,
-        },
-      },
+          outputPath: './assets/files'
+        }
+      }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
   plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/frontend/pages/index.html',
+      filename: 'index.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/frontend/pages/portfolio.html',
+      filename: 'portfolio.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/frontend/pages/portfolioView.html',
+      filename: 'portfolioView.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/frontend/pages/services.html',
+      filename: 'services.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/frontend/pages/contact.html',
+      filename: 'contact.html'
+    }),
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css'
+      filename: 'styles/[name].css',
+      chunkFilename: '[id].css'
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/pages/index.html', to: '' },
-        { from: 'src/pages/portfolio.html', to: '' },
-        { from: 'src/pages/portfolioView.html', to: '' },
-        { from: 'src/pages/services.html', to: '' },
-        { from: 'src/pages/contact.html', to: '' },
-        { from: 'src/components/contact/Contact.php', to: 'php' },
-        { from: 'src/assets/sitefiles/favicon', to: 'assets/favicon' },
-        { from: 'src/assets/pictures/srp-designs-ex.png', to: 'assets/images' },
-        { from: 'src/assets/sitefiles/sitemap.xml', to: '' },
-        { from: 'src/assets/sitefiles/google084c1b47f0e0c49d.html', to: '' },
-        { from: 'src/styles/animate.min.css', to: 'styles' },
+        { from: 'src/frontend/assets/sitefiles/favicon', to: 'assets/favicon' },
+        { from: 'src/frontend/assets/sitefiles/sitemap.xml', to: '' },
+        { from: 'src/frontend/styles/animate.min.css', to: 'styles' }
       ],
     })
   ]
-};
+}

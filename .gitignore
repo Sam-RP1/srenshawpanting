@@ -1,6 +1,7 @@
 /node_modules
 /build
-/src/assets
-/src/notes
+/src/frontend/assets
+/src/frontend/notes
 /stats.json
 notes.md
+.env

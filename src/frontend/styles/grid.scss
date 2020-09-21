@@ -1,0 +1,87 @@
+@use './base';
+@import './mixins/transition';
+@import './mixins/transform';
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  a {
+    display: flex;
+    height: 100%;
+    width: 65%;
+    flex-direction: column;
+    justify-content: center;
+    @include transition(0.2s);
+  }
+
+  a:hover {
+    @include transform(scale(0.95));
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin: 0.7em 0em 0em 0em;
+    text-align: center;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .grid-container div a {
+    width: 70%;
+  }
+
+  .grid-container.three {
+    flex-direction: row;
+
+    div {
+      width: 33.333333%;
+      margin-bottom: 0px;
+    }
+  }
+
+  .grid-container.even {
+    flex-flow: wrap;
+    flex-direction: initial;
+
+    div {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-container.even {
+    flex-flow: wrap;
+    flex-direction: initial;
+    justify-content: initial;
+
+    div {
+      width: 33.333333%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container.even {
+    div {
+      width: 25%;
+    }
+  }
+}
