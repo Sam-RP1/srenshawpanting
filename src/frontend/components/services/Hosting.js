@@ -16,43 +16,46 @@ const Hosting = () => {
     <article className="wrapper-100">
     <h1>Website Hosting</h1>
 
-    <section className="list-container four">
+    <section className="list-container three">
     <div>
     <h2>Standard Hosting</h2>
-    <p>The basics hosting package that will get your website up and running on a budget.</p>
+    <p>A basics hosting package that will get your website up and running on a budget.</p>
     <ul>
-    <li>Cost: £30.00 per year</li>
+    <li>Includes -</li>
+    <ul>
+    <li>Deployment in one region</li>
+    </ul>
+    <li>Price -</li>
+    <ul>
+    <li>Setup Fee: £10.00</li>
+    <li>Yearly Fee: £30.00</li>
+    </ul>
     <li>Best for static websites that...</li>
     <ul>
-    <li>Experience low to moderate traffic</li>
+    <li>Experience low to moderate traffic in a specific region</li>
     <li>Have no server code</li>
     </ul>
     </ul>
     </div>
 
     <div>
-    <h2>Premium Hosting</h2>
-    <p>The advanced hosting package that will get your website up, running and ready for greater demand.</p>
+    <h2>Advanced Hosting</h2>
+    <p>The hosting package that will get your website up, running and ready for broader demand.</p>
     <ul>
-    <li>Cost: £40.00 per year</li>
+    <li>Includes -</li>
+    <ul>
+    <li>Deployment in two regions (more regions can be added)</li>
+    </ul>
+    <li>Price -</li>
+    <ul>
+    <li>Setup Fee: £15.00</li>
+    <li>Yearly Fee: £50.00</li>
+    <li>Extra Region Fee Per Year: £20.00</li>
+    </ul>
     <li>Best for static websites that...</li>
     <ul>
-    <li>Experience moderate to high traffic</li>
+    <li>Experience moderate traffic across different regions</li>
     <li>Have no server code</li>
-    </ul>
-    </ul>
-    </div>
-
-    <div>
-    <h2>Deluxe Hosting</h2>
-    <p>The expert hosting package that will ensure your complex static website or web application is reliable, available and performs excellently.</p>
-    <ul>
-    <li>Cost: £50.00++ per year</li>
-    <li>Best for complex static websites or web applications that need...</li>
-    <ul>
-    <li>A Database</li>
-    <li>High Performance</li>
-    <li>Custom Server Configuration</li>
     </ul>
     </ul>
     </div>
@@ -63,7 +66,7 @@ const Hosting = () => {
     <p>Need enterprise level hosting? Want a solution that scales resources dynamically to meet fluctuating traffic? Want a specific backend or server configuration?</p>
     <p>Then this is the hosting package for you.</p>
     <ul>
-    <li>Cost: Variable</li>
+    <li>Price: Variable</li>
     <li>Best for solutions that require...</li>
     <ul>
     <li>Scalability</li>

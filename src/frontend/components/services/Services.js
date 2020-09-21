@@ -16,7 +16,7 @@ import Hosting from './Hosting';
 import webHostingIcon from '../../assets/icons/web-hosting-min.png';
 import webDevelopmentIcon from '../../assets/icons/web-development-min.png';
 import webDesignIcon from '../../assets/icons/web-design-min.png';
-import logoDesignIcon from '../../assets/icons/logo-design-min.png';
+import graphicDesignIcon from '../../assets/icons/graphic-design-min.png';
 
 /**
 * Services - Services component.
@@ -36,21 +36,21 @@ const Services = () => {
     <section className="grid-container even">
     <div data-aos="fade-up" data-aos-delay="100">
     <a href="/services.html#logo-design">
-    <img src={logoDesignIcon} alt="Website Hosting button"></img>
+    <img src={graphicDesignIcon} alt="Graphic Design button"></img>
     <h2>Logo Design</h2>
     </a>
     </div>
 
     <div data-aos="fade-up" data-aos-delay="100">
     <a href="/services.html#web-design">
-    <img src={webDesignIcon} alt="Website Hosting button"></img>
+    <img src={webDesignIcon} alt="Website Design button"></img>
     <h2>Website Design</h2>
     </a>
     </div>
 
     <div data-aos="fade-up" data-aos-delay="100">
     <a href="/services.html#web-development">
-    <img src={webDevelopmentIcon} alt="Website Hosting button"></img>
+    <img src={webDevelopmentIcon} alt="Website Development button"></img>
     <h2>Website Development</h2>
     </a>
     </div>
