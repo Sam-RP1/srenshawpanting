@@ -1,0 +1,230 @@
+@use '../../styles/base';
+@import '../../styles/mixins/transition';
+@import '../../styles/mixins/transform';
+
+.grid-container {
+  display: flex;
+  flex-flow: wrap;
+
+  div {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  div:first-child {
+    margin-top: 0px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 65%;
+    @include transition(0.2s);
+  }
+
+  a:hover {
+    @include transform(scale(0.95));
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin: 0.5em 0em 0em 0em;
+    text-align: center;
+    color: inherit;
+    width: auto;
+    width: fit-content;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/*----------------------------------------*\
+Size Modifiers
+\*----------------------------------------*/
+.grid-container.xsm {
+  a {
+    width: 55%;
+  }
+}
+
+.grid-container.sm {
+  a {
+    width: 60%;
+  }
+}
+
+.grid-container.lg {
+  a {
+    width: 70%;
+  }
+}
+
+.grid-container.xlg {
+  a {
+    width: 75%;
+  }
+}
+
+/*----------------------------------------*\
+Border Modifiers
+\*----------------------------------------*/
+.grid-container.text-border {
+  h2 {
+    border: 2px;
+    border-style: solid;
+    border-color: inherit;
+  }
+}
+
+.grid-container.text-border-top {
+  h2 {
+    border-top: 3px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: inherit;
+  }
+}
+
+.grid-container.text-border-left {
+  h2 {
+    border-top: 0px;
+    border-left: 3px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: inherit;
+  }
+}
+
+.grid-container.text-border-right {
+  h2 {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 3px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: inherit;
+  }
+}
+
+.grid-container.text-border-bottom {
+  h2 {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: inherit;
+  }
+}
+
+.grid-container.border-bottom {
+  div {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: inherit;
+    padding-bottom: 30px;
+  }
+
+  div:last-child {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+/*----------------------------------------*\
+Alignment Modifiers
+\*----------------------------------------*/
+.grid-container.center {
+  justify-content: center;
+}
+
+/*----------------------------------------*\
+Divider Modifiers
+\*----------------------------------------*/
+.grid-container.divide {
+  div {
+    border-top: 3px solid #171717;
+    padding-top: 30px;
+  }
+
+  div:nth-child(1) {
+    border-top: 0px;
+    padding-top: 0px;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .grid-container {
+    div {
+      width: 50%;
+    }
+
+    div:nth-child(2) {
+      margin-top: 0px;
+    }
+  }
+
+  .grid-container.divide {
+    div:nth-child(2) {
+      border-top: 0px;
+      padding-top: 0px;
+    }
+  }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+  .grid-container {
+    div {
+      width: 33.333333%;
+    }
+
+    div:nth-child(3) {
+      margin-top: 0px;
+    }
+  }
+
+  .grid-container.divide {
+    div:nth-child(3) {
+      border-top: 0px;
+      padding-top: 0px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    div {
+      width: 25%;
+    }
+
+    div:nth-child(4) {
+      margin-top: 0px;
+    }
+  }
+
+  .grid-container.divide {
+    div:nth-child(4) {
+      border-top: 0px;
+      padding-top: 0px;
+    }
+  }
+}
