@@ -5,12 +5,12 @@ import React from 'react';
 import './Icons.scss';
 
 /**
-* Icons - Contains the icons content for the Footer component.
+* Icons - Contains the icons content for the footer component.
 */
 const Icons = (props) => {
   let icons = props.icons.map((icon, i) => {
     return (
-      <a key={i} href={icon.href} target="_blank" className={i === props.icons.length ? "footer-icon-l" : undefined}>
+      <a key={i} href={icon.href} target="_blank">
       <img src={icon.src} alt={icon.alt}></img>
       </a>
     )

@@ -31,10 +31,10 @@ const Footer = () => {
   ];
 
   return (
-    <div className="footer-content-container container">
+    <div className="footer-content container">
     <Links links={links} />
     <Icons icons={icons} />
-    <p className="footer-icon-text">Stay Connected</p>
+    <p className="footer-label">Stay Connected</p>
     </div>
   )
 }

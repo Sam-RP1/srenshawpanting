@@ -34,6 +34,14 @@ Containers & Wrappers
     @include transform(scale(0.95));
   }
 
+  :first-child {
+    padding-left: 0px;
+  }
+
+  :last-child {
+    padding-right: 0px;
+  }
+
   img {
     height: inherit;
     width: inherit;
@@ -46,11 +54,9 @@ Containers & Wrappers
 @media (min-width: 768px) {
   .footer-icon-container {
     padding-bottom: 0px;
-    padding-left: 10px;
+    padding-left: 20px;
     justify-content: space-between;
-  }
 
-  .footer-icon-container {
     a {
       height: 26px;
       width: 26px;
@@ -58,32 +64,26 @@ Containers & Wrappers
       padding-right: 10px;
     }
   }
-
-  .footer-icon-l {
-    padding-right: 0px!important;
-  }
-}
-
-@media (min-width: 992px) {
-  .footer-icon-container {
-    padding-left: 15px;
-  }
-
-  .footer-icon-container {
-    a {
-      height: 30px;
-      width: 30px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
 }
 
 @media (min-width: 1200px) {
   .footer-icon-container {
+    padding-left: 25px;
+
     a {
-      height: 32px;
-      width: 32px;
+      height: 28px;
+      width: 28px;
+    }
+  }
+}
+
+@media (min-width: 1576px) {
+  .footer-icon-container {
+    padding-left: 30px;
+
+    a {
+      height: 30px;
+      width: 30px;
     }
   }
 }

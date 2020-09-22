@@ -5,14 +5,16 @@ import React from 'react';
 import './Links.scss';
 
 /**
-* Links - Contains the links content for the Footer component.
+* Links - Contains the links content for the footer component.
 */
 const Links = (props) => {
   let links = props.links.map((link, i) => {
     return (
       <React.Fragment key={i}>
       <li>|</li>
-      <li><a href={link.href}>{link.title}</a></li>
+      <li>
+      <a href={link.href}>{link.title}</a>
+      </li>
       </React.Fragment>
     )
   });

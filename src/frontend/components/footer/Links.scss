@@ -7,6 +7,7 @@ Links.scss
 LINKS
 
 - Containers & Wrappers
+- @media
 \*----------------------------------------*/
 
 /*----------------------------------------*\
@@ -19,12 +20,14 @@ Containers & Wrappers
   margin: 0px;
   padding: 0px;
   font-size: 0.9em;
+  overflow: hidden;
 
   ul {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: auto;
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -36,5 +39,15 @@ Containers & Wrappers
 
   li a:hover {
     color: base.$srp-blue!important;
+  }
+}
+
+/*----------------------------------------*\
+@media
+\*----------------------------------------*/
+@media (min-width: 768px) {
+  .footer-link-container {
+    flex-grow: 1;
+    width: initial;
   }
 }
