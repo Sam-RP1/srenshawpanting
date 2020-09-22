@@ -163,12 +163,23 @@ Divider Modifiers
     padding-top: 30px;
   }
 
-  div:nth-child(1) {
+  div:nth-of-type(1) {
     border-top: 0px;
     padding-top: 0px;
   }
 }
 
+.divider-2,
+.divider-2-3,
+.divider-3,
+.divider-2-4 {
+  display: none;
+  height: 3px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0px;
+  background-color: #171717;
+}
 
 @media (min-width: 576px) {
   .grid-container {
@@ -176,16 +187,22 @@ Divider Modifiers
       width: 50%;
     }
 
-    div:nth-child(2) {
+    div:nth-of-type(2) {
       margin-top: 0px;
     }
   }
 
   .grid-container.divide {
-    div:nth-child(2) {
+    div:nth-of-type(n) {
       border-top: 0px;
       padding-top: 0px;
     }
+  }
+
+  .divider-2,
+  .divider-2-3,
+  .divider-2-4 {
+    display: block;
   }
 }
 
@@ -197,16 +214,19 @@ Divider Modifiers
       width: 33.333333%;
     }
 
-    div:nth-child(3) {
+    div:nth-of-type(3) {
       margin-top: 0px;
     }
   }
 
-  .grid-container.divide {
-    div:nth-child(3) {
-      border-top: 0px;
-      padding-top: 0px;
-    }
+  .divider-2,
+  .divider-2-4 {
+    display: none;
+  }
+
+  .divider-3,
+  .divider-2-3 {
+    display: block;
   }
 }
 
@@ -216,15 +236,18 @@ Divider Modifiers
       width: 25%;
     }
 
-    div:nth-child(4) {
+    div:nth-of-type(4) {
       margin-top: 0px;
     }
   }
 
-  .grid-container.divide {
-    div:nth-child(4) {
-      border-top: 0px;
-      padding-top: 0px;
-    }
+  .divider-2,
+  .divider-2-3,
+  .divider-3 {
+    display: none;
+  }
+
+  .divider-2-4 {
+    display: block;
   }
 }

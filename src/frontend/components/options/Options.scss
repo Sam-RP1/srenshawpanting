@@ -26,18 +26,18 @@ Options
 /*----------------------------------------*\
 #'s
 \*----------------------------------------*/
-#portfolio, #services, #contact {
-  justify-content: center;
-}
-
-#contact {
-  margin-bottom: 0px;
-}
-
-#portfolio, #services {
-  border-bottom: 3px solid #171717;
-  padding-bottom: 60px;
-}
+// #portfolio, #services, #contact {
+//   justify-content: center;
+// }
+//
+// #contact {
+//   margin-bottom: 0px;
+// }
+//
+// #portfolio, #services {
+//   border-bottom: 3px solid #171717;
+//   padding-bottom: 60px;
+// }
 
 /*----------------------------------------*\
 General
@@ -96,20 +96,20 @@ General
     }
   }
 
-  #portfolio {
-    justify-content: flex-start;
-  }
-
-  #services {
-    justify-content: center;
-  }
-
-  #contact {
-    justify-content: flex-end;
-  }
-
-  #portfolio, #services {
-    border-bottom: none;
-    padding-bottom: 0px;
-  }
+  // #portfolio {
+  //   justify-content: flex-start;
+  // }
+  //
+  // #services {
+  //   justify-content: center;
+  // }
+  //
+  // #contact {
+  //   justify-content: flex-end;
+  // }
+  //
+  // #portfolio, #services {
+  //   border-bottom: none;
+  //   padding-bottom: 0px;
+  // }
 }

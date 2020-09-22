@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import Grid from '../ui/Grid';
+
 import '../../styles/root.scss';
 import './Options.scss';
 
@@ -18,42 +20,63 @@ const Options = () => {
       id: "portfolio",
       href: "portfolio.html",
       src: portfolioIcon,
-      alt: "Portfolio",
+      alt: "Portfolio button",
       title: "Portfolio"
     },
     {
       id: "services",
       href: "services.html",
       src: servicesIcon,
-      alt: "Services",
+      alt: "Services button",
       title: "Services"
     },
     {
       id: "contact",
       href: "contact.html",
       src: contactIcon,
-      alt: "Contact",
+      alt: "Contact button",
       title: "Contact"
-    }
+    },
+    {
+      id: "contact",
+      href: "contact.html",
+      src: contactIcon,
+      alt: "Contact button",
+      title: "Contact"
+    },
+    {
+      id: "portfolio",
+      href: "portfolio.html",
+      src: portfolioIcon,
+      alt: "Portfolio button",
+      title: "Portfolio"
+    },
+    {
+      id: "services",
+      href: "services.html",
+      src: servicesIcon,
+      alt: "Services button",
+      title: "Services"
+    },
+    {
+      id: "contact",
+      href: "contact.html",
+      src: contactIcon,
+      alt: "Contact button",
+      title: "Contact"
+    },
+    {
+      id: "contact",
+      href: "contact.html",
+      src: contactIcon,
+      alt: "Contact button",
+      title: "Contact"
+    },
   ];
-  const aos_delay = ["0", "100", "200"];
-
-  let icons = iconsData.map((icon, i) => {
-    return (
-      <div key={icon.id} id={icon.id} className="grid-square" data-aos="fade-up" data-aos-delay={aos_delay[i]}>
-      <a href={icon.href}>
-      <img src={icon.src} alt={icon.alt}></img>
-      <h2>{icon.title}</h2>
-      </a>
-      </div>
-    )
-  });
 
   return (
     <section id="options" className="section-default h-auto padding-6016">
-    <div className="options-container container">
-    {icons}
-    </div>
+    <Grid tiles={iconsData} divide={true} class={"container"} />
     </section>
   )
 };
