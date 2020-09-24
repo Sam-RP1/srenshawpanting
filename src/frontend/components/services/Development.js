@@ -15,22 +15,22 @@ const Development = () => {
     <div className="container services-item-container align-left"  data-aos="fade">
     <article className="wrapper-100">
     <h1>Website Development</h1>
-    <p style={{marginBottom: "10px"}}>If you would like to turn your creative vision for a website into reality then look no further.</p>
+    <p style={{marginBottom: "10px"}}>Transform your dream website into a reality.</p>
     <section className="list-container">
     <div>
     <h2>Website Development</h2>
     <p></p>
     <ul>
-    <li>Cost: £15.00 per hour</li>
-    <li>Prerequisites...</li>
+    <li>Price: £15.00 per hour</li>
+    <li>Prerequisites -</li>
     <ul>
-    <li>A website design for both mobile & desktop devices</li>
-    <li>Text content you would like</li>
-    <li>Images & media & other files prepared</li>
+    <li>Website designs for both mobile & desktop</li>
+    <li>Text content prepared</li>
+    <li>Media & other files prepared</li>
     </ul>
-    <li>Includes...</li>
+    <li>Includes -</li>
     <ul>
-    <li>Text content spell checking</li>
+    <li>A responsive website that works on mobile & desktop</li>
     <li>Website & asset optimisation to improve load times</li>
     <li>Three hours of free changes per year upon satisfactory completion & delivery</li>
     </ul>

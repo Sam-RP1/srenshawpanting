@@ -37,46 +37,11 @@ const Options = () => {
       alt: "Contact button",
       title: "Contact"
     },
-    {
-      id: "contact",
-      href: "contact.html",
-      src: contactIcon,
-      alt: "Contact button",
-      title: "Contact"
-    },
-    {
-      id: "portfolio",
-      href: "portfolio.html",
-      src: portfolioIcon,
-      alt: "Portfolio button",
-      title: "Portfolio"
-    },
-    {
-      id: "services",
-      href: "services.html",
-      src: servicesIcon,
-      alt: "Services button",
-      title: "Services"
-    },
-    {
-      id: "contact",
-      href: "contact.html",
-      src: contactIcon,
-      alt: "Contact button",
-      title: "Contact"
-    },
-    {
-      id: "contact",
-      href: "contact.html",
-      src: contactIcon,
-      alt: "Contact button",
-      title: "Contact"
-    },
   ];
 
   return (
     <section id="options" className="section-default h-auto padding-6016">
-    <Grid tiles={iconsData} divide={true} class={"container"} />
+    <Grid tiles={iconsData} divide={true} class={"center container"} />
     </section>
   )
 };

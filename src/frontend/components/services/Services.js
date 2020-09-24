@@ -63,9 +63,8 @@ const Services = () => {
     <h1 data-aos="flip-down">Information</h1>
     <p data-aos="fade-right" data-aos-delay="150">SRP Designs offers web and design related services which include, but are not limited too...</p>
 
-    <Grid tiles={data} class={"lg"} />
+    <Grid tiles={data} divide={true} class={"lg"} />
 
-    <p data-aos="fade-left" data-aos-delay="150">If you are interested in other design services that are not listed above, like business cards, please get in touch using the contact form provided <a href="contact.html"><i><u>here</u></i></a>. We will reply as soon as possible.</p>
     </article>
     </div>
     </section>
