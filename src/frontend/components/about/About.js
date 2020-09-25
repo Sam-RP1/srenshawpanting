@@ -27,12 +27,12 @@ const About = () => {
   };
   const icons = {
     rowOne: [
-      { href: "https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q", src: youtubeIcon, alt: "SRP Designs YouTube" },
-      { href: "https://www.instagram.com/_srpdesigns/", src: instagramIcon, alt: "SRP Designs Instagram" },
+      { href: "https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q", src: <i class="fab fa-youtube"></i> },
+      { href: "https://www.instagram.com/_srpdesigns/", src: <i class="fab fa-instagram"></i> },
     ],
     rowTwo: [
-      { href: "https://www.linkedin.com/in/samuel-renshaw-panting/", src: linkedinIcon, alt: "Samuel Renshaw Panting Linkedin" },
-      { href: "https://github.com/Sam-RP1?tab=repositories", src: githubIcon, alt: "Samuel Renshaw Panting GitHub" }
+      { href: "https://www.linkedin.com/in/samuel-renshaw-panting/", src: <i class="fab fa-linkedin-in"></i> },
+      { href: "https://github.com/Sam-RP1?tab=repositories", src: <i class="fab fa-github"></i> }
     ]
   };
 

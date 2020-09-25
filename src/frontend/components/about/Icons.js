@@ -12,14 +12,18 @@ const Icons = (props) => {
   let iconRowOne = props.icons.rowOne.map((item, i) => {
     return (
       <a key={i} href={item.href} target="_blank" data-aos={aos_data[i]} data-aos-delay={aos_delay[i]}>
-      <img src={item.src} alt={item.alt}></img>
+      <div>
+      {item.src}
+      </div>
       </a>
     )
   });
   let iconRowTwo = props.icons.rowTwo.map((item, i) => {
     return (
       <a key={i} href={item.href} target="_blank" data-aos={aos_data[i+2]} data-aos-delay={aos_delay[i+2]}>
-      <img src={item.src} alt={item.alt}></img>
+      <div>
+      {item.src}
+      </div>
       </a>
     )
   });

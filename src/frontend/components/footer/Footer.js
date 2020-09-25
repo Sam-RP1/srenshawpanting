@@ -19,10 +19,10 @@ const Footer = () => {
     { href: "contact.html", title: "Contact" }
   ];
   const icons = [
-    { href: "https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q", src: <i class="fab fa-youtube"></i>, alt: "SRP Designs YouTube" },
-    { href: "https://www.instagram.com/_srpdesigns/", src: <i class="fab fa-instagram"></i>, alt: "SRP Designs Instagram" },
-    { href: "https://www.linkedin.com/in/samuel-renshaw-panting/", src: <i class="fab fa-linkedin-in"></i>, alt: "Samuel Renshaw Panting Linkedin" },
-    { href: "https://github.com/Sam-RP1?tab=repositories", src: <i class="fab fa-github"></i>, alt: "Samuel Renshaw Panting GitHub" }
+    { href: "https://www.youtube.com/channel/UCDDIlIQ1pU7TAl0bjth6G2Q", src: <i class="fab fa-youtube"></i> },
+    { href: "https://www.instagram.com/_srpdesigns/", src: <i class="fab fa-instagram"></i> },
+    { href: "https://www.linkedin.com/in/samuel-renshaw-panting/", src: <i class="fab fa-linkedin-in"></i> },
+    { href: "https://github.com/Sam-RP1?tab=repositories", src: <i class="fab fa-github"></i> }
   ];
 
   return (
