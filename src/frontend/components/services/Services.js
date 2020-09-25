@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import '../../styles/root.scss';
 import './Services.scss';
@@ -54,6 +54,26 @@ const Services = () => {
       title: "Website Hosting"
     },
   ];
+
+  useEffect(() => {
+    addSmoothScroll();
+  }, [])
+
+  const addSmoothScroll = () => {
+    $(document).ready(function(){
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          let hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+  };
 
   return (
     <React.Fragment>
