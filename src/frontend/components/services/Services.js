@@ -37,21 +37,21 @@ const Services = () => {
       href: "/services.html#web-design",
       src: webDesignIcon,
       alt: "Website design button",
-      title: "Website Design"
+      title: "Web Design"
     },
     {
       id: "website-development-btn",
       href: "/services.html#web-development",
       src: webDevelopmentIcon,
       alt: "Website development button",
-      title: "Website Development"
+      title: "Web Development"
     },
     {
       id: "website-hosting-btn",
       href: "/services.html#web-hosting",
       src: webHostingIcon,
       alt: "Website hosting button",
-      title: "Website Hosting"
+      title: "Web Hosting"
     },
   ];
 
@@ -83,7 +83,7 @@ const Services = () => {
     <h1 data-aos="flip-down">Information</h1>
     <p data-aos="fade-right" data-aos-delay="150">SRP Designs offers web and design related services which include, but are not limited too...</p>
 
-    <Grid tiles={data} divide={true} class={"lg"} />
+    <Grid tiles={data} divide={true} class={""} />
 
     </article>
     </div>

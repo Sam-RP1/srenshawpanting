@@ -15,7 +15,7 @@ const WebDesign = () => {
     <div className="container services-item-container align-left" data-aos="fade">
     <article className="wrapper-100">
     <h1>Website Design</h1>
-    <p style={{marginBottom: "10px"}}>Turn your imaginations website ideas into designs that can be used in website development.</p>
+    <p style={{marginBottom: "10px"}}>Turn your imaginations website ideas into detailed designs that can be used for website development.</p>
     <section className="list-container">
     <div>
     <h2>Website Design</h2>

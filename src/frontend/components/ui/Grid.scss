@@ -154,6 +154,14 @@ Alignment Modifiers
   justify-content: center;
 }
 
+.grid-container.space-between {
+  justify-content: space-between;
+}
+
+.grid-container.space-around {
+  justify-content: space-around;
+}
+
 /*----------------------------------------*\
 Divider Modifiers
 \*----------------------------------------*/

@@ -7,9 +7,9 @@ import Grid from '../ui/Grid';
 import '../../styles/root.scss';
 import './Options.scss';
 
-import portfolioIcon from '../../assets/icons/portfolio.png';
-import servicesIcon from '../../assets/icons/services.png';
-import contactIcon from '../../assets/icons/contact.png';
+import portfolioIcon from '../../assets/icons/portfolio-min.png';
+import servicesIcon from '../../assets/icons/services-min.png';
+import contactIcon from '../../assets/icons/contact-min.png';
 
 /**
 * Options - The Options component.
@@ -41,7 +41,7 @@ const Options = () => {
 
   return (
     <section id="options" className="section-default h-auto padding-6016">
-    <Grid tiles={iconsData} divide={true} class={"center container"} />
+    <Grid tiles={iconsData} divide={true} class={"space-between container"} />
     </section>
   )
 };
