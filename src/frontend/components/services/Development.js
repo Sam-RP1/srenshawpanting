@@ -37,7 +37,7 @@ const Development = () => {
     </ul>
     </div>
     </section>
-    <p>For all questions, queries or enquiries related to the website development service please use the <a href="/contact.html"><u><i>contact form</i></u></a> and select the "Website Development" option from the "Select a Service" drop-down menu.</p>
+    <p>For all questions, queries or inquiries related to the website development service, please use the <a href="/contact.html"><u><i>contact form</i></u></a> and select the "Website Development" option from the "Select a Service" drop-down menu.</p>
     </article>
     </div>
     </section>

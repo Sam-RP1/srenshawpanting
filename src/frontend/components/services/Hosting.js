@@ -61,7 +61,7 @@ const Hosting = () => {
     <div>
     <h2>Custom Hosting</h2>
     <p>The complete hosting package that can be tailored to meet your requirements.</p>
-    <p>Need enterprise level hosting? Need a specific backend or server configuration? Want a solution that scales resources dynamically to meet fluctuating traffic? Want hosting in multiple regions?</p>
+    <p>Need enterprise-level hosting? Need a specific backend or server configuration? Want a solution that scales resources dynamically to meet fluctuating traffic? Want hosting in multiple regions?</p>
     <p>Then this is the hosting package for you.</p>
     <ul>
     <li>Price - </li>
@@ -82,12 +82,12 @@ const Hosting = () => {
     </section>
 
     <p className="small-print">***A domain name is required to host your website. Domain names can be purchased online for a specific fee per year.</p>
-    <p>When hosting your website with SRP Designs we will require your domain name to be handled by us so that it can be configured as necessary. If you already own a domain name then we will require it to be transfered to us. However, if you do not already own your desired domain name don't panic! We can purchase it on your behalf, making the process much easier. Whilst a domain name is in our possession...</p>
+    <p>When hosting your website with SRP Designs, we will require your domain name to be handled by us so we can configure it as necessary. If you already own a domain name, then we will need it to be transferred to us. However, if you do not already own your desired domain name, don't panic! We can purchase it on your behalf, making the process much easier. While a domain name is in our possession...</p>
     <ul className="temp-list-style">
     <li>We will invoice you yearly for the cost to keep it</li>
     <li>You can request for your domain name to be returned to you at anytime</li>
     </ul>
-    <p>For all questions, queries or enquiries related to the hosting packages offered here please use the <a href="/contact.html"><u><i>contact form</i></u></a> and select the "Website Hosting" option from the "Select a Service" drop-down menu.</p>
+    <p>For all questions, queries or inquiries related to the hosting packages offered here, please use the <a href="/contact.html"><u><i>contact form</i></u></a> and select the "Website Hosting" option from the "Select a Service" drop-down menu.</p>
     </article>
     </div>
     </section>

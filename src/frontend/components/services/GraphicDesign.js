@@ -28,12 +28,12 @@ const GraphicDesign = () => {
     </ul>
     <li>Includes -</li>
     <ul>
-    <li>High resolution PNG & JPG files</li>
+    <li>High-resolution PNG & JPG files</li>
     </ul>
     </ul>
     </div>
     </section>
-    <p>For all questions, queries or enquiries related to the graphic design service please use the <a href="/contact.html"><u><i>contact form</i></u></a> and select the "Graphic Design" option from the "Select a Service" drop-down menu.</p>
+    <p>For all questions, queries or inquiries related to the graphic design service, please use the <a href="/contact.html"><u><i>contact form</i></u></a> and select the "Graphic Design" option from the "Select a Service" drop-down menu.</p>
     </article>
     </div>
     </section>

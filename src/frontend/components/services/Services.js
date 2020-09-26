@@ -81,7 +81,7 @@ const Services = () => {
     <div className="container column">
     <article className="wrapper-100">
     <h1 data-aos="flip-down">Information</h1>
-    <p data-aos="fade-right" data-aos-delay="150">SRP Designs offers web and design related services which include, but are not limited too...</p>
+    <p data-aos="fade-right" data-aos-delay="150">SRP Designs offers the following web and design related services...</p>
 
     <Grid tiles={data} divide={true} class={""} />
 
