@@ -64,6 +64,22 @@ Images
 /*----------------------------------------*\
 Buttons
 \*----------------------------------------*/
+.info-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  :nth-child(1) {
+    margin-top: 0px;
+  }
+
+  a {
+    margin-top: 15px;
+  }
+}
+
 .info-btn-outer {
   height: auto;
   width: 100%;
@@ -96,4 +112,17 @@ Buttons
 
 .btn-arrow {
   padding-left: 6px;
+}
+
+/*----------------------------------------*\
+temp
+\*----------------------------------------*/
+#list-two.hide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .info-btn-container {
+    width: 30%;
+  }
 }

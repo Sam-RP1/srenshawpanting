@@ -15,7 +15,7 @@ const GraphicDesign = () => {
     <div className="container services-item-container align-left" data-aos="fade">
     <article className="wrapper-100">
     <h1>Graphic Design</h1>
-    <p style={{marginBottom: "10px"}}>Make your creative visions for business cards, leaflets, logos, icons and other artwork real.</p>
+    <p className="temp-p-margin">Make your creative visions for business cards, leaflets, logos, icons and other artwork real.</p>
     <section className="list-container">
     <div>
     <h2>Graphic Design</h2>

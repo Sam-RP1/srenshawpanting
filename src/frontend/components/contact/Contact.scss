@@ -21,7 +21,15 @@ Contact
 /*----------------------------------------*\
 Containers
 \*----------------------------------------*/
-.contact-container {
+.contact-content {
   display: flex;
   flex-direction: column;
+
+  :nth-child(2) {
+    margin-top: 0px;
+  }
+
+  p {
+    margin-top: 30px;
+  }
 }

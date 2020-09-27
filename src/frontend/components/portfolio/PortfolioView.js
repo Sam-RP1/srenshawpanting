@@ -77,7 +77,7 @@ class PortfolioItemList extends Component {
       {listOne}
       </ul>
       </div>
-      <div id="list-two" className="info-list" style={{display: this.props.enableListTwo ? "block" : "none"}} data-aos="fade-up" data-aos-delay="150">
+      <div id="list-two" className={"info-list " + (this.props.enableListTwo ? "" : "hide")} data-aos="fade-up" data-aos-delay="150">
       <h2>{this.props.listTwoTitle}</h2>
       <ul>
       {listTwo}
@@ -95,7 +95,7 @@ class PortfolioItemButton extends Component {
   render() {
     let buttons = this.props.buttons.map((item, i) => {
       return (
-        <a key={i} href={item.link} target="_blank" className="info-btn-outer" style={{marginTop: i > 0 ? "15px" : "0px"}} data-aos="fade-left" data-aos-delay={i.toString() + "50"}>
+        <a key={i} href={item.link} target="_blank" className="info-btn-outer" data-aos="fade-left" data-aos-delay={i.toString() + "50"}>
         <div className="info-btn">{item.text}<span className="btn-arrow">&#8618;</span></div>
         </a>
       )

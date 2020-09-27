@@ -15,7 +15,7 @@ const Development = () => {
     <div className="container services-item-container align-left"  data-aos="fade">
     <article className="wrapper-100">
     <h1>Website Development</h1>
-    <p style={{marginBottom: "10px"}}>Transform your dream website into a reality.</p>
+    <p className="temp-p-margin">Transform your dream website into a reality.</p>
     <section className="list-container">
     <div>
     <h2>Website Development</h2>

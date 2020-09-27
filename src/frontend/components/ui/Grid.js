@@ -42,7 +42,7 @@ const Grid = (props) => {
   });
 
   return (
-    <section key={"grid-container-" + 1} className={"grid-container " + props.class + (props.divide === true ? " divide" : undefined)}>
+    <section key={"grid-container-" + 1} className={"grid-container " + props.class + (props.divide === true ? " divide" : "")}>
     {content}
     </section>
   )

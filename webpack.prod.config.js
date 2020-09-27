@@ -7,11 +7,11 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: "./src/index.js",
-    portfolio: "./src/portfolio.js",
-    portfolio_view: "./src/portfolioView.js",
-    services: "./src/services.js",
-    contact: "./src/contact.js",
+    index: "./src/frontend/index.js",
+    portfolio: "./src/frontend/portfolio.js",
+    portfolio_view: "./src/frontend/portfolioView.js",
+    services: "./src/frontend/services.js",
+    contact: "./src/frontend/contact.js",
   },
   output: {
     path: path.join(__dirname, 'build/'),
