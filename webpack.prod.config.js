@@ -14,7 +14,7 @@ module.exports = {
     contact: "./src/frontend/contact.js",
   },
   output: {
-    path: path.join(__dirname, 'build/'),
+    path: path.join(__dirname, 'build/public/'),
     filename: 'bundles/[name]-bundle.js'
   },
   optimization: {
@@ -48,7 +48,10 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
           },
           'css-loader',
           'sass-loader'
@@ -69,7 +72,10 @@ module.exports = {
         test: /\.(png|svg|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'url-loader'
+            loader: 'file-loader',
+            options: {
+              outputPath: './assets/images',
+            },
           }
         ]
       },
@@ -77,31 +83,36 @@ module.exports = {
         test: /\.(pdf|md)$/i,
         loader: 'file-loader',
         options: {
-          outputPath: './assets/files'
+          outputPath: './assets/files',
         }
       }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/frontend/pages/index.html',
-      filename: 'index.html'
+      template: "./src/frontend/pages/index.html",
+      filename: "./index.html",
+      excludeChunks: [ 'server', 'portfolio', 'portfolio_view', 'services', 'contact' ]
     }),
     new HtmlWebPackPlugin({
-      template: './src/frontend/pages/portfolio.html',
-      filename: 'portfolio.html'
+      template: "./src/frontend/pages/portfolio.html",
+      filename: "./portfolio.html",
+      excludeChunks: [ 'server', 'index', 'portfolio_view', 'services', 'contact' ]
     }),
     new HtmlWebPackPlugin({
-      template: './src/frontend/pages/portfolioView.html',
-      filename: 'portfolioView.html'
+      template: "./src/frontend/pages/portfolioView.html",
+      filename: "./portfolioView.html",
+      excludeChunks: [ 'server', 'portfolio', 'index', 'services', 'contact' ]
     }),
     new HtmlWebPackPlugin({
-      template: './src/frontend/pages/services.html',
-      filename: 'services.html'
+      template: "./src/frontend/pages/services.html",
+      filename: "./services.html",
+      excludeChunks: [ 'server', 'portfolio', 'portfolio_view', 'index', 'contact' ]
     }),
     new HtmlWebPackPlugin({
-      template: './src/frontend/pages/contact.html',
-      filename: 'contact.html'
+      template: "./src/frontend/pages/contact.html",
+      filename: "./contact.html",
+      excludeChunks: [ 'server', 'portfolio', 'portfolio_view', 'services', 'index' ]
     }),
     new MiniCssExtractPlugin({
       filename: 'styles/[name].css',
@@ -111,7 +122,8 @@ module.exports = {
       patterns: [
         { from: 'src/frontend/assets/sitefiles/favicon', to: 'assets/favicon' },
         { from: 'src/frontend/assets/sitefiles/sitemap.xml', to: '' },
-        { from: 'src/frontend/styles/animate.min.css', to: 'styles' }
+        { from: 'src/frontend/styles/animate.min.css', to: 'styles' },
+        { from: 'src/frontend/components/contact/Contact.php', to: 'php' }
       ],
     })
   ]
