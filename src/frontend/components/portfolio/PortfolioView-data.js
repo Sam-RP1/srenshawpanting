@@ -28,11 +28,7 @@ export const fredData = {
     {
       link: "http://fred.srenshawpanting.co.uk/",
       text: "View Website"
-    },
-    {
-      link: "https://github.com/Sam-RP1/fred-2020",
-      text: "View Repository"
-    },
+    }
   ],
   media: [
     {
@@ -58,7 +54,7 @@ import letterImg_1 from '../../assets/portfolio/letter-detonator/img/ld-menu-pla
 import letterImg_2 from '../../assets/portfolio/letter-detonator/img/ld-game-placeholder-min.png';
 export const letterDetonatorData = {
   title: "letter detonator",
-  description: "A small straightforward web game where users try to achieve high scores by surviving endless waves of randomly generated letters as long as possible. Users must detonate the approaching letters, causing them to explode, in order to survive. To detonate letters users must press the corresponding letter key on their keyboard. Each time a letter is successfully detonated the user's score will increase by 1. However, each time a letter that is not present is attempted to be detonated the user's score will decrease by 1.\n \nThe purpose of the game is twofold, for users to have fun and improve their typing skills. The game aims to help users improve their typing skills by its difficulty increasing when the user's score reaches certain thresholds. This difficulty increase means more letters will spawn and need to be detonated, in turn causing the user to have less time to look at their keys as they will need to pay more attention to the greater number of letters on the screen. Therefore, users will need to learn to type without looking at their keys and with more fingers to improve their chances of surviving.",
+  description: "A small straightforward web game where users try to achieve high scores by surviving endless waves of randomly generated letters as long as possible. Users must detonate the approaching letters, causing them to explode, in order to survive. To detonate letters users must press the corresponding letter key on their keyboard. Each time a letter is successfully detonated the user's score will increase by 1. However, each time a letter that is not present is attempted to be detonated the user's score will decrease by 1.\n \nThe purpose of the game is twofold, for users to have fun and improve their typing skills. The game aims to help users improve their typing skills by increasing its difficulty when the user's score reaches certain thresholds. This difficulty increase means more letters will spawn, in turn requiring the user to detonate them quicker to survive. Therefore, users will need to learn to 'touch type' with more fingers to improve their chances of surviving and reaching a new high score.",
   tech: ["HTML Canvas", "SCSS", "JS / JSX", "React", "Local Storage", "Webpack"],
   enableListTwo: true,
   listTwoTitle: "Features",

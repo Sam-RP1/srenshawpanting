@@ -8,18 +8,13 @@ import './About.scss';
 import Lists from './Lists';
 import Icons from './Icons';
 
-import youtubeIcon from '../../assets/icons/youtube.png';
-import linkedinIcon from '../../assets/icons/linkedin.png';
-import instagramIcon from '../../assets/icons/instagram.png';
-import githubIcon from '../../assets/icons/github.png';
-
 /**
 * About - The About component.
 */
 const About = () => {
   const listOne = {
     title: "Competencies",
-    list: ["HTML", "CSS / Sass", "JS / JSX", "MySQL", "React", "Webpack"]
+    list: ["HTML", "CSS / SASS", "JS / ES6 / JSX", "MySQL", "React", "Webpack"]
   };
   const listTwo = {
     title: "Interests",
