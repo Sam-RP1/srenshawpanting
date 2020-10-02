@@ -286,12 +286,19 @@ Repo
   background-color: base.$srp-blue;
   box-shadow: 1px 1px 3px #000;
   margin-top: 10px;
+  @include transition(0.2s);
+
+  &:hover {
+    box-shadow: 2px 2px 3px #000;
+    @include transform(scale(1.05));
+  }
 
   h2 {
     font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 5px;
     margin: 0px 0px 10px 0px;
+    pointer-events: none;
   }
 
   @media screen and (min-width: 1376px) {
@@ -318,6 +325,7 @@ Repo
     height: auto;
     flex-grow: 1;
     padding-right: 30px;
+    pointer-events: none;
 
     div:nth-of-type(2) {
       margin-left: 25px;
@@ -336,6 +344,10 @@ Repo
     i {
       cursor: pointer;
       font-size: 1.4em;
+      @include transition(0.2s);
+    }
+    :hover {
+      color: #171717;
     }
   }
 

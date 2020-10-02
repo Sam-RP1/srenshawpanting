@@ -26,19 +26,24 @@ const Portfolio = React.memo((props) => {
     fetch(request)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       const arr = [];
+
+      data.sort((a, b) => {
+        return (a.pushed_at < b.pushed_at) ? 1 : ((a.pushed_at > b.pushed_at) ? -1 : 0);
+      });
+
       for (let item of data) {
         let entry = {
           id: item.id,
           title: item.name,
           created: item.created_at.split('T')[0],
-          updated: item.updated_at.split('T')[0],
+          updated: item.pushed_at.split('T')[0],
           repoUrl: item.svn_url,
           webUrl: item.homepage
         }
         arr.push(entry);
       }
+      
       setGithubData(arr);
     })
     .catch((error) => console.log('Problem fetching data'))
