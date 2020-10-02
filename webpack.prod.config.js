@@ -15,7 +15,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'build/public/'),
-    filename: 'bundles/[name]-bundle.js'
+    filename: 'bundles/[name]-bundle.js',
+     chunkFilename: 'bundles/[name].bundle.js'
   },
   optimization: {
     minimize: true,
@@ -28,8 +29,8 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})
     ],
     splitChunks: {
-      automaticNameDelimiter: '-',
-      chunks: 'all'
+      chunks: 'all',
+      automaticNameDelimiter: '-'
     },
     removeEmptyChunks: true,
     mergeDuplicateChunks: true,
