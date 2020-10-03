@@ -54,9 +54,6 @@ GALLERY
   background-image: url('../../assets/portfolio/foodlette/img/foodlette.png');
 }
 
-// #website-template-012
-// #website-template-013
-
 /*----------------------------------------*\
 Containers & Wrappers
 \*----------------------------------------*/
@@ -297,7 +294,7 @@ Repo
 
   &:hover {
     box-shadow: 2px 2px 3px #000;
-    // @include transform(scale(0.98));
+    @include transform(scale(1.03));
   }
 
   h2 {
@@ -317,6 +314,17 @@ Repo
       margin: 0px;
     }
   }
+}
+
+.repo-page {
+  display: none;
+  opacity: 0;
+  @include transition(0.5s);
+}
+
+#repo-page-0 {
+  display: block;
+  opacity: 1;
 }
 
 .repo-content {
@@ -344,8 +352,8 @@ Repo
     flex-direction: column;
     justify-content: center;
 
-    :nth-child(2) {
-      padding-top: 10px;
+    a:nth-of-type(1) {
+      padding-bottom: 10px;
     }
 
     i {
@@ -380,9 +388,9 @@ Repo
       flex-direction: row;
       justify-content: center;
 
-      :nth-child(2) {
-        padding-top: 0px;
-        padding-left: 20px;
+      a:nth-of-type(1) {
+        padding-bottom: 0px;
+        padding-right: 20px;
       }
     }
   }

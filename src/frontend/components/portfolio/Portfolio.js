@@ -6,53 +6,19 @@ import '../../styles/root.scss';
 import './Portfolio.scss';
 
 import Section from '../ui/Section';
-import Repositories from './Repositories';
+import Repositories from './Repositories/Repositories';
 import { portfolioData } from './Portfolio-data.js';
 
 /**
 * Portfolio - Renders portfolio items on the portfolio page.
 */
 const Portfolio = React.memo((props) => {
-  const [githubData, setGithubData] = useState([]);
   const aos = ["fade-right", "fade-up", "fade-left", "fade-down", "fade-right", "fade-left"];
 
   const handleTab = (id) => {
     const elem = document.getElementById(id);
     elem.parentNode.classList.toggle('active');
   }
-
-  const fetchGithub = () => {
-    const request = 'https://api.github.com/users/Sam-RP1/repos';
-
-    fetch(request)
-    .then((res) => res.json())
-    .then((data) => {
-      const arr = [];
-
-      data.sort((a, b) => {
-        return (a.pushed_at < b.pushed_at) ? 1 : ((a.pushed_at > b.pushed_at) ? -1 : 0);
-      });
-
-      for (let item of data) {
-        let entry = {
-          id: item.id,
-          title: item.name,
-          created: item.created_at.split('T')[0],
-          updated: item.pushed_at.split('T')[0],
-          repoUrl: item.svn_url,
-          webUrl: item.homepage
-        }
-        arr.push(entry);
-      }
-
-      setGithubData(arr);
-    })
-    .catch((error) => console.log('Problem fetching data'))
-  }
-
-  useEffect(() => {
-    fetchGithub();
-  }, [])
 
   return (
     <>
@@ -87,12 +53,6 @@ const Portfolio = React.memo((props) => {
     )}
     </div>
     </Section>
-
-    <Section class={"bg-white content-black"}>
-    <h1 data-aos="flip-down">Repositories</h1>
-    <Repositories repos={githubData} />
-    </Section>
-
     <Section class={"bg-black content-white"}>
     <h1 data-aos="flip-down">Academics</h1>
     <div className="portfolio-gallery-container">
@@ -123,6 +83,10 @@ const Portfolio = React.memo((props) => {
       </div>
     )}
     </div>
+    </Section>
+    <Section class={"bg-white content-black"}>
+    <h1 data-aos="flip-down">Repositories</h1>
+    <Repositories />
     </Section>
     </>
   );
