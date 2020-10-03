@@ -21,7 +21,7 @@ const foodletteData = {
 
 // FRED
 const fredData = {
-  id: "fred",
+  id: "fred-2019",
   title: "fred",
   purpose: "srp designs",
   description: "A clean 'PowerPoint' like website designed, created and deployed for the patent-pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for information, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve to improve current domestic and public fire prevention strategies.",
@@ -72,7 +72,7 @@ const reviewData = {
 
 // Robotics
 const roboticsData = {
-  id: "robotics",
+  id: "robotics-cw-2019",
   title: "robotics",
   purpose: "university project",
   description: "An individual project with the aim to improve the performance of mobile robots object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment. The mobile robots performance improvements were achieved through designing various procedures and algorithms, along with implementing specific hardware to facilitate and further enhance functionalities.",
@@ -82,7 +82,7 @@ const roboticsData = {
 
 // SENDWI
 const sendwiData = {
-  id: "sendwi",
+  id: "sendwi-2019",
   title: "send wi",
   purpose: "srp designs",
   description: "A simplistic and clean single-page website created for the Send Women's Institute to give the group an online presence. The website also serves as a place for interested women or Institute members to go for the latest information.",
@@ -91,7 +91,10 @@ const sendwiData = {
 }
 
 // Portfolio array
-export const portfolioArr = [prpData, letterDetonatorData, fredData, sendwiData, pudData, roboticsData, dssData, reviewData, foodletteData];
+export const portfolioData = {
+  portfolio: [prpData, letterDetonatorData, fredData, sendwiData, foodletteData],
+  academics:[pudData, roboticsData, dssData, reviewData]
+}
 
 // Exports
-export default portfolioArr;
+export default portfolioData;

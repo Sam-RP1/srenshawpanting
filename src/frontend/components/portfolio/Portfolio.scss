@@ -22,7 +22,7 @@ GALLERY
   background-image: url('../../assets/portfolio/distributed-systems/img/dss.png');
 }
 
-#fred .gallery-item-picture-container {
+#fred-2019 .gallery-item-picture-container {
   background-image: url('../../assets/portfolio/fred-2020/img/fred.png');
 }
 
@@ -38,11 +38,11 @@ GALLERY
   background-image: url('../../assets/portfolio/portsmouth-unattended-displays/img/pud.png');
 }
 
-#sendwi .gallery-item-picture-container {
+#sendwi-2019 .gallery-item-picture-container {
   background-image: url('../../assets/portfolio/sendwi-2020/img/sendwi.jpg');
 }
 
-#robotics .gallery-item-picture-container {
+#robotics-cw-2019 .gallery-item-picture-container {
   background-image: url('../../assets/portfolio/robotics/img/robotics.png');
 }
 
@@ -54,6 +54,9 @@ GALLERY
   background-image: url('../../assets/portfolio/foodlette/img/foodlette.png');
 }
 
+// #website-template-012
+// #website-template-013
+
 /*----------------------------------------*\
 Containers & Wrappers
 \*----------------------------------------*/
@@ -61,6 +64,10 @@ Containers & Wrappers
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    justify-content: initial;
+  }
 }
 
 .gallery-item-container {
@@ -290,7 +297,7 @@ Repo
 
   &:hover {
     box-shadow: 2px 2px 3px #000;
-    @include transform(scale(1.05));
+    // @include transform(scale(0.98));
   }
 
   h2 {
@@ -422,6 +429,51 @@ Repo
   @media screen and (min-width: 1692px) {
     width: 50%;
   }
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: auto;
+
+  &.disable {
+    pointer-events: none;
+    opacity: 0.5;
+
+    .previous-btn, .next-btn {
+      background-color: grey;
+      border-color: grey;
+    }
+  }
+}
+
+.previous-btn, .next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid #00597d;
+  color: #fff;
+  background-color: base.$srp-blue;
+  box-shadow: 1px 1px 3px #000;
+  cursor: pointer;
+  @include transition(0.2s);
+
+  &:hover {
+    color: #fff;
+    background-color: #171717;
+    border-color: #171717;
+    @include transform(scale(0.97));
+  }
+}
+
+.next-btn {
+  margin-left: 15px;
 }
 
 /*----------------------------------------*\
