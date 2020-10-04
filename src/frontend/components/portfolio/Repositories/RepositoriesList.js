@@ -30,8 +30,9 @@ const RepositoriesList = React.memo((props) => {
 
   return (
     <>
+    <div className="repo-page-container">
     {pages.map((page, i) =>
-      <section key={"repo-page-" + i} id={"repo-page-" + i} className={"repo-page" + (i === 0 ? " open" : "")}>
+      <section key={"repo-page-" + i} id={"repo-page-" + i} className={"repo-page" + (i === 0 ? "" : " start")}>
       {page.map((item, x) =>
         <div key={item.id} className="repo">
         <h2>{item.title}</h2>
@@ -55,11 +56,12 @@ const RepositoriesList = React.memo((props) => {
       )}
       </section>
     )}
+    </div>
     <div className={"btn-wrapper" + (numPages <= 1 ? " disable" : "")}>
-    <a className="previous-btn" onClick={() => {handlePages(numPages, -1, openPage, setOpenPage)}}>
+    <a className="previous-btn" onClick={() => {handlePages(numPages, -1, "slide-in-out", openPage, setOpenPage)}}>
     <i className="fas fa-chevron-left"></i>
     </a>
-    <a className="next-btn" onClick={() => {handlePages(numPages, 1, openPage, setOpenPage)}}>
+    <a className="next-btn" onClick={() => {handlePages(numPages, 1, "slide-in-out", openPage, setOpenPage)}}>
     <i className="fas fa-chevron-right"></i>
     </a>
     </div>

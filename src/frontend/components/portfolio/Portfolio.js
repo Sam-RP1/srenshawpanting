@@ -84,7 +84,7 @@ const Portfolio = React.memo((props) => {
     )}
     </div>
     </Section>
-    <Section class={"bg-white content-black"}>
+    <Section class={"bg-white content-black overflow-hidden"}>
     <h1 data-aos="flip-down">Repositories</h1>
     <Repositories />
     </Section>
