@@ -6,12 +6,20 @@ import handlePages from '../../../scripts/handlePages';
 
 const RepositoriesList = React.memo((props) => {
   const [openPage, setOpenPage] = useState("repo-page-0");
+  const [leftBtnStatus, setLeftBtnStatus] = useState(false);
+  const [rightBtnStatus, setRightBtnStatus] = useState(true);
   const { repoData } = props;
   const pages = [];
-  const reposPerPage = 5;
+  const reposPerPage = 2;
   const numPages = Math.ceil(repoData.length / reposPerPage);
   let currentRepoNum = 0;
   let maxRepoNum = currentRepoNum + reposPerPage;
+
+  const updateStates = (page, leftBtn, rightBtn) => {
+    setOpenPage(page);
+    setLeftBtnStatus(leftBtn);
+    setRightBtnStatus(rightBtn);
+  }
 
   // Create Pages
   for (let i = 0; i < numPages; i++) {
@@ -58,10 +66,10 @@ const RepositoriesList = React.memo((props) => {
     )}
     </div>
     <div className={"btn-wrapper" + (numPages <= 1 ? " disable" : "")}>
-    <a className="previous-btn" onClick={() => {handlePages(numPages, -1, "slide-in-out", openPage, setOpenPage)}}>
+    <a className={"previous-btn" + (leftBtnStatus === false ? " disable" : "")} onClick={() => {handlePages(numPages, -1, "slide-in-out", openPage, updateStates)}}>
     <i className="fas fa-chevron-left"></i>
     </a>
-    <a className="next-btn" onClick={() => {handlePages(numPages, 1, "slide-in-out", openPage, setOpenPage)}}>
+    <a className={"next-btn" + (rightBtnStatus === false ? " disable" : "")} onClick={() => {handlePages(numPages, 1, "slide-in-out", openPage, updateStates)}}>
     <i className="fas fa-chevron-right"></i>
     </a>
     </div>
