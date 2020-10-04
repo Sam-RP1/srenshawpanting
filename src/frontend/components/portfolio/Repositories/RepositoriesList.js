@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 
 import '../../../styles/root.scss';
 
+import handlePages from '../../../scripts/handlePages';
+
 const RepositoriesList = React.memo((props) => {
   const [openPage, setOpenPage] = useState("repo-page-0");
-  const { repoData, handlePages } = props;
+  const { repoData } = props;
   const pages = [];
   const reposPerPage = 5;
   const numPages = Math.ceil(repoData.length / reposPerPage);
@@ -29,7 +31,7 @@ const RepositoriesList = React.memo((props) => {
   return (
     <>
     {pages.map((page, i) =>
-      <section key={"repo-page-" + i} id={"repo-page-" + i} className="repo-page">
+      <section key={"repo-page-" + i} id={"repo-page-" + i} className={"repo-page" + (i === 0 ? " open" : "")}>
       {page.map((item, x) =>
         <div key={item.id} className="repo">
         <h2>{item.title}</h2>
