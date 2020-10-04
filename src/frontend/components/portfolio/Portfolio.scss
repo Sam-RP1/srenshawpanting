@@ -270,6 +270,8 @@ Repo
   width: 100%;
 }
 
+//  Swap to translate3d to benefit from hardware accel
+
 .repo-page-container {
   display: grid;
   height: auto;
@@ -305,12 +307,12 @@ Repo
     z-index: 1;
 
     .repo {
-      @include transform(translateX(150%));
+      @include transform(translateX(-150%));
     }
 
     &.open {
       .repo {
-        animation-name: slideOverIn;
+        animation-name: slideIn;
         animation-duration: 0.8s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
@@ -318,19 +320,47 @@ Repo
     }
   }
 
-  &.close {
+  &.reverse {
     z-index: 1;
 
     .repo {
-      animation-name: slideOverOut;
+      animation-name: slideOutLeft;
       animation-duration: 0.8s;
       animation-timing-function: ease;
       animation-fill-mode: forwards;
     }
   }
+
+  &.close {
+    z-index: 1;
+
+    .repo {
+      animation-name: slideOutRight;
+      animation-duration: 0.8s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &.end {
+    z-index: 1;
+
+    .repo {
+      @include transform(translateX(150%));
+    }
+
+    &.open {
+      .repo {
+        animation-name: slideIn;
+        animation-duration: 0.8s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
 }
 
-@keyframes slideOverIn {
+@keyframes slideIn {
   0% {
     opacity: 0;
   }
@@ -341,13 +371,17 @@ Repo
   }
 }
 
-@keyframes slideOverOut {
+@keyframes slideOutLeft {
   0% {}
 
-  99% {
+  100% {
     -webkit-transform: translateX(-150%);
     transform: translateX(-150%);
   }
+}
+
+@keyframes slideOutRight {
+  0% {}
 
   100% {
     opacity: 0;
@@ -548,6 +582,13 @@ Repo
     background-color: #171717;
     border-color: #171717;
     @include transform(scale(0.97));
+  }
+
+  &.disable {
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: grey;
+    border-color: grey;
   }
 }
 
