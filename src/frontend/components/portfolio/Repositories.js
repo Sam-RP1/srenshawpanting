@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 
-import '../../../styles/root.scss';
+import '../../styles/root.scss';
 
-import LoadingIndicator from '../../ui/LoadingIndicator';
-import RepositoriesList from './RepositoriesList';
+import LoadingIndicator from '../ui/LoadingIndicator';
+import Slider from '../Slider/Slider';
 
-const Repositories = (props) => {
+const Repositories = React.memo((props) => {
   const [repoData, setRepoData] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -43,10 +43,16 @@ const Repositories = (props) => {
 
   return (
     <div className="repo-container">
-    {isLoading && <LoadingIndicator/>}
-    {isLoading === false && <RepositoriesList repoData={repoData} />}
+    {isLoading && <LoadingIndicator />}
+    {isLoading === false && <Slider
+      name={"repo"}
+      itemsPerSlide={3}
+      transition={"slide-in-out"}
+      sliderData={repoData}
+      />
+    }
     </div>
   )
-};
+});
 
 export default Repositories;
