@@ -272,18 +272,18 @@ Repo
 
 //  Swap to translate3d to benefit from hardware accel
 
-.repo-page-container {
+.repo-slide-container {
   display: grid;
   height: auto;
   width: auto;
 
-  &> .repo-page {
+  &> .repo-slide {
     grid-column-start: 1;
     grid-row-start: 1;
   }
 }
 
-.repo-page {
+.repo-slide {
   position: relative;
   display: block;
   min-width: 100%;
@@ -298,7 +298,7 @@ Repo
 
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        animation-delay: $i * 0.1s;
+        animation-delay: $i * 0.05s;
       }
     }
   }
@@ -313,7 +313,7 @@ Repo
     &.open {
       .repo {
         animation-name: slideIn;
-        animation-duration: 0.8s;
+        animation-duration: 0.6s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
       }
@@ -325,7 +325,7 @@ Repo
 
     .repo {
       animation-name: slideOutLeft;
-      animation-duration: 0.8s;
+      animation-duration: 0.6s;
       animation-timing-function: ease;
       animation-fill-mode: forwards;
     }
@@ -336,7 +336,7 @@ Repo
 
     .repo {
       animation-name: slideOutRight;
-      animation-duration: 0.8s;
+      animation-duration: 0.6s;
       animation-timing-function: ease;
       animation-fill-mode: forwards;
     }
@@ -352,7 +352,7 @@ Repo
     &.open {
       .repo {
         animation-name: slideIn;
-        animation-duration: 0.8s;
+        animation-duration: 0.6s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
       }

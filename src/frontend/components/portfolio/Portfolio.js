@@ -6,7 +6,7 @@ import '../../styles/root.scss';
 import './Portfolio.scss';
 
 import Section from '../ui/Section';
-import Repositories from './Repositories/Repositories';
+import Repositories from './Repositories';
 import { portfolioData } from './Portfolio-data.js';
 
 /**
