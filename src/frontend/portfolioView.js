@@ -12,6 +12,7 @@ import { letterDetonatorData } from './components/portfolio/PortfolioView-data.j
 import { prpData } from './components/portfolio/PortfolioView-data.js';
 import { roboticsData } from './components/portfolio/PortfolioView-data.js';
 import { pudData } from './components/portfolio/PortfolioView-data.js';
+import { karensBeautyBox } from './components/portfolio/PortfolioView-data.js';
 import { errData } from './components/portfolio/PortfolioView-data.js';
 
 // Functions
@@ -37,6 +38,8 @@ function renderProject() {
     project = pudData;
   } else if (projectId === "foodlette2020") {
     project = foodletteData;
+  } else if (projectId === "karensbeautybox") {
+    project = karensBeautyBox;
   } else {
     project = errData;
   }

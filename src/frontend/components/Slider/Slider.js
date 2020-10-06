@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import '../../styles/root.scss';
+import './Slider.scss';
 
 import slideHandler from './slideHandler';
 import debounce from '../../scripts/debounce';

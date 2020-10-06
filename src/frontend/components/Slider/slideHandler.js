@@ -14,6 +14,7 @@ const slideHandler = (numSlides, action, animation, id, callback) => {
   let leftBtn;
   let rightBtn;
 
+  // Set buttons 
   if (nextSlideNum === 0) {
     leftBtn = false;
     rightBtn = true;
@@ -30,7 +31,7 @@ const slideHandler = (numSlides, action, animation, id, callback) => {
   const currentSlide = document.getElementById(id);
   const nextSlide = document.getElementById(nextSlideId);
 
-  // Transition
+  // Transition methods or functions need to go here
   if ((' ' + nextSlide.className + ' ').indexOf(' ' + 'end' + ' ') > -1 === true) {
     currentSlide.classList.toggle("reverse");
     nextSlide.classList.toggle("open");

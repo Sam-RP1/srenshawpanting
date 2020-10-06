@@ -46,7 +46,7 @@ const Repositories = React.memo((props) => {
     {isLoading && <LoadingIndicator />}
     {isLoading === false && <Slider
       name={"repo"}
-      itemsPerSlide={2}
+      itemsPerSlide={3}
       transition={"slide-in-out"}
       >
       {repoData.map((repo, i) =>
