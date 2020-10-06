@@ -6,7 +6,7 @@ import './Slider.scss';
 import slideHandler from './slideHandler';
 import debounce from '../../scripts/debounce';
 
-const Slider = (props) => {
+const Slider = React.memo((props) => {
   const [name, setName] = useState("undefined") // default "undefined"
   const [openSlide, setOpenSlide] = useState("undefined-slide-0"); // default undefined name
   const [leftBtnStatus, setLeftBtnStatus] = useState(false); // default false
@@ -70,6 +70,6 @@ const Slider = (props) => {
     </div>
     </>
   )
-}
+})
 
 export default Slider;
