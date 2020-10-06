@@ -46,10 +46,31 @@ const Repositories = React.memo((props) => {
     {isLoading && <LoadingIndicator />}
     {isLoading === false && <Slider
       name={"repo"}
-      itemsPerSlide={3}
+      itemsPerSlide={2}
       transition={"slide-in-out"}
-      sliderData={repoData}
-      />
+      >
+      {repoData.map((repo, i) =>
+        <div key={repo.id} className="repo">
+        <h2>{repo.title}</h2>
+        <div className="repo-content">
+        <div className="info-wrapper">
+        <div>
+        <p>Created:</p>
+        <p>{repo.created}</p>
+        </div>
+        <div>
+        <p>Last Commit:</p>
+        <p>{repo.updated}</p>
+        </div>
+        </div>
+        <div className="icons-wrapper">
+        <a href={repo.webUrl} target="_blank" style={{display: (repo.webUrl === null ? "none" : "")}}><i className="fas fa-link"></i></a>
+        <a href={repo.repoUrl} target="_blank"><i className="fab fa-github"></i></a>
+        </div>
+        </div>
+        </div>
+      )}
+      </Slider>
     }
     </div>
   )

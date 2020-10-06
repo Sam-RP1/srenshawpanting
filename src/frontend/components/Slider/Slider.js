@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import '../../styles/root.scss';
 
@@ -6,16 +6,43 @@ import slideHandler from './slideHandler';
 import debounce from '../../scripts/debounce';
 
 const Slider = (props) => {
-  const [openSlide, setOpenSlide] = useState("repo-slide-0");
-  const [leftBtnStatus, setLeftBtnStatus] = useState(false);
-  const [rightBtnStatus, setRightBtnStatus] = useState(true);
-  const [lastClickTime, setLastClickTime] = useState(0);
-  const { sliderData } = props;
-  const slides = [];
-  const itemsPerSlide = props.itemsPerSlide;
-  const numSlides = Math.ceil(sliderData.length / itemsPerSlide);
-  const transition = props.transition;
-  const delay = 700 + (itemsPerSlide * 50); // Change to its own method that sets delay based on animation props passed
+  const [name, setName] = useState("undefined") // default "undefined"
+  const [openSlide, setOpenSlide] = useState("undefined-slide-0"); // default undefined name
+  const [leftBtnStatus, setLeftBtnStatus] = useState(false); // default false
+  const [rightBtnStatus, setRightBtnStatus] = useState(false); // default false
+  const [lastClickTime, setLastClickTime] = useState(0); // default 0
+  const [slides, setSlides] = useState([]); // default empty
+  const [transition, setTransition] = useState(undefined) // default undefined
+  const [delay, setDelay] = useState(800); // default 800
+
+  useEffect(() => {
+    const itemsPerSlide = props.itemsPerSlide;
+    const numSlides = Math.ceil(props.children.length / itemsPerSlide);
+    const slideArr = [];
+    let currentSlideNum = 0;
+    let maxSlideNum = 0 + itemsPerSlide;
+
+    for (let i = 0; i < numSlides; i++) {
+      let slideContents = [];
+      for (let x = currentSlideNum; x < maxSlideNum; x++) {
+        if (x === props.children.length) {
+          break;
+        } else {
+          slideContents.push(props.children[x]);
+        }
+      }
+      slideArr.push(slideContents);
+      currentSlideNum += itemsPerSlide;
+      maxSlideNum += itemsPerSlide;
+    }
+
+    numSlides > 1 ? setRightBtnStatus(true) : setRightBtnStatus(false);
+    setTransition(props.transition);
+    setDelay(675 + (itemsPerSlide * 50)); // Change to its own method that sets delay based on animation props passed
+    setSlides(slideArr);
+    setOpenSlide(props.name + "-slide-0");
+    setName(props.name);
+  }, [props.children, props.name, props.itemsPerSlide, props.transition])
 
   const updateStates = (slide, leftBtn, rightBtn) => {
     setOpenSlide(slide);
@@ -23,56 +50,20 @@ const Slider = (props) => {
     setRightBtnStatus(rightBtn);
   }
 
-  let currentSlideNum = 0;
-  let maxSlideNum = currentSlideNum + itemsPerSlide;
-  for (let i = 0; i < numSlides; i++) {
-    let slideContents = [];
-    for (let x = currentSlideNum; x < maxSlideNum; x++) {
-      if (x === sliderData.length) {
-        break;
-      } else {
-        slideContents.push(sliderData[x]);
-      }
-    }
-    slides.push(slideContents);
-    currentSlideNum += itemsPerSlide;
-    maxSlideNum += itemsPerSlide;
-  }
-
   return (
     <>
-    <div className="repo-slide-container">
+    <div className={name + "-slide-container"}>
     {slides.map((slide, i) =>
-      <section key={"repo-slide-" + i} id={"repo-slide-" + i} className={"repo-slide" + (i === 0 ? "" : " start")}>
-      {slide.map((item, x) =>
-        <div key={item.id} className="repo">
-        <h2>{item.title}</h2>
-        <div className="repo-content">
-        <div className="info-wrapper">
-        <div>
-        <p>Created:</p>
-        <p>{item.created}</p>
-        </div>
-        <div>
-        <p>Last Commit:</p>
-        <p>{item.updated}</p>
-        </div>
-        </div>
-        <div className="icons-wrapper">
-        <a href={item.webUrl} target="_blank" style={{display: (item.webUrl === null ? "none" : "")}}><i className="fas fa-link"></i></a>
-        <a href={item.repoUrl} target="_blank"><i className="fab fa-github"></i></a>
-        </div>
-        </div>
-        </div>
-      )}
+      <section key={name + "-slide-" + i} id={name + "-slide-" + i} className={name + "-slide" + (i === 0 ? "" : " start")}>
+      {slide.map((item, x) => item )}
       </section>
     )}
     </div>
-    <div className={"btn-wrapper" + (numSlides <= 1 ? " disable" : "")}>
-    <a className={"previous-btn" + (leftBtnStatus === false ? " disable" : "")} onClick={() => {debounce(lastClickTime, delay, setLastClickTime) ? slideHandler(numSlides, -1, "slide-in-out", openSlide, updateStates) : null}}>
+    <div className={"btn-wrapper" + (slides.length <= 1 ? " disable" : "")}>
+    <a className={"previous-btn" + (leftBtnStatus === false ? " disable" : "")} onClick={() => {debounce(lastClickTime, delay, setLastClickTime) ? slideHandler(slides.length, -1, transition, openSlide, updateStates) : null}}>
     <i className="fas fa-chevron-left"></i>
     </a>
-    <a className={"next-btn" + (rightBtnStatus === false ? " disable" : "")} onClick={() => {debounce(lastClickTime, delay, setLastClickTime) ? slideHandler(numSlides, 1, "slide-in-out", openSlide, updateStates) : null}}>
+    <a className={"next-btn" + (rightBtnStatus === false ? " disable" : "")} onClick={() => {debounce(lastClickTime, delay, setLastClickTime) ? slideHandler(slides.length, 1, transition, openSlide, updateStates) : null}}>
     <i className="fas fa-chevron-right"></i>
     </a>
     </div>
