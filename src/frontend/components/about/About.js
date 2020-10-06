@@ -14,11 +14,11 @@ import Icons from './Icons';
 const About = () => {
   const listOne = {
     title: "Competencies",
-    list: ["HTML", "CSS / SASS", "JS / ES6 / JSX", "MySQL", "React", "Webpack"]
+    list: ["HTML", "CSS / SASS", "JS / ES6 / JSX", "React", "MySQL", "Webpack"]
   };
   const listTwo = {
     title: "Interests",
-    list: ["Front-end Development", "Backend Development", "Web Design", "UI / UX", "Distributed Systems", "Cloud Computing"]
+    list: ["Web Design", "Front-end Web Development", "Backend Development", "UI / UX", "Cloud Computing"]
   };
   const icons = {
     rowOne: [
@@ -35,7 +35,7 @@ const About = () => {
     <section id="about" className="section-default h-auto padding-6016">
     <article className="container column">
     <h1 data-aos="flip-down">About</h1>
-    <p data-aos="fade-right" data-aos-delay="150">I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a motivated individual who consistently improves my knowledge and proficiency in numerous subject areas relating to information technology. Such areas include front-end development, backend development, web design and cloud computing. Alongside this, I am currently self-employed and operate SRP Designs, a business that provides bespoke web solutions for clients in the UK.</p>
+    <p data-aos="fade-right" data-aos-delay="150">I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a motivated individual who consistently improves my knowledge and proficiency in numerous subject areas relating to information technology. Such areas include web design, front-end web development, backend development and cloud computing. Alongside this, I am currently self-employed and operate SRP Designs, a business that provides bespoke web solutions for clients in the UK.</p>
     <div className="about-info-container">
     <Lists listOne={listOne} listTwo={listTwo} />
     <Icons icons={icons} />
