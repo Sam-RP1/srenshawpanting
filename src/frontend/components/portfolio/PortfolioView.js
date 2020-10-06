@@ -33,7 +33,7 @@ class RenderPortfolioItem extends Component {
     super(props);
     this.state = {
       description: props.data.description,
-      deatils: props.data.deatils,
+      details: props.data.details,
       enableListTwo: props.data.enableListTwo,
       listTwoTitle: props.data.listTwoTitle,
       listTwoContents: props.data.listTwoContents,
@@ -50,7 +50,7 @@ class RenderPortfolioItem extends Component {
       <h1 data-aos="flip-down">Information</h1>
       <p className="" data-aos="fade-right" data-aos-delay="150">{this.state.description}</p>
       <div className="info-container">
-      <PortfolioItemList deatils={this.state.deatils} enableListTwo={this.state.enableListTwo} listTwoTitle={this.state.listTwoTitle} listTwoContents={this.state.listTwoContents} />
+      <PortfolioItemList details={this.state.details} enableListTwo={this.state.enableListTwo} listTwoTitle={this.state.listTwoTitle} listTwoContents={this.state.listTwoContents} />
       <PortfolioItemButton buttons={this.state.buttons} />
       </div>
       </article>
@@ -66,7 +66,7 @@ class RenderPortfolioItem extends Component {
 */
 class PortfolioItemList extends Component {
   render() {
-    let listOne = this.props.deatils.map((item, i) => <li key={i}>{item}</li>);
+    let listOne = this.props.details.map((item, i) => <li key={i}>{item}</li>);
     let listTwo = this.props.listTwoContents.map((item, i) => <li key={i}>{item}</li>);
 
     return (
