@@ -2,7 +2,7 @@
 export const foodletteData = {
   title: "foodlette",
   description: "In development!",
-  tech: ["TBC"],
+  details: ["TBC"],
   enableListTwo: false,
   listTwoTitle: "",
   listTwoContents: [""],
@@ -20,7 +20,7 @@ import fredImg_2 from '../../assets/portfolio/fred-2020/img/fred-parallax-placeh
 export const fredData = {
   title: "fred",
   description: "A clean and pure website that takes on the role of a 'PowerPoint' presentation. The website was commissioned by the inventors of the FRED device, a patent-pending Fire Response Early Detection (FRED) device. FRED's inventors wanted a website that would be the 'be-all and end-all' for information, statistics and resources related to the FRED device and their project as a whole. The website needed to clearly present how FRED works, why FRED is needed and the problems FRED can solve to improve current domestic and public fire prevention strategies.\n \nAs a result, the design of the website contains no clutter, is simple to navigate using the horizontal one-page scroll feature and has some 'pages' with vertical parallax scrolling.",
-  tech: ["HTML", "SCSS", "JSX", "React", "Webpack"],
+  details: ["HTML", "SCSS", "JS", "React", "Webpack"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Horizontal One-Page Scrolling", "Parallax Vertical Scrolling"],
@@ -48,6 +48,23 @@ export const fredData = {
   ]
 }
 
+// Karensbeautybox
+export const karensBeautyBox = {
+  title: "karens beauty box",
+  description: "A single-page website with a refined design that features a beautiful centerpiece background alongside bespoke minimalistic icons and a logo. The site, icons and logo were designed and developed for Karens Beauty Box.",
+  details: ["Icon & Logo Design", "HTML", "SCSS", "JS", "React", "Webpack"],
+  enableListTwo: true,
+  listTwoTitle: "Features",
+  listTwoContents: ["One-Page Website", "Animated Splash Screen", "Full Background Image", "Bespoke Logo & Icon Design"],
+  buttons: [
+    {
+      link: "http://karensbeautybox.co.uk/",
+      text: "View Website"
+    }
+  ],
+  media: []
+}
+
 // Letter Detonator
 import letterGif_1 from '../../assets/portfolio/letter-detonator/gifs/ld-detonating-letters.gif';
 import letterImg_1 from '../../assets/portfolio/letter-detonator/img/ld-menu-placeholder-min.png';
@@ -55,7 +72,7 @@ import letterImg_2 from '../../assets/portfolio/letter-detonator/img/ld-game-pla
 export const letterDetonatorData = {
   title: "letter detonator",
   description: "A small straightforward web game where users try to achieve high scores by surviving endless waves of randomly generated letters as long as possible. Users must detonate the approaching letters, causing them to explode, in order to survive. To detonate letters users must press the corresponding letter key on their keyboard. Each time a letter is successfully detonated the user's score will increase by 1. However, each time a letter that is not present is attempted to be detonated the user's score will decrease by 1.\n \nThe purpose of the game is twofold, for users to have fun and improve their typing skills. The game aims to help users improve their typing skills by increasing its difficulty when the user's score reaches certain thresholds. This difficulty increase means more letters will spawn, in turn requiring the user to detonate them quicker to survive. Therefore, users will need to learn to 'touch type' with more fingers to improve their chances of surviving and reaching a new high score.",
-  tech: ["HTML Canvas", "SCSS", "JS / JSX", "React", "Local Storage", "Webpack"],
+  details: ["HTML Canvas", "SCSS", "JS", "React", "Local Storage", "Webpack"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Game Engine Looper", "Animations", "Local Highscores", "Changeable Settings"],
@@ -102,7 +119,7 @@ import prpFile_1 from '../../assets/portfolio/peer-review-portal/files/prp.pdf';
 export const prpData = {
   title: "Peer Review Portal",
   description: "Peer Review Portal is a web application designed and developed to allow both the processes of peer review and meta-review to be conducted comprehensively in an online environment. Peer Review Portal has two user types, students and teachers, which are each provided with a suite of features that allow them to assume their respective roles and carry out their respective processes. As well as, the Peer Review Portal web application operates paperlessly and encompasses the setting, collecting and meta-reviewing of work for assignments by teachers and the submitting, peer-reviewing of work and accessing of feedback for assignments by students.\n \nImportantly, the Peer Review Portal web application provides a streamlined and improved peer review and meta-review experience as it solves a number of issues identified by students and teachers that partake or have partaken in traditional peer review and meta-review processes.\n \nIssues experienced by students include difficulty interpreting or understanding marking schemes, uncertainty with what feedback to give or how to give critical feedback, losing work due to it being paper-based and the need to physically hand work in. The Peer Review Portal web application solves these student issues outlined by using a simple intuitive standard structure for giving feedback, having readily available guidance on how to give detailed or critical feedback and also removes the chances of losing work or the need to physically hand in work as the entire process is made paperless.\n \nIssues encountered by teachers include inefficiencies with setting assignments, collecting work for assignments, shuffling handed-in work, redistributing work randomly to students for peer reviewing and returning with that has been peer-reviewed to its owner. These teacher-specific issues are solved by the Peer Review Portal web application letting students hand-in work online at any time before the submission deadline set, automatically shuffling then redistributing submitted work to students for peer reviewing online and automatically returning feedback given to submitted work from completed peer reviews or meta-reviews to the works submitter.\n \nAs a whole, the Peer Review Portal web application was the artefact submitted for my individual final year project as an undergraduate studying software engineering. This individual final year project spanned eight months, commencing in the September of 2019 and concluding in the April of 2020. The project also required a report to be submitted alongside the Peer Review Portal artefact developed. The report submitted meticulously covers the projects in its entirety and can be accessed using the button found below.",
-  tech: ["HTML", "CSS", "JS / JSX", "Babel", "React", "Nodejs", "Express 4.X", "MySQL"],
+  details: ["HTML", "CSS", "JS / JSX", "Babel", "React", "Express 4.X", "MySQL"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Google Sign In", "Create & Join Classes", "Create Assignments", "PDF File Submissions",
@@ -159,7 +176,7 @@ import roboticsImg_1 from '../../assets/portfolio/robotics/img/robo-placeholder-
 export const roboticsData = {
   title: "robotics",
   description: "An individual university project with the aim to improve the performance of a mobile robot's object manipulation and sorting, based on colour, in a simulated scenario of an industrial environment using the V-REP simulation software.\n \nThe focal point of the project was sorting objects in industrial environments using robotics to automate the process.\n\nTo achieve the aims for the project in an efficient manner the final mobile robot deployed in the simulation scenario needed to be capable of manipulating at least one object at a time, identifying an object's colour so that it can be sorted appropriately, avoiding collisions with nearby obstacles and as a result be able to calculate its navigational path dynamically.\n \nThe Kuka YouBot was the mobile robot selected as it can manipulate objects using its 5 degrees of freedom arm, carry multiple objects on its rear platform and could also be modified to be equipped with proximity sensors along with an RGB sensor. Therefore meaning that the final Kuka YouBot deployed could be capable of achieving the project's aim.\n \nFor the Kuka YouBot to be able to make use of the proximity sensors and RGB sensor attached to it several algorithms were designed and implemented so that it could identify objects colours and sort them appropriately, as well as to detect structures or obstacles and avoid colliding with them by dynamically calculating its navigational path.\n \nThe project report details the approach taken, the mobile robot selected, the procedure designed, the simulation system itself, the results obtained from simulation runs and the conclusions deduced.",
-  tech: ["V-REP", "Lua Script", "Kuka YouBot"],
+  details: ["V-REP", "Lua Script", "Kuka YouBot"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Proximity Sensors", "Collision Detection", "RGB Vision Sensor", "Colour Sorting"],
@@ -195,7 +212,7 @@ import pudFile_1 from '../../assets/portfolio/portsmouth-unattended-displays/fil
 export const pudData = {
   title: "pud hub",
   description: "The Portsmouth Unattended Displays Hub (PUDHUB) is a web application that allows for the creation, customisation and management of a network of unattended displays from a single place. The web application has a number of features and functionalities which include being able to create, edit and save HTML, CSS and JS files using a basic in-browser text editor, the capability to upload media files for use on unattended displays and the option to individually configure the settings for each unattended display connected to the PUDHUB web application.\n \nA display is turned into an unattended display by simply navigating it to the PUDHUB web applications root address. Once the request has been processed by the PUDHUB web application it will then serve the connecting display the necessary files to setup it up as an unattended display. From this point onwards the newly setup unattended display will maintain itself and communication with the PUDHUB web application in intervals. As well as, from this point, the unattended display can be completely customised and configured.",
-  tech: ["HTML", "CSS", "JS", "Nodejs", "Express 4.X", "MySQL"],
+  details: ["HTML", "CSS", "JS", "Express 4.X", "MySQL"],
   enableListTwo: true,
   listTwoTitle: "Features",
   listTwoContents: ["Create & Edit Files In-browser", "Configure & Customise Unattended Displays",  "Upload Media", "Self Updating Unattended Displays"],
@@ -238,7 +255,7 @@ export const pudData = {
 export const errData = {
   title: "Stop it! Error!",
   description: "Oi! Stop playing with my url!",
-  tech: ["Fiddling", "Exploring", "Adventure", "Testing", "Experimenting"],
+  details: ["Fiddling", "Exploring", "Adventure", "Testing", "Experimenting"],
   enableListTwo: false,
   listTwoTitle: "",
   listTwoContents: [],
@@ -263,6 +280,7 @@ export const errData = {
 export default {
   foodletteData,
   fredData,
+  karensBeautyBox,
   letterDetonatorData,
   prpData,
   roboticsData,
