@@ -22,7 +22,7 @@ const Header = () => {
     scrolledWindow();
     window.addEventListener('scroll', scrolledWindow);
     window.addEventListener('resize', windowSizeHandler);
-    if (document.title.substr(0, 7) === "Bespoke") {
+    if (document.title.substr(0, 3) === "Web") {
       addSmoothScroll();
     }
   }, [])
