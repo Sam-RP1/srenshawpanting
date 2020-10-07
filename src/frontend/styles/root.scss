@@ -20,6 +20,12 @@ ROOT
 /*----------------------------------------*\
 Element Tags
 \*----------------------------------------*/
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 html {
   font-family: 'Open Sans', sans-serif;
   background-color: base.$srp-black;
