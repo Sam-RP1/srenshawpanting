@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "allowJs": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+		  "allowSyntheticDefaultImports": true,
+		  "strict": true,
+      "module": "esnext",
+      "target": "es5",
+      "resolveJsonModule": true,
+		  "noEmit": true,
+		  "jsx": "react"
+    }
+}

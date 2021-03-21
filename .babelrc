@@ -1,6 +1,19 @@
 {
   "presets": [
-    "@babel/env",
-    "@babel/preset-react"
-  ]
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-typescript"
+  ],
+  "sourceType": "unambiguous",
+  "env": {
+    "production" : {
+      "plugins": [
+        ["react-remove-properties", { "properties": ["data-test"] } ]
+      ]
+    }
+  }
 }
