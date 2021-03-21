@@ -1,4 +1,42 @@
+// Colours
+// --- Primary
 $srp-black: #171717;
-$srp-white: #fff;
-$srp-blue: #0080b3;
+$srp-white: #ffffff;
 $srp-footer-txt-color: #d5d5d5;
+$srp-greys: (
+    100: #dee3ea,
+    200: #b2bdce,
+    300: #5d7287,
+    700: #242c33,
+    800: #151a24,
+    900: #0b0e13,
+);
+// --- Accents
+$srp-accent-blue: #0080b3;
+
+// Breakpoints Map
+$breakpoints: (
+    mobile-medium: 376px,
+    xsmall: 576px,
+    small: 768px,
+    medium: 992px,
+    large: 1200px,
+    xlarge: 1576px,
+);
+
+// --- Paragraphs
+$paragraph: 14px;
+$paragraph-large: 16px;
+$paragraph-small: 12px;
+$paragraph-bold: bold $paragraph;
+
+// Buttons
+// ---
+$button-default: (
+    color: $srp-white,
+    background-color: map-get($srp-greys, '800'),
+);
+
+// General Properties
+$rounded: 0.25rem;
+$padding-default: 16px 24px;
