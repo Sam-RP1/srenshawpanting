@@ -1,0 +1,36 @@
+@use '../../../../styles/base';
+@use '../../../../styles/typography/typography';
+
+.h1,
+.h2,
+.h3,
+.h4 {
+    font-weight: 400;
+    font-family: 'Heebo', sans-serif;
+    text-transform: capitalize;
+    color: base.$srp-white;
+    margin: {
+        top: 0;
+        bottom: 0;
+    }
+
+    &--bold {
+        font-weight: bold;
+    }
+}
+
+.h1 {
+    @include typography.font-size(typography.$h1-font-sizes, base.$breakpoints);
+}
+
+.h2 {
+    @include typography.font-size(typography.$h2-font-sizes, base.$breakpoints);
+}
+
+.h3 {
+    @include typography.font-size(typography.$h3-font-sizes, base.$breakpoints);
+}
+
+.h4 {
+    @include typography.font-size(typography.$h4-font-sizes, base.$breakpoints);
+}

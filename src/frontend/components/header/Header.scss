@@ -1,52 +1,124 @@
 @use '../../styles/base';
-@import '../../styles/mixins/transition';
+@import '../../styles/typography/typography', '../../styles/mixins/transition.scss',
+    '../../styles/mixins/transform.scss';
 
-/*----------------------------------------*\
-Header.scss
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    width: 100vw;
+    margin: 0;
+    padding: base.$padding-default;
+    z-index: 1000;
 
-HEADER
+    border-bottom: base.$srp-accent-blue solid 2px;
 
-- Header
-- Containers & Wrappers
-- @media
-\*----------------------------------------*/
+    color: map-get(base.$srp-greys, 900);
+    background-color: white;
 
-/*----------------------------------------*\
-Header
-\*----------------------------------------*/
-#global-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: 120px;
-  width: 100%;
-  margin: 0px;
-  color: base.$srp-black;
-  background-color: base.$srp-white;
-  z-index: 1000;
-  @include transition(0.3s);
+    &__logo {
+        display: flex;
+        flex: 1;
+        justify-content: flex-start;
+        align-items: center;
+
+        img {
+            display: block;
+            height: auto;
+            max-height: 50px;
+            width: 100%;
+            max-width: 150px;
+        }
+    }
+
+    &__nav {
+        position: relative;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        nav {
+            position: fixed;
+            top: 100vh;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px);
+            width: 100vw;
+            padding: base.$padding-default;
+
+            background-color: white;
+            @include transition(0.3s);
+
+            a {
+                display: inline-block;
+                height: auto;
+                width: 50%;
+                margin: {
+                    top: 5px;
+                    bottom: 5px;
+                }
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: bold;
+                @include font-size($h4-font-sizes, base.$breakpoints);
+
+                &:after {
+                    display: block;
+                    content: '';
+                    border-bottom: solid 3px base.$srp-accent-blue;
+                    @include transform(scaleX(0));
+                    @include transition(transform 300ms ease-in-out);
+                }
+
+                &:hover:after {
+                    transform: scaleX(1);
+                }
+            }
+
+            &.active {
+                top: 100px;
+            }
+        }
+    }
 }
 
-/*----------------------------------------*\
-Containers & Wrappers
-\*----------------------------------------*/
-.header-content-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
+.nav-menu-btn {
+    display: block;
+    height: 100%;
+    width: auto;
+    cursor: pointer;
 }
 
-/*----------------------------------------*\
-@media
-\*----------------------------------------*/
-@media (min-width: 992px) {
-  #global-header {
-    color: base.$srp-white;
-    background-color: transparent;
-  }
+.bar-1,
+.bar-2,
+.bar-3 {
+    width: 40px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: map-get(base.$srp-greys, 900);
+    margin: 6px 0px;
+    @include transition(0.3s);
+}
+
+.active .bar-1 {
+    @include transform(rotate(-45deg) translate(-9px, 6px));
+}
+
+.active .bar-2 {
+    opacity: 0;
+}
+
+.active .bar-3 {
+    @include transform(rotate(45deg) translate(-8px, -8px));
 }

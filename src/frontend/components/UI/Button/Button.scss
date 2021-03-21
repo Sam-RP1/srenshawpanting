@@ -1,0 +1,35 @@
+@use '../../../styles/base';
+
+button {
+    -webkit-appearance: button;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    border-radius: base.$rounded;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:focus {
+        outline: 2px auto;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: 0.55rem;
+    text-transform: capitalize;
+
+    &--w-full {
+        width: 100%;
+    }
+
+    &--max-w-300px {
+        max-width: 300px;
+    }
+}
