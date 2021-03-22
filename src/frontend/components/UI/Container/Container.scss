@@ -1,0 +1,30 @@
+@use '../../../styles/base';
+
+$container-sizes: (
+    null: 90%,
+    xsmall: 85%,
+    small: 80%,
+    medium: 75%,
+    large: 70%,
+);
+
+// Mixins
+// --- Container Size Mixin
+@mixin container-size($cs-map, $cs-breakpoints: $breakpoints) {
+    @each $cs-breakpoint, $cs-container-size in $cs-map {
+        @if $cs-breakpoint == null {
+            width: $cs-container-size;
+        } @else {
+            @if map-has-key($cs-breakpoints, $cs-breakpoint) {
+                $cs-breakpoint: map-get($cs-breakpoints, $cs-breakpoint);
+            }
+            @media screen and (min-width: $cs-breakpoint) {
+                width: $cs-container-size;
+            }
+        }
+    }
+}
+
+.container {
+    @include container-size($container-sizes, base.$breakpoints);
+}
