@@ -45,7 +45,7 @@ body {
 }
 
 main {
-    height: auto;
+    height: 200vh;
     width: 100%;
 }
 
@@ -70,10 +70,6 @@ a:hover {
 /*----------------------------------------*\
 Container & Wrappers
 \*----------------------------------------*/
-.container {
-    width: 90%;
-}
-
 #content {
     display: flex;
     flex-direction: column;
@@ -210,10 +206,6 @@ Content Colors
 @media
 \*----------------------------------------*/
 @media (min-width: 576px) {
-    .container {
-        width: 85%;
-    }
-
     .section-default {
         h1 {
             font-size: 2em;
@@ -222,22 +214,12 @@ Content Colors
 }
 
 @media (min-width: 768px) {
-    .container {
-        width: 80%;
-    }
 }
 
 @media (min-width: 992px) {
-    .container {
-        width: 75%;
-    }
 }
 
 @media (min-width: 1200px) {
-    .container {
-        width: 70%;
-    }
-
     .wrapper-100 {
         width: 100%;
     }
