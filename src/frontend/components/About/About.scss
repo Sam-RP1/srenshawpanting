@@ -1,0 +1,76 @@
+@use '../../styles/base';
+
+.about {
+    margin-top: 80px;
+    color: white;
+
+    &__content {
+        &__lists-container {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            margin-top: 18px;
+
+            &__list {
+                height: auto;
+                width: 100%;
+                margin-top: 18px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-inline-start: 20px;
+                    margin: {
+                        top: 5px;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                    }
+
+                    li {
+                        height: auto;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        &__icons-container {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: auto;
+            width: 100%;
+            margin-top: 18px;
+
+            .icon-wrapper {
+                position: relative;
+                display: flex;
+                flex-grow: 1;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 50px;
+                margin: {
+                    bottom: 5px;
+                }
+                border-radius: 15px;
+                background-color: white;
+                font-size: 30px;
+
+                svg {
+                    path {
+                        fill: map-get(base.$srp-greys, 900);
+                    }
+                }
+            }
+        }
+    }
+}
