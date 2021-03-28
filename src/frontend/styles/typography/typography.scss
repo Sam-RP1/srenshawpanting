@@ -23,7 +23,7 @@ $h3-font-sizes: (
 
 // H4 Font Size Map
 $h4-font-sizes: (
-    null: 1.25rem,
+    null: 1.4rem,
 );
 
 // Header Font Size Map
@@ -53,4 +53,8 @@ $p-font-sizes: (
             }
         }
     }
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

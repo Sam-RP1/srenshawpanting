@@ -1,5 +1,6 @@
 @use '../../../../styles/base';
-@use '../../../../styles/typography/typography';
+@import '../../../../styles/typography/typography';
+@import '../../../../styles/mixins/userSelect';
 
 .h1,
 .h2,
@@ -13,24 +14,43 @@
         top: 0;
         bottom: 0;
     }
+    @include userSelect(none);
 
     &--bold {
         font-weight: bold;
     }
+
+    &--underline {
+        &::after {
+            display: block;
+            content: '';
+            height: 2px;
+            width: 75px;
+            background-color: white;
+            margin: {
+                top: 10px;
+                bottom: 18px;
+            }
+        }
+    }
+
+    &--space-out {
+        letter-spacing: 3px;
+    }
 }
 
 .h1 {
-    @include typography.font-size(typography.$h1-font-sizes, base.$breakpoints);
+    @include font-size($h1-font-sizes, base.$breakpoints);
 }
 
 .h2 {
-    @include typography.font-size(typography.$h2-font-sizes, base.$breakpoints);
+    @include font-size($h2-font-sizes, base.$breakpoints);
 }
 
 .h3 {
-    @include typography.font-size(typography.$h3-font-sizes, base.$breakpoints);
+    @include font-size($h3-font-sizes, base.$breakpoints);
 }
 
 .h4 {
-    @include typography.font-size(typography.$h4-font-sizes, base.$breakpoints);
+    @include font-size($h4-font-sizes, base.$breakpoints);
 }

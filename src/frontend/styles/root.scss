@@ -54,6 +54,11 @@ p {
     @include font-size($p-font-sizes, base.$breakpoints);
 }
 
+p,
+li {
+    letter-spacing: 1px;
+}
+
 a {
     text-decoration: none;
     content: inherit;
@@ -65,84 +70,6 @@ a:hover {
     color: inherit;
     background-color: transparent;
     text-decoration: none;
-}
-
-/*----------------------------------------*\
-Container & Wrappers
-\*----------------------------------------*/
-#content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0px;
-}
-
-.wrapper-100,
-.wrapper-60,
-.wrapper-50,
-.wrapper-40 {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-}
-
-.txt-wrapper {
-    box-sizing: border-box;
-    padding: 0px 0px 30px 0px;
-}
-
-.txt-wrapper {
-    p {
-        white-space: pre-line;
-    }
-}
-
-/*----------------------------------------*\
-Alignments
-\*----------------------------------------*/
-.align-left {
-    text-align: left;
-
-    article {
-        align-items: flex-start;
-    }
-}
-
-.align-right {
-    text-align: right;
-
-    article {
-        align-items: flex-end;
-    }
-}
-
-.align-center {
-    text-align: center;
-
-    article {
-        align-items: center;
-    }
-}
-
-/*----------------------------------------*\
-Sections
-\*----------------------------------------*/
-.section-default {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0px;
-}
-
-.section-default {
-    h1 {
-        font-size: 1.8em;
-        margin: 0px 0px 30px 0px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-    }
 }
 
 /*----------------------------------------*\
