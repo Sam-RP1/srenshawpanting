@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { Header } from '../../components/Header/Header';
+// type HomeProps = {};
 
-type HomeProps = {};
-
-export const Home = ({}: HomeProps) => {
-    return <Header test={'TEST'} />;
+export const Home = (): JSX.Element => {
+    return <></>;
 };

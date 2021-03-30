@@ -23,8 +23,9 @@
 
                 ul {
                     display: flex;
-                    flex-wrap: wrap;
-                    padding-inline-start: 20px;
+                    flex-direction: column;
+                    padding-inline-start: 0;
+                    list-style-type: none;
                     margin: {
                         top: 5px;
                         bottom: 0;
@@ -32,9 +33,24 @@
                         left: 0;
                     }
 
+                    &.wrap {
+                        flex-direction: initial;
+                        flex-wrap: wrap;
+
+                        li {
+                            width: 50%;
+                            max-width: 50%;
+                        }
+                    }
+
                     li {
                         height: auto;
-                        width: 50%;
+                        width: 100%;
+
+                        &::before {
+                            content: '//';
+                            padding-right: 7px;
+                        }
                     }
                 }
             }
@@ -63,11 +79,11 @@
                 }
                 border-radius: 15px;
                 background-color: white;
-                font-size: 30px;
+                font-size: 28px;
 
                 svg {
                     path {
-                        fill: map-get(base.$srp-greys, 900);
+                        fill: map-get(base.$srp-greys, 800);
                     }
                 }
             }

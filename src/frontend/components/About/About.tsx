@@ -6,7 +6,7 @@ import { Container } from '../UI/Container/Container';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChessKnight } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faInstagram, faGithub, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faInstagram, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 import './About.scss';
 
@@ -27,14 +27,14 @@ export const About = (): JSX.Element => {
                     <div className='about__content__lists-container'>
                         <div className='about__content__lists-container__list'>
                             <Heading importance={4} title={'Competencies:'} classes={['spaced']} />
-                            <ul>
+                            <ul className='wrap'>
                                 <li>HTML</li>
                                 <li>CSS & SASS</li>
                                 <li>JavaScript</li>
                                 <li>TypeScript</li>
                                 <li>React</li>
                                 <li>Redux</li>
-                                <li>Jest & Enzyme</li>
+                                <li>Jest</li>
                                 <li>MySQL</li>
                                 <li>Webpack</li>
                                 <li>Express</li>
@@ -45,9 +45,10 @@ export const About = (): JSX.Element => {
                             <Heading importance={4} title={'Interests:'} classes={['spaced']} />
                             <ul>
                                 <li>Web Design</li>
-                                <li>UI / UX</li>
+                                <li>UI & UX</li>
                                 <li>Frontend Web Development</li>
                                 <li>Backend Development</li>
+                                <li>Fullstack Development</li>
                                 <li>Cloud Computing</li>
                             </ul>
                         </div>
