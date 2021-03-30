@@ -34,9 +34,9 @@ export const Header = (): JSX.Element => {
 
     return (
         <header className='header' ref={headerRoot}>
-            <Container classes={'header__content-container'}>
+            <Container classes={'header__content'}>
                 <>
-                    <div className='header__logo'>
+                    <div className='header__content__logo'>
                         <NavLink to='/'>
                             <svg
                                 version='1.0'
@@ -67,14 +67,14 @@ export const Header = (): JSX.Element => {
                         </NavLink>
                     </div>
 
-                    <div className='header__nav'>
-                        <div className='header__nav__btn' onClick={() => navHandler()} ref={navBtn}>
+                    <div className='header__content__nav'>
+                        <div className='header__content__nav__btn' onClick={() => navHandler()} ref={navBtn}>
                             <div className='bar-1'></div>
                             <div className='bar-2'></div>
                             <div className='bar-3'></div>
                         </div>
 
-                        <nav className='header__nav__menu' ref={navMenu}>
+                        <nav className='header__content__nav__menu' ref={navMenu}>
                             <NavLink to='/about'>About</NavLink>
                             <span>|</span>
                             <NavLink to='/portfolio'>Portfolio</NavLink>
@@ -86,15 +86,6 @@ export const Header = (): JSX.Element => {
                     </div>
                 </>
             </Container>
-
-            <ul style={{ display: 'none' }}>
-                <li>Chess.com</li>
-                <li>Instagram</li>
-                <li>Github</li>
-                <li>Youtube</li>
-                <li>Linkedin</li>
-                <li>Spotify</li>
-            </ul>
         </header>
     );
 };

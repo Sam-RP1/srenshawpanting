@@ -17,7 +17,7 @@
     padding: base.$padding-default;
     z-index: 1000;
     border-bottom: base.$srp-accent-blue solid 2px;
-    color: map-get(base.$srp-greys, 900);
+    color: map-get(base.$srp-greys, 800);
     background-color: white;
     @include transition(
         height 300ms ease-in-out,
@@ -26,112 +26,112 @@
         border-bottom 300ms ease-in-out
     );
 
-    &__content-container {
+    &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 100%;
-    }
 
-    &__logo {
-        position: relative;
-        display: flex;
-        flex: 1;
-        justify-content: flex-start;
-        align-items: center;
+        &__logo {
+            position: relative;
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+            align-items: center;
 
-        svg {
-            display: block;
-            height: auto;
-            max-height: 45px;
-            width: 100%;
-            max-width: 135px;
+            svg {
+                display: block;
+                height: auto;
+                max-height: 45px;
+                width: 100%;
+                max-width: 135px;
 
-            g {
-                @include transition(fill 300ms ease-in-out);
-                fill: map-get(base.$srp-greys, 900);
+                g {
+                    @include transition(fill 300ms ease-in-out);
+                    fill: map-get(base.$srp-greys, 800);
+                }
             }
         }
-    }
 
-    &__nav {
-        position: relative;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-
-        &__btn {
-            display: block;
-            height: 100%;
-            width: auto;
-            cursor: pointer;
-        }
-
-        &__menu {
-            position: fixed;
-            top: 100vh;
-            left: 0;
+        &__nav {
+            position: relative;
             display: flex;
+            flex: 1;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            height: calc(100vh - 110px);
-            width: 100%;
-            padding: base.$padding-default;
+            align-items: flex-end;
 
-            background-color: white;
-            @include transition(top 300ms ease-in-out, height 300ms ease-in-out);
-
-            a {
-                display: inline-block;
-                height: auto;
-                width: 50%;
-                margin: {
-                    top: 5px;
-                    bottom: 5px;
-                }
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                text-align: center;
-                // font-weight: bold;
-                @include font-size($header-font-sizes, base.$breakpoints);
-
-                &:after {
-                    display: block;
-                    content: '';
-                    border-bottom: solid 2px base.$srp-accent-blue;
-                    @include transform(scaleX(0));
-                    @include transition(transform 300ms ease-in-out);
-                }
-
-                &:hover:after {
-                    transform: scaleX(1);
-                }
+            &__btn {
+                display: block;
+                height: 100%;
+                width: auto;
+                cursor: pointer;
             }
 
-            span {
-                display: none;
-            }
+            &__menu {
+                position: fixed;
+                top: 100vh;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: calc(100vh - 110px);
+                width: 100%;
+                padding: base.$padding-default;
 
-            &.active {
-                top: 110px;
+                background-color: white;
+                @include transition(top 300ms ease-in-out, height 300ms ease-in-out);
+
+                a {
+                    display: inline-block;
+                    height: auto;
+                    width: 50%;
+                    margin: {
+                        top: 5px;
+                        bottom: 5px;
+                    }
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    // font-weight: bold;
+                    @include font-size($header-font-sizes, base.$breakpoints);
+
+                    &:after {
+                        display: block;
+                        content: '';
+                        border-bottom: solid 2px base.$srp-accent-blue;
+                        @include transform(scaleX(0));
+                        @include transition(transform 300ms ease-in-out);
+                    }
+
+                    &:hover:after {
+                        transform: scaleX(1);
+                    }
+                }
+
+                span {
+                    display: none;
+                }
+
+                &.active {
+                    top: 110px;
+                }
             }
         }
     }
 
     &.scrolled {
         height: 90px;
-        color: map-get(base.$srp-greys, 900);
+        color: map-get(base.$srp-greys, 800);
         background-color: white;
         border-bottom: base.$srp-accent-blue solid 2px;
 
-        .header__nav__menu {
+        .header__content__nav__menu {
             height: calc(100vh - 90px);
         }
 
-        .header__nav__menu.active {
+        .header__content__nav__menu.active {
             top: 90px;
         }
     }
@@ -141,54 +141,56 @@
         background-color: transparent;
         border-bottom: transparent solid 2px;
 
-        &__nav {
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-
-            &__btn {
-                display: none;
+        &__content {
+            &__logo {
+                svg {
+                    g {
+                        fill: white;
+                    }
+                }
             }
 
-            &__menu {
-                position: relative;
-                top: initial;
-                left: initial;
+            &__nav {
                 flex-direction: row;
-                height: auto;
-                width: auto;
-                background-color: initial;
-                padding: 0;
-                transition: initial;
+                justify-content: flex-end;
+                align-items: center;
 
-                a {
-                    margin: {
-                        top: 0;
-                        bottom: -2px;
-                    }
+                &__btn {
+                    display: none;
                 }
 
-                span {
-                    display: block;
-                    height: 100%;
-                    width: auto;
-                    margin: {
-                        left: 1.5vw;
-                        right: 1.5vw;
-                    }
-                    color: base.$srp-accent-blue;
-                }
-
-                &.active {
+                &__menu {
+                    position: relative;
                     top: initial;
-                }
-            }
-        }
+                    left: initial;
+                    flex-direction: row;
+                    height: auto;
+                    width: auto;
+                    background-color: initial;
+                    padding: 0;
+                    transition: initial;
 
-        &__logo {
-            svg {
-                g {
-                    fill: white;
+                    a {
+                        margin: {
+                            top: 0;
+                            bottom: -2px;
+                        }
+                    }
+
+                    span {
+                        display: block;
+                        height: 100%;
+                        width: auto;
+                        margin: {
+                            left: 1.5vw;
+                            right: 1.5vw;
+                        }
+                        color: base.$srp-accent-blue;
+                    }
+
+                    &.active {
+                        top: initial;
+                    }
                 }
             }
         }
@@ -215,7 +217,7 @@
     width: 40px;
     height: 5px;
     border-radius: 2px;
-    background-color: map-get(base.$srp-greys, 900);
+    background-color: map-get(base.$srp-greys, 800);
     margin: 6px 0px;
     @include transition(300ms ease-in-out);
 }
