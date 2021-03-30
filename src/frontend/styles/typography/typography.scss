@@ -1,29 +1,34 @@
 $font-default: 'Heebo';
 
-// H1 Font Size Map
+// Header Font Size Maps
 $h1-font-sizes: (
     null: 2.75rem,
     mobile-medium: 3rem,
     small: 3.125rem,
 );
 
-// H2 Font Size Map
 $h2-font-sizes: (
     null: 2.25rem,
     mobile-medium: 2.375rem,
     small: 2.5rem,
 );
 
-// H3 Font Size Map
 $h3-font-sizes: (
     null: 1.75rem,
     mobile-medium: 1.875rem,
     small: 2rem,
 );
 
-// H4 Font Size Map
 $h4-font-sizes: (
     null: 1.4rem,
+);
+
+$h5-font-sizes: (
+    null: 1.2rem,
+);
+
+$h6-font-sizes: (
+    null: 1rem,
 );
 
 // Header Font Size Map
