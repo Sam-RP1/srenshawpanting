@@ -5,10 +5,11 @@
 .h1,
 .h2,
 .h3,
-.h4 {
+.h4,
+.h5,
+.h6 {
     font-weight: 400;
     font-family: 'Heebo', sans-serif;
-    text-transform: capitalize;
     color: base.$srp-white;
     margin: {
         top: 0;
@@ -53,4 +54,12 @@
 
 .h4 {
     @include font-size($h4-font-sizes, base.$breakpoints);
+}
+
+.h5 {
+    @include font-size($h5-font-sizes, base.$breakpoints);
+}
+
+.h6 {
+    @include font-size($h6-font-sizes, base.$breakpoints);
 }
