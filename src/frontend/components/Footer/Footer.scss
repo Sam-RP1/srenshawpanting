@@ -1,0 +1,83 @@
+@use '../../styles/base';
+@import '../../styles/typography/typography', '../../styles/mixins/transition.scss',
+    '../../styles/mixins/transform.scss';
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 24px 16px;
+    background-color: map-get(base.$srp-greys, 900);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: base.$srp-accent-blue;
+            margin-bottom: 24px;
+        }
+
+        &__label {
+            padding-bottom: 3px;
+        }
+
+        &__icons-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: auto;
+            width: 100%;
+            padding-bottom: 24px;
+
+            .icon-wrapper {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+                margin: 0;
+                padding: 0px 8px;
+                font-size: 24px;
+
+                svg {
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+        }
+
+        &__links-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            color: white;
+
+            a {
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                @include transition(color ease-in-out 200ms);
+
+                &:hover {
+                    color: base.$srp-accent-blue;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+    }
+}
