@@ -1,25 +1,6 @@
 @use 'base';
 @import './typography/typography';
 
-/*----------------------------------------*\
-root.scss
-
-ROOT
-
-- Element Tags
-- Containers & Wrappers
-- Alignments
-- Sections
-- Heights
-- Padding
-- Background Colors
-- Content Colors
-- @media
-\*----------------------------------------*/
-
-/*----------------------------------------*\
-Element Tags
-\*----------------------------------------*/
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -35,7 +16,7 @@ Element Tags
 
 html {
     font-family: 'Heebo', sans-serif;
-    background-color: map-get(base.$srp-greys, 900);
+    background-color: map-get(base.$srp-greys, 800);
 }
 
 body {
@@ -45,7 +26,7 @@ body {
 }
 
 main {
-    height: 200vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -72,20 +53,6 @@ a:hover {
     text-decoration: none;
 }
 
-/*----------------------------------------*\
-Heights
-\*----------------------------------------*/
-.h-50 {
-    height: 50vh;
-}
-
-.h-auto {
-    height: auto;
-}
-
-/*----------------------------------------*\
-Margin
-\*----------------------------------------*/
 .mr-auto {
     margin-right: auto;
 }
@@ -94,50 +61,7 @@ Margin
     margin-left: auto;
 }
 
-/*----------------------------------------*\
-Padding
-\*----------------------------------------*/
-.padding-default {
-    padding: 8px 16px;
-    box-sizing: border-box;
-}
-
-.padding-6016 {
-    padding: 60px 16px;
-    box-sizing: border-box;
-}
-
-/*----------------------------------------*\
-Backgrounds Colors
-\*----------------------------------------*/
-.bg-white {
-    background-color: base.$srp-white;
-}
-
-.bg-black {
-    background-color: map-get(base.$srp-greys, 100);
-}
-
-/*----------------------------------------*\
-Content Colors
-\*----------------------------------------*/
-.content-white {
-    color: base.$srp-white;
-}
-
-.content-black {
-    color: base.$srp-black;
-}
-
-/*----------------------------------------*\
-@media
-\*----------------------------------------*/
 @media (min-width: 576px) {
-    .section-default {
-        h1 {
-            font-size: 2em;
-        }
-    }
 }
 
 @media (min-width: 768px) {
@@ -147,52 +71,4 @@ Content Colors
 }
 
 @media (min-width: 1200px) {
-    .wrapper-100 {
-        width: 100%;
-    }
-
-    .wrapper-60 {
-        width: 60%;
-    }
-
-    .wrapper-50 {
-        width: 50%;
-    }
-
-    .wrapper-40 {
-        width: 40%;
-    }
-
-    .txt-wrapper {
-        padding: 0px;
-    }
-
-    .align-right {
-        flex-flow: row-reverse !important;
-    }
-
-    .align-left {
-        flex-flow: row !important;
-    }
-
-    .align-center {
-        article {
-            box-sizing: border-box;
-            padding-bottom: 30px;
-        }
-    }
-
-    .align-right {
-        article {
-            box-sizing: border-box;
-            padding-left: 10px;
-        }
-    }
-
-    .align-left {
-        article {
-            box-sizing: border-box;
-            padding-right: 10px;
-        }
-    }
 }
