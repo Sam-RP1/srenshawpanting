@@ -3,6 +3,7 @@ import { Link, Icon } from '../../interfaces';
 
 import { Container } from '../UI/Container/Container';
 import { Heading } from '../UI/Typography/Heading/Heading';
+import { Tooltip } from '../UI/Tooltip/Tooltip';
 
 import './Footer.scss';
 
@@ -13,20 +14,22 @@ type FooterProps = {
 
 export const Footer = ({ links, icons }: FooterProps): JSX.Element => {
     const linkElems = links.map((link, i) => {
-        console.log('length', links.length);
         const isDivided = i <= links.length - 2 ? <div>|</div> : null;
         return (
-            <>
+            <React.Fragment key={link.id + '-footer'}>
                 {link.url}
                 {isDivided}
-            </>
+            </React.Fragment>
         );
     });
 
     const iconElems = icons.map((icon) => {
         return (
-            <a key={icon.id} href={icon.url}>
-                <div className='icon-wrapper'>{icon.icon}</div>
+            <a key={icon.id} href={icon.url} target='_blank' rel='noreferrer'>
+                <div className='icon-wrapper tooltip'>
+                    {icon.icon}
+                    <Tooltip tip={'HELLO!'} position={'left'} />
+                </div>
             </a>
         );
     });
