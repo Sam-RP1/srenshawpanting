@@ -204,8 +204,8 @@
                 top: initial;
             }
 
-            .header__logo svg g {
-                fill: map-get(base.$srp-greys, 900);
+            .header__content__logo svg g {
+                fill: map-get(base.$srp-greys, 800);
             }
         }
     }
