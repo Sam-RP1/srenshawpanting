@@ -27,7 +27,7 @@
         }
 
         &__label {
-            padding-bottom: 3px;
+            padding-bottom: 5px;
         }
 
         &__icons-container {
@@ -36,7 +36,7 @@
             justify-content: center;
             height: auto;
             width: 100%;
-            padding-bottom: 24px;
+            padding-bottom: 22px;
 
             .icon-wrapper {
                 position: relative;
@@ -48,9 +48,14 @@
                 padding: 0px 8px;
                 font-size: 24px;
 
-                svg {
-                    path {
-                        fill: white;
+                svg path {
+                    fill: white;
+                    @include transition(fill ease-out 200ms);
+                }
+
+                &:hover {
+                    svg path {
+                        fill: base.$srp-accent-blue;
                     }
                 }
             }
@@ -69,7 +74,7 @@
                 text-transform: uppercase;
                 font-size: 0.75rem;
                 letter-spacing: 2px;
-                @include transition(color ease-in-out 200ms);
+                @include transition(color ease-out 200ms);
 
                 &:hover {
                     color: base.$srp-accent-blue;
@@ -78,6 +83,76 @@
         }
     }
 
+    @media screen and (min-width: 576px) {
+        &__content {
+            &__links-container {
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
     @media screen and (min-width: 768px) {
+        &__content {
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+
+            &__label {
+                display: none;
+            }
+
+            &__icons-container {
+                justify-content: space-between;
+                width: 30%;
+                padding: 0;
+
+                .icon-wrapper {
+                    padding: 0;
+                    font-size: 20px;
+                }
+            }
+
+            &__links-container {
+                width: 55%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        &__content {
+            &__icons-container {
+                width: 25%;
+            }
+
+            &__links-container {
+                width: 50%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        &__content {
+            &__icons-container {
+                width: 23%;
+            }
+
+            &__links-container {
+                width: 45%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1576px) {
+        &__content {
+            &__icons-container {
+                width: 20%;
+            }
+
+            &__links-container {
+                width: 40%;
+            }
+        }
     }
 }
