@@ -8,7 +8,7 @@ import { Footer } from './components/Footer/Footer';
 // import { UIDesignSystem } from './containers/UIDesignSystem/UIDesignSystem';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessRook } from '@fortawesome/free-solid-svg-icons';
+import { faChessKing, faMugHot } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faInstagram, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 export const App = (): JSX.Element => {
@@ -46,6 +46,7 @@ export const App = (): JSX.Element => {
             ),
         },
     ];
+
     const icons = [
         { id: 'github', url: 'https://github.com/Sam-RP1', icon: <FontAwesomeIcon icon={faGithub} /> },
         {
@@ -53,13 +54,14 @@ export const App = (): JSX.Element => {
             url: 'https://www.linkedin.com/in/samuel-renshaw-panting/',
             icon: <FontAwesomeIcon icon={faLinkedinIn} />,
         },
-        { id: 'chess', url: 'https://www.chess.com/member/samuelr-p', icon: <FontAwesomeIcon icon={faChessRook} /> },
         {
             id: 'youtube',
             url: 'https://www.youtube.com/user/TheWarpCentral',
             icon: <FontAwesomeIcon icon={faYoutube} />,
         },
         { id: 'instagram', url: 'https://www.instagram.com/sxm_rp/', icon: <FontAwesomeIcon icon={faInstagram} /> },
+        { id: 'chess', url: 'https://www.chess.com/member/samuelr-p', icon: <FontAwesomeIcon icon={faChessKing} /> },
+        { id: 'buymeacoffee', url: 'https://www.buymeacoffee.com/samrp', icon: <FontAwesomeIcon icon={faMugHot} /> },
     ];
 
     return (
