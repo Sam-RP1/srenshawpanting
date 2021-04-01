@@ -1,0 +1,39 @@
+@use '../../../styles/base.scss';
+
+.tooltip {
+    position: relative;
+    display: block;
+
+    .tooltip__text {
+        position: absolute;
+        z-index: 1;
+        visibility: hidden;
+        min-width: 60px;
+        width: auto;
+        max-width: 200px;
+        color: white;
+        background-color: map-get(base.$srp-greys, 700);
+        text-align: center;
+        padding: 3px 5px;
+        border-radius: base.$rounded;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+
+        &--left {
+            @extend .tooltip__text;
+            right: 105%;
+        }
+        &--right {
+            @extend .tooltip__text;
+            left: -105%;
+        }
+    }
+
+    &:hover {
+        .tooltip__text,
+        .tooltip__text--left,
+        .tooltip__text--right {
+            visibility: visible;
+        }
+    }
+}
