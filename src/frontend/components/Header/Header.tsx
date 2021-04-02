@@ -5,15 +5,16 @@ import { Container } from '../UI/Container/Container';
 
 import './Header.scss';
 
-// type HeaderProps = {};
-
 export const Header = (): JSX.Element => {
-    const renderCount = useRef(0);
     const headerRoot = useRef();
     const navBtn = useRef();
     const navMenu = useRef();
 
-    console.log('Header Renders: ', renderCount.current++);
+    const closeMenu = () => {
+        if (window.innerWidth < 768) {
+            navBtn.current.click();
+        }
+    };
 
     const navHandler = () => {
         navBtn.current.classList.toggle('active');
@@ -75,13 +76,21 @@ export const Header = (): JSX.Element => {
                         </div>
 
                         <nav className='header__content__nav__menu' ref={navMenu}>
-                            <NavLink to='/about'>About</NavLink>
+                            <NavLink to='/about' onClick={() => closeMenu()}>
+                                About
+                            </NavLink>
                             <span>|</span>
-                            <NavLink to='/portfolio'>Portfolio</NavLink>
+                            <NavLink to='/portfolio' onClick={() => closeMenu()}>
+                                Portfolio
+                            </NavLink>
                             <span>|</span>
-                            <NavLink to='/cv'>CV</NavLink>
+                            <NavLink to='/cv' onClick={() => closeMenu()}>
+                                CV
+                            </NavLink>
                             <span>|</span>
-                            <NavLink to='/connect'>Connect</NavLink>
+                            <NavLink to='/connect' onClick={() => closeMenu()}>
+                                Connect
+                            </NavLink>
                         </nav>
                     </div>
                 </>
