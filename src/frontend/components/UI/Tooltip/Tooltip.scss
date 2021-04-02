@@ -1,4 +1,5 @@
 @use '../../../styles/base.scss';
+@import '../../../styles/mixins/transition.scss';
 
 .tooltip {
     position: relative;
@@ -7,6 +8,7 @@
     .tooltip__text {
         position: absolute;
         z-index: 1;
+        display: none;
         visibility: hidden;
         min-width: 60px;
         width: auto;
@@ -16,9 +18,14 @@
         text-align: center;
         padding: 3px 5px;
         border-radius: base.$rounded;
-        font-size: 0.9rem;
-        text-transform: uppercase;
+        font-size: 0.85rem;
+        opacity: 0;
+        @include transition(opacity ease 200ms);
 
+        &--top {
+            @extend .tooltip__text;
+            top: -150%;
+        }
         &--left {
             @extend .tooltip__text;
             right: 105%;
@@ -27,6 +34,10 @@
             @extend .tooltip__text;
             left: -105%;
         }
+
+        @media screen and (min-width: 576px) {
+            display: block;
+        }
     }
 
     &:hover {
@@ -34,6 +45,7 @@
         .tooltip__text--left,
         .tooltip__text--right {
             visibility: visible;
+            opacity: 1;
         }
     }
 }

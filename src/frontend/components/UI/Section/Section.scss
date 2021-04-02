@@ -8,4 +8,9 @@
         align-items: center;
         justify-content: center;
     }
+
+    &--end-center {
+        align-items: flex-end;
+        justify-content: center;
+    }
 }

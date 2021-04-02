@@ -1,7 +1,8 @@
 @use '../../styles/base';
 
 .about {
-    margin-top: 80px;
+    min-height: 100vh;
+    padding-top: 140px;
     color: white;
 
     &__content {
@@ -23,7 +24,8 @@
 
                 ul {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: initial;
+                    flex-wrap: wrap;
                     padding-inline-start: 0;
                     list-style-type: none;
                     margin: {
@@ -33,19 +35,9 @@
                         left: 0;
                     }
 
-                    &.wrap {
-                        flex-direction: initial;
-                        flex-wrap: wrap;
-
-                        li {
-                            width: 50%;
-                            max-width: 50%;
-                        }
-                    }
-
                     li {
                         height: auto;
-                        width: 100%;
+                        width: 50%;
 
                         &::before {
                             content: '//';
@@ -84,6 +76,36 @@
                 svg {
                     path {
                         fill: map-get(base.$srp-greys, 800);
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            &__lists-container {
+                &__list {
+                    ul {
+                        &.wrap {
+                            li {
+                                width: 33.333333%;
+                                max-width: 33.333333%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            &__lists-container {
+                &__list {
+                    ul {
+                        &.wrap {
+                            li {
+                                width: 25%;
+                                max-width: 25%;
+                            }
+                        }
                     }
                 }
             }
