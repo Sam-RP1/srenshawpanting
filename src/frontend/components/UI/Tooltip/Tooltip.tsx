@@ -14,9 +14,13 @@ export const Tooltip = ({ position = 'default', tip }: TooltipProps): JSX.Elemen
         position = 'tooltip__text--right';
     } else if (position === 'left') {
         position = 'tooltip__text--left';
-    } else {
-        position = 'tooltip__text';
+    } else if (position === 'top') {
+        position = 'tooltip__text--top';
     }
 
-    return <span className={position}>{tip}</span>;
+    return (
+        <span role='tooltip' className={position}>
+            {tip}
+        </span>
+    );
 };
