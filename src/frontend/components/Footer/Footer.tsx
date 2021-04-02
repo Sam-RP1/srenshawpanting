@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Icon } from '../../interfaces';
+import { Link, Icon } from '../../lib/interfaces';
 
 import { Container } from '../UI/Container/Container';
 import { Heading } from '../UI/Typography/Heading/Heading';
@@ -28,7 +28,7 @@ export const Footer = ({ links, icons }: FooterProps): JSX.Element => {
             <a key={icon.id} href={icon.url} target='_blank' rel='noreferrer'>
                 <div className='icon-wrapper tooltip'>
                     {icon.icon}
-                    <Tooltip tip={'HELLO!'} position={'left'} />
+                    <Tooltip tip={icon.tooltip} position={'top'} />
                 </div>
             </a>
         );
