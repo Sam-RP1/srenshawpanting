@@ -4,10 +4,6 @@ import { Heading } from '../UI/Typography/Heading/Heading';
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessKnight } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faInstagram, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
-
 import './About.scss';
 
 // type AboutProps = {};
@@ -52,33 +48,6 @@ export const About = (): JSX.Element => {
                                 <li>Cloud Computing</li>
                             </ul>
                         </div>
-                    </div>
-                    <div className='about__content__icons-container'>
-                        <a href='#'>
-                            <div className='icon-wrapper'>
-                                <FontAwesomeIcon icon={faGithub} />
-                            </div>
-                        </a>
-                        <a href='#'>
-                            <div className='icon-wrapper'>
-                                <FontAwesomeIcon icon={faLinkedin} />
-                            </div>
-                        </a>
-                        <a href='#'>
-                            <div className='icon-wrapper'>
-                                <FontAwesomeIcon icon={faChessKnight} />
-                            </div>
-                        </a>
-                        <a href='#'>
-                            <div className='icon-wrapper'>
-                                <FontAwesomeIcon icon={faYoutube} />
-                            </div>
-                        </a>
-                        <a href='#'>
-                            <div className='icon-wrapper'>
-                                <FontAwesomeIcon icon={faInstagram} />
-                            </div>
-                        </a>
                     </div>
                 </article>
             </Container>
