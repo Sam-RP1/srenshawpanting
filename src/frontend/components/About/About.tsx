@@ -10,7 +10,7 @@ import './About.scss';
 
 export const About = (): JSX.Element => {
     return (
-        <Section classes={['center-center', 'about']}>
+        <Section classes={['default', 'center-center', 'about']}>
             <Container>
                 <article className='about__content'>
                     <Heading importance={3} title={'About'} classes={['uppercase', 'spaced', 'underline']} />

@@ -1,8 +1,7 @@
 @use '../../styles/base.scss';
+@import '../../styles/mixins/transition.scss';
 
 .connect {
-    min-height: 100vh;
-    padding-top: 140px;
     color: white;
 
     &__content {
@@ -12,10 +11,30 @@
             justify-content: space-between;
             height: auto;
             width: 100%;
+            margin: 18px 0;
 
             a {
                 width: 33.333333%;
-                margin-top: 18px;
+
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    margin-top: 18px;
+                }
+
+                &:nth-child(1),
+                &:nth-child(4) {
+                    .icon-wrapper {
+                        justify-content: flex-start;
+                    }
+                }
+
+                &:nth-child(3),
+                &:nth-child(6) {
+                    .icon-wrapper {
+                        justify-content: flex-end;
+                    }
+                }
 
                 .icon-wrapper {
                     display: flex;
@@ -23,6 +42,17 @@
                     align-items: center;
                     width: 100%;
                     font-size: 48px;
+
+                    svg path {
+                        fill: white;
+                        @include transition(fill ease-out 200ms);
+                    }
+
+                    &:hover {
+                        svg path {
+                            fill: base.$srp-accent-blue;
+                        }
+                    }
                 }
             }
         }
@@ -30,17 +60,24 @@
         @media screen and (min-width: 768px) {
             &__icon-container {
                 flex-wrap: initial;
-                margin-top: 18px;
 
                 a {
                     width: auto;
-                    margin-top: 0;
+                    margin: 0;
+
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        margin-top: 0;
+                    }
+
+                    &:nth-child(n) {
+                        .icon-wrapper {
+                            justify-content: center;
+                        }
+                    }
 
                     .icon-wrapper {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
                         font-size: 64px;
                     }
                 }

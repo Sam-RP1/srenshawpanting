@@ -14,12 +14,17 @@ type SectionProps = {
 export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: SectionProps): JSX.Element => {
     const isCenterCenter = classes.indexOf('center-center');
     const isEndCenter = classes.indexOf('end-center');
+    const isDefault = classes.indexOf('default');
     let classStr = '';
 
     if (isCenterCenter > -1) {
         classes[isCenterCenter] = 'section--center-center';
     } else if (isEndCenter > -1) {
         classes[isEndCenter] = 'section--end-center';
+    }
+
+    if (isDefault > -1) {
+        classes[isDefault] = 'section--default';
     }
 
     if (classes.length !== 0) {

@@ -94,7 +94,6 @@
                     letter-spacing: 3px;
                     text-transform: uppercase;
                     text-align: center;
-                    // font-weight: bold;
                     @include font-size($header-font-sizes, base.$breakpoints);
 
                     &:after {
@@ -106,6 +105,10 @@
                     }
 
                     &:hover:after {
+                        transform: scaleX(1);
+                    }
+
+                    &.active:after {
                         transform: scaleX(1);
                     }
                 }

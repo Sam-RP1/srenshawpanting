@@ -1,5 +1,6 @@
-@use 'base';
-@import './typography/typography';
+@use 'base.scss';
+@import './typography/typography.scss';
+@import './mixins/userSelect.scss';
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -30,19 +31,18 @@ main {
     width: 100%;
 }
 
-p {
-    margin: 0px;
-    @include font-size($p-font-sizes, base.$breakpoints);
-}
-
 p,
 li {
     letter-spacing: 1px;
+    margin: 0px;
+    @include font-size($p-font-sizes, base.$breakpoints);
+    @include userSelect(none);
 }
 
 a {
     text-decoration: none;
     content: inherit;
+    @include userSelect(none);
 }
 
 a:link,

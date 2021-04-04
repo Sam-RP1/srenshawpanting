@@ -26,13 +26,13 @@ export const Connect = ({ icons }: ConnectProps): JSX.Element => {
     });
 
     return (
-        <Section classes={['center-center', 'connect']}>
+        <Section classes={['default', 'center-center', 'connect']}>
             <Container>
                 <article className='connect__content'>
                     <Heading importance={3} title={'Connect'} classes={['uppercase', 'spaced', 'underline']} />
                     <p>Get in touch, view my work or even support me via the platforms below.</p>
-                    <p>For other enquiries use: samrpenquiries@gmail.com</p>
                     <div className='connect__content__icon-container'>{iconElems}</div>
+                    <p>If email is more of your thing then you can reach me using: samrpenquiries@gmail.com</p>
                 </article>
             </Container>
         </Section>

@@ -4,6 +4,11 @@
     margin: 0;
     padding: 60px 16px;
 
+    &--default {
+        min-height: 100vh;
+        padding-top: 140px;
+    }
+
     &--center-center {
         align-items: center;
         justify-content: center;
