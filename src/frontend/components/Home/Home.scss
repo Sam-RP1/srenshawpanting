@@ -1,0 +1,56 @@
+.home {
+    color: white;
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__intro {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        &__pic {
+            display: none;
+            height: auto;
+            width: auto;
+            margin-left: 18px;
+
+            img {
+                $height: 150px;
+                height: $height;
+                border-radius: calc(#{$height / 2});
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            &__pic {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            &__pic {
+                img {
+                    $height: 180px;
+                    height: $height;
+                    border-radius: calc(#{$height / 2});
+                }
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            &__pic {
+                img {
+                    $height: 200px;
+                    height: $height;
+                    border-radius: calc(#{$height / 2});
+                }
+            }
+        }
+    }
+}
