@@ -19,12 +19,7 @@
     border-bottom: base.$srp-accent-blue solid 2px;
     color: map-get(base.$srp-greys, 800);
     background-color: white;
-    @include transition(
-        height 300ms ease-in-out,
-        color 300ms ease-in-out,
-        background-color 300ms ease-in-out,
-        border-bottom 300ms ease-in-out
-    );
+    @include transition(300ms);
 
     &__content {
         display: flex;
@@ -199,11 +194,11 @@
         }
 
         &.scrolled {
-            .header__nav__menu {
+            .header__content__nav__menu {
                 height: auto;
             }
 
-            .header__nav__menu.active {
+            .header__content__nav__menu.active {
                 top: initial;
             }
 
