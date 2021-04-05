@@ -1,4 +1,6 @@
 @use '../../styles/base.scss';
+@import '../../styles/mixins/transition.scss';
+@import '../../styles/mixins/transform.scss';
 
 .portfolio {
     color: white;
@@ -10,6 +12,14 @@
             height: auto;
             width: 100%;
         }
+
+        @media screen and (min-width: 992px) {
+            &__container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
     }
 
     &__tile {
@@ -19,21 +29,23 @@
         width: 100%;
         margin-top: 18px;
         background-color: map-get(base.$srp-greys, 900);
+        cursor: pointer;
+        box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.5), 1px 0 2px 0 rgba(0, 0, 0, 0.5), 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+        overflow: hidden;
 
         &:first-of-type {
             margin-top: 0;
         }
 
-        &#deduction {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/deduction/img/deduction-min.png');
-            }
+        &:hover .portfolio__tile__preview,
+        &:focus .portfolio__tile__preview {
+            filter: blur(0px);
+            @include transform(scale(1.1));
         }
 
-        &#peerreviewportal {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/peer-review-portal/img/prp.png');
-            }
+        &:hover .portfolio__tile__preview__filter,
+        &:focus .portfolio__tile__preview__filter {
+            opacity: 0.4;
         }
 
         &__preview {
@@ -43,20 +55,23 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            filter: blur(1px);
+            @include transition(300ms ease-out);
 
             &__filter {
                 position: absolute;
                 z-index: 1;
                 height: 100%;
                 width: 100%;
-                // background-color: rgba(0, 128, 179, 0.45);
-
+                opacity: 1;
                 background: linear-gradient(
-                    -30deg,
-                    rgba(0, 128, 179, 0.6),
-                    rgba(0, 128, 179, 0.4),
-                    rgba(0, 128, 179, 0.2)
+                    30deg,
+                    rgba(0, 128, 179, 1),
+                    rgba(0, 128, 179, 0.65),
+                    rgba(0, 128, 179, 0.45),
+                    rgba(0, 128, 179, 0.25)
                 );
+                @include transition(300ms ease-out);
             }
 
             img {
@@ -77,6 +92,68 @@
             height: auto;
             width: 100%;
             padding: base.$padding-default;
+        }
+
+        &#deduction {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/deduction/img/deduction-min.png');
+            }
+        }
+
+        &#peerreviewportal {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/peer-review-portal/img/prp-min.png');
+            }
+        }
+
+        &#letterdetonator {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/letter-detonator/img/letter-detonator-min.png');
+            }
+        }
+
+        &#karensbeautybox {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/karensbeautybox/img/karensbeautybox-min.png');
+            }
+        }
+
+        &#pudhub {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/portsmouth-unattended-displays/img/pud-min.png');
+            }
+        }
+
+        &#fred {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/fred/img/fred-min.png');
+            }
+        }
+
+        &#robotics {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/robotics/img/robotics.png');
+            }
+        }
+
+        &#distibutedsystems {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/distributed-systems/img/dss-min.png');
+            }
+        }
+
+        &#literaturereview {
+            .portfolio__tile__preview {
+                background-image: url('../../assets/portfolio/literature-review/img/litrev-min.png');
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 49%;
+
+            &:nth-child(2) {
+                margin-top: 0;
+            }
         }
     }
 }
