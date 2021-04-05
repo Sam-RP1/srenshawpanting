@@ -53,7 +53,8 @@
                     @include transition(fill ease-out 200ms);
                 }
 
-                &:hover {
+                &:hover,
+                &:focus {
                     svg path {
                         fill: base.$srp-accent-blue;
                     }
@@ -76,7 +77,8 @@
                 letter-spacing: 2px;
                 @include transition(color ease-out 200ms);
 
-                &:hover {
+                &:hover,
+                &:focus {
                     color: base.$srp-accent-blue;
                 }
             }
