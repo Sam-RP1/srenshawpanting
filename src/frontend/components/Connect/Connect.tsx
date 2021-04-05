@@ -16,12 +16,12 @@ type ConnectProps = {
 export const Connect = ({ icons }: ConnectProps): JSX.Element => {
     const iconElems = icons.map((icon) => {
         return (
-            <a key={icon.id} href={icon.url} target='_blank' rel='noreferrer'>
-                <div className='icon-wrapper tooltip'>
+            <div key={icon.id} className='icon-wrapper tooltip'>
+                <a href={icon.url} target='_blank' rel='noreferrer'>
                     {icon.icon}
                     <Tooltip tip={icon.tooltip} position={'left'} />
-                </div>
-            </a>
+                </a>
+            </div>
         );
     });
 
@@ -32,7 +32,8 @@ export const Connect = ({ icons }: ConnectProps): JSX.Element => {
                     <Heading importance={3} title={'Connect'} classes={['uppercase', 'spaced', 'underline']} />
                     <p>Get in touch, view my work or even support me via the platforms below.</p>
                     <div className='connect__content__icon-container'>{iconElems}</div>
-                    <p>If email is more of your thing then you can reach me using: samrpenquiries@gmail.com</p>
+                    <p>However, if email is more of your thing then you can contact me using:</p>
+                    <p>samrpenquiries@gmail.com</p>
                 </article>
             </Container>
         </Section>
