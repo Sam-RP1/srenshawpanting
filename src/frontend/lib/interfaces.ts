@@ -2,7 +2,8 @@ export interface Icon {
     id: string;
     url: string;
     icon: JSX.Element;
-    tooltip: string;
+    tooltip?: string;
+    label?: string;
 }
 export interface Icons extends Array<Icon> {}
 

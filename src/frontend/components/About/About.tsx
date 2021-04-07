@@ -15,10 +15,10 @@ export const About = (): JSX.Element => {
                 <article className='about__content'>
                     <Heading importance={3} title={'About'} classes={['uppercase', 'spaced', 'underline']} />
                     <p className=''>
-                        I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a motivated
-                        individual who consistently improves my knowledge and proficiency in numerous subject areas
-                        relating to information technology. Such areas include web design, front-end web development,
-                        backend development and cloud computing.
+                        Hi there! I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a
+                        motivated individual who consistently improves my knowledge and proficiency in numerous subject
+                        areas relating to information technology. Such areas include web design, front-end web
+                        development, backend development and cloud computing.
                     </p>
                     <div className='about__content__lists-container'>
                         <div className='about__content__lists-container__list'>

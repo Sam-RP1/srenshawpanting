@@ -4,7 +4,7 @@ import './Tooltip.scss';
 
 type TooltipProps = {
     position?: string;
-    tip: string;
+    tip?: string;
 };
 
 export const Tooltip = ({ position = 'default', tip }: TooltipProps): JSX.Element => {

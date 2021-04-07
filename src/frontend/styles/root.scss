@@ -64,6 +64,14 @@ a:hover {
     text-decoration: none;
 }
 
+.padding-default {
+    padding: base.$padding-default;
+}
+
+.padding-default-sides {
+    padding: base.$padding-default-sides;
+}
+
 .mr-auto {
     margin-right: auto;
 }

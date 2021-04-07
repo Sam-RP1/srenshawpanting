@@ -2,7 +2,7 @@
 @import '../../styles/mixins/transform.scss';
 
 #background {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@
 }
 
 .planet--1 {
-    position: absolute;
+    position: fixed;
     z-index: -3;
     top: 10%;
     left: 1rem;
@@ -22,7 +22,7 @@
 }
 
 .planet--2 {
-    position: absolute;
+    position: fixed;
     z-index: -3;
     bottom: 15rem;
     right: 1.5rem;
