@@ -1,5 +1,7 @@
 @use '../../styles/base';
 
+$margin-top: 1.125rem;
+
 .about {
     color: white;
 
@@ -9,12 +11,12 @@
             flex-direction: column;
             height: auto;
             width: 100%;
-            margin-top: 18px;
+            margin-top: $margin-top;
 
             &__list {
                 height: auto;
                 width: 100%;
-                margin-top: 18px;
+                margin-top: $margin-top;
 
                 &:first-child {
                     margin-top: 0;
@@ -41,39 +43,6 @@
                             content: '//';
                             padding-right: 7px;
                         }
-                    }
-                }
-            }
-        }
-
-        &__icons-container {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            height: auto;
-            width: 100%;
-            margin-top: 18px;
-
-            .icon-wrapper {
-                position: relative;
-                display: flex;
-                flex-grow: 1;
-                justify-content: center;
-                align-items: center;
-                height: 50px;
-                width: 50px;
-                margin: {
-                    bottom: 5px;
-                }
-                border-radius: 15px;
-                background-color: white;
-                font-size: 28px;
-
-                svg {
-                    path {
-                        fill: map-get(base.$srp-greys, 800);
                     }
                 }
             }
