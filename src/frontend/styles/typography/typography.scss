@@ -35,12 +35,15 @@ $h6-font-sizes: (
 $header-font-sizes: (
     null: 1.25rem,
     small: 1.1rem,
+    medium: 1.15rem,
 );
 
 // P Font Size Map
 $p-font-sizes: (
     null: 0.9rem,
     mobile-medium: 1rem,
+    small: 1.05rem,
+    medium: 1.1rem,
 );
 
 // Mixins
