@@ -23,7 +23,7 @@ html {
 body {
     height: auto;
     width: 100%;
-    margin: 0px;
+    margin: 0;
 }
 
 main {
@@ -31,10 +31,21 @@ main {
     width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    line-height: 1.6;
+}
+
 p,
 li {
     letter-spacing: 1px;
-    margin: 0px;
+    margin: 0;
     @include font-size($p-font-sizes, base.$breakpoints);
     @include userSelect(none);
 }
