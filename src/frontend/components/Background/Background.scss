@@ -1,3 +1,6 @@
+@use '../../styles/base.scss';
+@import '../../styles/mixins/transform.scss';
+
 #background {
     position: absolute;
     z-index: -1;
@@ -7,4 +10,23 @@
     bottom: 0;
     min-height: 100vh;
     overflow: hidden;
+}
+
+.planet--1 {
+    position: absolute;
+    z-index: -3;
+    top: 10%;
+    left: 1rem;
+    height: 140px;
+    width: 140px;
+}
+
+.planet--2 {
+    position: absolute;
+    z-index: -3;
+    bottom: 15rem;
+    right: 1.5rem;
+    height: 100px;
+    width: 100px;
+    @include transform(rotate(90deg));
 }
