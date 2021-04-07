@@ -24,12 +24,6 @@ $breakpoints: (
     xlarge: 1576px,
 );
 
-// --- Paragraphs
-$paragraph: 14px;
-$paragraph-large: 16px;
-$paragraph-small: 12px;
-$paragraph-bold: bold $paragraph;
-
 // Buttons
 // ---
 $button-default: (
@@ -39,4 +33,4 @@ $button-default: (
 
 // General Properties
 $rounded: 0.25rem;
-$padding-default: 8px 16px;
+$padding-default: 0.5rem 1rem;
