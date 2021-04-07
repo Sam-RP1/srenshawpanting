@@ -11,19 +11,19 @@
             justify-content: space-between;
             height: auto;
             width: 100%;
-            margin: 18px 0;
+            margin: 1.125rem 0;
 
             .icon-wrapper {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 33.333333%;
-                font-size: 48px;
+                font-size: 3rem;
 
                 &:nth-child(4),
                 &:nth-child(5),
                 &:nth-child(6) {
-                    margin-top: 18px;
+                    margin-top: 1.125rem;
                 }
 
                 &:nth-child(1),
@@ -54,6 +54,10 @@
             }
         }
 
+        p:first-of-type {
+            margin-bottom: 1rem;
+        }
+
         @media screen and (min-width: 576px) {
             &__icon-container {
                 flex-wrap: initial;
@@ -78,7 +82,7 @@
         @media screen and (min-width: 992px) {
             &__icon-container {
                 .icon-wrapper {
-                    font-size: 56px;
+                    font-size: 3.5rem;
                 }
             }
         }
