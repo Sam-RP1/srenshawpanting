@@ -216,7 +216,7 @@
     height: 5px;
     border-radius: 2px;
     background-color: map-get(base.$srp-greys, 800);
-    margin: 6px 0px;
+    margin: 6px 0;
     @include transition(300ms ease-in-out);
 }
 
