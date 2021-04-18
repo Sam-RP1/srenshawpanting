@@ -36,10 +36,12 @@ const About = () => {
             <article className='container column'>
                 <h1 data-aos='flip-down'>About</h1>
                 <p data-aos='fade-right' data-aos-delay='150'>
-                    I am Sam, a Software Engineering graduate from the University of Portsmouth. I am a motivated
-                    individual who consistently improves my knowledge and proficiency in numerous subject areas relating
-                    to information technology. Such areas include web design, front-end web development, backend
-                    development and cloud computing.
+                    Hi there! I&apos;m Sam, a 22-year-old Web Developer and Software Engineering graduate. I&apos;m
+                    an enthusiastic guy with a passion for the web and its multitude of technologies. I like to compose captivating designs, create smart user interfaces, solve complex problems,
+                    squash troublesome bugs, develop rich web experiences and web applications. As well as, I enjoy consistently pushing myself by learning new languages, frameworks and
+                    technologies in addition to further improving my abilities in ones I am already familiar with. When I&apos;m not learning, conceptualising, designing or developing, you&apos;ll most likely
+                    find me either exercising, playing with my dog, listening to music or being below average at
+                    chess.
                 </p>
                 <div className='about-info-container'>
                     <Lists listOne={listOne} listTwo={listTwo} />
