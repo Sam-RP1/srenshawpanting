@@ -16,8 +16,18 @@
 }
 
 html {
-    font-family: 'Heebo', sans-serif;
-    background-color: map-get(base.$srp-greys, 800);
+    font-family: 'Recursive', sans-serif;
+    // background-color: map-get(base.$srp-greys, 800);
+    background: linear-gradient(
+        0deg,
+        map-get(base.$srp-greys, 800),
+        map-get(base.$srp-greys, 800),
+        map-get(base.$srp-greys, 800),
+        #14171d,
+        map-get(base.$srp-greys, 900)
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body {
@@ -50,18 +60,15 @@ li {
     @include userSelect(none);
 }
 
-a {
-    text-decoration: none;
-    content: inherit;
-    @include userSelect(none);
-}
-
+a,
 a:link,
 a:visited,
 a:hover {
     color: inherit;
     background-color: transparent;
     text-decoration: none;
+    content: inherit;
+    @include userSelect(none);
 }
 
 .padding-default {
@@ -78,6 +85,10 @@ a:hover {
 
 .ml-auto {
     margin-left: auto;
+}
+
+.indent {
+    padding-left: 3rem;
 }
 
 @media (min-width: 576px) {
