@@ -3,19 +3,19 @@ $font-default: 'Heebo';
 // Header Font Size Maps
 $h1-font-sizes: (
     null: 2.75rem,
-    mobile-medium: 3rem,
+    mobile: 3rem,
     small: 3.125rem,
 );
 
 $h2-font-sizes: (
     null: 2.25rem,
-    mobile-medium: 2.375rem,
+    mobile: 2.375rem,
     small: 2.5rem,
 );
 
 $h3-font-sizes: (
     null: 1.75rem,
-    mobile-medium: 1.875rem,
+    mobile: 1.875rem,
     small: 2rem,
 );
 
@@ -33,7 +33,7 @@ $h6-font-sizes: (
 
 // Header Font Size Map
 $header-font-sizes: (
-    null: 1.25rem,
+    null: 1.75rem,
     small: 1.1rem,
     medium: 1.15rem,
 );
@@ -41,7 +41,7 @@ $header-font-sizes: (
 // P Font Size Map
 $p-font-sizes: (
     null: 0.9rem,
-    mobile-medium: 1rem,
+    mobile: 1rem,
     small: 1.05rem,
     medium: 1.1rem,
 );
