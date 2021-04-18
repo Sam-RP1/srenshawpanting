@@ -9,13 +9,25 @@
 .h5,
 .h6 {
     font-weight: 400;
-    font-family: 'Heebo', sans-serif;
     color: base.$srp-white;
     margin: {
         top: 0;
         bottom: 0;
     }
     @include userSelect(none);
+
+    &:before,
+    &:after {
+        display: inline-block;
+    }
+
+    // &:before {
+    //     content: '<';
+    // }
+
+    // &:after {
+    //     content: '>';
+    // }
 
     &--bold {
         font-weight: bold;
