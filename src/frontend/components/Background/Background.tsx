@@ -6,7 +6,7 @@ import './Background.scss';
 export const Background = (): JSX.Element => {
     return (
         <>
-            <Particles
+            {/* <Particles
                 id='background'
                 canvasClassName={'backgroundcanvas'}
                 options={{
@@ -19,29 +19,20 @@ export const Background = (): JSX.Element => {
                     interactivity: {
                         detectsOn: 'canvas',
                         events: {
-                            onClick: {
-                                enable: false,
-                                mode: 'push',
-                            },
                             onHover: {
                                 enable: false,
-                                mode: 'repulse',
+                                mode: 'bubble',
                             },
+
                             resize: true,
                         },
                         modes: {
                             bubble: {
-                                distance: 400,
+                                distance: 100,
                                 duration: 2,
-                                opacity: 0.8,
-                                size: 40,
-                            },
-                            push: {
-                                quantity: 4,
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4,
+                                opacity: 0.4,
+                                size: 6,
+                                color: '#0080b3',
                             },
                         },
                     },
@@ -70,9 +61,9 @@ export const Background = (): JSX.Element => {
                         number: {
                             density: {
                                 enable: true,
-                                value_area: 800,
+                                value_area: 550,
                             },
-                            value: 85,
+                            value: 80,
                         },
                         opacity: {
                             value: 0.35,
@@ -87,8 +78,13 @@ export const Background = (): JSX.Element => {
                     },
                     detectRetina: true,
                 }}
-            />
-            <div className='planet--1'>
+            /> */}
+        </>
+    );
+};
+
+{
+    /* <div className='planet--1'>
                 <svg viewBox='0 0 130 130'>
                     <path
                         d='M0,78 a65,25 0 1 1 102.5,45'
@@ -125,7 +121,5 @@ export const Background = (): JSX.Element => {
                         transform='rotate(45,100,100)'
                     />
                 </svg>
-            </div>
-        </>
-    );
-};
+            </div> */
+}

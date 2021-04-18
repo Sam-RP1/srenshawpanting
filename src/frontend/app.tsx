@@ -17,6 +17,7 @@ import { links } from './lib/links';
 export const App = (): JSX.Element => {
     return (
         <section className='theme theme-dark' data-test='component-app'>
+            <Background />
             <BrowserRouter>
                 <ScrollToTop />
                 <Header />
@@ -26,7 +27,6 @@ export const App = (): JSX.Element => {
                 <Route path='/' exact component={Home} />
                 <Footer icons={icons} links={links} />
             </BrowserRouter>
-            <Background />
         </section>
     );
 };

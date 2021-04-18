@@ -3,170 +3,58 @@
 @import '../../styles/mixins/transform.scss';
 
 .portfolio {
+    min-height: 100vh;
+    padding: 8.75rem 0 3.75rem 0;
     color: white;
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: base.$padding-default-sides;
+
         &__container {
             display: flex;
             flex-direction: column;
             height: auto;
             width: 100%;
-        }
-
-        @media screen and (min-width: 992px) {
-            &__container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
+            backdrop-filter: blur(20px);
+            background-color: rgba(0, 0, 0, 0.3);
         }
     }
 
-    &__tile {
-        position: relative;
+    &__item {
         display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        height: 180px;
+        justify-content: center;
+        min-height: 180px;
         width: 100%;
-        // margin-top: 18px;
-        background-color: map-get(base.$srp-greys, 900);
-        cursor: pointer;
-        box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.5), 1px 0 2px 0 rgba(0, 0, 0, 0.5), 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         overflow: hidden;
 
         &:first-of-type {
             margin-top: 0;
         }
-
-        &:hover .portfolio__tile__preview,
-        &:focus .portfolio__tile__preview {
-            @include transform(scale(1.1));
+        &:last-of-type {
+            border-bottom: none;
         }
 
-        &:hover .portfolio__tile__preview__filter,
-        &:focus .portfolio__tile__preview__filter {
-            opacity: 0.4;
-        }
-
-        &__preview {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: block;
-            height: 100%;
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            @include transition(300ms ease-out);
-
-            &__filter {
-                position: absolute;
-                z-index: 1;
-                height: 100%;
-                width: 100%;
-                opacity: 1;
-                // background: linear-gradient(
-                //     30deg,
-                //     rgba(0, 128, 179, 1),
-                //     rgba(0, 128, 179, 0.15),
-                //     rgba(0, 128, 179, 0),
-                //     rgba(0, 128, 179, 0)
-                // );
-                // background: linear-gradient(
-                //     30deg,
-                //     rgba(21, 26, 36, 1),
-                //     rgba(21, 26, 36, 0.65),
-                //     rgba(21, 26, 36, 0.45),
-                //     rgba(21, 26, 36, 0.25)
-                // );
-                @include transition(300ms ease-out);
-            }
-
-            img {
-                position: relative;
-                height: 100%;
-                width: 100%;
-            }
-        }
-
-        &__label {
-            position: relative;
-            z-index: 2;
+        &__content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            height: auto;
-            width: auto;
-            margin: 0.5rem;
-            padding: 0.2rem 0.5rem;
-            // border: 2px solid #fff;
-            // background-color: rgba(0, 0, 0, 0.5);
-        }
+            align-items: flex-start;
+            padding: 3rem 0;
 
-        &#deduction {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/deduction/img/deduction-min.png');
+            &__title {
+                padding-bottom: 1.5rem;
+            }
+
+            p {
+                color: base.$text-secondary-color;
             }
         }
 
-        &#peerreviewportal {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/peer-review-portal/img/prp-min.png');
-            }
-        }
-
-        &#letterdetonator {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/letter-detonator/img/letter-detonator-min.png');
-            }
-        }
-
-        &#karensbeautybox {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/karensbeautybox/img/karensbeautybox-min.png');
-            }
-        }
-
-        &#pudhub {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/portsmouth-unattended-displays/img/pud-min.png');
-            }
-        }
-
-        &#fred {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/fred/img/fred-min.png');
-            }
-        }
-
-        &#robotics {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/robotics/img/robotics.png');
-            }
-        }
-
-        &#distibutedsystems {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/distributed-systems/img/dss-min.png');
-            }
-        }
-
-        &#literaturereview {
-            .portfolio__tile__preview {
-                background-image: url('../../assets/portfolio/literature-review/img/litrev-min.png');
-            }
-        }
-
-        @media screen and (min-width: 992px) {
-            width: 49%;
-
-            &:nth-child(2) {
-                margin-top: 0;
-            }
+        @media screen and (min-width: 768px) {
         }
     }
 }
