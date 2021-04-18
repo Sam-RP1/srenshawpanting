@@ -9,7 +9,9 @@ $srp-greys: (
     200: #b2bdce,
     300: #5d7287,
     700: #242c33,
-    800: #151a24,
+    // 800: #151a24,
+    800: #1a1c24,
+    // 800: #1e1e1e,
     900: #0b0e13,
 );
 // --- Accents
@@ -17,13 +19,17 @@ $srp-accent-blue: #0080b3;
 
 // Breakpoints Map
 $breakpoints: (
-    mobile-medium: 376px,
+    // mobile-small: < 376px [Default]
+    mobile: 376px,
+    mobile-large: 476px,
     xsmall: 576px,
     small: 768px,
     medium: 992px,
     large: 1200px,
-    xlarge: 1576px,
+    xlarge: 1576px
 );
+
+$mobile: map-get($breakpoints, mobile);
 
 // Buttons
 // ---
