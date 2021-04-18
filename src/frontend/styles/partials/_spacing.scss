@@ -1,0 +1,19 @@
+$padding-default: (
+    null: 0 1rem,
+    mobile: 0 1.5rem,
+);
+
+@mixin padding-sizes($padding-map, $padding-breakpoints: $breakpoints) {
+    @each $padding-breakpoint, $padding-size in $padding-map {
+        @if $padding-breakpoint == null {
+            padding: $padding-size;
+        } @else {
+            @if map-has-key($padding-breakpoints, $padding-breakpoint) {
+                $padding-breakpoint: map-get($padding-breakpoints, $padding-breakpoint);
+            }
+            @media screen and (min-width: $padding-breakpoint) {
+                padding: $padding-size;
+            }
+        }
+    }
+}
