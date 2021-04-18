@@ -10,12 +10,15 @@ type HeadingProps = {
     importance: number;
     title: string;
     classes?: Classes[];
+    open?: boolean;
+    close?: boolean;
 };
 
-export const Heading = ({ importance, title, classes = [] }: HeadingProps): JSX.Element => {
+export const Heading = ({ importance, title, classes = [], open, close }: HeadingProps): JSX.Element => {
     const isBold = classes.indexOf('bold');
     const isUnderline = classes.indexOf('underline');
     const isSpaced = classes.indexOf('spaced');
+
     let classStr = '';
 
     if (isBold > -1) {
@@ -26,6 +29,11 @@ export const Heading = ({ importance, title, classes = [] }: HeadingProps): JSX.
     }
     if (isSpaced > -1) {
         classes[isSpaced] = 'h' + importance + '--space-out';
+    }
+    if (open === true) {
+        title = '<' + title + '>';
+    } else if (close === true) {
+        title = '</' + title + '>';
     }
 
     if (classes.length !== 0) {
