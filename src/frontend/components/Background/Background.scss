@@ -1,32 +1,152 @@
-@use '../../styles/base.scss';
-@import '../../styles/mixins/transform.scss';
+@use '../../styles/mixins/transform.scss' as *;
+@use '../../styles/mixins/transition.scss' as *;
 
-#background {
+#bg {
     position: fixed;
-    z-index: -1;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-.planet--1 {
-    position: absolute;
     z-index: 0;
-    top: 10%;
-    left: 1rem;
-    height: 140px;
-    width: 140px;
-}
+    display: block;
+    width: 100%;
+    height: 100vh;
 
-.planet--2 {
-    position: absolute;
-    z-index: 0;
-    bottom: 15rem;
-    right: 1.5rem;
-    height: 100px;
-    width: 100px;
-    @include transform(rotate(90deg));
+    canvas {
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #planetary-system {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+
+        @media screen and (min-width: 768px) {
+            right: 10rem;
+            bottom: 11rem;
+            height: initial;
+            width: initial;
+        }
+
+        &:hover,
+        &:active {
+            .ps__wrapper {
+                .ps__celestial-body--satellite {
+                    -webkit-animation-play-state: paused !important;
+                    -moz-animation-play-state: paused !important;
+                    -o-animation-play-state: paused !important;
+                    animation-play-state: paused !important;
+
+                    span {
+                        -webkit-animation-play-state: paused !important;
+                        -moz-animation-play-state: paused !important;
+                        -o-animation-play-state: paused !important;
+                        animation-play-state: paused !important;
+                    }
+                }
+            }
+        }
+
+        .ps__wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+
+            $orbits: 3;
+            @for $i from 1 through $orbits + 1 {
+                &:nth-child(#{$i}) {
+                    transform: rotateZ(#{($i - 1) * 35}deg);
+
+                    .ps__celestial-body--satellite {
+                        animation: orbit 2200ms + (500 * $i) linear infinite;
+
+                        span {
+                            animation: satellite 2200ms + (500 * $i) linear infinite;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ps__celestial-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 300px;
+            height: 300px;
+            @include transform(translate(-50%, -50%));
+            transform-style: preserve-3d;
+
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                border-radius: 100%;
+                box-sizing: border-box;
+                border: 8px solid #000;
+                overflow: hidden;
+                @include transition(background-color 150ms linear);
+            }
+
+            &--planet span {
+                width: 200px;
+                height: 200px;
+                background-color: rgba(255, 80, 50, 1);
+                transform: translate(-50%, -50%);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -16%;
+                    left: -16%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, 0.15);
+                    border-radius: 100%;
+                }
+            }
+
+            &--satellite span {
+                left: 100%;
+                width: 50px;
+                height: 50px;
+                background-color: rgba(98, 19, 96, 1);
+                transform: translate(-50%, -50%);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -25%;
+                    left: -25%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+    @keyframes orbit {
+        0% {
+            @include transform(translate(-50%, -50%) rotateY(0deg));
+        }
+        100% {
+            @include transform(translate(-50%, -50%) rotateY(360deg));
+        }
+    }
+
+    @keyframes satellite {
+        0% {
+            @include transform(translate(-50%, -50%) rotateY(0deg));
+        }
+        100% {
+            @include transform(translate(-50%, -50%) rotateY(-360deg));
+        }
+    }
 }
