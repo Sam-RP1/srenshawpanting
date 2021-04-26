@@ -1,56 +1,107 @@
-.home {
+@use '../../styles/base.scss';
+@import '../../styles/mixins/transform.scss';
+
+// .home {
+//     color: white;
+
+//     @media screen and (min-width: 768px) {
+//     }
+
+//     @media screen and (min-width: 992px) {
+//     }
+
+//     @media screen and (min-width: 1200px) {
+//     }
+// }
+
+$margin-bottom: 2rem;
+
+.hero {
+    display: block;
     color: white;
 
-    &__content {
+    &__text {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        margin-bottom: $margin-bottom;
+        pointer-events: none;
+    }
+
+    &__next {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 23px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
+        height: auto;
+        @include transform(translateX(-50%));
 
-        &__hero-text {
+        &__item {
             display: flex;
-            flex: 1;
             flex-direction: column;
+            align-items: center;
             justify-content: flex-end;
-            align-items: flex-start;
-        }
-
-        &__pic {
-            display: none;
             height: auto;
-            width: auto;
-            margin-left: 1.125rem;
+            cursor: pointer;
 
-            img {
-                $height: 150px;
-                height: $height;
-                border-radius: calc(#{$height / 2});
+            &__label {
+                display: block;
+            }
+
+            &__arrow-down {
+                position: relative;
+                top: 6px;
+                display: inline-block;
+                height: 2px;
+                width: 35px;
+                margin-top: 13px;
+                background-color: base.$srp-white-bg;
+                @include transform(rotate(-90deg));
+                // animation-name: bounce;
+                // animation-duration: 1.5s;
+                // animation-timing-function: ease-in-out;
+                // animation-iteration-count: infinite;
+
+                // &:before,
+                // &:after {
+                //     position: absolute;
+                //     left: 10px;
+                //     content: '';
+                //     width: 10px;
+                //     background-color: base.$srp-white-bg;
+                // }
+
+                // &:before {
+                //     height: 2px;
+                //     top: -3px;
+                //     @include transform(rotate(-40deg));
+                // }
+
+                // &:after {
+                //     height: 2px;
+                //     top: 3px;
+                //     @include transform(rotate(40deg));
+                // }
             }
         }
+    }
+}
 
-        @media screen and (min-width: 768px) {
-            &__pic {
-                display: flex;
-            }
-        }
+@keyframes bounce {
+    0% {
+        @include transform(rotate(-90deg));
+    }
 
-        @media screen and (min-width: 992px) {
-            &__pic {
-                img {
-                    $height: 180px;
-                    height: $height;
-                    border-radius: calc(#{$height / 2});
-                }
-            }
-        }
+    50% {
+        @include transform(translateY(5px) rotate(-90deg));
+    }
 
-        @media screen and (min-width: 1200px) {
-            &__pic {
-                img {
-                    $height: 200px;
-                    height: $height;
-                    border-radius: calc(#{$height / 2});
-                }
-            }
-        }
+    100% {
+        @include transform(rotate(-90deg));
     }
 }
