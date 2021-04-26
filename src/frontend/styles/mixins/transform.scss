@@ -3,4 +3,5 @@
     -ms-transform: $property;
     -o-transform: $property;
     transform: $property;
+    will-change: transform;
 }
