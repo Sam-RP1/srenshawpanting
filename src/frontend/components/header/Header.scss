@@ -91,31 +91,37 @@
                 @include transition(top 350ms ease);
 
                 a {
+                    position: relative;
+                    display: block;
                     height: auto;
                     width: auto;
                     margin: 5px 0;
                     letter-spacing: 2px;
                     color: b.$text-secondary-color;
-                    // -webkit-background-clip: text;
-                    // -moz-background-clip: text;
-                    // background-clip: text;
-                    // -webkit-text-fill-color: transparent;
-                    // -moz-text-fill-color: transparent;
-                    // text-fill-color: transparent;
-                    // background-color: b.$text-secondary-color !important;
-                    // background-image: linear-gradient(90deg, #0080b3, #05425a);
-                    // background-size: 0%;
                     @include font-size($header-font-sizes, b.$breakpoints);
                     @include transition(color 300ms ease);
-                    // @include transition(background-size 300ms ease);
 
-                    &:hover {
-                        color: b.$srp-accent-blue;
-                        // background-size: 100%;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        bottom: -5px;
+                        display: block;
+                        height: 3px;
+                        width: 0;
+                        background-color: #0080b3;
+                        @include transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
                     }
 
-                    &.active {
-                        color: b.$srp-accent-blue;
+                    &:hover:after {
+                        @include transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
+                    }
+
+                    &:hover:after,
+                    &.active:after {
+                        width: 99%;
+                        left: 0;
                     }
                 }
             }
@@ -210,7 +216,7 @@
 
                     a {
                         margin: {
-                            left: 1rem;
+                            left: 0.75rem;
                             right: 0;
                             top: 0;
                             bottom: -2px;
@@ -234,6 +240,12 @@
                 height: auto;
                 color: map-get(b.$srp-greys, 800);
             }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        &__content__nav__menu a {
+            margin-left: 1.5rem;
         }
     }
 }
