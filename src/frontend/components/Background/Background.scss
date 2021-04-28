@@ -19,21 +19,23 @@
 
     #planetary-system {
         position: absolute;
-        height: 100%;
-        width: 100%;
+        left: 50%;
+        top: 50%;
         transform-style: preserve-3d;
+        perspective: 900px;
 
         @media screen and (min-width: 768px) {
             right: 10rem;
             bottom: 11rem;
-            height: initial;
-            width: initial;
+            left: initial;
+            top: initial;
         }
 
         &:hover,
         &:active {
             .ps__wrapper {
                 .ps__celestial-body--satellite {
+                    z-index: 10;
                     -webkit-animation-play-state: paused !important;
                     -moz-animation-play-state: paused !important;
                     -o-animation-play-state: paused !important;
@@ -58,13 +60,14 @@
             $orbits: 3;
             @for $i from 1 through $orbits + 1 {
                 &:nth-child(#{$i}) {
-                    transform: rotateZ(#{($i - 1) * 35}deg);
+                    z-index: #{$i};
+                    transform: rotateZ(#{($i - 1) * 25 + 5}deg);
 
                     .ps__celestial-body--satellite {
-                        animation: orbit 2200ms + (500 * $i) linear infinite;
+                        animation: orbit 2400ms + (500 * $i) linear infinite;
 
                         span {
-                            animation: satellite 2200ms + (500 * $i) linear infinite;
+                            animation: satellite 2400ms + (500 * $i) linear infinite;
                         }
                     }
                 }
@@ -80,6 +83,11 @@
             height: 300px;
             @include transform(translate(-50%, -50%));
             transform-style: preserve-3d;
+
+            a {
+                height: 100%;
+                width: 100%;
+            }
 
             span {
                 position: absolute;
@@ -98,6 +106,7 @@
                 height: 200px;
                 background-color: rgba(255, 80, 50, 1);
                 transform: translate(-50%, -50%);
+                pointer-events: none;
 
                 &:before {
                     content: '';
@@ -128,6 +137,18 @@
                     background-color: rgba(255, 255, 255, 0.2);
                     border-radius: 100%;
                 }
+            }
+
+            &__icon {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                color: #fff;
+                font-size: 1.4rem;
             }
         }
     }

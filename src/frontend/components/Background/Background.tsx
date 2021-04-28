@@ -1,9 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
+import { Icon } from '../../lib/interfaces';
 
 import './Background.scss';
 
-export const Background = (): JSX.Element => {
+type BackgroundProps = {
+    icons: Icon[];
+};
+
+export const Background = ({ icons }: BackgroundProps): JSX.Element => {
     const planet = useRef();
     const cb1 = useRef();
     const cb2 = useRef();
@@ -31,9 +36,15 @@ export const Background = (): JSX.Element => {
                 return colors[i];
             };
 
+            const getPreviousCol = () => {
+                const p = i - 1 >= 0 ? i - 1 : colors.length - 1;
+                return colors[p];
+            };
+
             return {
                 getNextCol: getNextCol,
                 getCurrentCol: getCurrentCol,
+                getPreviousCol: getPreviousCol,
             };
         })();
 
@@ -54,6 +65,7 @@ export const Background = (): JSX.Element => {
                 e = e.touches[0];
             }
 
+            const previousColor = colorPicker.getPreviousCol();
             const currentColor = colorPicker.getCurrentCol();
             const nextColor = colorPicker.getNextCol();
             const targetR = calcPageFill(e.clientX, e.clientY);
@@ -62,10 +74,9 @@ export const Background = (): JSX.Element => {
             const particles = [];
 
             const updatePlanetarySystem = () => {
-                const oldColor = planet.current.style.background;
-                cb1.current.style.background = oldColor;
-                cb2.current.style.background = oldColor;
-                cb3.current.style.background = oldColor;
+                cb1.current.style.background = previousColor;
+                cb2.current.style.background = previousColor;
+                cb3.current.style.background = previousColor;
                 planet.current.style.background = currentColor;
             };
 
@@ -195,7 +206,6 @@ export const Background = (): JSX.Element => {
         window.addEventListener('resize', resizeCanvas);
         bg.addEventListener('touchstart', handleEvent);
         bg.addEventListener('mousedown', handleEvent);
-        console.log('Canvas Height', canvas.height);
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
@@ -214,18 +224,30 @@ export const Background = (): JSX.Element => {
                     </div>
                 </section>
                 <section className='ps__wrapper'>
-                    <div className='ps__celestial-body ps__celestial-body--satellite tooltip'>
-                        <span ref={cb1}></span>
+                    <div className='ps__celestial-body ps__celestial-body--satellite'>
+                        <span ref={cb1}>
+                            <a key={'ps-' + icons[0].id} href={icons[0].url} target='_blank' rel='noreferrer'>
+                                <div className='ps__celestial-body__icon'>{icons[0].icon}</div>
+                            </a>
+                        </span>
                     </div>
                 </section>
                 <section className='ps__wrapper'>
-                    <div className='ps__celestial-body ps__celestial-body--satellite tooltip'>
-                        <span ref={cb2}></span>
+                    <div className='ps__celestial-body ps__celestial-body--satellite'>
+                        <span ref={cb2}>
+                            <a key={'ps-' + icons[1].id} href={icons[1].url} target='_blank' rel='noreferrer'>
+                                <div className='ps__celestial-body__icon'>{icons[1].icon}</div>
+                            </a>
+                        </span>
                     </div>
                 </section>
                 <section className='ps__wrapper'>
-                    <div className='ps__celestial-body ps__celestial-body--satellite tooltip'>
-                        <span ref={cb3}></span>
+                    <div className='ps__celestial-body ps__celestial-body--satellite'>
+                        <span ref={cb3}>
+                            <a key={'ps-' + icons[3].id} href={icons[3].url} target='_blank' rel='noreferrer'>
+                                <div className='ps__celestial-body__icon'>{icons[3].icon}</div>
+                            </a>
+                        </span>
                     </div>
                 </section>
             </div>
