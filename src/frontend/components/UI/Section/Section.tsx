@@ -15,6 +15,7 @@ export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: 
     const isCenterCenter = classes.indexOf('center-center');
     const isEndCenter = classes.indexOf('end-center');
     const isDefault = classes.indexOf('default');
+    const isTop = classes.indexOf('top');
     let classStr = '';
 
     if (isCenterCenter > -1) {
@@ -23,7 +24,9 @@ export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: 
         classes[isEndCenter] = 'section--end-center';
     }
 
-    if (isDefault > -1) {
+    if (isTop > -1) {
+        classes[isTop] = 'section--top';
+    } else if (isDefault > -1) {
         classes[isDefault] = 'section--default';
     }
 

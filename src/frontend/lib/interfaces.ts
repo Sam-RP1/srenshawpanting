@@ -1,6 +1,6 @@
 export interface Icon {
     id: string;
-    url: string;
+    url?: string;
     icon: JSX.Element;
     tooltip?: string;
     label?: string;

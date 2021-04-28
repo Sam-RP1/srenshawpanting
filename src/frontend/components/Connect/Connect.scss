@@ -5,6 +5,8 @@
     color: white;
 
     &__content {
+        position: relative;
+
         &__icon-container {
             display: flex;
             flex-wrap: wrap;

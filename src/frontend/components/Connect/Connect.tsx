@@ -26,7 +26,7 @@ export const Connect = ({ icons }: ConnectProps): JSX.Element => {
     });
 
     return (
-        <Section classes={['default', 'center-center', 'connect']}>
+        <Section classes={['top', 'center-center', 'connect']}>
             <Container>
                 <article className='connect__content'>
                     <Heading importance={3} title={'Connect'} classes={['uppercase', 'spaced', 'underline']} />
