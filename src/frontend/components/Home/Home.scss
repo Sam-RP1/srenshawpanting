@@ -1,5 +1,6 @@
 @use '../../styles/base.scss';
 @import '../../styles/mixins/transform.scss';
+@import '../../styles/mixins/userSelect.scss';
 
 // .home {
 //     color: white;
@@ -88,6 +89,117 @@ $margin-bottom: 2rem;
                 //     @include transform(rotate(40deg));
                 // }
             }
+        }
+    }
+}
+
+.site-pages {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    color: white;
+    pointer-events: none;
+
+    &__tile {
+        display: flex;
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+        margin-bottom: 1rem;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        pointer-events: initial;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &__content {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        &__mega-title {
+            position: absolute;
+            z-index: 0;
+            left: 60px;
+            bottom: -50px;
+            color: #4d4d4d;
+            font-size: 9rem;
+            opacity: 0.2;
+            overflow: hidden;
+            white-space: nowrap;
+            @include userSelect(none);
+
+            h1 {
+                margin: 0;
+            }
+        }
+
+        &__hero {
+            position: relative;
+            font-size: 7.5rem;
+        }
+
+        &__button {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100%;
+
+            h3 {
+                margin: 0 15px 0 0;
+            }
+
+            h3,
+            .icon-wrapper {
+                font-size: 2rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    @media screen and (min-width: 576px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__tile {
+            width: calc(50% - 0.5rem);
+            padding-bottom: calc(50% - 0.5rem);
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                margin-bottom: 0;
+            }
+
+            &__content {
+                position: absolute;
+                height: 100%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+    }
+
+    @media screen and (min-width: 992px) {
+        &__tile {
+            width: calc(25% - 0.5rem);
+            padding-bottom: calc(25% - 0.5rem);
+            margin-bottom: 0;
         }
     }
 }
