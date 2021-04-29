@@ -5,48 +5,42 @@ import { Heading } from '../UI/Typography/Heading/Heading';
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
 
-import { Icon, Icons } from '../../lib/interfaces';
-
 import './Home.scss';
 
 type HomeProps = {
     sitePages: {
-        hero: Icon;
-        megaTitle: string;
+        icon: JSX.Element;
         id: string;
+        megaTitle: string;
         title: string;
         route: string;
-        buttons: Icons;
     }[];
+    arrowsIcon: JSX.Element;
 };
 
-export const Home = ({ sitePages }: HomeProps): JSX.Element => {
+export const Home = ({ sitePages, arrowsIcon }: HomeProps): JSX.Element => {
     const scrollTo = () => {
-        const wHeight = window.innerHeight - 172;
-        // Scroll the height of the where next parent elem
-        window.scrollTo({ top: wHeight, behavior: 'smooth' });
-    };
+        const wHeight = window.innerHeight - 80;
+        const sitePagesHeight = document.querySelector('.site-pages').parentNode.offsetHeight;
 
-    // On mobile have padding turned off on the parent elem so the blur/bg is 100% width then on desktop have it so that there is 1rem padding
+        const scrollDist = sitePagesHeight > wHeight ? wHeight : sitePagesHeight;
+
+        window.scrollTo({ top: scrollDist, behavior: 'smooth' });
+    };
 
     const content = sitePages.map((page) => {
         return (
-            <div key={page.id} className='site-pages__tile '>
-                <div className='site-pages__tile__content container'>
+            <div key={page.id} id={page.id} className='site-pages__tile'>
+                <NavLink to={page.route} className='site-pages__tile__content container'>
                     <div className='site-pages__tile__mega-title'>
                         <h1>{page.megaTitle}</h1>
                     </div>
-                    <div className='site-pages__tile__hero'>{page.hero}</div>
-
-                    {page.buttons.map((btn) => {
-                        return (
-                            <NavLink key={page.id + page.route} to={page.route} className='site-pages__tile__button'>
-                                <h3>{page.title}</h3>
-                                <div className='icon-wrapper'>{btn.icon}</div>
-                            </NavLink>
-                        );
-                    })}
-                </div>
+                    <div className='site-pages__tile__icon'>{page.icon}</div>
+                    <div className='site-pages__tile__text'>
+                        <h3>{page.title}</h3>
+                        <div className='icon-wrapper'>{arrowsIcon}</div>
+                    </div>
+                </NavLink>
             </div>
         );
     });
