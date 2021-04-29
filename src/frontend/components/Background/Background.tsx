@@ -24,7 +24,7 @@ export const Background = ({ icons }: BackgroundProps): JSX.Element => {
         let cWidth;
 
         const colorPicker = (() => {
-            const colors = ['#25243c', '#36346f', '#18154b', '#621360', '#ff6138'];
+            const colors = ['#25243c', '#36346f', '#621360', '#ff6138'];
             let i = 0;
 
             const getNextCol = () => {
