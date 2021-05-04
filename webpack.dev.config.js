@@ -48,6 +48,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             outputPath: './public/assets/images',
+                            esModule: false,
                         },
                     },
                 ],
