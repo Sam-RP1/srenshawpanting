@@ -1,0 +1,94 @@
+@use '../../styles/base.scss';
+@import '../../styles/mixins/transform.scss';
+@import '../../styles/mixins/transition.scss';
+
+.cursor {
+    display: none;
+    pointer-events: none;
+    opacity: 1;
+    @include transition(opacity 150ms ease-out);
+
+    &--down & {
+        &__circle--outer {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    &--hover & {
+        &__circle--outer {
+            height: 40px;
+            width: 40px;
+            border: 2px solid base.$srp-accent-blue;
+            mix-blend-mode: initial;
+        }
+
+        &__circle--inner {
+            height: 8px;
+            width: 8px;
+            background-color: base.$srp-accent-blue;
+            mix-blend-mode: initial;
+        }
+    }
+
+    &--hidden {
+        opacity: 0;
+    }
+
+    &__circle {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        mix-blend-mode: difference;
+        z-index: 9999;
+        transform: translateX(-50%) translateY(-50%);
+
+        &--outer {
+            display: flex;
+            height: 30px;
+            width: 30px;
+            border: 2px solid #fff;
+            border-radius: 100%;
+            background-color: transparent;
+            mix-blend-mode: difference;
+            transform: translateX(-50%) translateY(-50%);
+            @include transition(height 100ms ease-out, width 100ms ease-out, border 150ms ease-out);
+        }
+
+        &--inner {
+            display: flex;
+            height: 6px;
+            width: 6px;
+            border-radius: 100%;
+            background-color: #fff;
+            mix-blend-mode: difference;
+            transform: translateX(-50%) translateY(-50%);
+            @include transition(height 150ms ease-out, width 150ms ease-out, background-color 150ms ease-out);
+        }
+    }
+
+    &__plus {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        stroke: transparent;
+        fill: transparent;
+        mix-blend-mode: normal;
+        transform: translateX(-50%) translateY(-50%);
+        &--area {
+            stroke: transparent;
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    * {
+        cursor: none !important;
+    }
+
+    .cursor {
+        display: initial;
+    }
+}
