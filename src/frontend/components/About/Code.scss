@@ -1,0 +1,47 @@
+.code {
+    &__container {
+        position: relative;
+        z-index: 1;
+        padding: 1rem;
+        border-radius: 10px;
+        // backdrop-filter: blur(10px);
+        background-color: #282c34;
+        box-shadow: 0 0 3px 1px rgb(0 0 0 / 40%), 0 3px 10px 1px rgb(0 0 0 / 60%);
+    }
+
+    // text color? D7DAE0
+
+    // Hovered line ABB2BF or 3E4451
+
+    // Line number 636D83, active num ABB2BF
+
+    &--comment {
+        color: #5c6370;
+        // or white with opacity? 626772
+    }
+
+    &--variable {
+        color: #e06c75;
+        // or BE5046
+    }
+
+    &--keyword {
+        color: #c678dd;
+    }
+
+    &--symbol,
+    &--function,
+    &--special {
+        color: #42baca;
+        // 56b6c2
+    }
+
+    &--string {
+        color: #84c555;
+    }
+
+    &--class {
+        color: #e5c07b;
+        // or D19A66
+    }
+}
