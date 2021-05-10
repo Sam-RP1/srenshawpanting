@@ -1,66 +1,14 @@
-@use '../../styles/base.scss';
-@import '../../styles/mixins/transition.scss';
-@import '../../styles/mixins/transform.scss';
-@import '../../styles/mixins/userSelect.scss';
+@use '../../styles/base.scss' as b;
+@use '../../styles/typography/typography.scss' as *;
+@use '../../styles/mixins/transition.scss' as *;
+@use '../../styles/mixins/transform.scss' as *;
+@use '../../styles/mixins/userSelect.scss' as *;
 
-$margin-top: 1.125rem;
-
-.timeline {
-    position: absolute;
-    top: 22px;
-    height: 100%; // calc(+100px)
-    width: 2px;
-    background-color: #fff;
-
-    &:before {
-        content: '';
-        position: relative;
-        top: -3px;
-        left: -3px;
-        display: block;
-        height: 8px;
-        width: 8px;
-        border-radius: 100%;
-        background-color: #fff;
-    }
-    // &--segment {
-    //     @extend .timeline;
-    // }
-
-    &__title-container {
-        position: relative;
-        height: auto;
-        width: auto;
-    }
-    &__title {
-        font-size: 1.875rem;
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 400;
-        color: #ffffff;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    &__mega-title {
-        position: absolute;
-        z-index: 0;
-        left: 60px;
-        bottom: -50px;
-        color: #4d4d4d;
-        font-size: 9rem;
-        opacity: 0.2;
-        margin: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-}
+$bp-mobile: map-get(b.$breakpoints, 'mobile');
+$bp-xsmall: map-get(b.$breakpoints, 'xsmall');
+$bp-small: map-get(b.$breakpoints, 'small');
+$padding: 1.5rem;
+$margin: 0.8rem;
 
 .portfolio {
     position: relative;
@@ -68,218 +16,250 @@ $margin-top: 1.125rem;
     flex-direction: column;
     height: auto;
     color: white;
-    // need to scroll on mobile
-    // pointer-events: none;
+    // overflow: hidden;
 
-    &__intro,
-    &__item {
-        position: relative;
-        height: auto;
-        width: 100%;
-        // cuts off timeline dots
-        // overflow: hidden;
+    &__title {
+        margin-top: 30px;
+        h2 {
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 0;
+        }
     }
 
-    &__content-wrapper {
+    &__mega-title {
+        position: absolute;
+        z-index: 0;
+        top: -55px;
+        left: 60px;
+        color: #cacaca;
+        font-size: 9rem;
+        opacity: 0.2;
+        overflow: hidden;
+        white-space: nowrap;
+        @include userSelect(none);
+
+        h1 {
+            line-height: initial;
+            margin: 0;
+        }
+    }
+
+    &__container {
         position: relative;
         display: flex;
         flex-direction: column;
-        margin-left: 1rem;
-
-        &__container {
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            width: 100vw;
-            backdrop-filter: blur(20px);
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-    }
-
-    &__panel {
-        // position: relative;
-        display: block;
-        height: auto;
-        width: 80%;
-        // width: calc(100% - 2rem);
-        margin-left: auto;
-        margin-top: 5rem;
-        margin-bottom: 2.5rem;
-        pointer-events: initial;
-
-        &:hover & {
-            &__image {
-                box-shadow: 2px 20px 40px -5px rgb(0 0 0 / 75%);
-            }
-            &__container {
-                @include transform(scale3d(1, 1, 1));
-            }
-        }
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-
-        &__container {
-            // position: relative;
-            // z-index: 1;
-            display: block;
-            // display: flex;
-            // flex-direction: column;
-            // align-items: flex-start;
-            // width: 100%;
-            // padding: 1rem;
-            transform-style: preserve-3d;
-            perspective: 700px;
-            will-change: transform;
-            @include transition(transform 200ms cubic-bezier(0.3, 0.98, 0.52, 0.99));
-        }
-
-        &__mega-title {
-            position: absolute;
-            z-index: 0;
-            left: 60px;
-            bottom: -50px;
-            color: #4d4d4d;
-            font-size: 9rem;
-            opacity: 0.2;
-            overflow: hidden;
-            white-space: nowrap;
-            @include userSelect(none);
-
-            h1 {
-                margin: 0;
-            }
-        }
-
-        p,
-        .icon-wrapper {
-            color: base.$text-secondary-color;
-        }
-
-        @media screen and (min-width: 768px) {
-        }
     }
 }
 
-.portfolio__panel__content {
-    position: absolute;
-    left: -20%;
-    top: -1.6rem;
-    z-index: 0;
-    width: 120%;
-    // padding: 1rem;
-    // width: 90%;
-    // pointer-events: none;
-    @include transform(translateZ(30px) scale3d(0.955, 0.955, 0.955));
-
-    p {
-        font-size: 0.8rem;
-        text-shadow: 1px 2px 4px #000;
-    }
-}
-
-.portfolio__panel__info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    &:after {
-        position: relative;
-        content: '';
-        display: block;
-        height: 2px;
-        width: 90px;
-        margin: 0.75rem 0;
-        background-color: #fff;
-    }
-}
-
-.portfolio__panel__title {
-}
-
-.portfolio__panel__detail {
-    display: flex;
-    flex-direction: row;
-}
-
-.portfolio__panel__int {
-}
-
-.portfolio__panel__context {
-    margin-left: 10px;
-}
-
-.portfolio__panel__content {
-    pointer-events: none;
-}
-
-h5 {
-    font-size: 1.2rem;
-    margin: 0;
-    letter-spacing: 3px;
-    font-weight: 400;
-    text-shadow: 1px 2px 4px #000;
-}
-
-.portfolio__panel__image {
+.panel {
     position: relative;
-    z-index: -1;
-    height: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: auto;
     width: 100%;
-    padding-bottom: 49%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 75%);
-    @include transition(box-shadow 200ms cubic-bezier(0.3, 0.98, 0.52, 0.99));
+    margin-top: 3rem;
 
-    &:before {
-        content: '';
+    &--ar-1 &,
+    &--ar-2 &,
+    &--ar-3 &,
+    &--ar-4 & {
+        &__image {
+            $width: calc(100% - #{3 * $padding});
+            width: $width;
+            padding-bottom: calc(#{$width} / 2 * 3);
+        }
+    }
+
+    &__image {
+        position: relative;
+        z-index: 0;
+        height: 0;
+        border-radius: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 75%);
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(40deg, rgba(0, 0, 0, 0.8), transparent 60%);
+        }
+    }
+
+    &__content {
         position: absolute;
-        left: 0;
-        top: 0;
-        display: block;
-        height: 100%;
+        z-index: 1;
+        height: auto;
         width: 100%;
-        background: linear-gradient(65deg, rgba(0, 0, 0, 0.8), transparent 50%);
+        padding: $padding $padding $margin 0;
+
+        &__title {
+            position: relative;
+            width: max-content;
+            max-width: 100%;
+            margin: 0 0 $margin 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-shadow: 0 1px 20px #000;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                display: block;
+                height: 4px;
+                width: 100%;
+                background-color: #0080b3;
+            }
+        }
+
+        &__taster {
+            display: none;
+        }
+
+        &__taster,
+        &__tag {
+            margin: 0 0 $margin 0;
+        }
+
+        &__title,
+        &__tag,
+        &__taster {
+            text-shadow: 0px 2px 8px #000;
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        padding: 0.5rem 0.75rem;
+        border-radius: 5px;
+        background-color: #0080b3;
+        @include font-size($p-font-sizes, b.$breakpoints);
+
+        &::before {
+            content: 'Learn More';
+            position: relative;
+            display: inline-block;
+            margin-right: 5px;
+        }
     }
 }
 
-// do later
-.portfolio__panel__glare {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
+@media screen and (min-width: $bp-mobile) {
+    $margin: 1rem;
+    $padding: 1.5rem;
 
-    &__inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        pointer-events: none;
-        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
-        width: 400px;
-        height: 400px;
-        transform: rotate(180deg) translate(-50%, -50%);
-        transform-origin: 0% 0%;
-        opacity: 0;
+    .panel {
+        &--ar-1 &,
+        &--ar-2 &,
+        &--ar-3 &,
+        &--ar-4 & {
+            &__image {
+                $width: calc(100% - #{4 * $padding});
+                width: $width;
+                padding-bottom: calc(#{$width} / 2 * 3);
+            }
+        }
+
+        &__content {
+            position: absolute;
+            z-index: 1;
+            height: auto;
+            width: 100%;
+            padding: $padding $padding $padding 0;
+
+            &__title {
+                margin: 0 0 $margin 0;
+                font-size: 1.5rem;
+            }
+
+            &__taster {
+                display: none;
+            }
+
+            &__taster,
+            &__tag {
+                margin: 0 0 $margin 0;
+            }
+        }
     }
 }
 
-// @mixin div-same-size-as-background-img($url) {     background-image: url($url);     background-size: contain;     background-repeat: no-repeat;     width: 100%;     height: 0;     padding-top: percentage(image-height($url) / image-width($url)); }
+@media screen and (min-width: $bp-xsmall) {
+    $margin: 1rem;
+    $padding: 1.5rem;
 
-@media screen and (min-width: map-get(base.$breakpoints, 'mobile')) {
-    .portfolio__panel {
-        margin-top: 4rem;
-        margin-bottom: 2rem;
+    .panel {
+        &--ar-1,
+        &--ar-2,
+        &--ar-3,
+        &--ar-4 {
+            $width: 475px;
+            width: $width;
+        }
+        &--ar-1 & {
+            &__image {
+                $width: 330px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 4 * 5);
+            }
+        }
+
+        &--ar-2 &,
+        &--ar-4 & {
+            &__image {
+                $width: 400px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 4 * 2.4);
+            }
+        }
+
+        &--ar-3 & {
+            &__image {
+                $width: 380px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 3 * 2.5);
+            }
+        }
+
+        &__content {
+            padding: $padding $padding $padding 0;
+
+            &__taster {
+                display: block;
+            }
+
+            &__tag {
+                display: none;
+            }
+        }
+
+        &__button {
+            padding: 0.6rem 1rem;
+        }
     }
+}
 
-    .portfolio__panel__content {
-        top: 0.5rem;
-        left: -21%;
+@media screen and (min-width: $bp-small) {
+    .panel {
+        &--ar-4 & {
+            &__image {
+                $width: 400px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 16 * 9);
+            }
+        }
     }
 }
