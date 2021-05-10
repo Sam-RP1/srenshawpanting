@@ -1,13 +1,24 @@
-@use '../../styles/base.scss';
-@import '../../styles/mixins/transform.scss';
-@import '../../styles/mixins/transition.scss';
-@import '../../styles/mixins/userSelect.scss';
+@use '../../styles/base.scss' as b;
+@use '../../styles/mixins/transform.scss' as *;
+@use '../../styles/mixins/transition.scss'as *;
+@use '../../styles/mixins/userSelect.scss'as *;
 
 $margin-bottom: 2rem;
 
 .hero {
     display: block;
     color: white;
+
+    &__hint {
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+        display: none;
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
 
     &__text {
         position: relative;
@@ -49,7 +60,7 @@ $margin-bottom: 2rem;
                 height: 2px;
                 width: 35px;
                 margin-top: 13px;
-                background-color: base.$srp-white-bg;
+                background-color: b.$srp-white-bg;
                 @include transform(rotate(-90deg));
                 // animation-name: bounce;
                 // animation-duration: 1.5s;
@@ -62,7 +73,7 @@ $margin-bottom: 2rem;
                 //     left: 10px;
                 //     content: '';
                 //     width: 10px;
-                //     background-color: base.$srp-white-bg;
+                //     background-color: b.$srp-white-bg;
                 // }
 
                 // &:before {

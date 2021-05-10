@@ -20,16 +20,16 @@ export const icons: Icons = [
         tooltip: 'LinkedIn',
     },
     {
-        id: 'youtube',
-        url: 'https://www.youtube.com/user/TheWarpCentral',
-        icon: <FontAwesomeIcon icon={faYoutube} />,
-        tooltip: 'YouTube',
-    },
-    {
         id: 'instagram',
         url: 'https://www.instagram.com/sxm_rp/',
         icon: <FontAwesomeIcon icon={faInstagram} />,
         tooltip: 'Instagram',
+    },
+    {
+        id: 'youtube',
+        url: 'https://www.youtube.com/user/TheWarpCentral',
+        icon: <FontAwesomeIcon icon={faYoutube} />,
+        tooltip: 'YouTube',
     },
     {
         id: 'chess',

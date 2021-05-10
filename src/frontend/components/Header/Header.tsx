@@ -1,10 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
+// Component Imports
 import { Container } from '../UI/Container/Container';
 
+// Styles
 import './Header.scss';
 
+/**
+ * Exports Header component
+ * @returns JSX.Element
+ */
 export const Header = (): JSX.Element => {
     const headerRoot = useRef();
 
@@ -34,7 +40,7 @@ export const Header = (): JSX.Element => {
         <header className='header' ref={headerRoot}>
             <Container classes={'header__content'}>
                 <>
-                    <div className='header__content__logo'>
+                    <div className='header__logo'>
                         <NavLink to='/' onClick={() => closeMenu()}>
                             <svg
                                 version='1.0'
@@ -76,14 +82,14 @@ c116 0 149 4 182 19 84 38 120 119 113 256 l-3 70 -80 0 -80 0 -5 -90 -5 -90
                         </NavLink>
                     </div>
 
-                    <div className='header__content__nav'>
-                        <div className='header__content__nav__btn' onClick={() => navHandler()}>
+                    <div className='header__nav'>
+                        <div className='header__nav__btn' onClick={() => navHandler()}>
                             <div className='bar-top'></div>
                             <div className='bar-middle'></div>
                             <div className='bar-bottom'></div>
                         </div>
 
-                        <nav className='header__content__nav__menu'>
+                        <nav className='header__nav__menu'>
                             <NavLink to='/' exact onClick={() => closeMenu()}>
                                 &#60;Home &#47;&#62;
                             </NavLink>

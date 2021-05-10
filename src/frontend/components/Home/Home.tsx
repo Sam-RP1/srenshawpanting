@@ -50,6 +50,9 @@ export const Home = ({ sitePages, arrowsIcon }: HomeProps): JSX.Element => {
             <Section classes={['top', 'end-center']}>
                 <Container classes={'hero'}>
                     <>
+                        <div className='hero__hint'>
+                            <p>Psst... press the background</p>
+                        </div>
                         <div className='hero__text'>
                             <Heading
                                 importance={4}

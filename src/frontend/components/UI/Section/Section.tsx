@@ -12,6 +12,7 @@ type SectionProps = {
 };
 
 export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: SectionProps): JSX.Element => {
+    const isNullCenter = classes.indexOf('null-center');
     const isCenterCenter = classes.indexOf('center-center');
     const isEndCenter = classes.indexOf('end-center');
     const isDefault = classes.indexOf('default');
@@ -22,6 +23,8 @@ export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: 
         classes[isCenterCenter] = 'section--center-center';
     } else if (isEndCenter > -1) {
         classes[isEndCenter] = 'section--end-center';
+    } else if (isNullCenter > -1) {
+        classes[isNullCenter] = 'section--null-center';
     }
 
     if (isTop > -1) {

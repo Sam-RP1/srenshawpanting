@@ -1,10 +1,17 @@
-@use '../../styles/base';
-@import '../../styles/typography/typography', '../../styles/mixins/transition.scss',
-    '../../styles/mixins/transform.scss';
+@use '../../styles/base.scss' as b;
+@use '../../styles/typography/typography.scss' as *;
+@use '../../styles/mixins/transition.scss' as *;
+@use '../../styles/mixins/transform.scss' as *;
+
+$bp-xsmall: map-get(b.$breakpoints, 'xsmall');
+$bp-small: map-get(b.$breakpoints, 'small');
+$bp-medium: map-get(b.$breakpoints, 'medium');
+$bp-large: map-get(b.$breakpoints, 'large');
+$bp-xlarge: map-get(b.$breakpoints, 'xlarge');
 
 .footer {
     position: relative;
-    z-index: 1;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,151 +19,143 @@
     width: 100%;
     margin: 0;
     padding: 1.5rem 1rem;
-    background-color: map-get(base.$srp-greys, 900);
+    background-color: map-get(b.$srp-greys, 900);
 
     &__content {
+        position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
 
         &::before {
             content: '';
+            position: absolute;
+            top: 0;
             display: block;
             height: 2px;
             width: 100%;
-            background-color: base.$srp-accent-blue;
-            margin-bottom: 1.375rem;
+            background-color: b.$srp-accent-blue;
         }
+    }
 
-        &__label {
-            padding-bottom: 5px;
+    &__icons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        padding-top: calc(1.375rem + 2px);
+        padding-bottom: 1.375rem;
+
+        .icon-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin: 0;
+            padding: 0 0.5rem;
+            font-size: 1.5rem;
+
+            svg path {
+                fill: white;
+                @include transition(fill ease-out 200ms);
+            }
+
+            &:hover,
+            &:focus {
+                svg path {
+                    fill: b.$srp-accent-blue;
+                }
+            }
+        }
+    }
+
+    &__links-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        color: white;
+
+        a {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            @include transition(color ease-out 200ms);
+
+            &:hover,
+            &:focus {
+                color: b.$srp-accent-blue;
+            }
+        }
+    }
+
+    @media screen and (min-width: $bp-xsmall) {
+        &__links-container {
+            a {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: $bp-small) {
+        &__content {
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            &:before {
+                position: relative;
+                margin-bottom: 1.375rem;
+            }
         }
 
         &__icons-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            height: auto;
-            width: auto;
-            padding-bottom: 1.375rem;
+            justify-content: space-between;
+            width: 30%;
+            padding: 0;
 
             .icon-wrapper {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: auto;
-                margin: 0;
-                padding: 0 0.5rem;
-                font-size: 1.5rem;
-
-                svg path {
-                    fill: white;
-                    @include transition(fill ease-out 200ms);
-                }
-
-                &:hover,
-                &:focus {
-                    svg path {
-                        fill: base.$srp-accent-blue;
-                    }
-                }
+                padding: 0;
+                font-size: 1.25rem;
             }
         }
 
         &__links-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            height: auto;
-            width: 100%;
-            color: white;
-
-            a {
-                text-transform: uppercase;
-                font-size: 0.75rem;
-                letter-spacing: 2px;
-                @include transition(color ease-out 200ms);
-
-                &:hover,
-                &:focus {
-                    color: base.$srp-accent-blue;
-                }
-            }
+            width: 55%;
         }
     }
 
-    @media screen and (min-width: 576px) {
-        &__content {
-            &__links-container {
-                a {
-                    font-size: 0.8rem;
-                }
-            }
+    @media screen and (min-width: $bp-medium) {
+        &__icons-container {
+            width: 25%;
+        }
+
+        &__links-container {
+            width: 50%;
         }
     }
 
-    @media screen and (min-width: 768px) {
-        &__content {
-            justify-content: space-between;
-            flex-direction: row-reverse;
-            flex-wrap: wrap;
+    @media screen and (min-width: $bp-large) {
+        &__icons-container {
+            width: 23%;
+        }
 
-            &__label {
-                display: none;
-            }
-
-            &__icons-container {
-                justify-content: space-between;
-                width: 30%;
-                padding: 0;
-
-                .icon-wrapper {
-                    padding: 0;
-                    font-size: 1.25rem;
-                }
-            }
-
-            &__links-container {
-                width: 55%;
-            }
+        &__links-container {
+            width: 45%;
         }
     }
 
-    @media screen and (min-width: 992px) {
-        &__content {
-            &__icons-container {
-                width: 25%;
-            }
-
-            &__links-container {
-                width: 50%;
-            }
+    @media screen and (min-width: $bp-xlarge) {
+        &__icons-container {
+            width: 20%;
         }
-    }
 
-    @media screen and (min-width: 1200px) {
-        &__content {
-            &__icons-container {
-                width: 23%;
-            }
-
-            &__links-container {
-                width: 45%;
-            }
-        }
-    }
-
-    @media screen and (min-width: 1576px) {
-        &__content {
-            &__icons-container {
-                width: 20%;
-            }
-
-            &__links-container {
-                width: 40%;
-            }
+        &__links-container {
+            width: 40%;
         }
     }
 }

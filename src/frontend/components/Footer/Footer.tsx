@@ -1,17 +1,23 @@
 import React from 'react';
 import { Link, Icon } from '../../lib/interfaces';
 
+// Component Imports
 import { Container } from '../UI/Container/Container';
-import { Heading } from '../UI/Typography/Heading/Heading';
 import { Tooltip } from '../UI/Tooltip/Tooltip';
 
+// Styles
 import './Footer.scss';
 
+// Types
 type FooterProps = {
     links: Link[];
     icons: Icon[];
 };
 
+/**
+ * Exports Footer component
+ * @returns JSX.Element
+ */
 export const Footer = ({ links, icons }: FooterProps): JSX.Element => {
     const linkElems = links.map((link, i) => {
         const isDivided = i <= links.length - 2 ? <div>|</div> : null;
@@ -38,13 +44,8 @@ export const Footer = ({ links, icons }: FooterProps): JSX.Element => {
         <footer className='footer'>
             <Container classes={'footer__content'}>
                 <>
-                    <Heading
-                        importance={6}
-                        title={'Stay Connected'}
-                        classes={['uppercase', 'spaced', 'footer__content__label']}
-                    />
-                    <div className='footer__content__icons-container'>{iconElems}</div>
-                    <div className='footer__content__links-container'>{linkElems}</div>
+                    <div className='footer__links-container'>{linkElems}</div>
+                    <div className='footer__icons-container'>{iconElems}</div>
                 </>
             </Container>
         </footer>
