@@ -2,17 +2,41 @@ import React, { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 import { Icon } from '../../lib/interfaces';
 
+// Styles
 import './Background.scss';
 
+// Types
 type BackgroundProps = {
     icons: Icon[];
 };
 
+/**
+ * Exports Background component
+ * @returns JSX.Element
+ */
 export const Background = ({ icons }: BackgroundProps): JSX.Element => {
+    const cbIcons = [];
+    icons.forEach((val) => cbIcons.push(Object.assign({}, val)));
+    cbIcons.splice(3, 5);
     const planet = useRef();
     const cb1 = useRef();
     const cb2 = useRef();
     const cb3 = useRef();
+    const cbArr = [cb1, cb2, cb3];
+
+    const satellites = cbIcons.map((icon, i) => {
+        return (
+            <section key={'ps-' + icon.id} className='ps__wrapper'>
+                <div className='ps__celestial-body ps__celestial-body--satellite'>
+                    <span ref={cbArr[i]}>
+                        <a href={icon.url} target='_blank' rel='noreferrer'>
+                            <div className='ps__celestial-body__icon'>{icon.icon}</div>
+                        </a>
+                    </span>
+                </div>
+            </section>
+        );
+    });
 
     useEffect(() => {
         const bg = document.getElementById('bg');
@@ -223,33 +247,7 @@ export const Background = ({ icons }: BackgroundProps): JSX.Element => {
                         <span ref={planet}></span>
                     </div>
                 </section>
-                <section className='ps__wrapper'>
-                    <div className='ps__celestial-body ps__celestial-body--satellite'>
-                        <span ref={cb1}>
-                            <a key={'ps-' + icons[0].id} href={icons[0].url} target='_blank' rel='noreferrer'>
-                                <div className='ps__celestial-body__icon'>{icons[0].icon}</div>
-                            </a>
-                        </span>
-                    </div>
-                </section>
-                <section className='ps__wrapper'>
-                    <div className='ps__celestial-body ps__celestial-body--satellite'>
-                        <span ref={cb2}>
-                            <a key={'ps-' + icons[1].id} href={icons[1].url} target='_blank' rel='noreferrer'>
-                                <div className='ps__celestial-body__icon'>{icons[1].icon}</div>
-                            </a>
-                        </span>
-                    </div>
-                </section>
-                <section className='ps__wrapper'>
-                    <div className='ps__celestial-body ps__celestial-body--satellite'>
-                        <span ref={cb3}>
-                            <a key={'ps-' + icons[3].id} href={icons[3].url} target='_blank' rel='noreferrer'>
-                                <div className='ps__celestial-body__icon'>{icons[3].icon}</div>
-                            </a>
-                        </span>
-                    </div>
-                </section>
+                {satellites}
             </div>
         </div>
     );
