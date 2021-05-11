@@ -42,12 +42,12 @@ type PortfolioProps = {
  * @returns JSX.Element
  */
 export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps): JSX.Element => {
-    const proAspectRatios = ['ar-2', 'ar-1', 'ar-4', 'ar-1'];
+    const proAspectRatios = ['ar-2', 'ar-1', 'ar-4', 'ar-3'];
     const acaAspectRatios = ['ar-2', 'ar-4', 'ar-4', 'ar-1'];
 
     const professional = professionalItems.map((item, i) => {
         return (
-            <div key={item.id} className={'panel ' + 'panel--' + proAspectRatios[i]}>
+            <div key={item.id} id={item.id} className={'panel ' + 'panel--' + proAspectRatios[i]}>
                 <div className='panel__image' style={{ backgroundImage: 'url(' + item.img + ')' }}></div>
                 <div className='panel__content'>
                     <h2 className='panel__content__title'>{item.title}</h2>
@@ -61,7 +61,7 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
 
     const academic = academicItems.map((item, i) => {
         return (
-            <div key={item.id} className={'panel ' + 'panel--' + acaAspectRatios[i]}>
+            <div key={item.id} id={item.id} className={'panel ' + 'panel--' + acaAspectRatios[i]}>
                 <div className='panel__image' style={{ backgroundImage: 'url(' + item.img + ')' }}></div>
                 <div className='panel__content'>
                     <h2 className='panel__content__title'>{item.title}</h2>
@@ -73,6 +73,9 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
         );
     });
 
+    // Next do layout
+    // Then animations
+    // Then add the no hover for mobile devices or devices with no pointer
     return (
         <Section classes={['top', 'null-center']}>
             <Container classes='portfolio'>
