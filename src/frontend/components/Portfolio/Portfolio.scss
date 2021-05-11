@@ -7,6 +7,9 @@
 $bp-mobile: map-get(b.$breakpoints, 'mobile');
 $bp-xsmall: map-get(b.$breakpoints, 'xsmall');
 $bp-small: map-get(b.$breakpoints, 'small');
+$bp-medium: map-get(b.$breakpoints, 'medium');
+$bp-large: map-get(b.$breakpoints, 'large');
+$bp-xlarge: map-get(b.$breakpoints, 'xlarge');
 $padding: 1.5rem;
 $margin: 0.8rem;
 
@@ -174,10 +177,6 @@ $margin: 0.8rem;
         }
 
         &__content {
-            position: absolute;
-            z-index: 1;
-            height: auto;
-            width: 100%;
             padding: $padding $padding $padding 0;
 
             &__title {
@@ -200,6 +199,10 @@ $margin: 0.8rem;
 @media screen and (min-width: $bp-xsmall) {
     $margin: 1rem;
     $padding: 1.5rem;
+
+    .portfolio__container {
+        align-items: center;
+    }
 
     .panel {
         &--ar-1,
@@ -228,15 +231,13 @@ $margin: 0.8rem;
 
         &--ar-3 & {
             &__image {
-                $width: 380px;
+                $width: 330px;
                 width: $width;
-                padding-bottom: calc(#{$width} / 3 * 2.5);
+                padding-bottom: calc(#{$width} / 2 * 2.8);
             }
         }
 
         &__content {
-            padding: $padding $padding $padding 0;
-
             &__taster {
                 display: block;
             }
@@ -245,7 +246,6 @@ $margin: 0.8rem;
                 display: none;
             }
         }
-
         &__button {
             padding: 0.6rem 1rem;
         }
@@ -253,6 +253,10 @@ $margin: 0.8rem;
 }
 
 @media screen and (min-width: $bp-small) {
+    .portfolio__container {
+        align-items: initial;
+    }
+
     .panel {
         &--ar-4 & {
             &__image {
@@ -261,5 +265,124 @@ $margin: 0.8rem;
                 padding-bottom: calc(#{$width} / 16 * 9);
             }
         }
+    }
+
+    #deduction {
+        margin: 3rem auto 0 -2rem;
+    }
+    #letterdetonator {
+        margin: -2.5rem -2.5rem 0 auto;
+    }
+    #karensbeautybox {
+        margin: 1rem auto 0 -3rem;
+    }
+    #peerreviewportal {
+        margin: -3rem 0 0 auto;
+    }
+    #robotics {
+        margin: 1rem auto 0 -1.5rem;
+    }
+    #pudhub {
+        margin: -2.5rem -3rem 0 auto;
+    }
+    #distributedsystems {
+        margin: 2rem auto 0 -1rem;
+    }
+    #literaturereview {
+        margin: -3rem 0 0 auto;
+    }
+}
+
+@media screen and (min-width: $bp-medium) {
+    #deduction {
+        margin: 3rem auto 0 -3rem;
+    }
+    #letterdetonator {
+        margin: -8rem -2.5rem 0 auto;
+    }
+    #peerreviewportal {
+        margin: -11rem -1rem 0 auto;
+    }
+    #distributedsystems {
+        margin: 2rem auto 0 -3rem;
+    }
+    #literaturereview {
+        margin: -7rem -1rem 0 auto;
+    }
+}
+
+@media screen and (min-width: $bp-large) {
+    // relook
+    #deduction {
+        margin: 3rem auto 0 -2rem;
+    }
+    #letterdetonator {
+        margin: -13rem -8rem 0 auto;
+    }
+    #karensbeautybox {
+        margin: -10rem auto 0 -8rem;
+    }
+    #peerreviewportal {
+        margin: -2rem -6rem 0 auto;
+    }
+    #robotics {
+        margin: -24rem auto 0 -4.5rem;
+    }
+    #pudhub {
+        margin: 12rem -8rem 0 auto;
+    }
+    #distributedsystems {
+        margin: -23rem auto 0 -8rem;
+    }
+    #literaturereview {
+        margin: 2rem auto 0 -5rem;
+    }
+}
+
+@media screen and (min-width: 1376px) {
+    // finish
+    #karensbeautybox {
+        margin: -10rem auto 0 -3rem;
+    }
+    #peerreviewportal {
+        margin: 0 -1rem 0 auto;
+    }
+    #robotics {
+        margin: -25rem auto 0 -3rem;
+    }
+    #distributedsystems {
+        margin: 1rem auto 0 -3rem;
+    }
+    #literaturereview {
+        margin: -11rem -1rem 0 auto;
+    }
+}
+
+@media screen and (min-width: $bp-xlarge) {
+    #deduction {
+        margin: 3rem auto 0 -12rem;
+    }
+    #letterdetonator {
+        margin: -12rem -12rem 0 auto;
+        z-index: 2;
+    }
+    #karensbeautybox {
+        margin: -10rem auto 0 auto;
+    }
+    #peerreviewportal {
+        margin: 2rem -13rem 0 auto;
+        z-index: 2;
+    }
+    #robotics {
+        margin: -28rem auto 0 -13rem;
+    }
+    #pudhub {
+        margin: -6rem auto 0 auto;
+    }
+    #distributedsystems {
+        margin: 8rem auto 0 35rem;
+    }
+    #literaturereview {
+        margin: -19rem auto 0 -12rem;
     }
 }
