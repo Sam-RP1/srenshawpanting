@@ -12,6 +12,8 @@ export const Cursor = (): JSX.Element => {
         const bigCircle = document.querySelector('.cursor__circle--outer');
         const smallCircle = document.querySelector('.cursor__circle--inner');
 
+        // Bug where if you hold down on an 'a' tag and then drag only the hover class is removed
+        // Bug where if you click on a button and then it is no longer there you havent left it so the class stays applied
         const onMouseOver = () => {
             cursor?.classList.add('cursor--hover');
         };
@@ -30,7 +32,7 @@ export const Cursor = (): JSX.Element => {
 
         const onMouseMove = (e) => {
             gsap.to(bigCircle, {
-                duration: 0.2,
+                duration: 0,
                 x: e.clientX,
                 y: e.clientY,
             });

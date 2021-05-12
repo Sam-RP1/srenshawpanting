@@ -42,8 +42,8 @@ type PortfolioProps = {
  * @returns JSX.Element
  */
 export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps): JSX.Element => {
-    const proAspectRatios = ['ar-2', 'ar-1', 'ar-4', 'ar-3'];
-    const acaAspectRatios = ['ar-2', 'ar-4', 'ar-4', 'ar-1'];
+    const proAspectRatios = ['ar-4', 'ar-1', 'ar-3', 'ar-1'];
+    const acaAspectRatios = ['ar-4', 'ar-3', 'ar-4', 'ar-2'];
 
     const professional = professionalItems.map((item, i) => {
         return (
@@ -76,6 +76,8 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
     // Next do layout
     // Then animations
     // Then add the no hover for mobile devices or devices with no pointer
+    // Add in mega-titles that are absolutely positioned but are translated to their require position (eg 50% of the way down)
+    // work on pointer events for mobile vs desktop
     return (
         <Section classes={['top', 'null-center']}>
             <Container classes='portfolio'>

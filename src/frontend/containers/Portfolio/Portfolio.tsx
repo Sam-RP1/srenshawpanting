@@ -6,6 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { Portfolio as PortfolioCmpnt } from '../../components/Portfolio/Portfolio';
 
+// Load images lazily from server side when deployed, create a spinner for loading
 // eslint-disable-next-line
 const deductionPrev = require('../../assets/portfolio/deduction/img/deduction-min.png');
 // eslint-disable-next-line
@@ -14,6 +15,14 @@ const letterDetonatorPrev = require('../../assets/portfolio/letter-detonator/img
 const karensBeautyBoxPrev = require('../../assets/portfolio/karensbeautybox/img/karensbeautybox-min.png');
 // eslint-disable-next-line
 const peerReviewPortalPrev = require('../../assets/portfolio/peer-review-portal/img/prp-min.png');
+// eslint-disable-next-line
+const roboticsPrev = require('../../assets/portfolio/robotics/img/robotics.png');
+// eslint-disable-next-line
+const pudhubPrev = require('../../assets/portfolio/portsmouth-unattended-displays/img/pud-min.png');
+// eslint-disable-next-line
+const distPrev = require('../../assets/portfolio/distributed-systems/img/dss-min.png');
+// eslint-disable-next-line
+const litrevPrev = require('../../assets/portfolio/literature-review/img/litrev-min.png');
 
 export const Portfolio = (): JSX.Element => {
     const gitHubIcon = <FontAwesomeIcon icon={faGithub} />;
@@ -25,7 +34,9 @@ export const Portfolio = (): JSX.Element => {
             id: 'deduction',
             title: 'Deduction',
             created: '2020',
-            description: 'Multiplayer web game',
+            tag: 'Multiplayer web game',
+            taster: 'A real-time multiplayer web game in which two teams face off to get their score to zero first',
+            description: '',
             buttons: [
                 // {
                 //     id: 'deduction-visit-btn',
@@ -52,7 +63,9 @@ export const Portfolio = (): JSX.Element => {
             id: 'letterdetonator',
             title: 'Letter Detonator',
             created: '2020',
-            description: 'Web game',
+            tag: 'Web game',
+            taster: 'A web game where players type to survive the endless waves of letters',
+            description: '',
             buttons: [
                 // {
                 //     id: 'letterdetonator-visit-btn',
@@ -79,7 +92,9 @@ export const Portfolio = (): JSX.Element => {
             id: 'karensbeautybox',
             title: 'Karens Beauty Box',
             created: '2020',
-            description: 'Client Website',
+            tag: 'Single-page Website',
+            taster: 'A single-page website with a minimalistic design featuring bespoke icons and a logo',
+            description: '',
             buttons: [
                 // {
                 //     id: 'karensbeautybox-visit-btn',
@@ -100,7 +115,9 @@ export const Portfolio = (): JSX.Element => {
             id: 'peerreviewportal',
             title: 'Peer Review Portal',
             created: '2019',
-            description: 'Web application',
+            tag: 'Web application',
+            taster: 'A web application that streamlines and enhances the peer review and meta review processes',
+            description: '',
             buttons: [
                 // {
                 //     id: 'peerreviewportal-report-btn',
@@ -121,10 +138,37 @@ export const Portfolio = (): JSX.Element => {
 
     const academicItems = [
         {
+            id: 'pudhub',
+            title: 'P.U.D Hub',
+            created: '2018',
+            tag: 'Web application',
+            taster: 'A web application that allows for the full creation, customisation and management of a network of unattended displays',
+            description: '',
+            techStack: 'Built using HTML, CSS, JS, Express and MariaDB.',
+            buttons: [
+                // {
+                //     id: 'pudhub-github-btn',
+                //     url: '#',
+                //     icon: gitHubIcon,
+                //     label: 'View on GitHub',
+                // },
+                {
+                    id: 'pudhub-more-btn',
+                    url: '#',
+                    icon: learnMoreIcon,
+                    label: 'Learn More',
+                },
+            ],
+            img: pudhubPrev,
+        },
+        {
             id: 'robotics',
             title: 'Robotics',
             created: '2019',
-            description: 'V-REP Simulation',
+            tag: 'V-REP Simulation',
+            taster: 'A project aiming to improve the performance of a mobile robot`s object manipulation and colour based sorting',
+            description: '',
+            techStack: '',
             buttons: [
                 // {
                 //     id: 'robotics-report-btn',
@@ -145,33 +189,15 @@ export const Portfolio = (): JSX.Element => {
                     label: 'Learn More',
                 },
             ],
+            img: roboticsPrev,
         },
+
         {
-            id: 'pudhub',
-            title: 'P.U.D Hub',
-            created: '2018',
-            description: 'Web application',
-            techStack: 'Built using HTML, CSS, JS, Express and MariaDB.',
-            buttons: [
-                // {
-                //     id: 'pudhub-github-btn',
-                //     url: '#',
-                //     icon: gitHubIcon,
-                //     label: 'View on GitHub',
-                // },
-                {
-                    id: 'pudhub-more-btn',
-                    url: '#',
-                    icon: learnMoreIcon,
-                    label: 'Learn More',
-                },
-            ],
-        },
-        {
-            id: 'distibutedsystems',
+            id: 'distributedsystems',
             title: 'Distributed Systems',
             created: '2019',
-            description: 'Research Paper',
+            tag: 'Research Paper',
+            taster: 'A paper researching and evaluting the suitability of different methods to detect and mitigate DDOS attacks in IoT temperature sensing devices',
             techStack: 'Experiment conducted using Node.js, Raspberry Pi 3B+ and a Computer Cluster (7 Nodes).',
             buttons: [
                 {
@@ -181,12 +207,14 @@ export const Portfolio = (): JSX.Element => {
                     label: 'View Research',
                 },
             ],
+            img: distPrev,
         },
         {
             id: 'literaturereview',
             title: 'Mitigating Data Exposure',
             created: '2017',
-            description: 'Literature Review',
+            tag: 'Literature Review',
+            taster: 'A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web',
             techStack: '',
             buttons: [
                 {
@@ -196,6 +224,7 @@ export const Portfolio = (): JSX.Element => {
                     label: 'View Literature Review',
                 },
             ],
+            img: litrevPrev,
         },
     ];
 
