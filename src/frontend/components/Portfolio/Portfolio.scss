@@ -80,7 +80,7 @@ $margin: 0.8rem;
         position: relative;
         z-index: 0;
         height: 0;
-        border-radius: 10px;
+        border-radius: 5px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -138,7 +138,7 @@ $margin: 0.8rem;
         &__title,
         &__tag,
         &__taster {
-            text-shadow: 0px 2px 8px #000;
+            text-shadow: 0px 2px 5px #000;
         }
     }
 
@@ -220,20 +220,27 @@ $margin: 0.8rem;
             }
         }
 
-        &--ar-2 &,
-        &--ar-4 & {
+        &--ar-2 & {
             &__image {
-                $width: 400px;
+                $width: 330px;
                 width: $width;
-                padding-bottom: calc(#{$width} / 4 * 2.4);
+                padding-bottom: calc(#{$width} / 2 * 3);
             }
         }
 
         &--ar-3 & {
             &__image {
-                $width: 330px;
+                $width: 400px;
                 width: $width;
-                padding-bottom: calc(#{$width} / 2 * 2.8);
+                padding-bottom: calc(#{$width} / 3 * 2.5);
+            }
+        }
+
+        &--ar-4 & {
+            &__image {
+                $width: 400px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 16 * 9);
             }
         }
 
@@ -257,132 +264,134 @@ $margin: 0.8rem;
         align-items: initial;
     }
 
-    .panel {
-        &--ar-4 & {
-            &__image {
-                $width: 400px;
-                width: $width;
-                padding-bottom: calc(#{$width} / 16 * 9);
-            }
-        }
-    }
-
     #deduction {
-        margin: 3rem auto 0 -2rem;
+        margin: 4rem auto 0 -2rem;
     }
     #letterdetonator {
-        margin: -2.5rem -2.5rem 0 auto;
+        margin: -3rem -2rem 0 auto;
     }
     #karensbeautybox {
-        margin: 1rem auto 0 -3rem;
+        margin: 1rem auto 0 -2rem;
     }
     #peerreviewportal {
-        margin: -3rem 0 0 auto;
-    }
-    #robotics {
-        margin: 1rem auto 0 -1.5rem;
+        margin: -3rem -2rem 0 auto;
     }
     #pudhub {
-        margin: -2.5rem -3rem 0 auto;
+        margin: 1rem auto 0 -2rem;
+    }
+    #robotics {
+        margin: -3rem -2rem 0 auto;
     }
     #distributedsystems {
-        margin: 2rem auto 0 -1rem;
+        margin: 1rem auto 0 -2rem;
     }
     #literaturereview {
-        margin: -3rem 0 0 auto;
+        margin: -3rem -2rem 0 auto;
     }
 }
 
 @media screen and (min-width: $bp-medium) {
     #deduction {
-        margin: 3rem auto 0 -3rem;
+        margin: 4rem auto 0 -4rem;
     }
     #letterdetonator {
-        margin: -8rem -2.5rem 0 auto;
+        margin: -12rem -4rem 0 auto;
+    }
+    #karensbeautybox {
+        margin: 1rem auto 0 -4rem;
     }
     #peerreviewportal {
-        margin: -11rem -1rem 0 auto;
+        margin: -13rem -4rem 0 auto;
+    }
+    #pudhub {
+        margin: 1rem auto 0 -4rem;
+    }
+    #robotics {
+        margin: -7rem -4rem 0 auto;
     }
     #distributedsystems {
-        margin: 2rem auto 0 -3rem;
+        margin: 1rem auto 0 -4rem;
     }
     #literaturereview {
-        margin: -7rem -1rem 0 auto;
+        margin: -12rem -4rem 0 auto;
     }
 }
 
 @media screen and (min-width: $bp-large) {
-    // relook
     #deduction {
-        margin: 3rem auto 0 -2rem;
+        margin: 4rem auto 0 -8rem;
     }
     #letterdetonator {
-        margin: -13rem -8rem 0 auto;
+        margin: -12rem -8rem 0 auto;
     }
-    #karensbeautybox {
-        margin: -10rem auto 0 -8rem;
-    }
-    #peerreviewportal {
-        margin: -2rem -6rem 0 auto;
-    }
-    #robotics {
-        margin: -24rem auto 0 -4.5rem;
-    }
-    #pudhub {
-        margin: 12rem -8rem 0 auto;
-    }
-    #distributedsystems {
-        margin: -23rem auto 0 -8rem;
-    }
-    #literaturereview {
-        margin: 2rem auto 0 -5rem;
-    }
-}
-
-@media screen and (min-width: 1376px) {
-    // finish
     #karensbeautybox {
         margin: -10rem auto 0 -3rem;
     }
     #peerreviewportal {
-        margin: 0 -1rem 0 auto;
+        margin: -7rem -5rem 0 auto;
+    }
+    #pudhub {
+        margin: -14rem auto 0 -8rem;
     }
     #robotics {
-        margin: -25rem auto 0 -3rem;
+        margin: 3rem auto 0 auto;
     }
     #distributedsystems {
-        margin: 1rem auto 0 -3rem;
+        margin: 3rem -6rem 0 auto;
     }
     #literaturereview {
-        margin: -11rem -1rem 0 auto;
+        margin: -14rem auto 0 -8rem;
+    }
+}
+
+@media screen and (min-width: 1376px) {
+    #karensbeautybox {
+        margin: -8rem auto 0 4rem;
+    }
+    #peerreviewportal {
+        margin: -7rem -4rem 0 auto;
+    }
+    #pudhub {
+        margin: -13rem auto 0 -8rem;
+    }
+    #robotics {
+        margin: 3rem 4rem 0 auto;
+    }
+    #distributedsystems {
+        margin: 5rem -8rem 0 auto;
+    }
+    #literaturereview {
+        margin: -28rem auto 0 -8rem;
     }
 }
 
 @media screen and (min-width: $bp-xlarge) {
     #deduction {
-        margin: 3rem auto 0 -12rem;
+        margin: 4rem auto 0 -12rem;
     }
     #letterdetonator {
         margin: -12rem -12rem 0 auto;
-        z-index: 2;
+        z-index: 3;
     }
     #karensbeautybox {
-        margin: -10rem auto 0 auto;
+        margin: -12rem auto 0 auto;
+        z-index: 2;
     }
     #peerreviewportal {
-        margin: 2rem -13rem 0 auto;
+        margin: 0 -12rem 0 auto;
+        z-index: 3;
+    }
+    #pudhub {
+        margin: -20rem auto 0 auto;
         z-index: 2;
     }
     #robotics {
-        margin: -28rem auto 0 -13rem;
-    }
-    #pudhub {
-        margin: -6rem auto 0 auto;
+        margin: -30rem auto 0 -12rem;
     }
     #distributedsystems {
-        margin: 8rem auto 0 35rem;
+        margin: 18rem auto 0 30rem;
     }
     #literaturereview {
-        margin: -19rem auto 0 -12rem;
+        margin: -21rem auto 0 -12rem;
     }
 }
