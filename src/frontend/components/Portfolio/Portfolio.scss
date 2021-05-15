@@ -84,7 +84,7 @@ $margin: 0.8rem;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 75%);
+        box-shadow: 0px 6px 20px 0px rgb(0 0 0 / 75%);
         overflow: hidden;
 
         &:before {
@@ -105,6 +105,7 @@ $margin: 0.8rem;
         height: auto;
         width: 100%;
         padding: $padding $padding $margin 0;
+        @include userSelect(none);
 
         &__title {
             position: relative;
@@ -113,7 +114,7 @@ $margin: 0.8rem;
             margin: 0 0 $margin 0;
             font-size: 1.4rem;
             font-weight: 400;
-            text-shadow: 0 1px 20px #000;
+            text-shadow: 0 1px 15px #000;
 
             &::after {
                 content: '';
@@ -126,29 +127,46 @@ $margin: 0.8rem;
             }
         }
 
-        &__taster {
-            display: none;
-        }
-
         &__taster,
         &__tag {
-            margin: 0 0 $margin 0;
+            width: max-content;
+            max-width: 100%;
+
+            span {
+                display: inline;
+                margin: 0 0 $margin 0;
+                background: rgba(0, 0, 0, 0.6);
+                box-decoration-break: clone;
+            }
         }
 
-        &__title,
-        &__tag,
         &__taster {
-            text-shadow: 0px 2px 5px #000;
+            display: none;
+            span {
+                padding: 2px 0;
+                box-shadow: 0.5rem 0 0 rgba(0, 0, 0, 0.6), -0.5rem 0 0 0 rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        &__tag {
+            span {
+                padding: 4px;
+                border-radius: 5px;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0.6), 0 0 0 rgba(0, 0, 0, 0.6);
+            }
         }
     }
 
     &__button {
         display: inline-flex;
         align-items: center;
+        height: 35px;
         width: auto;
         padding: 0.5rem 0.75rem;
         border-radius: 5px;
         background-color: #0080b3;
+        box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 5px 0 rgb(0 0 0 / 17%);
+        white-space: nowrap;
         @include font-size($p-font-sizes, b.$breakpoints);
 
         &::before {
@@ -160,6 +178,7 @@ $margin: 0.8rem;
     }
 }
 
+//  Breakpoints
 @media screen and (min-width: $bp-mobile) {
     $margin: 1rem;
     $padding: 1.5rem;
@@ -182,10 +201,6 @@ $margin: 0.8rem;
             &__title {
                 margin: 0 0 $margin 0;
                 font-size: 1.5rem;
-            }
-
-            &__taster {
-                display: none;
             }
 
             &__taster,
@@ -395,3 +410,74 @@ $margin: 0.8rem;
         margin: -21rem auto 0 -12rem;
     }
 }
+
+@media (hover) {
+    .panel {
+        &__image {
+            @include transition(all 500ms ease);
+        }
+
+        &__content {
+            pointer-events: none;
+            @include transform(translate(0, calc(100% - 4.8rem)));
+            @include transition(transform 500ms ease);
+            transition-delay: 325ms;
+
+            &__title {
+                &::after {
+                    width: 0%;
+                    @include transition(width 450ms ease);
+                    transition-delay: 325ms;
+                }
+            }
+
+            &__taster,
+            &__tag {
+                opacity: 0;
+                @include transition(opacity 300ms ease);
+            }
+        }
+
+        &__button {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+            @include transition(width 300ms ease, padding 300ms ease);
+        }
+
+        &:hover & {
+            &__image {
+                box-shadow: 0px 10px 25px 0px rgb(0 0 0 / 90%);
+            }
+
+            &__content {
+                pointer-events: initial;
+                @include transform(translate(0, 0));
+                @include transition(transform 500ms ease);
+
+                &__title {
+                    &::after {
+                        width: 100%;
+                        @include transition(width 450ms ease);
+                    }
+                }
+
+                &__taster,
+                &__tag {
+                    opacity: 1;
+                    @include transition(opacity 300ms ease);
+                    transition-delay: 475ms;
+                }
+            }
+
+            &__button {
+                width: 132px;
+                padding: 0.5rem 0.75rem;
+                @include transition(width 300ms ease, padding 300ms ease);
+                transition-delay: 475ms;
+            }
+        }
+    }
+}
+
+// focus-within on hover things for keyboard users
