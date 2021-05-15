@@ -34,6 +34,7 @@ type PortfolioProps = {
         description?: string;
         techStack: string;
         buttons: Icons;
+        img: string;
     }[];
 };
 
@@ -51,9 +52,20 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
                 <div className='panel__image' style={{ backgroundImage: 'url(' + item.img + ')' }}></div>
                 <div className='panel__content'>
                     <h2 className='panel__content__title'>{item.title}</h2>
-                    <p className='panel__content__tag'>{item.tag}</p>
-                    <p className='panel__content__taster'>{item.taster}</p>
-                    <div className='panel__button'>{item.buttons[0].icon}</div>
+                    <p className='panel__content__tag'>
+                        <span>{item.tag}</span>
+                    </p>
+                    <p className='panel__content__taster'>
+                        <span>{item.taster}</span>
+                    </p>
+                    <div
+                        className='panel__button'
+                        onClick={() => {
+                            console.log('open me');
+                        }}
+                    >
+                        {item.buttons[0].icon}
+                    </div>
                 </div>
             </div>
         );
@@ -65,9 +77,20 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
                 <div className='panel__image' style={{ backgroundImage: 'url(' + item.img + ')' }}></div>
                 <div className='panel__content'>
                     <h2 className='panel__content__title'>{item.title}</h2>
-                    <p className='panel__content__tag'>{item.tag}</p>
-                    <p className='panel__content__taster'>{item.taster}</p>
-                    <div className='panel__button'>{item.buttons[0].icon}</div>
+                    <p className='panel__content__tag'>
+                        <span>{item.tag}</span>
+                    </p>
+                    <p className='panel__content__taster'>
+                        <span>{item.taster}</span>
+                    </p>
+                    <div
+                        className='panel__button'
+                        onClick={() => {
+                            console.log('open me');
+                        }}
+                    >
+                        {item.buttons[0].icon}
+                    </div>
                 </div>
             </div>
         );
