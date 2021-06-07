@@ -1,17 +1,16 @@
-@use '../../styles/base.scss' as b;
-@use '../../styles/typography/typography.scss' as *;
-@use '../../styles/mixins/transition.scss' as *;
-@use '../../styles/mixins/transform.scss' as *;
-@use '../../styles/mixins/userSelect.scss' as *;
-
-$bp-mobile: map-get(b.$breakpoints, 'mobile');
-$bp-xsmall: map-get(b.$breakpoints, 'xsmall');
-$bp-small: map-get(b.$breakpoints, 'small');
-$bp-medium: map-get(b.$breakpoints, 'medium');
-$bp-large: map-get(b.$breakpoints, 'large');
-$bp-xlarge: map-get(b.$breakpoints, 'xlarge');
+@use '../../styles/_index.scss' as i;
 $padding: 1.5rem;
 $margin: 0.8rem;
+
+.section--portfolio {
+    justify-content: center;
+    padding: {
+        top: 5rem;
+        right: 1rem;
+        bottom: 3.75rem;
+        left: 3rem;
+    }
+}
 
 .portfolio {
     position: relative;
@@ -19,10 +18,15 @@ $margin: 0.8rem;
     flex-direction: column;
     height: auto;
     color: white;
-    // overflow: hidden;
+
+    .timeline {
+        top: -5rem;
+        height: calc(100% + 8.75rem);
+    }
 
     &__title {
-        margin-top: 30px;
+        // margin-top: 30px;
+        margin: 30px 0;
         h2 {
             font-weight: 400;
             text-transform: uppercase;
@@ -40,7 +44,7 @@ $margin: 0.8rem;
         opacity: 0.2;
         overflow: hidden;
         white-space: nowrap;
-        @include userSelect(none);
+        @include i.userSelect(none);
 
         h1 {
             line-height: initial;
@@ -50,8 +54,13 @@ $margin: 0.8rem;
 
     &__container {
         position: relative;
+        z-index: 13;
         display: flex;
         flex-direction: column;
+
+        &:last-of-type {
+            z-index: 12;
+        }
     }
 }
 
@@ -84,7 +93,7 @@ $margin: 0.8rem;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        box-shadow: 0px 6px 20px 0px rgb(0 0 0 / 75%);
+        box-shadow: 0px 4px 20px 0px rgb(0 0 0 / 75%);
         overflow: hidden;
 
         &:before {
@@ -105,7 +114,7 @@ $margin: 0.8rem;
         height: auto;
         width: 100%;
         padding: $padding $padding $margin 0;
-        @include userSelect(none);
+        @include i.userSelect(none);
 
         &__title {
             position: relative;
@@ -131,12 +140,12 @@ $margin: 0.8rem;
         &__tag {
             width: max-content;
             max-width: 100%;
+            margin: 0 0 $margin 0;
 
             span {
                 display: inline;
-                margin: 0 0 $margin 0;
                 background: rgba(0, 0, 0, 0.6);
-                box-decoration-break: clone;
+                // box-decoration-break: clone;
             }
         }
 
@@ -167,7 +176,7 @@ $margin: 0.8rem;
         background-color: #0080b3;
         box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 5px 0 rgb(0 0 0 / 17%);
         white-space: nowrap;
-        @include font-size($p-font-sizes, b.$breakpoints);
+        @include i.font-size(i.$p-font-sizes, i.$breakpoints);
 
         &::before {
             content: 'Learn More';
@@ -179,7 +188,7 @@ $margin: 0.8rem;
 }
 
 //  Breakpoints
-@media screen and (min-width: $bp-mobile) {
+@media screen and (min-width: i.$bp-mobile) {
     $margin: 1rem;
     $padding: 1.5rem;
 
@@ -211,7 +220,7 @@ $margin: 0.8rem;
     }
 }
 
-@media screen and (min-width: $bp-xsmall) {
+@media screen and (min-width: i.$bp-xsmall) {
     $margin: 1rem;
     $padding: 1.5rem;
 
@@ -274,40 +283,40 @@ $margin: 0.8rem;
     }
 }
 
-@media screen and (min-width: $bp-small) {
+@media screen and (min-width: i.$bp-small) {
     .portfolio__container {
         align-items: initial;
     }
 
     #deduction {
-        margin: 4rem auto 0 -2rem;
+        margin: 0 auto 0 -3rem;
     }
     #letterdetonator {
         margin: -3rem -2rem 0 auto;
     }
     #karensbeautybox {
-        margin: 1rem auto 0 -2rem;
+        margin: 1rem auto 0 -3rem;
     }
     #peerreviewportal {
         margin: -3rem -2rem 0 auto;
     }
     #pudhub {
-        margin: 1rem auto 0 -2rem;
+        margin: 1rem auto 0 -3rem;
     }
     #robotics {
         margin: -3rem -2rem 0 auto;
     }
     #distributedsystems {
-        margin: 1rem auto 0 -2rem;
+        margin: 1rem auto 0 -3rem;
     }
     #literaturereview {
         margin: -3rem -2rem 0 auto;
     }
 }
 
-@media screen and (min-width: $bp-medium) {
+@media screen and (min-width: i.$bp-medium) {
     #deduction {
-        margin: 4rem auto 0 -4rem;
+        margin: 0 auto 0 -4rem;
     }
     #letterdetonator {
         margin: -12rem -4rem 0 auto;
@@ -328,13 +337,13 @@ $margin: 0.8rem;
         margin: 1rem auto 0 -4rem;
     }
     #literaturereview {
-        margin: -12rem -4rem 0 auto;
+        margin: -10rem -4rem 0 auto;
     }
 }
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: i.$bp-large) {
     #deduction {
-        margin: 4rem auto 0 -8rem;
+        margin: 0 auto 0 -8rem;
     }
     #letterdetonator {
         margin: -12rem -8rem 0 auto;
@@ -380,9 +389,9 @@ $margin: 0.8rem;
     }
 }
 
-@media screen and (min-width: $bp-xlarge) {
+@media screen and (min-width: i.$bp-xlarge) {
     #deduction {
-        margin: 4rem auto 0 -12rem;
+        margin: 0 auto 0 -12rem;
     }
     #letterdetonator {
         margin: -12rem -12rem 0 auto;
@@ -412,29 +421,36 @@ $margin: 0.8rem;
 }
 
 @media (hover) {
+    .portfolio__container {
+        pointer-events: none;
+    }
+
     .panel {
+        pointer-events: initial;
+
         &__image {
-            @include transition(all 500ms ease);
+            @include i.transition(all 500ms ease);
+            transition-delay: 250ms;
         }
 
         &__content {
             pointer-events: none;
-            @include transform(translate(0, calc(100% - 4.8rem)));
-            @include transition(transform 500ms ease);
-            transition-delay: 325ms;
+            @include i.transform(translate(0, calc(100% - 4.8rem)));
+            @include i.transition(transform 500ms ease);
+            transition-delay: 250ms;
 
             &__title {
                 &::after {
                     width: 0%;
-                    @include transition(width 450ms ease);
-                    transition-delay: 325ms;
+                    @include i.transition(width 450ms ease);
+                    transition-delay: 250ms;
                 }
             }
 
             &__taster,
             &__tag {
                 opacity: 0;
-                @include transition(opacity 300ms ease);
+                @include i.transition(opacity 300ms ease);
             }
         }
 
@@ -442,30 +458,32 @@ $margin: 0.8rem;
             width: 0;
             padding: 0;
             overflow: hidden;
-            @include transition(width 300ms ease, padding 300ms ease);
+            @include i.transition(width 300ms ease, padding 300ms ease);
         }
 
         &:hover & {
             &__image {
-                box-shadow: 0px 10px 25px 0px rgb(0 0 0 / 90%);
+                box-shadow: 0px 4px 30px 0px rgb(0 0 0 / 90%);
+                @include i.transform(scale(0.98));
+                transition-delay: 0ms;
             }
 
             &__content {
                 pointer-events: initial;
-                @include transform(translate(0, 0));
-                @include transition(transform 500ms ease);
+                @include i.transform(translate(0, 0));
+                @include i.transition(transform 500ms ease);
 
                 &__title {
                     &::after {
                         width: 100%;
-                        @include transition(width 450ms ease);
+                        @include i.transition(width 450ms ease);
                     }
                 }
 
                 &__taster,
                 &__tag {
                     opacity: 1;
-                    @include transition(opacity 300ms ease);
+                    @include i.transition(opacity 300ms ease);
                     transition-delay: 475ms;
                 }
             }
@@ -473,7 +491,7 @@ $margin: 0.8rem;
             &__button {
                 width: 132px;
                 padding: 0.5rem 0.75rem;
-                @include transition(width 300ms ease, padding 300ms ease);
+                @include i.transition(width 300ms ease, padding 300ms ease);
                 transition-delay: 475ms;
             }
         }
