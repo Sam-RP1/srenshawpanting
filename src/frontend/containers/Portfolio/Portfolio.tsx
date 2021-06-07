@@ -92,7 +92,7 @@ export const Portfolio = (): JSX.Element => {
             id: 'karensbeautybox',
             title: 'Karens Beauty Box',
             created: '2020',
-            tag: 'Single-page Website',
+            tag: 'Single-page website',
             taster: 'A single-page website with a minimalistic design featuring bespoke icons and a logo',
             description: '',
             buttons: [
