@@ -1,4 +1,4 @@
-@use '../../../styles/base';
+@use '../../../styles/_index.scss' as i;
 
 $container-sizes: (
     null: 100%,
@@ -27,5 +27,5 @@ $container-sizes: (
 }
 
 .container {
-    @include container-size($container-sizes, base.$breakpoints);
+    @include container-size($container-sizes, i.$breakpoints);
 }
