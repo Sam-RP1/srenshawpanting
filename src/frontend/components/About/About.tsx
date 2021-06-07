@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Heading } from '../UI/Typography/Heading/Heading';
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
+
+import { reactIcon } from '../../lib/icons';
 
 import './About.scss';
 import './Code.scss';
@@ -10,10 +11,91 @@ import './Code.scss';
 // type AboutProps = {};
 
 export const About = (): JSX.Element => {
+    //use state to manage open editor tab
     return (
-        <Section classes={['top', 'center-center']}>
+        <Section selector={'about'}>
             <Container classes={'about'}>
                 <>
+                    <div className='timeline'></div>
+                    <div className='timeline__title'>
+                        <h2>{'<About />'}</h2>
+                        <div className='mega-title'>
+                            <h1>About</h1>
+                        </div>
+                    </div>
+
+                    <div className='editor'>
+                        <div className='editor__header'>
+                            <div className='editor__header__controls'>
+                                <div className='close'></div>
+                                <div className='minimise'></div>
+                                <div className='restore'></div>
+                            </div>
+
+                            <div className='editor__header__title'>
+                                <p>
+                                    srenshawpanting <span>- About.tsx</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='editor__tabs'>
+                            <div className='editor__tab active'>
+                                {reactIcon.icon}
+                                <p>About.tsx</p>
+                                <span>&#x2715;</span>
+                            </div>
+                            <div className='editor__tab'>
+                                {reactIcon.icon}
+                                <p>Education.tsx</p>
+                                <span>&#x2715;</span>
+                            </div>
+                            <div className='editor__tab'>
+                                {reactIcon.icon}
+                                <p>Experience.tsx</p>
+                                <span>&#x2715;</span>
+                            </div>
+                            <div className='editor__tab'>
+                                {reactIcon.icon}
+                                <p>Skills.tsx</p>
+                                <span>&#x2715;</span>
+                            </div>
+                        </div>
+
+                        <div className='editor__window'>
+                            <article className='editor__file'>
+                                <p className='editor__file__line'>
+                                    <span className='keyword'>const</span> <span className='function'>description</span>{' '}
+                                    <span className='symbol'>=</span>{' '}
+                                    <span className='string'>
+                                        &apos;Hi there! I&apos;m Sam, a 22-year-old Web Developer and Software
+                                        Engineering graduate. I&apos;m an enthusiastic guy with a passion for the web
+                                        and its multitude of technologies.
+                                    </span>{' '}
+                                    <span className='string'>
+                                        I like to compose captivating designs, create smart user interfaces, solve
+                                        complex problems, squash troublesome bugs, develop rich web experiences and web
+                                        applications.
+                                    </span>{' '}
+                                    <span className='string'>
+                                        As well as, I enjoy consistently pushing myself by learning new languages,
+                                        frameworks and technologies in addition to further improving my abilities in
+                                        ones I am already familiar with.
+                                    </span>{' '}
+                                    <span className='string'>
+                                        When I&apos;m not learning, conceptualising, designing or developing,
+                                        you&apos;ll most likely find me either exercising, playing with my dog,
+                                        listening to music or being below average at chess.&apos;
+                                    </span>
+                                    ;
+                                </p>
+                            </article>
+                            <article className='editor__file'></article>
+                            <article className='editor__file'></article>
+                            <article className='editor__file'></article>
+                        </div>
+                    </div>
+
                     <article className='code__container'>
                         <p className='code__line'>
                             <span className='code--keyword'>const</span> <span className='code--function'>About</span>{' '}
@@ -26,7 +108,7 @@ export const About = (): JSX.Element => {
                             <span className='code--keyword'>return</span> competenciesArr;
                         </p>
                         <p className='code__line'>{'}'}</p>
-                        <br />
+                        <p className='code__line'>&nbsp;</p>
 
                         {/* DATA BLOCK */}
                         <p className='code__line'>
@@ -50,7 +132,7 @@ export const About = (): JSX.Element => {
                             email: <span className='code--string'>&apos;srenshawpanting@gmail.com&apos;</span>,
                         </p>
                         <p className='code__line'>{'}'};</p>
-                        <br />
+                        <p className='code__line'>&nbsp;</p>
 
                         {/* DESCRIPTION BLOCK */}
                         <p className='code__line'>
@@ -77,7 +159,7 @@ export const About = (): JSX.Element => {
                             </span>
                             ;
                         </p>
-                        <br />
+                        <p className='code__line'>&nbsp;</p>
 
                         {/* COMPETENCIES BLOCK */}
                         <p className='code__line'>
@@ -97,7 +179,7 @@ export const About = (): JSX.Element => {
                             <span>&apos;SPA&apos;</span>, <span>&apos;AWS&apos;</span>, <span>&apos;GCP&apos;</span>
                         </p>
                         <p className='code__line'>];</p>
-                        <br />
+                        <p className='code__line'>&nbsp;</p>
 
                         {/* INTERESTS BLOCK */}
                         <p className='code__line'>
@@ -115,26 +197,6 @@ export const About = (): JSX.Element => {
                             <span>&apos;Halo&apos;</span>
                         </p>
                         <p className='code__line'>];</p>
-                        <br />
-
-                        <p>
-                            Hi there! I&apos;m Sam, a 22-year-old Web Developer and Software Engineering graduate.
-                            I&apos;m an enthusiastic guy with a passion for the web and its multitude of technologies.
-                        </p>
-                        <p>
-                            I like to compose captivating designs, create smart user interfaces, solve complex problems,
-                            squash troublesome bugs, develop rich web experiences and web applications.
-                        </p>
-                        <p>
-                            As well as, I enjoy consistently pushing myself by learning new languages, frameworks and
-                            technologies in addition to further improving my abilities in ones I am already familiar
-                            with.
-                        </p>
-                        <p>
-                            When I&apos;m not learning, conceptualising, designing or developing, you&apos;ll most
-                            likely find me either exercising, playing with my dog, listening to music or being below
-                            average at chess.
-                        </p>
                     </article>
                 </>
             </Container>
