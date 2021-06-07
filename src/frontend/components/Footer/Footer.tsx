@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Icon } from '../../lib/interfaces';
+import { Links, Icons } from '../../lib/interfaces';
 
 // Component Imports
 import { Container } from '../UI/Container/Container';
@@ -10,8 +10,8 @@ import './Footer.scss';
 
 // Types
 type FooterProps = {
-    links: Link[];
-    icons: Icon[];
+    links: Links;
+    icons: Icons;
 };
 
 /**
