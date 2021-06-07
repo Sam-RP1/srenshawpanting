@@ -3,7 +3,7 @@ export interface Icon {
     url?: string;
     icon: JSX.Element;
     tooltip?: string;
-    label?: string;
+    extension?: string;
 }
 export interface Icons extends Array<Icon> {}
 
