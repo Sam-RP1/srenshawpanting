@@ -1,0 +1,176 @@
+@use '../../styles/_index.scss' as i;
+$margin-top: 1.125rem;
+
+.section--lab {
+    justify-content: center;
+    padding: {
+        top: 5rem;
+        right: 1rem;
+        bottom: 3.75rem;
+        left: 3rem;
+    }
+}
+
+.lab {
+    position: relative;
+    color: white;
+
+    .timeline {
+        top: -5rem;
+        height: calc(100% + 8.75rem);
+    }
+}
+
+.lab__github {
+    position: relative;
+
+    &__panel {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 1px 6px 0px rgb(0 0 0 / 90%), 0px -1px 6px 0px rgb(0 0 0 / 90%);
+        // background: linear-gradient(to bottom, #04101f, #030a13, #020a14);
+        background-color: #051529;
+        overflow: hidden;
+
+        &__tabs {
+            position: relative;
+            top: 0;
+            display: flex;
+            flex-direction: row;
+            background-color: #041122;
+            box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 90%);
+        }
+
+        &__tab {
+            height: auto;
+            width: 50%;
+            padding: 0.5rem;
+
+            &:first-child {
+                border-right: 1px solid #000;
+            }
+        }
+
+        &__content {
+            display: block;
+            padding: 0.5rem;
+        }
+
+        &__featured {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__recent {
+            display: none;
+        }
+
+        &__repos {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__repo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            padding: 0.5rem 0;
+
+            &__icons {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        &__title {
+            position: relative;
+
+            h4 {
+                position: relative;
+                width: max-content;
+                max-width: 100%;
+                margin: 0 0 0.8rem 0;
+                font-size: 1.4rem;
+                font-weight: 400;
+                text-shadow: 0 1px 15px #000;
+                letter-spacing: 2px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    display: block;
+                    height: 4px;
+                    width: 100%;
+                    background-color: #0080b3;
+                }
+            }
+        }
+    }
+}
+
+.lab__flickr {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h4 {
+        width: 100%;
+    }
+
+    .glide {
+        left: -1rem;
+        z-index: 12;
+        width: calc(100vw - 2rem);
+
+        &__slide {
+            img {
+                box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 75%);
+            }
+        }
+
+        &__track {
+            overflow: initial;
+        }
+
+        &__arrow {
+            position: absolute;
+            display: block;
+            bottom: 2rem;
+            z-index: 2;
+            color: white;
+            padding: 9px 12px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 5px 0 rgb(0 0 0 / 17%);
+            text-shadow: 0 0.25em 0.5em rgb(0 0 0 / 10%);
+            opacity: 1;
+            background-color: #0080b3;
+            cursor: pointer;
+            transition: opacity 150ms ease, border 300ms ease-in-out;
+            line-height: 1;
+            font: 400 14px 'Recursive';
+            letter-spacing: 2px;
+
+            &--left {
+                left: 1rem;
+            }
+            &--right {
+                right: 1rem;
+            }
+        }
+    }
+}
+
+.glide__slide {
+    img {
+        height: auto;
+        width: 100%;
+    }
+}
