@@ -1,0 +1,126 @@
+@use '../../styles/_index.scss' as i;
+$margin-bottom: 1rem;
+$padding-bottom: 5rem;
+
+.section--hero {
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+    padding: {
+        top: 60%;
+        right: 1rem;
+        bottom: $padding-bottom;
+        left: 3rem;
+    }
+    overflow: hidden;
+
+    .hint {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        display: none;
+        color: #fff;
+
+        p {
+            font-size: 0.7rem;
+            padding-right: 10px;
+            animation: wiggle 3s infinite;
+        }
+
+        @keyframes wiggle {
+            0% {
+                @include i.transform(rotate(0deg));
+            }
+            75% {
+                @include i.transform(rotate(0deg));
+            }
+            80% {
+                @include i.transform(rotate(7deg));
+            }
+            85% {
+                @include i.transform(rotate(-7deg));
+            }
+            90% {
+                @include i.transform(rotate(7deg));
+            }
+            95% {
+                @include i.transform(rotate(-7deg));
+            }
+            100% {
+                @include i.transform(rotate(0deg));
+            }
+        }
+    }
+}
+
+.hero {
+    position: relative;
+    display: block;
+    color: white;
+
+    .timeline {
+        top: 15px;
+        height: calc(100% + #{$padding-bottom});
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        margin: 3rem 0 $margin-bottom 0;
+        pointer-events: none;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 $margin-bottom 0;
+        pointer-events: none;
+    }
+
+    &__next {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: auto;
+            cursor: pointer;
+
+            &__label {
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        @include i.transform(rotate(-90deg));
+    }
+
+    50% {
+        @include i.transform(translateY(5px) rotate(-90deg));
+    }
+
+    100% {
+        @include i.transform(rotate(-90deg));
+    }
+}
+
+@media screen and (min-width: i.$bp-mobile) {
+    .section--hero {
+        justify-content: center;
+        padding: {
+            top: 50vh;
+            right: 1rem;
+            bottom: $padding-bottom;
+            left: 3rem;
+        }
+    }
+}
