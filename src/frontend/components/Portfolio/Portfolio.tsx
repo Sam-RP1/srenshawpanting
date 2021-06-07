@@ -4,13 +4,11 @@ import { gsap } from 'gsap';
 // Component Imports
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
-import { Heading } from '../UI/Typography/Heading/Heading';
 
 import { Icons } from '../../lib/interfaces';
 
 // Styles
 import './Portfolio.scss';
-// Could add a next and/or prev button to the timeline to jump between sections/segements using state and stuff when it is its own component
 
 // Types
 type PortfolioProps = {
@@ -96,21 +94,20 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
         );
     });
 
-    // Next do layout
-    // Then animations
-    // Then add the no hover for mobile devices or devices with no pointer
     // Add in mega-titles that are absolutely positioned but are translated to their require position (eg 50% of the way down)
-    // work on pointer events for mobile vs desktop
+    // Keyboard compatability
     return (
-        <Section classes={['top', 'null-center']}>
+        <Section selector={'portfolio'} classes={[]}>
             <Container classes='portfolio'>
                 <>
-                    <div className='portfolio__title'>
-                        <Heading importance={3} title='Portfolio' classes={['uppercase', 'spaced']} />
+                    <div className='timeline'></div>
+                    <div className='timeline__title'>
+                        <h2>{'<Portfolio />'}</h2>
+                        <div className='mega-title'>
+                            <h1>Portfolio</h1>
+                        </div>
                     </div>
-                    <div className='portfolio__mega-title'>
-                        <h1>Portfolio</h1>
-                    </div>
+
                     <div className='portfolio__container'>{professional}</div>
                     <div className='portfolio__container'>{academic}</div>
                 </>
