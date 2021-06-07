@@ -1,13 +1,4 @@
-@use '../../styles/base.scss' as b;
-@use '../../styles/typography/typography.scss' as *;
-@use '../../styles/mixins/transition.scss' as *;
-@use '../../styles/mixins/transform.scss' as *;
-
-$bp-xsmall: map-get(b.$breakpoints, 'xsmall');
-$bp-small: map-get(b.$breakpoints, 'small');
-$bp-medium: map-get(b.$breakpoints, 'medium');
-$bp-large: map-get(b.$breakpoints, 'large');
-$bp-xlarge: map-get(b.$breakpoints, 'xlarge');
+@use '../../styles/_index.scss' as i;
 
 .footer {
     position: relative;
@@ -19,7 +10,7 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
     width: 100%;
     margin: 0;
     padding: 1.5rem 1rem;
-    background-color: map-get(b.$srp-greys, 900);
+    background-color: map-get(i.$srp-greys, 900);
 
     &__content {
         position: relative;
@@ -34,7 +25,7 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
             display: block;
             height: 2px;
             width: 100%;
-            background-color: b.$srp-accent-blue;
+            background-color: i.$srp-accent-blue;
         }
     }
 
@@ -59,13 +50,13 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
 
             svg path {
                 fill: white;
-                @include transition(fill ease-out 200ms);
+                @include i.transition(fill ease-out 200ms);
             }
 
             &:hover,
             &:focus {
                 svg path {
-                    fill: b.$srp-accent-blue;
+                    fill: i.$srp-accent-blue;
                 }
             }
         }
@@ -84,16 +75,16 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 2px;
-            @include transition(color ease-out 200ms);
+            @include i.transition(color ease-out 200ms);
 
             &:hover,
             &:focus {
-                color: b.$srp-accent-blue;
+                color: i.$srp-accent-blue;
             }
         }
     }
 
-    @media screen and (min-width: $bp-xsmall) {
+    @media screen and (min-width: i.$bp-xsmall) {
         &__links-container {
             a {
                 font-size: 0.8rem;
@@ -101,7 +92,7 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
         }
     }
 
-    @media screen and (min-width: $bp-small) {
+    @media screen and (min-width: i.$bp-small) {
         &__content {
             justify-content: space-between;
             flex-direction: row;
@@ -129,7 +120,7 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
         }
     }
 
-    @media screen and (min-width: $bp-medium) {
+    @media screen and (min-width: i.$bp-medium) {
         &__icons-container {
             width: 25%;
         }
@@ -139,7 +130,7 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
         }
     }
 
-    @media screen and (min-width: $bp-large) {
+    @media screen and (min-width: i.$bp-large) {
         &__icons-container {
             width: 23%;
         }
@@ -149,7 +140,7 @@ $bp-xlarge: map-get(b.$breakpoints, 'xlarge');
         }
     }
 
-    @media screen and (min-width: $bp-xlarge) {
+    @media screen and (min-width: i.$bp-xlarge) {
         &__icons-container {
             width: 20%;
         }
