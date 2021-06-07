@@ -1,39 +1,22 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import { Links } from './interfaces';
 
 export const links: Links = [
     {
         id: 'about',
-        url: (
-            <NavLink key={'about-link'} to='/about'>
-                About
-            </NavLink>
-        ),
+        url: <div key={'about-link'}>About</div>,
     },
     {
         id: 'portfolio',
-        url: (
-            <NavLink key={'portfolio-link'} to='/portfolio'>
-                Portfolio
-            </NavLink>
-        ),
+        url: <div key={'portfolio-link'}>Portfolio</div>,
     },
     {
         id: 'cv',
-        url: (
-            <NavLink key={'cv-link'} to='/cv'>
-                CV
-            </NavLink>
-        ),
+        url: <div key={'cv-link'}>CV</div>,
     },
     {
         id: 'connect',
-        url: (
-            <NavLink key={'connect-link'} to='/connect'>
-                Connect
-            </NavLink>
-        ),
+        url: <div key={'connect-link'}>Connect</div>,
     },
 ];
