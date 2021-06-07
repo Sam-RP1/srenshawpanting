@@ -1,32 +1,28 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Cursor } from './components/Cursor/Cursor';
-import { ScrollToTop } from './hooks/useScrollToTop';
 import { Header } from './components/Header/Header';
-import { Home } from './containers/Home/Home';
+import { Hero } from './containers/Hero/Hero';
 import { About } from './containers/About/About';
 import { Portfolio } from './containers/Portfolio/Portfolio';
+import { Lab } from './containers/Lab/Lab';
 import { Connect } from './containers/Connect/Connect';
-import { Footer } from './components/Footer/Footer';
+import { Footer } from './containers/Footer/Footer';
 import { Background } from './components/Background/Background';
 
-import { icons } from './lib/icons';
-import { links } from './lib/links';
+import { socialIcons } from './lib/icons';
 
 export const App = (): JSX.Element => {
     return (
-        <section className='theme theme-dark' data-test='component-app'>
-            <Background icons={icons} />
-            <BrowserRouter>
-                <ScrollToTop />
-                <Header />
-                <Route path='/connect' component={Connect} />
-                <Route path='/portfolio' component={Portfolio} />
-                <Route path='/about' component={About} />
-                <Route path='/' exact component={Home} />
-                <Footer icons={icons} links={links} />
-            </BrowserRouter>
+        <section data-test='component-app'>
+            <Background icons={socialIcons} />
+            <Header />
+            <Hero />
+            <About />
+            <Portfolio />
+            <Lab />
+            <Connect />
+            <Footer />
             <Cursor />
         </section>
     );
