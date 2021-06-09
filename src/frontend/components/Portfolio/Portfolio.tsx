@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 // Component Imports
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
+import { Timeline } from '../UI/Timeline/Timeline';
 
 import { Icons } from '../../lib/interfaces';
 
@@ -100,13 +101,7 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
         <Section selector={'portfolio'} classes={[]}>
             <Container classes='portfolio'>
                 <>
-                    <div className='timeline'></div>
-                    <div className='timeline__title'>
-                        <h2>{'<Portfolio />'}</h2>
-                        <div className='mega-title'>
-                            <h1>Portfolio</h1>
-                        </div>
-                    </div>
+                    <Timeline title={'Portfolio'} megaTitle={true} />
 
                     <div className='portfolio__container'>{professional}</div>
                     <div className='portfolio__container'>{academic}</div>

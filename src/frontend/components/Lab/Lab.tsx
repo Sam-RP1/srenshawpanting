@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 // import LeaderLine from 'react-leader-line';
 
+import { Timeline } from '../UI/Timeline/Timeline';
+
 import './Lab.scss';
 
 export const Lab = (): JSX.Element => {
@@ -21,15 +23,5 @@ export const Lab = (): JSX.Element => {
         // });
     }, []);
 
-    return (
-        <>
-            <div className='timeline'></div>
-            <div className='timeline__title'>
-                <h2>{'<Lab />'}</h2>
-                <div className='mega-title'>
-                    <h1>Lab</h1>
-                </div>
-            </div>
-        </>
-    );
+    return <Timeline title={'Lab'} megaTitle={true} />;
 };

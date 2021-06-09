@@ -3,6 +3,7 @@ import { Icons } from '../../lib/interfaces';
 
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
+import { Timeline } from '../UI/Timeline/Timeline';
 
 import { SocialStack } from '../SocialStack/SocialStack';
 
@@ -32,20 +33,16 @@ export const Hero = ({ socials }: HeroProps): JSX.Element => {
                     <SocialStack socials={socials} />
                     <Container classes={'hero'}>
                         <>
-                            <div className='timeline'></div>
-                            <div className='timeline__title'>
-                                <h2>{'<Welcome />'}</h2>
-                            </div>
-                            <div className='hero__title'>
-                                <h4>Samuel Renshaw-Panting</h4>
-                            </div>
-                            <div className='hero__text'>
-                                <p>I am a Software Engineering Graduate & Web Developer</p>
-                            </div>
-                            <div className='hero__next'>
-                                <div className='hero__next__item' onClick={() => scrollTo()}>
-                                    <p className='hero__next__item__label'>Let&apos;s get going...</p>
-                                    <span className='hero__next__item__arrow-down'></span>
+                            <Timeline title={'Welcome'} megaTitle={false} />
+                            <div className='hero__content'>
+                                <div className='hero__content__text'>
+                                    <p>Hi, I&apos;m Sam, a Software Engineering Graduate & Web Developer</p>
+                                </div>
+                                <div className='hero__content__next'>
+                                    <div className='hero__content__next__item' onClick={() => scrollTo()}>
+                                        <p className='hero__content__next__item__label'>Let&apos;s get going...</p>
+                                        <span className='hero__content__next__item__arrow-down'></span>
+                                    </div>
                                 </div>
                             </div>
                         </>

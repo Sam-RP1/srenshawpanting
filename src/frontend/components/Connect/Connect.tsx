@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Heading } from '../UI/Typography/Heading/Heading';
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
+import { Timeline } from '../UI/Timeline/Timeline';
 import { Tooltip } from '../UI/Tooltip/Tooltip';
 
 import { Icons } from '../../lib/interfaces';
@@ -14,27 +14,32 @@ type ConnectProps = {
 };
 
 export const Connect = ({ icons }: ConnectProps): JSX.Element => {
-    const iconElems = icons.map((icon) => {
+    const test = icons.map((icon) => {
         return (
-            <div key={icon.id} className='icon-wrapper tooltip'>
-                <a href={icon.url} target='_blank' rel='noreferrer'>
-                    {icon.icon}
-                    <Tooltip tip={icon.tooltip} position={'left'} />
-                </a>
+            <div key={icon.id} className='connect__ps'>
+                <div className='connect__ps__wrapper'>
+                    <div className='connect__ps__celestial-body connect__ps__celestial-body--planet'>
+                        <span id={icon.id}>{icon.icon}</span>
+                    </div>
+                </div>
+
+                <div className='connect__ps__wrapper'>
+                    <div className='connect__ps__celestial-body connect__ps__celestial-body--satellite'>
+                        <span></span>
+                    </div>
+                </div>
             </div>
         );
     });
 
     return (
-        <Section classes={['top', 'center-center']}>
+        <Section selector={'connect'} classes={[]}>
             <Container classes={'connect'}>
-                <article className='connect__content'>
-                    <Heading importance={3} title={'Connect'} classes={['uppercase', 'spaced', 'underline']} />
-                    <div className='connect__content__icon-container'>{iconElems}</div>
-                    <p>Get in touch, view my work or even support me via the platforms above.</p>
-                    <p>However, if you prefer to email then you can contact me directly using:</p>
-                    <p>samrpenquiries@gmail.com</p>
-                </article>
+                <>
+                    <Timeline title={'Connect'} megaTitle={true} />
+
+                    <div className='connect__icons-container'>{test}</div>
+                </>
             </Container>
         </Section>
     );
