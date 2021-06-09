@@ -39,7 +39,7 @@ $margin-top: 1.125rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 25px;
+            height: 30px;
             width: 100%;
             padding: 0 0.5rem;
             border-bottom: 1px solid #0c0d0f;
@@ -82,7 +82,7 @@ $margin-top: 1.125rem;
             &__title {
                 p {
                     color: rgba(255, 255, 255, 0.6);
-                    font-size: 0.8rem;
+                    font-size: 0.9rem;
                 }
 
                 span {
@@ -166,15 +166,24 @@ $margin-top: 1.125rem;
 
         &__file {
             counter-reset: line;
+
             &__line {
-                padding: 0.2rem 0.7rem;
+                display: block;
+                padding: 0.05rem 0.7rem;
+                color: rgba(255, 255, 255, 0.85);
+
+                span {
+                    span {
+                        margin-right: 1px;
+                    }
+                }
 
                 &:nth-child(n) {
                     &::before {
                         counter-increment: line;
                         content: counter(line);
                         position: absolute;
-                        left: 0;
+                        left: 5px;
                         display: inline-block;
                         width: 1.4rem;
                         text-align: right;
@@ -182,19 +191,26 @@ $margin-top: 1.125rem;
                     }
                 }
 
-                .variable {
-                    color: #e06c75;
+                .obj-key {
+                    display: inline-block;
+                    width: 100%;
+                }
+
+                .import,
+                .elem {
+                    color: #ff5555;
                     // or BE5046
                 }
 
-                .keyword {
-                    color: #c678dd;
+                .keyword,
+                .arrow {
+                    color: #ca66e9;
                 }
 
                 .symbol,
                 .function,
                 .special {
-                    color: #42baca;
+                    color: #41b6c5;
                     // 56b6c2
                 }
 
@@ -204,13 +220,18 @@ $margin-top: 1.125rem;
                     }
                 }
                 .string {
-                    color: #84c555;
+                    color: #7dd33f;
                 }
 
                 .class,
-                .integer {
-                    color: #e5c07b;
+                .integer,
+                .variable {
+                    color: #e2a127;
                     // or D19A66
+                }
+
+                .component {
+                    color: #f5d418;
                 }
 
                 .comment {
@@ -226,11 +247,37 @@ $margin-top: 1.125rem;
                 }
 
                 .indent {
+                    display: inline-block;
+
                     &--4 {
-                        padding-left: 2ch;
-                        // @media screen and (min-width: $bp-mobile) {
-                        //     padding-left: 4ch;
-                        // }
+                        @extend .indent;
+                        @media screen and (min-width: i.$bp-mobile) {
+                            padding-left: 2ch;
+                        }
+                    }
+                    &--8 {
+                        @extend .indent;
+                        @media screen and (min-width: i.$bp-mobile) {
+                            padding-left: 4ch;
+                        }
+                    }
+                    &--12 {
+                        @extend .indent;
+                        @media screen and (min-width: i.$bp-mobile) {
+                            padding-left: 6ch;
+                        }
+                    }
+                    &--16 {
+                        @extend .indent;
+                        @media screen and (min-width: i.$bp-mobile) {
+                            padding-left: 8ch;
+                        }
+                    }
+                    &--20 {
+                        @extend .indent;
+                        @media screen and (min-width: i.$bp-mobile) {
+                            padding-left: 10ch;
+                        }
                     }
                 }
             }
@@ -251,6 +298,18 @@ $margin-top: 1.125rem;
             &__tab {
                 span {
                     display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-xsmall) {
+    .about {
+        .editor {
+            &__file__line {
+                .obj-key {
+                    width: auto;
                 }
             }
         }
