@@ -46,8 +46,8 @@ $header-font-sizes: (
 
 // P Font Size Map
 $p-font-sizes: (
-    null: 0.85rem,
-    mobile: 1rem,
+    null: 1rem,
+    small: 1.1rem,
 );
 
 // Font Size Mixin
@@ -75,13 +75,13 @@ h5,
 h6,
 p,
 li {
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 p,
 li {
-    letter-spacing: 1px;
     margin: 0;
+    letter-spacing: 1px;
     @include font-size($p-font-sizes, bp.$breakpoints);
     @include userSelect(none);
 }
