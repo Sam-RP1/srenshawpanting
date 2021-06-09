@@ -1,64 +1,4 @@
-@use 'base.scss';
-@import './typography/typography.scss';
-@import './mixins/userSelect.scss';
-
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-}
-
-*,
-:after,
-:before {
-    box-sizing: border-box;
-    border: 0 solid #e5e7eb;
-}
-
-html {
-    font-family: 'Recursive', sans-serif;
-    // background-color: map-get(base.$srp-greys, 800);
-    background: linear-gradient(
-        0deg,
-        map-get(base.$srp-greys, 800),
-        map-get(base.$srp-greys, 800),
-        map-get(base.$srp-greys, 800),
-        #14171d,
-        map-get(base.$srp-greys, 900)
-    );
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-body {
-    height: auto;
-    width: 100%;
-    margin: 0;
-}
-
-main {
-    height: auto;
-    width: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-    line-height: 1.6;
-}
-
-p,
-li {
-    letter-spacing: 1px;
-    margin: 0;
-    @include font-size($p-font-sizes, base.$breakpoints);
-    @include userSelect(none);
-}
+@use './mixins/_userSelect.scss' as us;
 
 a,
 a:link,
@@ -68,37 +8,10 @@ a:hover {
     background-color: transparent;
     text-decoration: none;
     content: inherit;
-    @include userSelect(none);
+    @include us.userSelect(none);
 }
 
-.padding-default {
-    padding: base.$padding-default;
-}
-
-.padding-default-sides {
-    padding: base.$padding-default-sides;
-}
-
-.mr-auto {
-    margin-right: auto;
-}
-
-.ml-auto {
-    margin-left: auto;
-}
-
-.indent {
-    padding-left: 3rem;
-}
-
-@media (min-width: 576px) {
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
+@font-face {
+    font-family: 'futura';
+    src: url('../assets/fonts/futura_boo.woff') format('woff');
 }
