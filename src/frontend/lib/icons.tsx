@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessKing, faHandPointer } from '@fortawesome/free-solid-svg-icons';
+import { faChessKing, faHandPointer, faExternalLinkSquareAlt } from '@fortawesome/free-solid-svg-icons';
 import {
     faLinkedinIn,
     faInstagram,
@@ -10,6 +10,7 @@ import {
     faCodepen,
     faFlickr,
     faReact,
+    faJsSquare,
 } from '@fortawesome/free-brands-svg-icons';
 
 import { Icon, Icons } from './interfaces';
@@ -79,6 +80,16 @@ export const pointerIcon: Icon = {
 export const reactIcon: Icon = {
     id: 'react-icon',
     icon: <FontAwesomeIcon icon={faReact} />,
+};
+
+export const jsIcon: Icon = {
+    id: 'js-icon',
+    icon: <FontAwesomeIcon icon={faJsSquare} />,
+};
+
+export const externalLinkIcon: Icon = {
+    id: 'externalLink',
+    icon: <FontAwesomeIcon icon={faExternalLinkSquareAlt} />,
 };
 
 export const socialIcons: Icons = [
