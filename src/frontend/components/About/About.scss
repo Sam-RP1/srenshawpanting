@@ -199,7 +199,6 @@ $margin-top: 1.125rem;
                 .import,
                 .elem {
                     color: #ff5555;
-                    // or BE5046
                 }
 
                 .keyword,
@@ -211,7 +210,6 @@ $margin-top: 1.125rem;
                 .function,
                 .special {
                     color: #41b6c5;
-                    // 56b6c2
                 }
 
                 &__string {
@@ -227,7 +225,6 @@ $margin-top: 1.125rem;
                 .integer,
                 .variable {
                     color: #e2a127;
-                    // or D19A66
                 }
 
                 .component {
@@ -235,7 +232,6 @@ $margin-top: 1.125rem;
                 }
 
                 .comment {
-                    // or white with opacity? 626772
                     color: #5c6370;
                     font-style: italic;
 
@@ -245,40 +241,33 @@ $margin-top: 1.125rem;
                         font-style: italic;
                     }
                 }
+            }
+        }
 
-                .indent {
-                    display: inline-block;
-
-                    &--4 {
-                        @extend .indent;
-                        @media screen and (min-width: i.$bp-mobile) {
-                            padding-left: 2ch;
-                        }
-                    }
-                    &--8 {
-                        @extend .indent;
-                        @media screen and (min-width: i.$bp-mobile) {
-                            padding-left: 4ch;
-                        }
-                    }
-                    &--12 {
-                        @extend .indent;
-                        @media screen and (min-width: i.$bp-mobile) {
-                            padding-left: 6ch;
-                        }
-                    }
-                    &--16 {
-                        @extend .indent;
-                        @media screen and (min-width: i.$bp-mobile) {
-                            padding-left: 8ch;
-                        }
-                    }
-                    &--20 {
-                        @extend .indent;
-                        @media screen and (min-width: i.$bp-mobile) {
-                            padding-left: 10ch;
-                        }
-                    }
+        .indent {
+            &--4 {
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(2ch + 0.7rem);
+                }
+            }
+            &--8 {
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(4ch + 0.7rem);
+                }
+            }
+            &--12 {
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(6ch + 0.7rem);
+                }
+            }
+            &--16 {
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(8ch + 0.7rem);
+                }
+            }
+            &--20 {
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(10ch + 0.7rem);
                 }
             }
         }

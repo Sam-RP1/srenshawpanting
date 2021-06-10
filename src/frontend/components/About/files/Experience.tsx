@@ -12,6 +12,14 @@ export const Experience = (): JSX.Element => {
             {/* blank line */}
             <p className='editor__file__line'>&nbsp;</p>
 
+            {/* import style */}
+            <p className='editor__file__line'>
+                <span className='keyword'>import</span> <span className='string'>{"'../About.scss'"}</span>;
+            </p>
+
+            {/* blank line */}
+            <p className='editor__file__line'>&nbsp;</p>
+
             {/* open function */}
             <p className='editor__file__line'>
                 <span className='keyword'>export const</span> <span className='function'>Experience</span>{' '}
@@ -21,15 +29,93 @@ export const Experience = (): JSX.Element => {
                 {' {'}
             </p>
 
+            {/* open education array */}
+            <p className='editor__file__line indent--4'>
+                <span className='keyword'>const</span> <span className='variable'>experienceData</span>{' '}
+                <span className='symbol'>=</span> {' ['}
+            </p>
+
+            {/* open obj 1 */}
+            <p className='editor__file__line indent--8'>{'{ '}</p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    duration<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'2019-Present'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    role<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Freelance'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    establishment<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'SRP Designs'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    details<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>
+                    {
+                        "'I operate SRP Designs, a business that creates exciting, captivating and meaningful digital experiences for emerging businesses, brands and individual clients. SRP Designs offers UI/UX design, web development and web hosting services.'"
+                    }
+                </span>
+                ,
+            </p>
+            <p className='editor__file__line indent--8'>{' }'},</p>
+            {/* close obj 1 */}
+
+            {/* open obj 2 */}
+            <p className='editor__file__line indent--8'>{'{ '}</p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    duration<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'2017-2020'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    role<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Student'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    establishment<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'University of Portsmouth'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    details<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>
+                    {
+                        "'As a software engineering student, I furthered my proficiency in front-end and back-end development through studying and using numerous frameworks, environments and platforms such as React, Node.js and AWS. As well as, I also gained experience working in teams to collaboratively design, implement, test and deploy applications.'"
+                    }
+                </span>
+                ,
+            </p>
+            <p className='editor__file__line indent--8'>{' }'},</p>
+            {/* close obj 2 */}
+
+            {/* close education array */}
+            <p className='editor__file__line indent--4'>{'];'}</p>
+
+            {/* blank line */}
+            <p className='editor__file__line'>&nbsp;</p>
+
             {/* open return */}
-            <p className='editor__file__line'>
-                <span className='keyword indent--4'>return</span> (
+            <p className='editor__file__line indent--4'>
+                <span className='keyword'>return</span> (
             </p>
 
             {/* close return */}
-            <p className='editor__file__line'>
-                <span className='indent--4'>);</span>
-            </p>
+            <p className='editor__file__line indent--4'>);</p>
 
             {/* close function */}
             <p className='editor__file__line'>{'};'}</p>
