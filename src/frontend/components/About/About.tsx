@@ -12,7 +12,6 @@ import { Skills } from './files/Skills';
 import { reactIcon, jsIcon } from '../../lib/icons';
 
 import './About.scss';
-import './Code.scss';
 
 export const About = (): JSX.Element => {
     const [openTab, setOpenTab] = useState('Profile.tsx');
