@@ -1,6 +1,6 @@
 @use '../../styles/_index.scss' as i;
 $margin-bottom: 1rem;
-$padding-bottom: 5rem;
+$padding-bottom: 3rem;
 
 .section--hero {
     position: relative;
@@ -55,45 +55,43 @@ $padding-bottom: 5rem;
 
 .hero {
     position: relative;
-    display: block;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .timeline {
         top: 15px;
         height: calc(100% + #{$padding-bottom});
     }
 
-    &__title {
-        position: relative;
-        z-index: 1;
-        margin: 3rem 0 $margin-bottom 0;
-        pointer-events: none;
-    }
+    &__content {
+        color: #fff;
 
-    &__text {
-        position: relative;
-        z-index: 1;
-        margin: 0 0 $margin-bottom 0;
-        pointer-events: none;
-    }
+        &__text {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 $margin-bottom 0;
+            pointer-events: none;
+        }
 
-    &__next {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: row;
-        height: auto;
-
-        &__item {
+        &__next {
+            position: relative;
+            z-index: 1;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
+            flex-direction: row;
             height: auto;
-            cursor: pointer;
 
-            &__label {
-                display: block;
+            &__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                height: auto;
+                cursor: pointer;
+
+                &__label {
+                    display: block;
+                }
             }
         }
     }
