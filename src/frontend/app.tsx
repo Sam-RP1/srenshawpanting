@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Cursor } from './components/Cursor/Cursor';
-import { Header } from './components/Header/Header';
+import { Header } from './containers/Header/Header';
 import { Hero } from './containers/Hero/Hero';
 import { About } from './containers/About/About';
 import { Portfolio } from './containers/Portfolio/Portfolio';
