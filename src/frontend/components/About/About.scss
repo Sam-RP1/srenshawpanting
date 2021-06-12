@@ -156,6 +156,8 @@ $margin-top: 1.125rem;
         }
 
         &__window {
+            // max-height: 700px;
+            // overflow-y: scroll;
             padding: {
                 top: 0.5rem;
                 bottom: 0.5rem;
@@ -168,6 +170,7 @@ $margin-top: 1.125rem;
             counter-reset: line;
 
             &__line {
+                position: relative;
                 display: block;
                 padding: 0.05rem 0.7rem;
                 color: rgba(255, 255, 255, 0.85);
@@ -183,7 +186,7 @@ $margin-top: 1.125rem;
                         counter-increment: line;
                         content: counter(line);
                         position: absolute;
-                        left: 5px;
+                        left: calc(-1.5rem - 5px);
                         display: inline-block;
                         width: 1.4rem;
                         text-align: right;
@@ -246,26 +249,31 @@ $margin-top: 1.125rem;
 
         .indent {
             &--4 {
+                padding-left: calc(1ch + 0.7rem);
                 @media screen and (min-width: i.$bp-mobile) {
                     padding-left: calc(2ch + 0.7rem);
                 }
             }
             &--8 {
+                padding-left: calc(2ch + 0.7rem);
                 @media screen and (min-width: i.$bp-mobile) {
                     padding-left: calc(4ch + 0.7rem);
                 }
             }
             &--12 {
+                padding-left: calc(3ch + 0.7rem);
                 @media screen and (min-width: i.$bp-mobile) {
                     padding-left: calc(6ch + 0.7rem);
                 }
             }
             &--16 {
+                padding-left: calc(4ch + 0.7rem);
                 @media screen and (min-width: i.$bp-mobile) {
                     padding-left: calc(8ch + 0.7rem);
                 }
             }
             &--20 {
+                padding-left: calc(5ch + 0.7rem);
                 @media screen and (min-width: i.$bp-mobile) {
                     padding-left: calc(10ch + 0.7rem);
                 }
