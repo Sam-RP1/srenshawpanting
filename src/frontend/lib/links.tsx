@@ -13,7 +13,7 @@ export const links: Links = [
     },
     {
         id: 'cv',
-        url: <div key={'cv-link'}>CV</div>,
+        url: <div key={'lab-link'}>Lab</div>,
     },
     {
         id: 'connect',
