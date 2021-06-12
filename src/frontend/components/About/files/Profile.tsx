@@ -24,9 +24,6 @@ export const Profile = (): JSX.Element => {
                 <span className='keyword'>from</span> <span className='string'>{"'react'"}</span>;
             </p>
 
-            {/* blank line */}
-            <p className='editor__file__line'>&nbsp;</p>
-
             {/* import style */}
             <p className='editor__file__line'>
                 <span className='keyword'>import</span> <span className='string'>{"'../About.scss'"}</span>;
@@ -78,6 +75,16 @@ export const Profile = (): JSX.Element => {
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
             {/* close p2 */}
+
+            {/* open p3 */}
+            <p className='editor__file__line indent--12'>{pElemOpen}</p>
+            <p className='editor__file__line indent--16'>
+                My many professional and personal interests include UI/UX, Web Design, Frontend Development, Backend
+                Development, Fullstack Development, Cloud Computing, Drones, Photography, Fitness, Nutrition, NFL,
+                Chess, Music and FPS/MMO Games.
+            </p>
+            <p className='editor__file__line indent--12'>{pElemClose}</p>
+            {/* close p3 */}
 
             {/* close div 1 */}
             <p className='editor__file__line indent--8'>
