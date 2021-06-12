@@ -1,15 +1,12 @@
-@use '../../styles/base.scss' as b;
-@use '../../styles/typography/typography.scss' as *;
-@use '../../styles/mixins/transition.scss' as *;
-@use '../../styles/mixins/transform.scss' as *;
+@use '../../styles/_index.scss' as i;
 
 $bp-custom: 767px;
-$bp-small: map-get(b.$breakpoints, 'small');
-$bp-medium: map-get(b.$breakpoints, 'medium');
 
 %btn-focus {
     outline-color: #0080b3;
 }
+
+// animation timings and styles, everything above iphone 4
 
 .header {
     position: fixed;
@@ -19,11 +16,15 @@ $bp-medium: map-get(b.$breakpoints, 'medium');
     z-index: 1000;
     display: flex;
     justify-content: center;
-    height: 100px;
+    height: 80px;
     width: 100%;
     margin: 0;
-    padding: b.$padding-default;
-    @include transition(height 300ms cubic-bezier(0.7, 1.74, 0.41, 0.8));
+    padding: 0.5rem 1.5rem;
+    border-bottom: transparent solid 2px;
+    @include i.transition(
+        background-color 300ms cubic-bezier(0.51, 0.03, 0.21, 1),
+        border-bottom 300ms cubic-bezier(0.51, 0.03, 0.21, 1)
+    );
 
     &__content {
         display: flex;
@@ -33,8 +34,6 @@ $bp-medium: map-get(b.$breakpoints, 'medium');
     }
 
     &__logo {
-        margin-right: 0.9rem;
-
         svg {
             display: block;
             height: auto;
@@ -44,119 +43,192 @@ $bp-medium: map-get(b.$breakpoints, 'medium');
         }
 
         svg g {
-            fill: white;
-            @include transition(fill 250ms ease);
+            fill: #fff;
+            @include i.transition(fill 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
         }
     }
 
     &__nav {
-        display: flex;
-        flex-direction: column;
-
         &__btn {
+            position: relative;
+            z-index: 500;
             display: block;
-            height: 100%;
-            width: auto;
-            cursor: pointer;
+            width: 50px;
 
-            .bar-top,
-            .bar-middle,
-            .bar-bottom {
-                height: 5px;
+            &::before,
+            &::after {
+                content: '';
+                position: relative;
+                top: 50%;
+                display: block;
+                height: 2px;
+                width: 40px;
                 border-radius: 2px;
-                background-color: white;
+                background-color: #fff;
                 margin: 6px 0 6px auto;
-                @include transition(250ms ease);
+                @include i.transform(translate(0%, -50%));
+                @include i.transition(
+                    300ms cubic-bezier(0.51, 0.03, 0.21, 1),
+                    background-color 450ms cubic-bezier(0.51, 0.03, 0.21, 1)
+                );
             }
 
-            .bar-top {
+            &::before {
                 width: 40px;
             }
-
-            .bar-middle {
-                width: 30px;
-            }
-
-            .bar-bottom {
-                width: 20px;
+            &::after {
+                width: 25px;
             }
         }
 
         &__menu {
-            position: absolute;
-            top: 100vh;
-            left: 0;
-            right: 0;
-            z-index: -1;
+            position: fixed;
+            top: 1rem;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            z-index: 10;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 80px);
-            width: 100%;
-            padding: b.$padding-default;
-            color: map-get(b.$srp-greys, 800);
-            background-color: white;
-            @include transition(top 350ms ease);
+            color: map-get(i.$srp-greys, 800);
+            pointer-events: none;
+            opacity: 0;
+            @include i.transition(opacity 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
 
-            a {
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                height: 100%;
+                width: 100%;
+            }
+            &::before {
+                background-image: linear-gradient(to bottom, #092a53, #061e3b, #07182c, #061424, #020d1a);
+                @include i.transform(scaleX(1.2) scaleY(1.2));
+            }
+            &::after {
+                background-color: #fff;
+                @include i.transform(scaleY(1));
+            }
+
+            &__links {
                 position: relative;
-                display: block;
-                height: auto;
-                width: auto;
-                margin: 5px 0;
-                letter-spacing: 2px;
-                color: b.$text-secondary-color;
-                @include font-size($header-font-sizes, b.$breakpoints);
-                @include transition(color 300ms ease);
+                z-index: 1;
+                height: 70%;
+                width: 100%;
+                padding: 1rem;
+                color: map-get(i.$srp-greys, 800);
 
-                &:focus-visible {
-                    @extend %btn-focus;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        margin: 0 0 5px 0;
+
+                        &:last-of-type {
+                            margin: 0;
+                        }
+
+                        a {
+                            position: relative;
+                            display: block;
+                            text-align: center;
+                            width: 100%;
+                            letter-spacing: 2px;
+                            @include i.font-size(i.$header-font-sizes, i.$breakpoints);
+                            @include i.transition(color 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
+
+                            // put into @media(hover)
+                            // &:focus-visible {
+                            //     @extend %btn-focus;
+                            // }
+
+                            // &:after {
+                            //     content: '';
+                            //     position: absolute;
+                            //     left: auto;
+                            //     right: 0;
+                            //     bottom: -5px;
+                            //     display: block;
+                            //     height: 2px;
+                            //     width: 0;
+                            //     background-color: #0080b3;
+                            //     @include i.transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
+                            // }
+
+                            // &:hover:after {
+                            //     @include i.transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
+                            // }
+
+                            // &:hover:after,
+                            // &.active:after {
+                            //     width: 99%;
+                            //     left: 0;
+                            // }
+                        }
+                    }
                 }
+            }
 
-                &:after {
-                    content: '';
-                    position: absolute;
-                    left: auto;
-                    right: 0;
-                    bottom: -5px;
-                    display: block;
-                    height: 2px;
-                    width: 0;
-                    background-color: #0080b3;
-                    @include transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
-                }
+            &__socials {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                height: 30%;
+                width: 100%;
+                color: #fff;
+                background: i.$srp-accent-red-gradient;
+                clip-path: polygon(100% 30%, 100% 100%, 0 100%, 0 0);
 
-                &:hover:after {
-                    @include transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
-                }
+                ul {
+                    position: relative;
+                    top: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 70%;
+                    width: 100%;
+                    max-width: 360px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0 1.5rem;
+                    @include i.transform(translate(0%, -30%));
 
-                &:hover:after,
-                &.active:after {
-                    width: 99%;
-                    left: 0;
+                    li {
+                        font-size: 1.4rem;
+                    }
                 }
             }
         }
     }
 
     &.scrolled {
-        height: 80px;
-        border-bottom: b.$srp-accent-blue solid 2px;
-        color: map-get(b.$srp-greys, 800);
+        border-bottom: i.$srp-accent-blue solid 2px;
+        color: map-get(i.$srp-greys, 800);
         background-color: white;
     }
 
     &.scrolled & {
         &__logo svg g {
-            fill: map-get(b.$srp-greys, 800);
+            fill: map-get(i.$srp-greys, 800);
         }
 
         &__nav__btn {
-            .bar-top,
-            .bar-middle,
-            .bar-bottom {
-                background-color: map-get(b.$srp-greys, 800);
+            &::before,
+            &::after {
+                background-color: map-get(i.$srp-greys, 800);
             }
         }
     }
@@ -165,44 +237,33 @@ $bp-medium: map-get(b.$breakpoints, 'medium');
     * Isolate the .active modifier to screen widths below 767px
     **/
     @media screen and (max-width: $bp-custom) {
-        &.active {
-            height: 80px;
-            border-bottom: b.$srp-accent-blue solid 2px;
-            color: map-get(b.$srp-greys, 800);
-            background-color: white;
-        }
-
         &.active & {
-            &__logo svg g {
-                fill: map-get(b.$srp-greys, 800);
-            }
+            &__nav {
+                &__btn {
+                    &::before,
+                    &::after {
+                        width: 27px;
+                        background-color: map-get(i.$srp-greys, 800);
+                    }
 
-            &__nav__btn {
-                .bar-top,
-                .bar-middle,
-                .bar-bottom {
-                    background-color: map-get(b.$srp-greys, 800);
+                    &::before {
+                        @include i.transform(rotate(45deg) translate(0%, 5px));
+                    }
+                    &::after {
+                        @include i.transform(rotate(-45deg) translate(0%, -5px));
+                    }
                 }
 
-                .bar-top {
-                    @include transform(rotate(-45deg) translate(-9px, 6px));
+                &__menu {
+                    pointer-events: initial;
+                    opacity: 1;
+                    @include i.transition(opacity 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
                 }
-                .bar-middle {
-                    opacity: 0;
-                }
-                .bar-bottom {
-                    width: 40px;
-                    @include transform(rotate(45deg) translate(-8px, -8px));
-                }
-            }
-
-            &__nav__menu {
-                top: 80px;
             }
         }
     }
 
-    @media screen and (min-width: $bp-small) {
+    @media screen and (min-width: 10000px) {
         &__logo svg g {
             fill: white;
         }
@@ -217,18 +278,6 @@ $bp-medium: map-get(b.$breakpoints, 'medium');
             }
 
             &__menu {
-                position: relative;
-                z-index: 1;
-                top: initial;
-                left: initial;
-                right: initial;
-                flex-direction: row;
-                height: auto;
-                width: auto;
-                color: white;
-                background-color: initial;
-                padding: 0;
-
                 a {
                     margin: {
                         left: 0.75rem;
@@ -248,18 +297,83 @@ $bp-medium: map-get(b.$breakpoints, 'medium');
                 }
             }
         }
+    }
+}
 
-        &.scrolled & {
-            &__nav__menu {
-                height: auto;
-                color: map-get(b.$srp-greys, 800);
+@media screen and (min-width: i.$bp-mobile) {
+    .header {
+        &__nav {
+            &__menu {
+                &__links {
+                    ul li {
+                        margin: 0 0 25px 0;
+                    }
+                }
+                &__socials {
+                    ul li {
+                        font-size: 1.6rem;
+                    }
+                }
             }
         }
     }
+}
 
-    @media screen and (min-width: $bp-medium) {
-        &__nav__menu a {
-            margin-left: 1.5rem;
+@media screen and (min-width: i.$bp-small) {
+    .header {
+        &__nav {
+            &__btn {
+                display: none;
+            }
+
+            &__menu {
+                position: relative;
+                top: initial;
+                bottom: initial;
+                left: initial;
+                right: initial;
+                flex-direction: row;
+                pointer-events: initial;
+                color: #fff;
+                opacity: 1;
+
+                &::before,
+                &::after,
+                &__socials {
+                    display: none;
+                }
+
+                &__links {
+                    height: auto;
+                    width: auto;
+                    color: #fff;
+                    padding: 0;
+
+                    ul {
+                        flex-direction: row;
+
+                        li,
+                        li:last-of-type {
+                            margin: {
+                                left: 2rem;
+                                right: 0;
+                                top: 0;
+                                bottom: -2px;
+                            }
+
+                            & a {
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.scrolled & {
+            &__nav__menu__links {
+                color: map-get(i.$srp-greys, 800);
+            }
         }
     }
 }
