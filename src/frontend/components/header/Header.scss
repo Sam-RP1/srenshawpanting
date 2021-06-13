@@ -2,17 +2,10 @@
 
 $bp-custom: 767px;
 
-%btn-focus {
-    outline-color: #0080b3;
-}
-
-// animation timings and styles, everything above iphone 4
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -37,9 +30,9 @@ $bp-custom: 767px;
         svg {
             display: block;
             height: auto;
-            max-height: 40px;
+            max-height: 35px;
             width: 100%;
-            max-width: 100px;
+            max-width: 88px;
         }
 
         svg g {
@@ -87,7 +80,7 @@ $bp-custom: 767px;
             bottom: 1rem;
             left: 1rem;
             right: 1rem;
-            z-index: 10;
+            z-index: 400;
             display: flex;
             flex-direction: column;
             color: map-get(i.$srp-greys, 800);
@@ -126,6 +119,7 @@ $bp-custom: 767px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    align-items: center;
                     height: 100%;
                     width: 100%;
                     list-style: none;
@@ -133,6 +127,7 @@ $bp-custom: 767px;
                     padding: 0;
 
                     li {
+                        width: 70%;
                         margin: 0 0 5px 0;
 
                         &:last-of-type {
@@ -147,34 +142,6 @@ $bp-custom: 767px;
                             letter-spacing: 2px;
                             @include i.font-size(i.$header-font-sizes, i.$breakpoints);
                             @include i.transition(color 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
-
-                            // put into @media(hover)
-                            // &:focus-visible {
-                            //     @extend %btn-focus;
-                            // }
-
-                            // &:after {
-                            //     content: '';
-                            //     position: absolute;
-                            //     left: auto;
-                            //     right: 0;
-                            //     bottom: -5px;
-                            //     display: block;
-                            //     height: 2px;
-                            //     width: 0;
-                            //     background-color: #0080b3;
-                            //     @include i.transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
-                            // }
-
-                            // &:hover:after {
-                            //     @include i.transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
-                            // }
-
-                            // &:hover:after,
-                            // &.active:after {
-                            //     width: 99%;
-                            //     left: 0;
-                            // }
                         }
                     }
                 }
@@ -209,6 +176,10 @@ $bp-custom: 767px;
                     li {
                         font-size: 1.4rem;
                     }
+
+                    li a svg {
+                        display: block;
+                    }
                 }
             }
         }
@@ -232,11 +203,13 @@ $bp-custom: 767px;
             }
         }
     }
+}
 
-    /**
+/**
     * Isolate the .active modifier to screen widths below 767px
     **/
-    @media screen and (max-width: $bp-custom) {
+@media screen and (max-width: $bp-custom) {
+    .header {
         &.active & {
             &__nav {
                 &__btn {
@@ -257,43 +230,6 @@ $bp-custom: 767px;
                 &__menu {
                     pointer-events: initial;
                     opacity: 1;
-                    @include i.transition(opacity 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
-                }
-            }
-        }
-    }
-
-    @media screen and (min-width: 10000px) {
-        &__logo svg g {
-            fill: white;
-        }
-
-        &__nav {
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-
-            &__btn {
-                display: none;
-            }
-
-            &__menu {
-                a {
-                    margin: {
-                        left: 0.75rem;
-                        right: 0;
-                        top: 0;
-                        bottom: -2px;
-                    }
-
-                    &:first-of-type {
-                        display: none;
-                        margin: 0 0 -2px 0;
-                    }
-                }
-
-                &.active {
-                    top: initial;
                 }
             }
         }
@@ -302,14 +238,30 @@ $bp-custom: 767px;
 
 @media screen and (min-width: i.$bp-mobile) {
     .header {
+        &__logo {
+            svg {
+                max-height: 40px;
+                max-width: 100px;
+            }
+
+            svg g {
+                fill: #fff;
+                @include i.transition(fill 450ms cubic-bezier(0.51, 0.03, 0.21, 1));
+            }
+        }
+
         &__nav {
             &__menu {
                 &__links {
+                    height: 80%;
+
                     ul li {
                         margin: 0 0 25px 0;
                     }
                 }
                 &__socials {
+                    height: 20%;
+
                     ul li {
                         font-size: 1.6rem;
                     }
@@ -352,6 +304,10 @@ $bp-custom: 767px;
                     ul {
                         flex-direction: row;
 
+                        li {
+                            width: auto;
+                        }
+
                         li,
                         li:last-of-type {
                             margin: {
@@ -373,6 +329,66 @@ $bp-custom: 767px;
         &.scrolled & {
             &__nav__menu__links {
                 color: map-get(i.$srp-greys, 800);
+            }
+        }
+    }
+}
+
+@media (hover) {
+    .header {
+        &__nav {
+            &__btn {
+                cursor: pointer;
+            }
+
+            &__menu {
+                &__links ul li a {
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        bottom: 3px;
+                        display: block;
+                        height: 2px;
+                        width: 0;
+                        background-color: #0080b3;
+                        @include i.transition(all 0.35s cubic-bezier(0.7, 0.045, 0.33, 1));
+                    }
+
+                    &:hover:after {
+                        @include i.transition(all 0.35s cubic-bezier(0.7, 0.045, 0.33, 1));
+                    }
+
+                    &:hover:after,
+                    &.active:after {
+                        width: 99%;
+                        left: 0;
+                    }
+
+                    @media screen and (min-width: i.$bp-small) {
+                        &:after {
+                            bottom: 1px;
+                        }
+
+                        &:after,
+                        &:hover:after {
+                            @include i.transition(all 0.25s cubic-bezier(0.7, 0.045, 0.33, 1));
+                        }
+                    }
+                }
+
+                &__socials ul li a {
+                    svg path {
+                        @include i.transition(fill 0.35s cubic-bezier(0.7, 0.045, 0.33, 1));
+                    }
+
+                    &:hover {
+                        svg path {
+                            fill: i.$srp-accent-blue;
+                        }
+                    }
+                }
             }
         }
     }

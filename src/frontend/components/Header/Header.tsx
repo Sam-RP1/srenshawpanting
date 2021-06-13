@@ -54,7 +54,7 @@ export const Header = ({ socials }: HeaderProps): JSX.Element => {
         <header className='header' ref={headerRoot}>
             <Container classes={'header__content'}>
                 <>
-                    <div className='header__logo'>
+                    <a href='#hero' className='header__logo'>
                         <svg
                             version='1.0'
                             xmlns='http://www.w3.org/2000/svg'
@@ -92,7 +92,7 @@ c116 0 149 4 182 19 84 38 120 119 113 256 l-3 70 -80 0 -80 0 -5 -90 -5 -90
                                 />
                             </g>
                         </svg>
-                    </div>
+                    </a>
 
                     <div className='header__nav'>
                         <a className='header__nav__btn' onClick={() => navHandler()}></a>
@@ -101,16 +101,24 @@ c116 0 149 4 182 19 84 38 120 119 113 256 l-3 70 -80 0 -80 0 -5 -90 -5 -90
                             <section className='header__nav__menu__links'>
                                 <ul>
                                     <li>
-                                        <a onClick={() => closeMenu()}>About</a>
+                                        <a href='about' onClick={() => closeMenu()}>
+                                            About
+                                        </a>
                                     </li>
                                     <li>
-                                        <a onClick={() => closeMenu()}>Portfolio</a>
+                                        <a href='#portfolio' onClick={() => closeMenu()}>
+                                            Portfolio
+                                        </a>
                                     </li>
                                     <li>
-                                        <a onClick={() => closeMenu()}>Lab</a>
+                                        <a href='#lab' onClick={() => closeMenu()}>
+                                            Lab
+                                        </a>
                                     </li>
                                     <li>
-                                        <a onClick={() => closeMenu()}>Connect</a>
+                                        <a href='#connect' onClick={() => closeMenu()}>
+                                            Connect
+                                        </a>
                                     </li>
                                 </ul>
                             </section>
