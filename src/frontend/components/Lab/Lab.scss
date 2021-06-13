@@ -5,7 +5,7 @@ $margin-top: 1.125rem;
     justify-content: center;
     padding: {
         top: 5rem;
-        right: 1rem;
+        right: 1.5rem;
         bottom: 3.75rem;
         left: 3rem;
     }
@@ -48,13 +48,13 @@ $margin-top: 1.125rem;
             padding: 0.5rem;
 
             &:first-child {
-                border-right: 1px solid #000;
+                border-right: 1px solid rgba(0, 0, 0, 0.5);
             }
         }
 
         &__content {
             display: block;
-            padding: 0.5rem;
+            width: 100%;
         }
 
         &__featured {
@@ -78,11 +78,21 @@ $margin-top: 1.125rem;
             align-items: center;
             height: auto;
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 
             &__icons {
                 display: flex;
                 flex-direction: row;
+
+                a {
+                    margin-left: 0.5rem;
+
+                    svg {
+                        display: block;
+                        font-size: 1rem;
+                    }
+                }
             }
         }
 
@@ -172,5 +182,19 @@ $margin-top: 1.125rem;
     img {
         height: auto;
         width: 100%;
+    }
+}
+
+@media screen and (min-width: i.$bp-mobile) {
+    .lab__github {
+        &__panel {
+            &__repo {
+                a {
+                    svg {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
     }
 }

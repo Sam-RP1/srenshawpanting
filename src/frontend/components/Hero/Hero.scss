@@ -8,7 +8,7 @@ $padding-bottom: 3rem;
     height: 100vh;
     padding: {
         top: 60%;
-        right: 1rem;
+        right: 1.5rem;
         bottom: $padding-bottom;
         left: 3rem;
     }
@@ -97,26 +97,12 @@ $padding-bottom: 3rem;
     }
 }
 
-@keyframes bounce {
-    0% {
-        @include i.transform(rotate(-90deg));
-    }
-
-    50% {
-        @include i.transform(translateY(5px) rotate(-90deg));
-    }
-
-    100% {
-        @include i.transform(rotate(-90deg));
-    }
-}
-
 @media screen and (min-width: i.$bp-mobile) {
     .section--hero {
         justify-content: center;
         padding: {
             top: 50vh;
-            right: 1rem;
+            right: 1.5rem;
             bottom: $padding-bottom;
             left: 3rem;
         }
