@@ -14,18 +14,29 @@ type ConnectProps = {
 };
 
 export const Connect = ({ icons }: ConnectProps): JSX.Element => {
-    const test = icons.map((icon) => {
+    const moonOrbits = ['orbit-1', 'orbit-2', 'orbit-3', 'orbit-4', 'orbit-5', 'orbit-6', 'orbit-7', 'orbit-8'];
+
+    const connectPlanets = icons.map(({ id, icon, url }) => {
+        const index = Math.floor(Math.random() * moonOrbits.length);
+        const orbit = moonOrbits.splice(index, 1);
+
         return (
-            <div key={icon.id} className='connect__ps'>
-                <div className='connect__ps__wrapper'>
-                    <div className='connect__ps__celestial-body connect__ps__celestial-body--planet'>
-                        <span id={icon.id}>{icon.icon}</span>
+            <div key={'connect-' + id} className='connect__planet-system'>
+                <div className={'connect__moon-container ' + orbit[0]}>
+                    <div className='connect__moon'>
+                        <div className='connect__moon__body'>
+                            <span className='crater--1'></span>
+                            <span className='crater--2'></span>
+                            <span className='crater--3'></span>
+                        </div>
                     </div>
                 </div>
 
-                <div className='connect__ps__wrapper'>
-                    <div className='connect__ps__celestial-body connect__ps__celestial-body--satellite'>
-                        <span></span>
+                <div className='connect__planet-container'>
+                    <div className='connect__planet'>
+                        <a href={url} target='__blank' className='connect__planet__body' id={'connect-planet-' + id}>
+                            <span className='connect__planet__body__icon'>{icon}</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -38,7 +49,7 @@ export const Connect = ({ icons }: ConnectProps): JSX.Element => {
                 <>
                     <Timeline title={'Connect'} megaTitle={true} />
 
-                    <div className='connect__icons-container'>{test}</div>
+                    <div className='connect__planets-container'>{connectPlanets}</div>
                 </>
             </Container>
         </Section>
