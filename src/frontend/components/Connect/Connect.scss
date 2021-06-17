@@ -25,10 +25,13 @@
     }
 
     &__planets-container {
+        position: relative;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
     }
 
     &__planet-system {
@@ -186,7 +189,7 @@
                 }
             }
 
-            &#connect-planet- {
+            &-- {
                 &github {
                     background-color: #0a0a0a;
                 }
@@ -277,6 +280,40 @@
                     height: 6px;
                     width: 6px;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-mobile) {
+    .connect {
+        &__planets-container {
+            justify-content: initial;
+            align-items: initial;
+        }
+
+        &__planet-system {
+            &:first-child,
+            &:last-child {
+                margin: 0 auto 0 0;
+            }
+            &:nth-child(2) {
+                margin: -160px 0 0 auto;
+            }
+            &:nth-child(3) {
+                margin: 0px auto 0 0;
+            }
+            &:nth-child(4) {
+                margin: -160px 0 0 auto;
+            }
+            &:nth-child(5) {
+                margin: 0px auto 0 0;
+            }
+            &:nth-child(6) {
+                margin: -160px 0 0 auto;
+            }
+            &:nth-child(7) {
+                margin: 0px auto 0 0;
             }
         }
     }

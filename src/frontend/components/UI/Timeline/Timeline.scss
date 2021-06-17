@@ -26,6 +26,7 @@ $mega-title-font-sizes: (
     &__title {
         position: relative;
         margin-bottom: 5rem;
+        text-transform: capitalize;
         @include userSelect(none);
 
         &::before {
@@ -75,6 +76,28 @@ $mega-title-font-sizes: (
                 line-height: normal;
             }
         }
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            z-index: 11;
+            height: 2px;
+            width: 2px;
+            background-color: transparent;
+            @include transform(translate(0%, -50%));
+        }
+    }
+
+    span {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: 11;
+        height: 2px;
+        width: 2px;
+        background-color: transparent;
+        @include transform(translate(-50%, 0%));
     }
 }
 
