@@ -5,10 +5,13 @@ a:link,
 a:visited,
 a:hover {
     color: inherit;
-    background-color: transparent;
     text-decoration: none;
     content: inherit;
     @include us.userSelect(none);
+}
+
+.leader-line {
+    z-index: -1;
 }
 
 @font-face {

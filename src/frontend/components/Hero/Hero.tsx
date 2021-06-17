@@ -33,7 +33,7 @@ export const Hero = ({ socials }: HeroProps): JSX.Element => {
                     <SocialStack socials={socials} />
                     <Container classes={'hero'}>
                         <>
-                            <Timeline title={'Welcome'} megaTitle={false} />
+                            <Timeline title={'Welcome'} megaTitle={true} />
                             <div className='hero__content'>
                                 <div className='hero__content__text'>
                                     <p>Hi, I&apos;m Sam, a Software Engineering Graduate & Web Developer</p>
