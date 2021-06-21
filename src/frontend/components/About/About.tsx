@@ -7,7 +7,7 @@ import { Timeline } from '../UI/Timeline/Timeline';
 import { Profile } from './files/Profile';
 import { Education } from './files/Education';
 import { Experience } from './files/Experience';
-import { Skills } from './files/Skills';
+import { Data } from './files/Data';
 
 import { reactIcon, jsIcon } from '../../lib/icons';
 
@@ -20,7 +20,7 @@ export const About = (): JSX.Element => {
         { id: 'Profile.tsx', icon: reactIcon.icon, file: <Profile /> },
         { id: 'Education.tsx', icon: reactIcon.icon, file: <Education /> },
         { id: 'Experience.tsx', icon: reactIcon.icon, file: <Experience /> },
-        { id: 'Skills.js', icon: jsIcon.icon, file: <Skills /> },
+        { id: 'Data.js', icon: jsIcon.icon, file: <Data /> },
     ];
 
     return (

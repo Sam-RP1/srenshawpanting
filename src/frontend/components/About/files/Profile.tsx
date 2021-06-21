@@ -68,10 +68,10 @@ export const Profile = (): JSX.Element => {
             {/* open p2 */}
             <p className='editor__file__line indent--12'>{pElemOpen}</p>
             <p className='editor__file__line indent--16'>
-                As well as, I enjoy consistently pushing myself by learning new languages, frameworks and technologies
-                in addition to further improving my abilities in ones I am already familiar with. When I&apos;m not
-                learning, conceptualising, designing or developing, you&apos;ll most likely find me either exercising,
-                playing with my dog, listening to music or being below average at chess.
+                Throughout the time I have invested in programming and developing I have become experienced and
+                proficient in various languages, frameworks and technologies. The majority of which include HTML, CSS,
+                JS, SASS, React, Redux, Jest, Enzyme, MySQL, NoSQL, Webpack, Node.js, npm, Express.js, Websockets,
+                Socket.io, PWA, SPA, AWS and GCP.
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
             {/* close p2 */}
@@ -79,12 +79,23 @@ export const Profile = (): JSX.Element => {
             {/* open p3 */}
             <p className='editor__file__line indent--12'>{pElemOpen}</p>
             <p className='editor__file__line indent--16'>
+                Alongside this, I enjoy consistently pushing myself by learning new languages, frameworks and
+                technologies in addition to further improving my abilities in ones I am already familiar with. When
+                I&apos;m not learning, conceptualising, designing, developing or programming, you&apos;ll most likely
+                find me either exercising, playing with my dog, listening to music or being below average at chess.
+            </p>
+            <p className='editor__file__line indent--12'>{pElemClose}</p>
+            {/* close p3 */}
+
+            {/* open p4 */}
+            <p className='editor__file__line indent--12'>{pElemOpen}</p>
+            <p className='editor__file__line indent--16'>
                 My many professional and personal interests include UI/UX, Web Design, Frontend Development, Backend
                 Development, Fullstack Development, Cloud Computing, Drones, Photography, Fitness, Nutrition, NFL,
                 Chess, Music and FPS/MMO Games.
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
-            {/* close p3 */}
+            {/* close p4 */}
 
             {/* close div 1 */}
             <p className='editor__file__line indent--8'>

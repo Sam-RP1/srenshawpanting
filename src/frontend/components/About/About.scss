@@ -13,7 +13,6 @@ $margin-top: 1.125rem;
 
 .about {
     position: relative;
-    color: white;
 
     .timeline {
         top: -5rem;
@@ -23,11 +22,9 @@ $margin-top: 1.125rem;
     .editor {
         position: relative;
         left: -3rem;
-        display: flex;
-        flex-direction: column;
-        min-height: 300px;
+        min-height: 500px;
+        height: auto;
         width: calc(100% + 3rem);
-        // padding: 1rem 1rem 1rem 2.5rem;
         border-radius: 0 0 10px 0;
         background-color: #282c34;
         box-shadow: 0 0 3px 1px rgb(0 0 0 / 40%), 0 3px 10px 1px rgb(0 0 0 / 60%);
@@ -136,6 +133,7 @@ $margin-top: 1.125rem;
                 color: rgba(255, 255, 255, 0.6);
                 font-size: 0.8rem;
                 margin-left: auto;
+                @include i.userSelect(none);
 
                 &:hover {
                     color: rgb(255, 255, 255, 1);
@@ -156,8 +154,6 @@ $margin-top: 1.125rem;
         }
 
         &__window {
-            // max-height: 700px;
-            // overflow-y: scroll;
             padding: {
                 top: 0.5rem;
                 bottom: 0.5rem;
@@ -173,7 +169,7 @@ $margin-top: 1.125rem;
                 position: relative;
                 display: block;
                 padding: 0.05rem 0.7rem;
-                color: rgba(255, 255, 255, 0.85);
+                color: rgba(255, 255, 255, 0.8);
 
                 span {
                     span {
@@ -186,7 +182,7 @@ $margin-top: 1.125rem;
                         counter-increment: line;
                         content: counter(line);
                         position: absolute;
-                        left: calc(-1.5rem - 5px);
+                        left: calc(-1.5rem - 8px);
                         display: inline-block;
                         width: 1.4rem;
                         text-align: right;
@@ -217,7 +213,7 @@ $margin-top: 1.125rem;
 
                 &__string {
                     span {
-                        color: #84c555;
+                        color: #7dd33f;
                     }
                 }
                 .string {
@@ -304,7 +300,14 @@ $margin-top: 1.125rem;
 @media screen and (min-width: i.$bp-xsmall) {
     .about {
         .editor {
+            left: -3.2rem;
+            width: calc(100% + 3.2rem);
+
             &__file__line {
+                &:nth-child(n)::before {
+                    left: calc(-1.5rem - 6px);
+                }
+
                 .obj-key {
                     width: auto;
                 }
@@ -336,9 +339,10 @@ $margin-top: 1.125rem;
         .editor {
             &__file {
                 &__line:hover {
-                    background-color: rgba(255, 255, 255, 0.1);
+                    background-color: rgba(255, 255, 255, 0.08);
+
                     &::before {
-                        color: #e7eaf1;
+                        color: #eceff6;
                     }
                 }
             }

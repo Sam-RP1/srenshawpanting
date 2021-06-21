@@ -9,9 +9,6 @@ export const Education = (): JSX.Element => {
                 <span className='keyword'>from</span> <span className='string'>{"'react'"}</span>;
             </p>
 
-            {/* blank line */}
-            <p className='editor__file__line'>&nbsp;</p>
-
             {/* import style */}
             <p className='editor__file__line'>
                 <span className='keyword'>import</span> <span className='string'>{"'../About.scss'"}</span>;
@@ -76,33 +73,10 @@ export const Education = (): JSX.Element => {
                 <span className='obj-key'>
                     qualification<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'A-Levels in ICT, Chemistry & Business'"}</span>,
+                <span className='string'>{"'A-Levels in Business, Chemistry, Geography & ICT'"}</span>,
             </p>
             <p className='editor__file__line indent--8'>{' }'},</p>
             {/* close obj 2 */}
-
-            {/* open obj 3 */}
-            <p className='editor__file__line indent--8'>{'{ '}</p>
-            <p className='editor__file__line indent--12'>
-                <span className='obj-key'>
-                    duration<span className='symbol'>:</span>
-                </span>{' '}
-                <span className='string'>{"'2015-2016'"}</span>,
-            </p>
-            <p className='editor__file__line indent--12'>
-                <span className='obj-key'>
-                    establishment<span className='symbol'>:</span>
-                </span>{' '}
-                <span className='string'>{"'Christs College'"}</span>,
-            </p>
-            <p className='editor__file__line indent--12'>
-                <span className='obj-key'>
-                    qualification<span className='symbol'>:</span>
-                </span>{' '}
-                <span className='string'>{"'AS-Level in Geography'"}</span>,
-            </p>
-            <p className='editor__file__line indent--8'>{' }'},</p>
-            {/* close obj 3 */}
 
             {/* close education array */}
             <p className='editor__file__line indent--4'>{'];'}</p>
@@ -114,39 +88,48 @@ export const Education = (): JSX.Element => {
             <p className='editor__file__line indent--4'>
                 <span className='keyword'>return</span> (
             </p>
+
             <p className='editor__file__line indent--8'>
                 {'<'}
-                <span className='elem'>ul</span>
+                <span className='elem'>ul</span> <span className='class'>className</span>=
+                <span className='string'>{"'about__education'"}</span>
                 {'>'}
             </p>
+
             <p className='editor__file__line indent--12'>
                 {'{'}
-                <span className='elem'>educationData</span>.<span className='special'>map</span>((item, i){' '}
-                <span className='arrow'>{'=>'}</span>
-                {' {'}
+                <span className='elem'>educationData</span>.<span className='special'>map</span>((
+                {'{ duration, establishment, qualification }'}, i) <span className='arrow'>{'=>'}</span>
+                {' ('}
             </p>
             <p className='editor__file__line indent--16'>
-                <span className='keyword'>return</span> (
-            </p>
-
-            <p className='editor__file__line indent--20'>
                 {'<'}
                 <span className='elem'>li</span> <span className='class'>key</span>
                 <span className='symbol'>=</span>
                 {'{'}
-                <span className='string'>{"'edu-list-elem-'"}</span> + i{'}>{'} <span className='elem'>item</span>.
-                <span className='elem'>duration</span> {'}'}: {'{'} <span className='elem'>item</span>.
+                <span className='string'>{"'edu-li-'"}</span> + i{'}>'}
+            </p>
+            <p className='editor__file__line indent--20'>
+                {'<'}
+                <span className='elem'>p</span>
+                {'>'}
+                {'{ '}
+                <span className='elem'>duration</span> {'}'}: {'{ '}
                 <span className='elem'>establishment</span>
                 {' }'} || {'{ '}
-                <span className='elem'>item</span>.<span className='elem'>qualification</span>
+                <span className='elem'>qualification</span>
                 {' }'}
+                {'</'}
+                <span className='elem'>p</span>
+                {'>'}
+            </p>
+            <p className='editor__file__line indent--16'>
                 {'</'}
                 <span className='elem'>li</span>
                 {'>'}
             </p>
+            <p className='editor__file__line indent--12'>{'))}'}</p>
 
-            <p className='editor__file__line indent--16'>);</p>
-            <p className='editor__file__line indent--12'>{'})}'}</p>
             <p className='editor__file__line indent--8'>
                 {'</'}
                 <span className='elem'>ul</span>

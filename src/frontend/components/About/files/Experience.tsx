@@ -9,9 +9,6 @@ export const Experience = (): JSX.Element => {
                 <span className='keyword'>from</span> <span className='string'>{"'react'"}</span>;
             </p>
 
-            {/* blank line */}
-            <p className='editor__file__line'>&nbsp;</p>
-
             {/* import style */}
             <p className='editor__file__line'>
                 <span className='keyword'>import</span> <span className='string'>{"'../About.scss'"}</span>;
@@ -29,7 +26,7 @@ export const Experience = (): JSX.Element => {
                 {' {'}
             </p>
 
-            {/* open education array */}
+            {/* open experience array */}
             <p className='editor__file__line indent--4'>
                 <span className='keyword'>const</span> <span className='variable'>experienceData</span>{' '}
                 <span className='symbol'>=</span> {' ['}
@@ -61,7 +58,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'I operate SRP Designs, a business that creates exciting, captivating and meaningful digital experiences for emerging businesses, brands and individual clients. SRP Designs offers UI/UX design, web development and web hosting services.'"
+                        "'I operate SRP Designs, a business that creates exciting, captivating and meaningful digital experiences for emerging businesses, brands and individual clients alike. SRP Designs offers UI/UX design, web development and web hosting services.'"
                     }
                 </span>
                 ,
@@ -103,7 +100,7 @@ export const Experience = (): JSX.Element => {
             <p className='editor__file__line indent--8'>{' }'},</p>
             {/* close obj 2 */}
 
-            {/* close education array */}
+            {/* close experience array */}
             <p className='editor__file__line indent--4'>{'];'}</p>
 
             {/* blank line */}
@@ -112,6 +109,62 @@ export const Experience = (): JSX.Element => {
             {/* open return */}
             <p className='editor__file__line indent--4'>
                 <span className='keyword'>return</span> (
+            </p>
+
+            <p className='editor__file__line indent--8'>
+                {'<'}
+                <span className='elem'>ul</span> <span className='class'>className</span>=
+                <span className='string'>{"'about__experience'"}</span>
+                {'>'}
+            </p>
+            <p className='editor__file__line indent--12'>
+                {'{'}
+                <span className='elem'>experienceData</span>.<span className='special'>map</span>((
+                {'{ duration, role, establishment, details }'}, i) <span className='arrow'>{'=>'}</span>
+                {' ('}
+            </p>
+            <p className='editor__file__line indent--16'>
+                {'<'}
+                <span className='elem'>li</span> <span className='class'>key</span>
+                <span className='symbol'>=</span>
+                {'{'}
+                <span className='string'>{"'exp-li-'"}</span> + i{'}>'}
+            </p>
+            <p className='editor__file__line indent--20'>
+                {'<'}
+                <span className='elem'>p</span>
+                {'>'}
+                {'{ '}
+                <span className='elem'>duration</span> {'}'}: {'{ '}
+                <span className='elem'>establishment</span>
+                {' }'} || {'{ '}
+                <span className='elem'>role</span>
+                {' }'}
+                {'</'}
+                <span className='elem'>p</span>
+                {'>'}
+            </p>
+            <p className='editor__file__line indent--20'>
+                {'<'}
+                <span className='elem'>p</span>
+                {'>'}
+                {'{ '}
+                <span className='elem'>details</span>
+                {' }'}
+                {'</'}
+                <span className='elem'>p</span>
+                {'>'}
+            </p>
+            <p className='editor__file__line indent--16'>
+                {'</'}
+                <span className='elem'>li</span>
+                {'>'}
+            </p>
+            <p className='editor__file__line indent--12'>{'))}'}</p>
+            <p className='editor__file__line indent--8'>
+                {'</'}
+                <span className='elem'>ul</span>
+                {'>'}
             </p>
 
             {/* close return */}
