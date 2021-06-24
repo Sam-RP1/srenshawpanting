@@ -27,9 +27,6 @@ export const Hero = ({ socials }: HeroProps): JSX.Element => {
         <>
             <Section selector={'hero'} classes={[]}>
                 <>
-                    <div className='hint'>
-                        <p>Psst... touch the background</p>
-                    </div>
                     <SocialStack socials={socials} />
                     <Container classes={'hero'}>
                         <>

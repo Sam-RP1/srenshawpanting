@@ -1,5 +1,4 @@
 @use '../../styles/_index.scss' as i;
-$margin-bottom: 1rem;
 $padding-bottom: 3rem;
 
 .section--hero {
@@ -13,44 +12,6 @@ $padding-bottom: 3rem;
         left: 3rem;
     }
     overflow: hidden;
-
-    .hint {
-        position: absolute;
-        right: 1rem;
-        bottom: 1rem;
-        display: none;
-        color: #fff;
-
-        p {
-            font-size: 0.7rem;
-            padding-right: 10px;
-            animation: wiggle 3s infinite;
-        }
-
-        @keyframes wiggle {
-            0% {
-                @include i.transform(rotate(0deg));
-            }
-            75% {
-                @include i.transform(rotate(0deg));
-            }
-            80% {
-                @include i.transform(rotate(7deg));
-            }
-            85% {
-                @include i.transform(rotate(-7deg));
-            }
-            90% {
-                @include i.transform(rotate(7deg));
-            }
-            95% {
-                @include i.transform(rotate(-7deg));
-            }
-            100% {
-                @include i.transform(rotate(0deg));
-            }
-        }
-    }
 }
 
 .hero {
@@ -66,11 +27,12 @@ $padding-bottom: 3rem;
 
     &__content {
         color: #fff;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
 
         &__text {
             position: relative;
             z-index: 1;
-            margin: 0 0 $margin-bottom 0;
+            margin: 0 0 1rem 0;
             pointer-events: none;
         }
 
