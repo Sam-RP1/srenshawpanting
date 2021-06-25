@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Glide from '@glidejs/glide';
 
 import '../../../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
 // import '../../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+
+import { flickrIcon } from '../../lib/icons';
 
 type FlickrProps = {
     flickrContent: {
@@ -15,6 +17,7 @@ export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
     console.log('render FLICKR component');
     // console.log('FLICKR', flickrContent[0]);
 
+    console.log('FLICKR LINK: ', flickrIcon.url);
     const slideContainer = useRef(null);
 
     const slideElems = flickrContent.map(({ url }, i) => {
@@ -27,8 +30,8 @@ export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
 
     useEffect(() => {
         if (slideContainer.current.hasChildNodes()) {
-            const carousel = new Glide('.glide', {
-                type: 'carousel',
+            const glide = new Glide('.glide', {
+                type: 'slider',
                 focusAt: 'center',
                 startAt: 0,
                 perView: 1.7,
@@ -47,7 +50,14 @@ export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
                     },
                 },
             });
-            carousel.mount();
+            glide.mount();
+
+            glide.on('swipe.end', () => {
+                const viewMore = document.getElementById('glide-view-more');
+                setTimeout(() => {
+                    viewMore.href = flickrIcon.url;
+                }, 400);
+            });
         }
     }, [flickrContent]);
 
@@ -71,7 +81,17 @@ export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
                             <li className='glide__slide'></li>
                             <li className='glide__slide'></li>
                             <li className='glide__slide'></li>
-                            <li className='glide__slide glide__slide--more'></li>
+                            <li className='glide__slide glide__slide--more'>
+                                <a
+                                    href={flickrIcon.url}
+                                    target='__blank'
+                                    id='glide-view-more'
+                                    className='glide__slide__content'
+                                >
+                                    {flickrIcon.icon}
+                                    <p>View more...</p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
