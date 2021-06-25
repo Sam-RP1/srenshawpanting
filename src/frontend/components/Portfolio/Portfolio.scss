@@ -25,8 +25,8 @@ $margin: 0.8rem;
     }
 
     &__title {
-        // margin-top: 30px;
         margin: 30px 0;
+
         h2 {
             font-weight: 400;
             text-transform: uppercase;
@@ -60,6 +60,10 @@ $margin: 0.8rem;
 
         &:last-of-type {
             z-index: 12;
+        }
+
+        #deduction {
+            margin-top: 0;
         }
     }
 }
@@ -123,15 +127,15 @@ $margin: 0.8rem;
             margin: 0 0 $margin 0;
             font-size: 1.4rem;
             font-weight: 400;
-            letter-spacing: 1px;
-            text-shadow: 0 1px 15px #000;
+            letter-spacing: 3px;
+            text-shadow: i.$text-shadow--heavy;
 
             &::after {
                 content: '';
                 position: absolute;
                 bottom: 0;
                 display: block;
-                height: 4px;
+                height: 2px;
                 width: 100%;
                 background-color: #0080b3;
             }
@@ -146,7 +150,6 @@ $margin: 0.8rem;
             span {
                 display: inline;
                 background: rgba(0, 0, 0, 0.6);
-                // box-decoration-break: clone;
             }
         }
 
@@ -181,6 +184,7 @@ $margin: 0.8rem;
 
         &::before {
             content: 'Learn More';
+            letter-spacing: 1px;
             position: relative;
             display: inline-block;
             margin-right: 5px;
@@ -421,6 +425,7 @@ $margin: 0.8rem;
     }
 }
 
+// Pointer enabled
 @media (hover) {
     .portfolio__container {
         pointer-events: none;
