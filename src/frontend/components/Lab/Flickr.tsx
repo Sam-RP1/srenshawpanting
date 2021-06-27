@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import Glide from '@glidejs/glide';
+import React, { useState, useEffect } from 'react';
+import Splide from '@splidejs/splide';
 
-import '../../../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
-// import '../../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+import '../../../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
 
 import { flickrIcon } from '../../lib/icons';
+import { Spinner } from '../UI/Spinner/Spinner';
 
 type FlickrProps = {
     flickrContent: {
@@ -15,50 +15,33 @@ type FlickrProps = {
 
 export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
     console.log('render FLICKR component');
-    // console.log('FLICKR', flickrContent[0]);
 
-    console.log('FLICKR LINK: ', flickrIcon.url);
-    const slideContainer = useRef(null);
-
-    const slideElems = flickrContent.map(({ url }, i) => {
-        return (
-            <li key={'lab-flickr-slide-' + i} className='glide__slide'>
-                <img src={url} />
-            </li>
-        );
-    });
+    const [isLoading, setIsLoading] = useState(true);
+    const [images, setImages] = useState(undefined);
 
     useEffect(() => {
-        if (slideContainer.current.hasChildNodes()) {
-            const glide = new Glide('.glide', {
-                type: 'slider',
-                focusAt: 'center',
-                startAt: 0,
-                perView: 1.7,
-                breakpoints: {
-                    1475: {
-                        perView: 1.5,
-                    },
-                    912: {
-                        perView: 1.3,
-                    },
-                    767: {
-                        perView: 1.15,
-                    },
-                    575: {
-                        perView: 1,
-                    },
-                },
-            });
-            glide.mount();
-
-            glide.on('swipe.end', () => {
-                const viewMore = document.getElementById('glide-view-more');
-                setTimeout(() => {
-                    viewMore.href = flickrIcon.url;
-                }, 400);
-            });
+        if (flickrContent.length !== 0) {
+            setIsLoading(false);
+            setImages(flickrContent);
+        } else {
+            setIsLoading(true);
         }
+
+        const splide = new Splide('.splide', {
+            type: 'slide',
+            rewind: 'true', // rewind from 1 to last or last to 1
+            height: 295,
+            autoHeight: false,
+            width: 500,
+            autoWidth: false,
+            gap: 10,
+            arrows: false,
+            focus: 'center',
+        }).mount();
+
+        return () => {
+            splide.destroy();
+        };
     }, [flickrContent]);
 
     return (
@@ -71,36 +54,21 @@ export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
                 </div>
             </div>
 
-            <div className='glide-wrapper'>
-                <div className='glide'>
-                    <div className='glide__track' data-glide-el='track'>
-                        <ul ref={slideContainer} className='glide__slides'>
-                            {/* {slideElems} */}
-                            {/* Lazy loading spinners inside each slide then when loaded replace the spinners */}
-                            <li className='glide__slide'></li>
-                            <li className='glide__slide'></li>
-                            <li className='glide__slide'></li>
-                            <li className='glide__slide'></li>
-                            <li className='glide__slide glide__slide--more'>
-                                <a
-                                    href={flickrIcon.url}
-                                    target='__blank'
-                                    id='glide-view-more'
-                                    className='glide__slide__content'
-                                >
+            <div className='splide-wrapper'>
+                <div className='splide'>
+                    <div className='splide__track'>
+                        <ul className='splide__list'>
+                            <li className='splide__slide'>{isLoading ? <Spinner /> : <img src={images[0].url} />}</li>
+                            <li className='splide__slide'>{isLoading ? <Spinner /> : <img src={images[1].url} />}</li>
+                            <li className='splide__slide'>{isLoading ? <Spinner /> : <img src={images[2].url} />}</li>
+                            <li className='splide__slide'>{isLoading ? <Spinner /> : <img src={images[3].url} />}</li>
+                            <li className='splide__slide splide__slide--more' style={{ width: '500px' }}>
+                                <a href={flickrIcon.url} target='__blank' className='splide__slide__content'>
                                     {flickrIcon.icon}
-                                    <p>View more...</p>
+                                    <p>See more</p>
                                 </a>
                             </li>
                         </ul>
-                    </div>
-
-                    <div className='glide__bullets' data-glide-el='controls[nav]'>
-                        <button className='glide__bullet' data-glide-dir='=0'></button>
-                        <button className='glide__bullet' data-glide-dir='=1'></button>
-                        <button className='glide__bullet' data-glide-dir='=2'></button>
-                        <button className='glide__bullet' data-glide-dir='=3'></button>
-                        <button className='glide__bullet' data-glide-dir='=4'></button>
                     </div>
                 </div>
                 <span id='flickr-leader-line-bottom'></span>
