@@ -44,6 +44,8 @@ export const Lab = (): JSX.Element => {
         const fetchGithub = async (): Promise<any> => {
             const reqURL = 'https://api.github.com/users/Sam-RP1/repos';
             const res = await fetchData(reqURL);
+            // const res = await fetchData(reqURL).catch(e => handleError(e));
+            // const [data, e] = await fetchData(reqURL);
 
             if (res.status === 'success' && !Object.prototype.hasOwnProperty.call(res.data, 'message')) {
                 const data = res.data;
@@ -99,10 +101,11 @@ export const Lab = (): JSX.Element => {
 
             if (res.status === 'success') {
                 const photoArr = res.data.photos.photo;
+                console.log(photoArr);
                 const urlPrefix = 'https://live.staticflickr.com/';
-                const flickrObj = [];
+                const flickrArr = [];
 
-                for (const i in photoArr) {
+                for (let i = 0; i < 4; i++) {
                     const photoTitle = photoArr[i].title;
                     const photoId = photoArr[i].id;
                     const serverId = photoArr[i].server;
@@ -114,10 +117,10 @@ export const Lab = (): JSX.Element => {
                         url: urlPrefix + serverId + '/' + photoId + '_' + secret + '_' + size + '.jpg',
                     };
 
-                    flickrObj.push(photoObj);
+                    flickrArr.push(photoObj);
                 }
 
-                setFlickrContent(flickrObj);
+                setFlickrContent(flickrArr);
             } else {
                 console.log('Error fetching Flickr data: ', res.data);
                 setFlickrContent([]);
@@ -125,7 +128,9 @@ export const Lab = (): JSX.Element => {
         };
 
         fetchGithub();
+        console.log('FETCHED GITHUB');
         fetchFlickr();
+        console.log('FETCHED FLICKR');
     }, []);
 
     return (
