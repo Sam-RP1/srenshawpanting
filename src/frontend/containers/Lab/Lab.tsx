@@ -14,6 +14,8 @@ interface repo {
     updated: string;
     repoURL: string;
     webURL: string;
+    description: string;
+    tags: Array<string>;
 }
 
 export const Lab = (): JSX.Element => {
@@ -43,16 +45,22 @@ export const Lab = (): JSX.Element => {
 
         const fetchGithub = async (): Promise<any> => {
             const reqURL = 'https://api.github.com/users/Sam-RP1/repos';
-            const res = await fetchData(reqURL);
-            // const res = await fetchData(reqURL).catch(e => handleError(e));
-            // const [data, e] = await fetchData(reqURL);
+            const featuredIDs = [283739731, 304401876, 290325161, 287375977, 287027145];
+            const sortedArr = [];
 
-            if (res.status === 'success' && !Object.prototype.hasOwnProperty.call(res.data, 'message')) {
-                const data = res.data;
-                const featuredIDs = [283739731, 304401876, 290325161, 287375977, 287027145];
-                const sortedArr = [];
-                let featuredArr = [];
-                let recentArr = [];
+            try {
+                const res = await fetch(reqURL, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/vnd.github.mercy-preview+json',
+                    },
+                });
+
+                if (res.status === 403) {
+                    throw 'You have exceeded Githubs rate limit!';
+                }
+
+                const data = await res.json();
 
                 data.sort((a, b) => {
                     return a.pushed_at < b.pushed_at ? 1 : a.pushed_at > b.pushed_at ? -1 : 0;
@@ -66,31 +74,37 @@ export const Lab = (): JSX.Element => {
                         updated: item.pushed_at.split('T')[0],
                         repoURL: item.svn_url,
                         webURL: item.homepage,
+                        description: item.description,
+                        tags: item.topics.sort((a, b) => a.localeCompare(b)),
                     };
                     sortedArr.push(entry);
                 }
 
-                featuredArr = sortedArr.filter((item) => {
+                const featuredArr = sortedArr.filter((item) => {
                     return featuredIDs.includes(item.id);
                 });
 
-                recentArr = sortedArr.slice(0, 5);
+                const recentArr = sortedArr.slice(0, 5);
+
+                featuredArr.sort((a, b) => {
+                    return a.title > b.title ? 1 : a.title < b.title ? -1 : 0;
+                });
 
                 setGithubContent({ featured: featuredArr, recent: recentArr });
-            } else {
-                console.log('Error fetching Github data: ', res.data);
-                const errorPlaceholder = [
-                    {
-                        id: 9999,
-                        title: 'error',
-                        created: '9999-99-99',
-                        updated: '9999-99-99',
-                        repoURL: '',
-                        webURL: '',
-                    },
-                ];
+            } catch (e) {
+                const errorPlaceholder = {
+                    id: 9999,
+                    title: 'error',
+                    created: '9999-99-99',
+                    updated: '9999-99-99',
+                    repoURL: '#',
+                    webURL: '#',
+                    description: 'Encountered error fetching data from Github',
+                    tags: ['error'],
+                };
 
-                setGithubContent({ featured: errorPlaceholder, recent: errorPlaceholder });
+                setGithubContent({ featured: [errorPlaceholder], recent: [errorPlaceholder] });
+                console.log('Error fetching Github data: ', e);
             }
         };
 
@@ -138,7 +152,7 @@ export const Lab = (): JSX.Element => {
             <Container classes={'lab'}>
                 <>
                     <LabCmpnt />
-                    <GithubCmpnt featured={githubContent.featured} recent={githubContent.recent} />
+                    <GithubCmpnt featuredRepos={githubContent.featured} recentRepos={githubContent.recent} />
                     <FlickrCmpnt flickrContent={flickrContent} />
                 </>
             </Container>
