@@ -1,5 +1,4 @@
-@use '../../../styles/base.scss';
-@import '../../../styles/mixins/transition.scss';
+@use '../../../styles/_index.scss' as i;
 
 .tooltip {
     position: relative;
@@ -14,13 +13,13 @@
         width: auto;
         max-width: 200px;
         color: white;
-        background-color: map-get(base.$srp-greys, 700);
+        background-color: map-get(i.$srp-greys, 700);
         text-align: center;
         padding: 3px 5px;
-        border-radius: base.$rounded;
+        border-radius: 0.25rem;
         font-size: 0.85rem;
         opacity: 0;
-        @include transition(opacity ease 200ms);
+        @include i.transition(opacity ease 200ms);
 
         &--top {
             @extend .tooltip__text;
