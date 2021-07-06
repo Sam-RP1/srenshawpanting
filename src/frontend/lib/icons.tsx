@@ -1,7 +1,13 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessKing, faHandPointer, faExternalLinkSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+    faChessKing,
+    faHandPointer,
+    faExternalLinkSquareAlt,
+    faAngleLeft,
+    faAngleRight,
+} from '@fortawesome/free-solid-svg-icons';
 import {
     faLinkedinIn,
     faInstagram,
@@ -90,6 +96,16 @@ export const jsIcon: Icon = {
 export const externalLinkIcon: Icon = {
     id: 'externalLink',
     icon: <FontAwesomeIcon icon={faExternalLinkSquareAlt} />,
+};
+
+export const leftChevronIcon: Icon = {
+    id: 'externalLink',
+    icon: <FontAwesomeIcon icon={faAngleLeft} />,
+};
+
+export const rightChevronIcon: Icon = {
+    id: 'externalLink',
+    icon: <FontAwesomeIcon icon={faAngleRight} />,
 };
 
 export const socialIcons: Icons = [
