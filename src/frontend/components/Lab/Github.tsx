@@ -1,34 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { githubIcon, externalLinkIcon } from '../../lib/icons';
+import { githubIcon, externalLinkIcon, leftChevronIcon, rightChevronIcon } from '../../lib/icons';
+import { Spinner } from '../UI/Spinner/Spinner';
 
 type GithubProps = {
-    featured: {
+    featuredRepos: {
         id: number;
         title: string;
         created: string;
         updated: string;
         repoURL: string;
         webURL: string;
+        description: string;
+        tags: Array<string>;
     }[];
-    recent: {
+    recentRepos: {
         id: number;
         title: string;
         created: string;
         updated: string;
         repoURL: string;
         webURL: string;
+        description: string;
+        tags: Array<string>;
     }[];
 };
 
-export const Github = ({ featured, recent }: GithubProps): JSX.Element => {
+export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element => {
     console.log('render GITHUB component');
 
+    const [isLoading, setIsLoading] = useState(true);
     const [openTab, setOpenTab] = useState('featured');
 
-    const featuredRepos = featured.map(({ id, title, repoURL, webURL }) => (
+    useEffect(() => {
+        if (featuredRepos.length !== 0 && recentRepos.length !== 0) {
+            setIsLoading(false);
+        } else {
+            setIsLoading(true);
+        }
+    }, [featuredRepos, recentRepos]);
+
+    const featuredElems = featuredRepos.map(({ id, title, repoURL, webURL, description, tags }) => (
         <div key={'lab-featured-repo-' + id} className='lab__github__panel__repo'>
-            <p>{title}</p>
+            <div className='lab__github__panel__repo__name'>
+                {rightChevronIcon.icon}
+                <h1>{title}</h1>
+            </div>
             <div className='lab__github__panel__repo__icons'>
                 {webURL !== '' && webURL !== null && (
                     <a href={webURL} target='__blank'>
@@ -39,12 +56,23 @@ export const Github = ({ featured, recent }: GithubProps): JSX.Element => {
                     {githubIcon.icon}
                 </a>
             </div>
+            <div className='lab__github__panel__repo__description'>
+                <p>{description}</p>
+            </div>
+            <div className='lab__github__panel__repo__tags'>
+                {tags.map((tag) => (
+                    <p key={'lab-featured-repo-' + id + '-' + tag}>{tag}</p>
+                ))}
+            </div>
         </div>
     ));
 
-    const recentRepos = recent.map(({ id, title, repoURL, webURL }) => (
+    const recentElems = recentRepos.map(({ id, title, repoURL, webURL, description, tags }) => (
         <div key={'lab-recent-repo-' + id} className='lab__github__panel__repo'>
-            <p>{title}</p>
+            <div className='lab__github__panel__repo__name'>
+                {rightChevronIcon.icon}
+                <h1>{title}</h1>
+            </div>
             <div className='lab__github__panel__repo__icons'>
                 {webURL !== '' && webURL !== null && (
                     <a href={webURL} target='__blank'>
@@ -54,13 +82,21 @@ export const Github = ({ featured, recent }: GithubProps): JSX.Element => {
                 <a href={repoURL} target='__blank'>
                     {githubIcon.icon}
                 </a>
+            </div>
+            <div className='lab__github__panel__repo__description'>
+                <p>{description}</p>
+            </div>
+            <div className='lab__github__panel__repo__tags'>
+                {tags.map((tag) => (
+                    <p key={'lab-recent-repo-' + id + '-' + tag}>{tag}</p>
+                ))}
             </div>
         </div>
     ));
 
     const tabs = [
-        { id: 'featured', content: featuredRepos },
-        { id: 'recent', content: recentRepos },
+        { id: 'featured', content: featuredElems },
+        { id: 'recent', content: recentElems },
     ];
 
     // put the new tool tips on the icons
@@ -87,16 +123,21 @@ export const Github = ({ featured, recent }: GithubProps): JSX.Element => {
                                 className={'lab__github__panel__tab' + isActive}
                             >
                                 <p>{id}</p>
+                                {leftChevronIcon.icon}
                             </div>
                         );
                     })}
                 </section>
 
-                <section className='lab__github__panel__content'>
-                    {tabs.map(({ id, content }) => {
-                        const repos = id === openTab ? content : '';
-                        return repos;
-                    })}
+                <section className={'lab__github__panel__content' + (isLoading ? ' isLoading' : ' loaded')}>
+                    {isLoading ? (
+                        <Spinner />
+                    ) : (
+                        tabs.map(({ id, content }) => {
+                            const repos = id === openTab ? content : '';
+                            return repos;
+                        })
+                    )}
                 </section>
             </div>
         </div>
