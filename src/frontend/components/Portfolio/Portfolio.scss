@@ -142,7 +142,7 @@ $margin: 0.8rem;
         }
 
         &__taster,
-        &__tag {
+        &__short-taster {
             width: max-content;
             max-width: 100%;
             margin: 0 0 $margin 0;
@@ -155,39 +155,66 @@ $margin: 0.8rem;
 
         &__taster {
             display: none;
+
             span {
-                padding: 2px 0;
+                padding: 3px 0 3px 0;
                 box-shadow: 0.5rem 0 0 rgba(0, 0, 0, 0.6), -0.5rem 0 0 0 rgba(0, 0, 0, 0.6);
             }
         }
 
-        &__tag {
+        &__short-taster {
             span {
                 padding: 4px;
                 border-radius: 5px;
                 box-shadow: 0 0 0 rgba(0, 0, 0, 0.6), 0 0 0 rgba(0, 0, 0, 0.6);
             }
         }
+
+        &__tags {
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 0 $margin 0;
+
+            p {
+                font-size: 0.85rem;
+                margin: 4px 5px 0 0;
+                padding: 2px 10px 0 10px;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
     }
 
-    &__button {
-        display: inline-flex;
+    &__buttons {
+        display: flex;
+        justify-content: center;
         align-items: center;
         height: 35px;
-        width: auto;
-        padding: 0.5rem 0.75rem;
+        width: 100%;
+        max-width: 100%;
         border-radius: 5px;
         background-color: #0080b3;
         box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 5px 0 rgb(0 0 0 / 17%);
-        white-space: nowrap;
-        @include i.font-size(i.$p-font-sizes, i.$breakpoints);
+        overflow: hidden;
 
-        &::before {
-            content: 'Learn More';
-            letter-spacing: 1px;
-            position: relative;
-            display: inline-block;
-            margin-right: 5px;
+        .btn {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-width: 0%;
+            padding: 0.5rem 0;
+            overflow: hidden;
+            @include i.font-size(i.$p-font-sizes, i.$breakpoints);
+
+            span {
+                max-width: 0;
+                margin: 2px 0 0 0;
+                white-space: nowrap;
+                overflow: hidden;
+            }
         }
     }
 }
@@ -217,9 +244,13 @@ $margin: 0.8rem;
                 font-size: 1.5rem;
             }
 
+            &__tags {
+                display: flex;
+            }
+
             &__taster,
-            &__tag {
-                margin: 0 0 $margin 0;
+            &__short-taster {
+                margin: 0 0 0.4rem 0;
             }
         }
     }
@@ -278,12 +309,9 @@ $margin: 0.8rem;
                 display: block;
             }
 
-            &__tag {
+            &__short-taster {
                 display: none;
             }
-        }
-        &__button {
-            padding: 0.6rem 1rem;
         }
     }
 }
@@ -454,17 +482,37 @@ $margin: 0.8rem;
             }
 
             &__taster,
-            &__tag {
+            &__short-taster {
                 opacity: 0;
                 @include i.transition(opacity 300ms ease);
             }
         }
 
-        &__button {
+        &__buttons {
             width: 0;
+            max-width: 260px;
             padding: 0;
             overflow: hidden;
-            @include i.transition(width 300ms ease, padding 300ms ease);
+            @include i.transition(width 300ms ease, padding 300ms ease-in-out);
+
+            .btn {
+                @include i.transition(min-width 375ms ease-in-out 450ms);
+
+                span {
+                    @include i.transition(max-width 400ms ease-in-out 0ms, margin 0ms ease-in-out 425ms);
+                }
+
+                &:hover {
+                    min-width: 100%;
+                    transition-delay: 0ms;
+
+                    span {
+                        max-width: 100%;
+                        margin: 2px 5px 0 0;
+                        @include i.transition(max-width 400ms ease-in-out 425ms, margin 100ms ease-in-out 400ms);
+                    }
+                }
+            }
         }
 
         &:hover & {
@@ -487,17 +535,16 @@ $margin: 0.8rem;
                 }
 
                 &__taster,
-                &__tag {
+                &__short-taster {
                     opacity: 1;
                     @include i.transition(opacity 300ms ease);
                     transition-delay: 475ms;
                 }
             }
 
-            &__button {
-                width: 132px;
-                padding: 0.5rem 0.75rem;
-                @include i.transition(width 300ms ease, padding 300ms ease);
+            &__buttons {
+                width: 100%;
+                @include i.transition(width 400ms ease);
                 transition-delay: 475ms;
             }
         }
