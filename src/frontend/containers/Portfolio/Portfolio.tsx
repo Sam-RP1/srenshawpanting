@@ -23,13 +23,13 @@ const distPrev = require('../../assets/portfolio/distributed-systems/img/dss-min
 const litrevPrev = require('../../assets/portfolio/literature-review/img/litrev-min.png');
 
 export const Portfolio = (): JSX.Element => {
-    const professionalItems = [
+    const portfolioContent = [
         {
             id: 'deduction',
             title: 'Deduction',
             created: '2020',
-            shortTaster: 'Multiplayer web game',
-            taster: 'A real-time multiplayer web game in which two teams face off to get their score to zero first',
+            taster: 'Multiplayer web game',
+            // taster: 'A real-time multiplayer web game in which two teams face off to get their score to zero first',
             tags: ['scss', 'react', 'redux', 'nodejs', 'express', 'socket-io', 'mysql'],
             description: '',
             buttons: [
@@ -58,8 +58,8 @@ export const Portfolio = (): JSX.Element => {
             id: 'letterdetonator',
             title: 'Letter Detonator',
             created: '2020',
-            shortTaster: 'Web game',
-            taster: 'A web game where players type to survive the endless waves of letters',
+            taster: 'Single-player web game',
+            // taster: 'A web game where players type to survive the endless waves of letters',
             tags: ['html', 'canvas', 'scss', 'javascript', 'react', 'local-storage'],
             description: '',
             buttons: [
@@ -88,8 +88,8 @@ export const Portfolio = (): JSX.Element => {
             id: 'karensbeautybox',
             title: 'Karens Beauty Box',
             created: '2020',
-            shortTaster: 'Single-page website',
-            taster: 'A single-page website with a minimalistic design featuring bespoke icons and a logo',
+            taster: 'Single-page website',
+            // taster: 'A single-page website with a minimalistic design featuring bespoke icons and a logo',
             tags: ['html', 'scss', 'react'],
             description: '',
             buttons: [
@@ -112,9 +112,10 @@ export const Portfolio = (): JSX.Element => {
             id: 'peerreviewportal',
             title: 'Peer Review Portal',
             created: '2019',
-            shortTaster: 'Web application',
-            taster: 'A web application that streamlines and enhances the peer review and meta review processes',
+            taster: 'Academic web application',
+            // taster: 'A web application that streamlines and enhances the peer review and meta review processes',
             tags: [
+                'html',
                 'css',
                 'javascript',
                 'react',
@@ -142,15 +143,12 @@ export const Portfolio = (): JSX.Element => {
             ],
             img: peerReviewPortalPrev,
         },
-    ];
-
-    const academicItems = [
         {
             id: 'pudhub',
             title: 'P.U.D Hub',
             created: '2018',
-            shortTaster: 'Web application',
-            taster: 'A web application that allows for the full creation, customisation and management of a network of unattended displays',
+            taster: 'Web application',
+            // taster: 'A web application that allows for the full creation, customisation and management of a network of unattended displays',
             tags: ['html', 'css', 'javascript', 'nodejs', 'express', 'multer', 'mysql'],
             description: '',
             buttons: [
@@ -173,8 +171,8 @@ export const Portfolio = (): JSX.Element => {
             id: 'robotics',
             title: 'Robotics',
             created: '2019',
-            shortTaster: 'V-REP Simulation',
-            taster: 'A project aiming to improve the performance of a mobile robot`s object manipulation and colour based sorting',
+            taster: 'V-REP Mobile robot simulation',
+            // taster: 'A project aiming to improve the performance of a mobile robot`s object manipulation and colour based sorting',
             tags: ['lua-script', 'v-rep'],
             description: '',
             buttons: [
@@ -203,9 +201,10 @@ export const Portfolio = (): JSX.Element => {
             id: 'distributedsystems',
             title: 'Distributed Systems',
             created: '2019',
-            shortTaster: 'Research Paper',
-            taster: 'A paper researching and evaluting the suitability of different methods to detect and mitigate DDOS attacks in IoT temperature sensing devices',
+            taster: 'Research paper',
+            // taster: 'A paper researching and evaluting the suitability of different methods to detect and mitigate DDOS attacks in IoT temperature sensing devices',
             tags: ['ddos', 'iot', 'nodejs', 'raspberry-pi', 'computer-cluster', 'research'],
+            description: '',
             buttons: [
                 {
                     id: 'distibutedsystems-report-btn',
@@ -220,9 +219,10 @@ export const Portfolio = (): JSX.Element => {
             id: 'literaturereview',
             title: 'Mitigating Data Exposure',
             created: '2017',
-            shortTaster: 'Literature Review',
-            taster: 'A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web',
+            taster: 'Literature review',
+            // taster: 'A literature review exploring the topic of Mitigating Corporate Information Exposure on the Web',
             tags: ['byod', 'info-exposure', 'literature-review'],
+            description: '',
             buttons: [
                 {
                     id: 'literaturereview-report-btn',
@@ -235,5 +235,5 @@ export const Portfolio = (): JSX.Element => {
         },
     ];
 
-    return <PortfolioCmpnt professionalItems={professionalItems} academicItems={academicItems} />;
+    return <PortfolioCmpnt portfolioContent={portfolioContent} />;
 };
