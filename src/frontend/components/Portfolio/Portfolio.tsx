@@ -12,29 +12,12 @@ import './Portfolio.scss';
 
 // Types
 type PortfolioProps = {
-    professionalItems: {
+    portfolioContent: {
         id: string;
         title: string;
         created: string;
-        shortTaster: string;
         taster: string;
         description: string;
-        tags: string[];
-        buttons: {
-            id: string;
-            url: string;
-            icon: Icon;
-            label: string;
-        }[];
-        img: string;
-    }[];
-    academicItems: {
-        id: string;
-        title: string;
-        created: string;
-        shortTaster: string;
-        taster: string;
-        description?: string;
         tags: string[];
         buttons: {
             id: string;
@@ -50,60 +33,29 @@ type PortfolioProps = {
  * Exports Portfolio component
  * @returns JSX.Element
  */
-export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps): JSX.Element => {
-    const proAspectRatios = ['ar-4', 'ar-1', 'ar-3', 'ar-1'];
-    const acaAspectRatios = ['ar-4', 'ar-3', 'ar-4', 'ar-2'];
+export const Portfolio = ({ portfolioContent }: PortfolioProps): JSX.Element => {
+    const aspectRatios = ['ar-4', 'ar-1', 'ar-3', 'ar-1', 'ar-4', 'ar-3', 'ar-4', 'ar-2'];
 
-    const professional = professionalItems.map(({ id, title, img, shortTaster, taster, tags, buttons }, i) => (
-        <div key={id} id={id} className={'panel ' + 'panel--' + proAspectRatios[i]}>
+    const content = portfolioContent.map(({ id, title, img, taster, tags, buttons }, i) => (
+        <div key={id} id={id} className={'panel ' + 'panel--' + aspectRatios[i]}>
             <div className='panel__image' style={{ backgroundImage: 'url(' + img + ')' }}></div>
             <div className='panel__content'>
                 <h2 className='panel__content__title'>{title}</h2>
-                <p className='panel__content__short-taster'>
-                    <span>{shortTaster}</span>
-                </p>
-                <p className='panel__content__taster'>
-                    <span>{taster}</span>
-                </p>
+
+                <p className='panel__content__taster'>{taster}</p>
+
                 <div className='panel__content__tags'>
                     {tags.map((tag) => (
                         <p key={id + '-tag-' + tag}>{tag}</p>
                     ))}
                 </div>
-                <div className='panel__buttons'>
-                    {buttons.map(({ id, url, icon, label }) => (
-                        <div key={id} className='btn'>
-                            <span>{label}</span>
-                            {icon.icon}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    ));
 
-    const academic = academicItems.map(({ id, title, img, shortTaster, taster, tags, buttons }, i) => (
-        <div key={id} id={id} className={'panel ' + 'panel--' + acaAspectRatios[i]}>
-            <div className='panel__image' style={{ backgroundImage: 'url(' + img + ')' }}></div>
-            <div className='panel__content'>
-                <h2 className='panel__content__title'>{title}</h2>
-                <p className='panel__content__short-taster'>
-                    <span>{shortTaster}</span>
-                </p>
-                <p className='panel__content__taster'>
-                    <span>{taster}</span>
-                </p>
-                <div className='panel__content__tags'>
-                    {tags.map((tag) => (
-                        <p key={id + '-tag-' + tag}>{tag}</p>
-                    ))}
-                </div>
                 <div className='panel__buttons'>
                     {buttons.map(({ id, url, icon, label }) => (
-                        <div key={id} className='btn'>
+                        <a key={id} className='btn' href='#' target='__blank'>
                             <span>{label}</span>
                             {icon.icon}
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -118,8 +70,7 @@ export const Portfolio = ({ professionalItems, academicItems }: PortfolioProps):
                 <>
                     <Timeline title={'Portfolio'} megaTitle={true} />
 
-                    <div className='portfolio__container'>{professional}</div>
-                    <div className='portfolio__container'>{academic}</div>
+                    <div className='portfolio__container'>{content}</div>
                 </>
             </Container>
         </Section>

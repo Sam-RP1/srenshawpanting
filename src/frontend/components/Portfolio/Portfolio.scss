@@ -1,6 +1,6 @@
 @use '../../styles/_index.scss' as i;
 $padding: 1.5rem;
-$margin: 0.8rem;
+$margin: 0.6rem;
 
 .section--portfolio {
     justify-content: center;
@@ -117,15 +117,15 @@ $margin: 0.8rem;
         z-index: 1;
         height: auto;
         width: 100%;
-        padding: $padding $padding $margin 0;
+        padding: $padding 0.5rem $margin 0;
         @include i.userSelect(none);
 
         &__title {
             position: relative;
             width: max-content;
             max-width: 100%;
-            margin: 0 0 $margin 0;
-            font-size: 1.4rem;
+            margin: 0 0 0.8rem 0;
+            font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 3px;
             text-shadow: i.$text-shadow--heavy;
@@ -133,7 +133,7 @@ $margin: 0.8rem;
             &::after {
                 content: '';
                 position: absolute;
-                bottom: 2px;
+                bottom: 3px;
                 display: block;
                 height: 2px;
                 width: 100%;
@@ -141,73 +141,55 @@ $margin: 0.8rem;
             }
         }
 
-        &__taster,
-        &__short-taster {
+        &__taster {
+            display: block;
             width: max-content;
             max-width: 100%;
-            margin: 0 0 $margin 0;
-
-            span {
-                display: inline;
-                background: rgba(0, 0, 0, 0.6);
-            }
-        }
-
-        &__taster {
-            display: none;
-
-            span {
-                padding: 3px 0 3px 0;
-                box-shadow: 0.5rem 0 0 rgba(0, 0, 0, 0.6), -0.5rem 0 0 0 rgba(0, 0, 0, 0.6);
-            }
-        }
-
-        &__short-taster {
-            span {
-                padding: 4px;
-                border-radius: 5px;
-                box-shadow: 0 0 0 rgba(0, 0, 0, 0.6), 0 0 0 rgba(0, 0, 0, 0.6);
-            }
+            margin: 0 0 0.8rem 0;
+            font-style: italic;
+            text-shadow: i.$text-shadow--heavy;
         }
 
         &__tags {
             display: none;
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 0 0 $margin 0;
+            margin: 0 0 1.3rem 0;
 
             p {
                 font-size: 0.85rem;
-                margin: 4px 5px 0 0;
+                margin: 4px 4px 0 0;
                 padding: 2px 10px 0 10px;
                 border-radius: 10px;
-                background-color: rgba(0, 0, 0, 0.8);
+                box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 40%), 0 1px 3px 0 rgb(0 0 0 / 40%);
+                background-color: i.$srp-accent-blue;
             }
         }
     }
 
     &__buttons {
         display: flex;
-        justify-content: center;
         align-items: center;
-        height: 35px;
-        width: 100%;
-        max-width: 100%;
-        border-radius: 5px;
-        background-color: #0080b3;
-        box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 5px 0 rgb(0 0 0 / 17%);
+        height: auto;
         overflow: hidden;
 
         .btn {
             display: flex;
-            flex: 1;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            min-width: 0%;
-            padding: 0.5rem 0;
+            height: 30px;
+            width: 30px;
+            padding: 0.25rem 3px;
+            margin-left: 0.5rem;
+            background-color: #0080b3;
+            border-radius: 15px;
+            box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 60%), 0 1px 3px 0 rgb(0 0 0 / 60%);
             overflow: hidden;
             @include i.font-size(i.$p-font-sizes, i.$breakpoints);
+
+            &:first-of-type {
+                margin-left: 0;
+            }
 
             span {
                 max-width: 0;
@@ -221,7 +203,6 @@ $margin: 0.8rem;
 
 //  Breakpoints
 @media screen and (min-width: i.$bp-mobile) {
-    $margin: 1rem;
     $padding: 1.5rem;
 
     .panel {
@@ -239,18 +220,12 @@ $margin: 0.8rem;
         &__content {
             padding: $padding $padding $padding 0;
 
-            &__title {
-                margin: 0 0 $margin 0;
-                font-size: 1.5rem;
+            &__taster {
+                margin: 0 0 0.4rem 0;
             }
 
             &__tags {
                 display: flex;
-            }
-
-            &__taster,
-            &__short-taster {
-                margin: 0 0 0.4rem 0;
             }
         }
     }
@@ -301,16 +276,6 @@ $margin: 0.8rem;
                 $width: 400px;
                 width: $width;
                 padding-bottom: calc(#{$width} / 16 * 9);
-            }
-        }
-
-        &__content {
-            &__taster {
-                display: block;
-            }
-
-            &__short-taster {
-                display: none;
             }
         }
     }
@@ -481,29 +446,22 @@ $margin: 0.8rem;
                 }
             }
 
-            &__taster,
-            &__short-taster {
+            &__taster {
                 opacity: 0;
                 @include i.transition(opacity 300ms ease);
             }
         }
 
         &__buttons {
-            width: 0;
-            max-width: 260px;
-            padding: 0;
-            overflow: hidden;
-            @include i.transition(width 300ms ease, padding 300ms ease-in-out);
-
             .btn {
-                @include i.transition(min-width 375ms ease-in-out 450ms);
+                @include i.transition(width 375ms ease-in-out 450ms);
 
                 span {
                     @include i.transition(max-width 400ms ease-in-out 0ms, margin 0ms ease-in-out 425ms);
                 }
 
                 &:hover {
-                    min-width: 100%;
+                    width: 150px;
                     transition-delay: 0ms;
 
                     span {
@@ -534,18 +492,11 @@ $margin: 0.8rem;
                     }
                 }
 
-                &__taster,
-                &__short-taster {
+                &__taster {
                     opacity: 1;
                     @include i.transition(opacity 300ms ease);
                     transition-delay: 475ms;
                 }
-            }
-
-            &__buttons {
-                width: 100%;
-                @include i.transition(width 400ms ease);
-                transition-delay: 475ms;
             }
         }
     }
