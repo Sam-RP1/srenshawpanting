@@ -50,9 +50,9 @@ export const Portfolio = ({ portfolioContent }: PortfolioProps): JSX.Element => 
                     ))}
                 </div>
 
-                <div className='panel__buttons'>
+                <div className='panel__content__buttons'>
                     {buttons.map(({ id, url, icon, label }) => (
-                        <a key={id} className='btn' href='#' target='__blank'>
+                        <a key={id} href='#' target='__blank'>
                             <span>{label}</span>
                             {icon.icon}
                         </a>

@@ -7,6 +7,7 @@ import {
     faExternalLinkSquareAlt,
     faAngleLeft,
     faAngleRight,
+    faFileAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faLinkedinIn,
@@ -99,13 +100,18 @@ export const externalLinkIcon: Icon = {
 };
 
 export const leftChevronIcon: Icon = {
-    id: 'externalLink',
+    id: ' leftChevron',
     icon: <FontAwesomeIcon icon={faAngleLeft} />,
 };
 
 export const rightChevronIcon: Icon = {
-    id: 'externalLink',
+    id: 'rightChevron',
     icon: <FontAwesomeIcon icon={faAngleRight} />,
+};
+
+export const fileIcon: Icon = {
+    id: 'file',
+    icon: <FontAwesomeIcon icon={faFileAlt} />,
 };
 
 export const socialIcons: Icons = [

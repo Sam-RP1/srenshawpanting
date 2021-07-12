@@ -138,6 +138,14 @@ export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element
                             return repos;
                         })
                     )}
+                    <a
+                        className='lab__github__panel__btn'
+                        href='https://github.com/Sam-RP1?tab=repositories'
+                        target='__blank'
+                    >
+                        <p>All repositories</p>
+                        {rightChevronIcon.icon}
+                    </a>
                 </section>
             </div>
         </div>

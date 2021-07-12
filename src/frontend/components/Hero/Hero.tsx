@@ -33,7 +33,7 @@ export const Hero = ({ socials }: HeroProps): JSX.Element => {
                             <Timeline title={'Welcome'} megaTitle={true} />
                             <div className='hero__content'>
                                 <div className='hero__content__text'>
-                                    <p>Hi, I&apos;m Sam, a Software Engineering Graduate & Web Developer</p>
+                                    <p>Hi, I&apos;m Sam, a Full Stack Web Developer & Software Engineering Graduate</p>
                                 </div>
                                 <div className='hero__content__next'>
                                     <div className='hero__content__next__item' onClick={() => scrollTo()}>
