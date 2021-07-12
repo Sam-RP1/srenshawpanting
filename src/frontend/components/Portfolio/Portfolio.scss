@@ -124,7 +124,7 @@ $margin: 0.6rem;
             position: relative;
             width: max-content;
             max-width: 100%;
-            margin: 0 0 0.8rem 0;
+            margin: 0 0 0.75rem 0;
             font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 3px;
@@ -165,37 +165,36 @@ $margin: 0.6rem;
                 background-color: i.$srp-accent-blue;
             }
         }
-    }
 
-    &__buttons {
-        display: flex;
-        align-items: center;
-        height: auto;
-        overflow: hidden;
-
-        .btn {
+        &__buttons {
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 30px;
-            width: 30px;
-            padding: 0.25rem 3px;
-            margin-left: 0.5rem;
-            background-color: #0080b3;
-            border-radius: 15px;
-            box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 60%), 0 1px 3px 0 rgb(0 0 0 / 60%);
-            overflow: hidden;
-            @include i.font-size(i.$p-font-sizes, i.$breakpoints);
+            height: auto;
 
-            &:first-of-type {
-                margin-left: 0;
-            }
-
-            span {
-                max-width: 0;
-                margin: 2px 0 0 0;
-                white-space: nowrap;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30px;
+                width: 30px;
+                padding: 0.25rem 3px;
+                margin-left: 0.5rem;
+                background-color: #0080b3;
+                border-radius: 15px;
+                box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 60%), 0 1px 3px 0 rgb(0 0 0 / 60%);
                 overflow: hidden;
+                @include i.font-size(i.$p-font-sizes, i.$breakpoints);
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                span {
+                    max-width: 0;
+                    margin: 2px 0 0 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
             }
         }
     }
@@ -435,41 +434,25 @@ $margin: 0.6rem;
         &__content {
             pointer-events: none;
             @include i.transform(translate(0, calc(100% - 4.8rem)));
-            @include i.transition(transform 500ms ease);
-            transition-delay: 250ms;
+            @include i.transition(transform 500ms ease 250ms);
 
             &__title {
                 &::after {
                     width: 0%;
                     @include i.transition(width 450ms ease);
-                    transition-delay: 250ms;
                 }
             }
 
-            &__taster {
+            &__taster,
+            &__tags p {
                 opacity: 0;
-                @include i.transition(opacity 300ms ease);
+                @include i.transform(translate(0, 3rem));
+                @include i.transition(opacity 300ms ease, transform 250ms ease);
             }
-        }
 
-        &__buttons {
-            .btn {
-                @include i.transition(width 375ms ease-in-out 450ms);
-
-                span {
-                    @include i.transition(max-width 400ms ease-in-out 0ms, margin 0ms ease-in-out 425ms);
-                }
-
-                &:hover {
-                    width: 150px;
-                    transition-delay: 0ms;
-
-                    span {
-                        max-width: 100%;
-                        margin: 2px 5px 0 0;
-                        @include i.transition(max-width 400ms ease-in-out 425ms, margin 100ms ease-in-out 400ms);
-                    }
-                }
+            &__buttons a {
+                opacity: 0;
+                @include i.transform(translate(0, 3rem));
             }
         }
 
@@ -483,20 +466,84 @@ $margin: 0.6rem;
             &__content {
                 pointer-events: initial;
                 @include i.transform(translate(0, 0));
-                @include i.transition(transform 500ms ease);
+                @include i.transition(transform 600ms ease 0ms);
 
                 &__title {
                     &::after {
                         width: 100%;
-                        @include i.transition(width 450ms ease);
+                        @include i.transition(width 550ms ease);
                     }
                 }
 
-                &__taster {
+                &__taster,
+                &__tags p {
                     opacity: 1;
-                    @include i.transition(opacity 300ms ease);
-                    transition-delay: 475ms;
+                    @include i.transform(translate(0, 0));
+                    @include i.transition(opacity 400ms ease, transform 500ms ease);
                 }
+
+                &__taster {
+                    transition-delay: 450ms;
+                }
+
+                &__tags {
+                    $n: 15;
+                    @for $i from 1 through $n {
+                        :nth-child(#{$i}) {
+                            transition-delay: 450ms + $i * 50;
+                        }
+                    }
+                }
+
+                &__buttons {
+                    $n: 3;
+                    @for $i from 1 through $n {
+                        a:nth-child(#{$i}) {
+                            @include i.transition(
+                                opacity 400ms ease (575ms + 75 * $i),
+                                width 375ms ease-in-out 450ms,
+                                transform 400ms ease (575ms + 75 * $i)
+                            );
+                        }
+                    }
+
+                    a {
+                        opacity: 1;
+                        @include i.transform(translate(0, 0rem));
+
+                        span {
+                            @include i.transition(max-width 400ms ease-in-out 0ms, margin 100ms ease-in-out 300ms);
+                        }
+
+                        &:hover {
+                            width: 150px;
+                            transition-delay: 0ms;
+
+                            span {
+                                max-width: 100%;
+                                margin: 2px 5px 0 0;
+                                @include i.transition(
+                                    max-width 400ms ease-in-out 425ms,
+                                    margin 100ms ease-in-out 400ms
+                                );
+                            }
+                        }
+                    }
+                }
+
+                // &__buttons a {
+                //     opacity: 1;
+                //     @include i.transform(translate(0, 0));
+                //     @include i.transition(opacity 300ms ease, width 375ms ease-in-out 450ms); //  transform 250ms ease);
+                //     // $n: 3;
+                //     // @for $i from 1 through $n {
+                //     //     :nth-child(#{$i}) {
+                //     //         position: absolute;
+                //     //         left: 10px * $i;
+                //     //         top: 10px * $i;
+                //     //     }
+                //     // }
+                // }
             }
         }
     }
