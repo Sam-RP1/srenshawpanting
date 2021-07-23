@@ -439,14 +439,14 @@ $margin: 0.6rem;
             &__title {
                 &::after {
                     width: 0%;
-                    @include i.transition(width 450ms ease 725ms);
+                    @include i.transition(width 450ms ease 750ms);
                 }
             }
 
             &__taster {
                 opacity: 0;
                 @include i.transform(translate(0, 2rem));
-                @include i.transition(opacity 250ms ease 540ms, transform 400ms ease 540ms);
+                @include i.transition(opacity 250ms ease 560ms, transform 400ms ease 560ms);
             }
 
             &__tags p {

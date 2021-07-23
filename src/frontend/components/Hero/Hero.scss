@@ -6,7 +6,7 @@ $padding-bottom: 3rem;
     justify-content: center;
     height: 100vh;
     padding: {
-        top: 60%;
+        top: 50vh;
         right: 1.5rem;
         bottom: $padding-bottom;
         left: 3rem;
@@ -55,18 +55,6 @@ $padding-bottom: 3rem;
                     display: block;
                 }
             }
-        }
-    }
-}
-
-@media screen and (min-width: i.$bp-mobile) {
-    .section--hero {
-        justify-content: center;
-        padding: {
-            top: 50vh;
-            right: 1.5rem;
-            bottom: $padding-bottom;
-            left: 3rem;
         }
     }
 }
