@@ -57,10 +57,10 @@ export const Profile = (): JSX.Element => {
             {/* open p1 */}
             <p className='editor__file__line indent--12'>{pElemOpen}</p>
             <p className='editor__file__line indent--16'>
-                Hi there, I&apos;m Sam, a 22-year-old Web Developer and Software Engineering graduate. I&apos;m an
+                Hi there, I&apos;m Sam, a 22-year-old Full Stack Web Developer and Software Engineer. I&apos;m an
                 enthusiastic guy with a passion for the web and its multitude of technologies. I like to compose
                 captivating designs, create smart user interfaces, solve complex problems, squash troublesome bugs,
-                develop rich web experiences and web applications.
+                develop rich web experiences and web applications from the ground up.
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
             {/* close p1 */}
@@ -70,8 +70,8 @@ export const Profile = (): JSX.Element => {
             <p className='editor__file__line indent--16'>
                 Throughout the time I have invested in programming and developing I have become experienced and
                 proficient in various languages, frameworks and technologies. The majority of which include HTML, CSS,
-                JS, SASS, React, Redux, Jest, Enzyme, MySQL, NoSQL, Webpack, Node.js, npm, Express.js, Websockets,
-                Socket.io, PWA, SPA, AWS and GCP.
+                JS, SASS, React, Redux, Jest, Enzyme, MySQL, NoSQL, Webpack, Node.js, npm, Express.js, Websockets, PWA,
+                SPA, AWS and GCP.
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
             {/* close p2 */}
@@ -79,10 +79,10 @@ export const Profile = (): JSX.Element => {
             {/* open p3 */}
             <p className='editor__file__line indent--12'>{pElemOpen}</p>
             <p className='editor__file__line indent--16'>
-                Alongside this, I enjoy consistently pushing myself by learning new languages, frameworks and
-                technologies in addition to further improving my abilities in ones I am already familiar with. When
-                I&apos;m not learning, conceptualising, designing, developing or programming, you&apos;ll most likely
-                find me either exercising, playing with my dog, listening to music or being below average at chess.
+                I enjoy consistently pushing myself by learning new languages, frameworks and technologies in addition
+                to further improving my abilities in ones I am already familiar with. When I&apos;m not learning,
+                conceptualising, designing, developing or programming, you&apos;ll most likely find me either
+                exercising, playing with my dog, listening to music or being below average at chess.
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
             {/* close p3 */}
@@ -91,7 +91,7 @@ export const Profile = (): JSX.Element => {
             <p className='editor__file__line indent--12'>{pElemOpen}</p>
             <p className='editor__file__line indent--16'>
                 My many professional and personal interests include UI/UX, Web Design, Frontend Development, Backend
-                Development, Fullstack Development, Cloud Computing, Drones, Photography, Fitness, Nutrition, NFL,
+                Development, Full Stack Development, Cloud Computing, Drones, Photography, Fitness, Nutrition, NFL,
                 Chess, Music and FPS/MMO Games.
             </p>
             <p className='editor__file__line indent--12'>{pElemClose}</p>
