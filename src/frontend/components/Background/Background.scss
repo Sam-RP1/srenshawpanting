@@ -35,30 +35,70 @@
         align-items: center;
         height: 100%;
         width: 100%;
-        z-index: 100;
+
+        &--foreground {
+            z-index: 2;
+        }
+        &--background {
+            z-index: -1;
+            opacity: 0.3;
+        }
 
         &__container {
             position: relative;
-            height: 39%;
-            width: 39%;
+            height: 42%;
+            width: 42%;
         }
 
         .cloud {
+            position: absolute;
+            height: auto;
+
+            img {
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+
             &--1 {
-                &:nth-child(n) {
-                    height: 15px;
-                    width: 100px;
-                    background: rgba(8, 40, 80, 1);
-                    border-radius: 10px;
-                }
-                &:nth-child(1) {
-                }
+                @extend .cloud;
+                top: 71%;
+                left: -43%;
+                width: 78%;
+            }
+
+            &--2 {
+                @extend .cloud;
+                top: 81%;
+                left: 41%;
+                width: 74%;
+            }
+
+            &--3 {
+                @extend .cloud;
+                top: 29%;
+                left: 58%;
+                width: 82%;
+            }
+
+            &--4 {
+                @extend .cloud;
+                top: -14%;
+                left: 38%;
+                width: 70%;
+            }
+            &--5 {
+                @extend .cloud;
+                top: -2%;
+                left: -34%;
+                width: 74%;
             }
         }
     }
 
     &__moon {
         position: absolute;
+        z-index: 1;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -93,7 +133,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -100;
+        z-index: 0;
         height: 100%;
         width: 100%;
 
