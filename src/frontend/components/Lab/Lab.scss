@@ -303,6 +303,7 @@ $margin-top: 1.125rem;
             img {
                 height: 295px;
                 width: auto;
+                pointer-events: none;
             }
 
             &--more {
