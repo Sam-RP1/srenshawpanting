@@ -62,7 +62,7 @@
 
             &--1 {
                 @extend .cloud;
-                top: 71%;
+                top: 68%;
                 left: -43%;
                 width: 78%;
             }
@@ -71,21 +71,21 @@
                 @extend .cloud;
                 top: 81%;
                 left: 41%;
-                width: 74%;
+                width: 72%;
             }
 
             &--3 {
                 @extend .cloud;
                 top: 29%;
                 left: 58%;
-                width: 82%;
+                width: 84%;
             }
 
             &--4 {
                 @extend .cloud;
                 top: -14%;
                 left: 38%;
-                width: 70%;
+                width: 68%;
             }
             &--5 {
                 @extend .cloud;
@@ -129,7 +129,8 @@
         }
     }
 
-    &__moonlight {
+    &__moonlight,
+    &__stars {
         position: absolute;
         top: 0;
         left: 0;
@@ -158,6 +159,11 @@
             width: 100%;
             background: url('../../assets/svgs/moonlighttest.svg') no-repeat;
             background-size: 100%;
+        }
+
+        .stars img {
+            height: auto;
+            width: 90%;
         }
     }
 }

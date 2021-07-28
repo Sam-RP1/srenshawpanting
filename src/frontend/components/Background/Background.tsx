@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import './Background.scss';
 import moon from '../../assets/svgs/moontest.svg';
+import stars from '../../assets/svgs/stars.svg';
 import cloud_1 from '../../assets/svgs/cloud-1.svg';
 import cloud_2 from '../../assets/svgs/cloud-2.svg';
 import cloud_3 from '../../assets/svgs/cloud-3.svg';
@@ -36,6 +37,13 @@ export const Background = (): JSX.Element => {
     return (
         <div className='sky'>
             <div className='sky__container'>
+                <section className='sky__stars'>
+                    <div className='sky__stars__container'>
+                        <div className='stars parallax' data-depth='0.2'>
+                            <img src={stars} />
+                        </div>
+                    </div>
+                </section>
                 <section className='sky__clouds sky__clouds--background'>
                     <div className='sky__clouds__container'>
                         <div className='cloud--4 parallax' data-depth='0.3'>
