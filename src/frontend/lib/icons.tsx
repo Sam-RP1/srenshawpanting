@@ -112,16 +112,9 @@ export const rightChevronIcon: Icon = {
 export const fileIcon: Icon = {
     id: 'file',
     icon: <FontAwesomeIcon icon={faFileAlt} />,
+    tooltip: 'CV',
 };
 
-export const socialIcons: Icons = [
-    githubIcon,
-    codepenIcon,
-    linkedinIcon,
-    instagramIcon,
-    youtubeIcon,
-    flickrIcon,
-    chessIcon,
-];
+export const socialIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, instagramIcon, flickrIcon, chessIcon];
 
-export const footerIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, instagramIcon, chessIcon];
+export const footerIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, instagramIcon, fileIcon];
