@@ -125,7 +125,7 @@ $margin: 0.6rem;
             width: max-content;
             max-width: 100%;
             margin: 0 0 0.75rem 0;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: 3px;
             text-shadow: i.$text-shadow--heavy;
@@ -286,28 +286,28 @@ $margin: 0.6rem;
     }
 
     #deduction {
-        margin: 0 auto 0 -3rem;
+        margin: 0 auto 0 0;
     }
     #letterdetonator {
-        margin: -3rem -2rem 0 auto;
+        margin: -3rem 0 0 auto;
     }
     #karensbeautybox {
-        margin: 1rem auto 0 -3rem;
+        margin: 1rem auto 0 0;
     }
     #peerreviewportal {
-        margin: -3rem -2rem 0 auto;
+        margin: -3rem 0 0 auto;
     }
     #pudhub {
-        margin: 1rem auto 0 -3rem;
+        margin: 1rem auto 0 0;
     }
     #robotics {
-        margin: -3rem -2rem 0 auto;
+        margin: -3rem 0 0 auto;
     }
     #distributedsystems {
-        margin: 1rem auto 0 -3rem;
+        margin: 1rem auto 0 0;
     }
     #literaturereview {
-        margin: -3rem -2rem 0 auto;
+        margin: -3rem 0 0 auto;
     }
 }
 
@@ -322,7 +322,7 @@ $margin: 0.6rem;
         margin: 1rem auto 0 -4rem;
     }
     #peerreviewportal {
-        margin: -13rem -4rem 0 auto;
+        margin: -12rem -4rem 0 auto;
     }
     #pudhub {
         margin: 1rem auto 0 -4rem;
@@ -339,29 +339,14 @@ $margin: 0.6rem;
 }
 
 @media screen and (min-width: i.$bp-large) {
-    #deduction {
-        margin: 0 auto 0 -8rem;
-    }
-    #letterdetonator {
-        margin: -12rem -8rem 0 auto;
-    }
-    #karensbeautybox {
-        margin: -10rem auto 0 -3rem;
-    }
-    #peerreviewportal {
-        margin: -7rem -5rem 0 auto;
-    }
-    #pudhub {
-        margin: -14rem auto 0 -8rem;
-    }
     #robotics {
-        margin: 3rem auto 0 auto;
+        margin: -2rem -4rem 0 auto;
     }
     #distributedsystems {
-        margin: 3rem -6rem 0 auto;
+        margin: 12rem -4rem 0 auto;
     }
     #literaturereview {
-        margin: -14rem auto 0 -8rem;
+        margin: -31rem auto 0 -4rem;
     }
 }
 
