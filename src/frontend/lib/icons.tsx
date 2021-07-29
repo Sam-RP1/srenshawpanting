@@ -115,6 +115,6 @@ export const fileIcon: Icon = {
     tooltip: 'CV',
 };
 
-export const socialIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, instagramIcon, flickrIcon, chessIcon];
+export const socialIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, flickrIcon, chessIcon];
 
-export const footerIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, instagramIcon, fileIcon];
+export const footerIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, fileIcon, flickrIcon];

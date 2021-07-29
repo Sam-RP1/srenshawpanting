@@ -48,7 +48,7 @@ export const About = (): JSX.Element => {
                             {tabs.map((tab) => {
                                 const isActive = tab.id === openTab ? ' active' : '';
                                 return (
-                                    <div
+                                    <a
                                         key={tab.id}
                                         onClick={() => setOpenTab(tab.id)}
                                         className={'editor__tab' + isActive}
@@ -56,7 +56,7 @@ export const About = (): JSX.Element => {
                                         {tab.icon}
                                         <p>{tab.id}</p>
                                         <span>&#x2715;</span>
-                                    </div>
+                                    </a>
                                 );
                             })}
                         </div>

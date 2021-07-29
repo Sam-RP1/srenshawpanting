@@ -7,11 +7,16 @@ interface Classes {
 }
 
 type SectionProps = {
+    selector?: string;
     classes?: Classes[];
     children: JSX.Element;
 };
 
-export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: SectionProps): JSX.Element => {
+export const Section = ({
+    selector,
+    classes = [],
+    children = <h1>Error loading...</h1>,
+}: SectionProps): JSX.Element => {
     const isNullCenter = classes.indexOf('null-center');
     const isCenterCenter = classes.indexOf('center-center');
     const isEndCenter = classes.indexOf('end-center');
@@ -39,5 +44,5 @@ export const Section = ({ classes = [], children = <h1>Error loading...</h1> }: 
         }
     }
 
-    return <section className={'section' + classStr}>{children}</section>;
+    return <section className={'section section--' + selector + classStr}>{children}</section>;
 };

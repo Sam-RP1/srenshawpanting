@@ -1,12 +1,10 @@
-@use '../../styles/base.scss';
-@import '../../styles/mixins/transform.scss';
-@import '../../styles/mixins/transition.scss';
+@use '../../styles/_index.scss' as i;
 
 .cursor {
     display: none;
     pointer-events: none;
     opacity: 1;
-    @include transition(opacity 150ms ease-out);
+    @include i.transition(opacity 150ms ease-out);
 
     &--down & {
         &__circle--outer {
@@ -17,17 +15,17 @@
 
     &--hover & {
         &__circle--outer {
-            height: 40px;
-            width: 40px;
-            border: 2px solid base.$srp-accent-blue;
-            mix-blend-mode: initial;
+            height: 45px;
+            width: 45px;
+            border: 2px solid #fff;
+            mix-blend-mode: difference;
         }
 
         &__circle--inner {
             height: 8px;
             width: 8px;
-            background-color: base.$srp-accent-blue;
-            mix-blend-mode: initial;
+            // background-color: black;
+            // mix-blend-mode: initial;
         }
     }
 
@@ -53,7 +51,7 @@
             background-color: transparent;
             mix-blend-mode: difference;
             transform: translateX(-50%) translateY(-50%);
-            @include transition(height 100ms ease-out, width 100ms ease-out, border 150ms ease-out);
+            @include i.transition(height 100ms ease-out, width 100ms ease-out, border 150ms ease-out);
         }
 
         &--inner {
@@ -64,7 +62,7 @@
             background-color: #fff;
             mix-blend-mode: difference;
             transform: translateX(-50%) translateY(-50%);
-            @include transition(height 150ms ease-out, width 150ms ease-out, background-color 150ms ease-out);
+            @include i.transition(height 150ms ease-out, width 150ms ease-out, background-color 150ms ease-out);
         }
     }
 

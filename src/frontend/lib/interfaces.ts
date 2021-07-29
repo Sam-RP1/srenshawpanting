@@ -9,7 +9,8 @@ export interface Icons extends Array<Icon> {}
 
 export interface Link {
     id: string;
-    url: JSX.Element;
+    url?: JSX.Element;
+    label?: string;
     tooltip?: string;
 }
 export interface Links extends Array<Link> {}

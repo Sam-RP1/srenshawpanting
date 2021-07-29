@@ -117,14 +117,14 @@ export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element
                     {tabs.map(({ id }) => {
                         const isActive = id === openTab ? ' active' : '';
                         return (
-                            <div
+                            <a
                                 key={id}
                                 onClick={() => setOpenTab(id)}
                                 className={'lab__github__panel__tab' + isActive}
                             >
                                 <p>{id}</p>
                                 {leftChevronIcon.icon}
-                            </div>
+                            </a>
                         );
                     })}
                 </section>
