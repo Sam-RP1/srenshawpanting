@@ -3,15 +3,19 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/frontend/index.js',
+        index: './src/frontend/index.tsx',
     },
     output: {
         path: path.join(__dirname, 'build/public/'),
         filename: 'bundles/[name]-bundle.js',
         chunkFilename: 'bundles/[name].bundle.js',
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     optimization: {
         minimize: true,
@@ -30,9 +34,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js|jsx$/,
+                test: /\.(js|jsx|tsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                use: [
+                    {
+                        loader: 'babel-loader',
+                    },
+                ],
             },
             {
                 test: /\.(sa|sc|c)ss$/,
@@ -71,9 +79,28 @@ module.exports = {
             },
             {
                 test: /\.(pdf|md)$/i,
-                loader: 'file-loader',
-                options: {
-                    outputPath: './assets/files',
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: './assets/files',
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        // Limit at 50k. Above that it emits separate files
+                        limit: 50000,
+                        // url-loader sets mimetype if it's passed.
+                        // Without this it derives it from the file extension
+                        mimetype: 'application/font-woff',
+                        // Output below fonts directory
+                        name: './fonts/[name].[ext]',
+                    },
                 },
             },
         ],
@@ -89,5 +116,13 @@ module.exports = {
             chunkFilename: '[id].css',
         }),
         new CssMinimizerPlugin(),
+        new CopyPlugin({
+            patterns: [
+                { from: './src/server/server-prod.js', to: '../server.js' },
+                { from: './src/server/routes', to: '../routes' },
+                { from: './src/server/appdata', to: '../appdata' },
+                { from: './src/server/package.json', to: '../package.json' },
+            ],
+        }),
     ],
 };

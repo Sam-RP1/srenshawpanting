@@ -1,0 +1,15 @@
+{
+    "name": "srenshawpanting",
+    "version": "1.2.0",
+    "description": "srenshawpanting website",
+    "main": "index.js",
+    "scripts": {
+      "start": "node ./server.js"
+    },
+    "author": "Samuel Renshaw-Panting",
+    "license": "",
+    "dependencies": {
+      "express": "^4.17.1",
+      "body-parser": "^1.19.0"
+    }
+  }
