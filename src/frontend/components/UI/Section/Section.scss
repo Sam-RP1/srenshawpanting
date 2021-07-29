@@ -1,0 +1,35 @@
+.section {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 3.75rem 1rem 3.75rem 3rem;
+
+    &--top {
+        min-height: 100vh;
+        padding: 8.75rem 1rem 3.75rem 3rem;
+    }
+
+    &--default {
+        padding: 3.75rem 1rem 3.75rem 3rem;
+    }
+
+    &--null-center {
+        justify-content: center;
+    }
+
+    &--center-center {
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--end-center {
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .section {
+        padding-left: 1.5rem !important;
+    }
+}

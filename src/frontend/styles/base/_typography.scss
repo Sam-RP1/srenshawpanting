@@ -1,0 +1,91 @@
+@use './_breakpoints.scss' as bp;
+@use '../mixins/_userSelect.scss' as *;
+
+$font-family: 'Recursive';
+
+// Header Font Size Maps
+$h1-font-sizes: (
+    null: 2.75rem,
+    mobile: 3rem,
+    small: 3.125rem,
+);
+
+$h2-font-sizes: (
+    null: 2.25rem,
+    mobile: 2.375rem,
+    small: 2.5rem,
+);
+
+$h3-font-sizes: (
+    null: 1.75rem,
+    mobile: 1.875rem,
+    small: 2rem,
+);
+
+$h4-font-sizes: (
+    null: 1.4rem,
+    xsmall: 1.6rem,
+    small: 1.8rem,
+    large: 2rem,
+);
+
+$h5-font-sizes: (
+    null: 1.2rem,
+);
+
+$h6-font-sizes: (
+    null: 1rem,
+);
+
+// Header Font Size Map
+$header-font-sizes: (
+    null: 1.75rem,
+    small: 1.1rem,
+    medium: 1.15rem,
+);
+
+// P Font Size Map
+$p-font-sizes: (
+    null: 1rem,
+    small: 1.05rem,
+);
+
+// Font Size Mixin
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint == null {
+            font-size: $fs-font-size;
+        } @else {
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+                $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+            }
+            @media screen and (min-width: $fs-breakpoint) {
+                font-size: $fs-font-size;
+            }
+        }
+    }
+}
+
+// Typography Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    line-height: 1.4;
+}
+
+p,
+li {
+    margin: 0;
+    letter-spacing: 1px;
+    @include font-size($p-font-sizes, bp.$breakpoints);
+    @include userSelect(none);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}

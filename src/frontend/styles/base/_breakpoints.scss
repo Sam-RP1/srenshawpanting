@@ -1,0 +1,20 @@
+// Breakpoints map
+$breakpoints: (
+    // mobile-small: < 374px [Default]
+    mobile: 374px,
+    mobile-large: 476px,
+    xsmall: 576px,
+    small: 768px,
+    medium: 992px,
+    large: 1200px,
+    xlarge: 1576px
+);
+
+// Breakpoint variables
+$bp-mobile: map-get($breakpoints, 'mobile');
+$bp-mobile-large: map-get($breakpoints, 'mobile-large');
+$bp-xsmall: map-get($breakpoints, 'xsmall');
+$bp-small: map-get($breakpoints, 'small');
+$bp-medium: map-get($breakpoints, 'medium');
+$bp-large: map-get($breakpoints, 'large');
+$bp-xlarge: map-get($breakpoints, 'xlarge');

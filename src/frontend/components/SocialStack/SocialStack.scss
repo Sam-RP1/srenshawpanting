@@ -1,0 +1,46 @@
+@use '../../styles/_index.scss' as i;
+
+.social-stack {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    @include i.transform(translate(0%, -50%));
+
+    li {
+        padding-top: 10px;
+
+        a:hover {
+            svg path {
+                fill: #fff;
+            }
+        }
+
+        svg {
+            font-size: 1.7rem;
+
+            path {
+                fill: rgba(255, 255, 255, 0.4);
+                @include i.transition(fill 300ms ease);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-small) {
+    // .social-stack {
+    //     display: flex;
+    // }
+}
+
+// @media screen and (min-width: i.$bp-medium) {
+//     .social-stack {
+//         li svg {
+//             font-size: 1.7rem;
+//         }
+//     }
+// }

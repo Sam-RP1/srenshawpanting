@@ -1,0 +1,16 @@
+$text-secondary-color: rgba(#fff, 0.85);
+$srp-greys: (
+    100: #dee3ea,
+    200: #b2bdce,
+    300: #5d7287,
+    700: #242c33,
+    // 800: #151a24,
+    800: #1a1c24,
+    // 800: #1e1e1e,
+    900: #0b0e13,
+);
+$srp-accent-blue: #0080b3;
+$srp-accent-red: #ff2534;
+$srp-accent-red-gradient: linear-gradient(rgba(255, 37, 52, 1) 0%, rgb(83, 6, 11) 100%);
+$text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.7);
+$text-shadow--heavy: 0px 1px 8px rgba(0, 0, 0, 0.9);

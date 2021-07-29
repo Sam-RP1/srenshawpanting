@@ -1,0 +1,103 @@
+@use '../../../styles/base/breakpoints' as bp;
+@use '../../../styles/base/_colors.scss' as col;
+@use '../../../styles/base/_typography.scss' as type;
+@use '../../../styles/mixins/transform.scss' as *;
+@use '../../../styles/mixins/userSelect.scss' as *;
+
+// Title font-size map
+$title-font-sizes: (
+    null: 1.8rem,
+    medium: 2rem,
+);
+
+// Mega Title font-size map
+$mega-title-font-sizes: (
+    null: 7rem,
+    medium: 8rem,
+);
+
+.timeline {
+    position: absolute;
+    left: -1.5rem;
+    z-index: 10;
+    width: 2px;
+    background-color: col.$srp-accent-blue;
+
+    &__title {
+        position: relative;
+        margin-bottom: 3rem;
+        text-shadow: col.$text-shadow;
+        text-transform: capitalize;
+        @include userSelect(none);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            z-index: 11;
+            height: 14px;
+            width: 14px;
+            border-radius: 100%;
+            border: 2px solid col.$srp-accent-blue;
+            background-color: #fff;
+            @include transform(translate(0%, -65%));
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: col.$text-secondary-color;
+            @include type.font-size($title-font-sizes, bp.$breakpoints);
+            font-weight: 400;
+            letter-spacing: 3px;
+            line-height: normal;
+        }
+
+        .mega-title {
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            left: 60px;
+            opacity: 0.4;
+            // overflow: hidden;
+            white-space: nowrap;
+            @include transform(translate(0%, -50%));
+
+            h2 {
+                margin: 0;
+                color: #ff2534;
+                @include type.font-size($mega-title-font-sizes, bp.$breakpoints);
+                font-weight: 600;
+                letter-spacing: 15px;
+                line-height: normal;
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: -24px;
+            z-index: 11;
+            height: 2px;
+            width: 2px;
+            background-color: transparent;
+            @include transform(translate(0%, -65%));
+        }
+    }
+
+    span {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: 11;
+        height: 2px;
+        width: 2px;
+        background-color: transparent;
+        @include transform(translate(-50%, 0%));
+    }
+}
+
+@media screen and (min-width: bp.$bp-xsmall) {
+}

@@ -1,0 +1,351 @@
+@use '../../styles/_index.scss' as i;
+$margin-top: 1.125rem;
+
+.section--about {
+    justify-content: center;
+    padding: {
+        top: 5rem;
+        right: 1.5rem;
+        bottom: 3.75rem;
+        left: 3rem;
+    }
+}
+
+.about {
+    position: relative;
+
+    .timeline {
+        top: -5rem;
+        height: calc(100% + 8.75rem);
+    }
+
+    .editor {
+        position: relative;
+        left: -3rem;
+        min-height: 500px;
+        height: auto;
+        width: calc(100% + 3rem);
+        border-radius: 0 0 10px 0;
+        background-color: #282c34;
+        box-shadow: 0 0 3px 1px rgb(0 0 0 / 40%), 0 3px 10px 1px rgb(0 0 0 / 60%);
+        overflow: hidden;
+
+        &__header {
+            position: relative;
+            z-index: 12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            width: 100%;
+            padding: 0 0.5rem;
+            border-bottom: 1px solid #0c0d0f;
+            background-color: #1e2227;
+
+            &__controls {
+                position: absolute;
+                left: 0.5rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+
+                .minimise,
+                .restore,
+                .close {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 100%;
+                    margin-right: 8px;
+                }
+
+                .minimise {
+                    background-color: #ff9f0a;
+                }
+
+                .restore {
+                    background-color: rgb(52, 199, 89);
+                    margin-right: 0;
+                }
+
+                .close {
+                    background-color: #ff453a;
+                }
+            }
+
+            &__title {
+                p {
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 0.9rem;
+                }
+
+                span {
+                    display: none;
+                    font-style: italic;
+                }
+            }
+        }
+
+        &__tabs {
+            position: relative;
+            z-index: 12;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: auto;
+            width: 100%;
+            background-color: #1e2227;
+            border-bottom: 1px solid #0c0d0f;
+            box-shadow: 0 2px 1px 0 rgb(0 0 0 / 20%);
+        }
+
+        &__tab {
+            position: relative;
+            z-index: 2;
+            top: 1px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 50%;
+            padding: 0.5rem;
+            background-color: #1e2227;
+            border-right: 1px solid #0c0d0f;
+            border-bottom: 1px solid #0c0d0f;
+
+            &:nth-child(2n) {
+                border-right: none;
+            }
+
+            svg path {
+                fill: #0e74ae;
+            }
+
+            p {
+                padding-left: 7px;
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            span {
+                display: none;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                margin-left: auto;
+                @include i.userSelect(none);
+
+                &:hover {
+                    color: rgb(255, 255, 255, 1);
+                }
+            }
+
+            &:hover {
+                background-color: #282c34;
+            }
+
+            &.active {
+                background-color: #282c34;
+
+                p {
+                    color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+
+        &__window {
+            padding: {
+                top: 0.5rem;
+                bottom: 0.5rem;
+                right: 0.5rem;
+                left: 2rem;
+            }
+        }
+
+        &__file {
+            counter-reset: line;
+
+            &__line {
+                position: relative;
+                display: block;
+                padding: 0.05rem 0.7rem;
+                color: rgba(255, 255, 255, 0.8);
+
+                span {
+                    span {
+                        margin-right: 1px;
+                    }
+                }
+
+                &:nth-child(n) {
+                    &::before {
+                        counter-increment: line;
+                        content: counter(line);
+                        position: absolute;
+                        left: calc(-1.5rem - 8px);
+                        display: inline-block;
+                        width: 1.4rem;
+                        text-align: right;
+                        color: #b0b7c4;
+                    }
+                }
+
+                .obj-key {
+                    display: inline-block;
+                    width: 100%;
+                }
+
+                .import,
+                .elem {
+                    color: #ff5555;
+                }
+
+                .keyword,
+                .arrow {
+                    color: #ca66e9;
+                }
+
+                .symbol,
+                .function,
+                .special {
+                    color: #41b6c5;
+                }
+
+                &__string {
+                    span {
+                        color: #7dd33f;
+                    }
+                }
+                .string {
+                    color: #7dd33f;
+                }
+
+                .class,
+                .integer,
+                .variable {
+                    color: #e2a127;
+                }
+
+                .component {
+                    color: #f5d418;
+                }
+
+                .comment {
+                    color: #5c6370;
+                    font-style: italic;
+
+                    &:before {
+                        content: '// ';
+                        color: #5c6370;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        .indent {
+            &--4 {
+                padding-left: calc(1ch + 0.7rem);
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(2ch + 0.7rem);
+                }
+            }
+            &--8 {
+                padding-left: calc(2ch + 0.7rem);
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(4ch + 0.7rem);
+                }
+            }
+            &--12 {
+                padding-left: calc(3ch + 0.7rem);
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(6ch + 0.7rem);
+                }
+            }
+            &--16 {
+                padding-left: calc(4ch + 0.7rem);
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(8ch + 0.7rem);
+                }
+            }
+            &--20 {
+                padding-left: calc(5ch + 0.7rem);
+                @media screen and (min-width: i.$bp-mobile) {
+                    padding-left: calc(10ch + 0.7rem);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-mobile) {
+    .about {
+        .editor {
+            &__header {
+                &__title {
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+            &__tab {
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-xsmall) {
+    .about {
+        .editor {
+            left: -3.2rem;
+            width: calc(100% + 3.2rem);
+
+            &__file__line {
+                &:nth-child(n)::before {
+                    left: calc(-1.5rem - 6px);
+                }
+
+                .obj-key {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-small) {
+    .about {
+        .editor {
+            &__tab {
+                width: auto;
+
+                &:nth-child(2n) {
+                    border-right: 1px solid #0c0d0f;
+                }
+
+                span {
+                    margin-left: 7px;
+                }
+            }
+        }
+    }
+}
+
+@media (hover) {
+    .about {
+        .editor {
+            &__file {
+                &__line:hover {
+                    background-color: rgba(255, 255, 255, 0.08);
+
+                    &::before {
+                        color: #eceff6;
+                    }
+                }
+            }
+        }
+    }
+}

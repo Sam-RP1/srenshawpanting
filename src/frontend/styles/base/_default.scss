@@ -1,0 +1,28 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+}
+
+html {
+    font-family: 'futura', sans-serif;
+}
+
+body {
+    height: auto;
+    width: 100%;
+    margin: 0;
+}
+
+main {
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+}

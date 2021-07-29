@@ -1,0 +1,202 @@
+@use '../../styles/_index.scss' as i;
+
+.sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #032550, #041d3b, #07182c, #061424, #020d1a);
+    overflow: hidden;
+
+    .parallax {
+        transform-style: preserve-3d;
+    }
+
+    &__container {
+        $size: 100vh;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        height: $size;
+        width: $size;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        pointer-events: none;
+        @include i.transform(translate(-50%, 0) translate3d(0px, 0px, 0px) rotate(0.0001deg));
+    }
+
+    &__clouds {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        &--foreground {
+            z-index: 2;
+        }
+        &--background {
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        &__container {
+            position: relative;
+            height: 42%;
+            width: 42%;
+        }
+
+        .cloud {
+            position: absolute;
+            height: auto;
+
+            img {
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+
+            &--1 {
+                @extend .cloud;
+                top: 68%;
+                left: -43%;
+                width: 78%;
+            }
+
+            &--2 {
+                @extend .cloud;
+                top: 81%;
+                left: 41%;
+                width: 72%;
+            }
+
+            &--3 {
+                @extend .cloud;
+                top: 29%;
+                left: 58%;
+                width: 84%;
+            }
+
+            &--4 {
+                @extend .cloud;
+                top: -14%;
+                left: 38%;
+                width: 68%;
+            }
+            &--5 {
+                @extend .cloud;
+                top: -2%;
+                left: -34%;
+                width: 74%;
+            }
+        }
+    }
+
+    &__moon {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        &__container {
+            position: relative;
+            height: 38%;
+            width: 38%;
+        }
+
+        &__layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        &__img {
+            display: block;
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &__moonlight,
+    &__stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+
+        &__container {
+            position: absolute;
+            top: 0;
+            z-index: -100;
+            height: 100%;
+            width: 100%;
+        }
+
+        &__wrap {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        &__layer {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: url('../../assets/svgs/moonlighttest.svg') no-repeat;
+            background-size: 100%;
+        }
+
+        .stars img {
+            height: auto;
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-xsmall) {
+    .sky__container {
+        $size: 130vw;
+        top: 50%;
+        left: 24%;
+        height: $size;
+        width: $size;
+        @include i.transform(translate(0, -50%) translate3d(0px, 0px, 0px) rotate(0.0001deg));
+    }
+}
+
+@media screen and (min-width: i.$bp-small) {
+    .sky__container {
+        $size: 1200px;
+        height: $size;
+        width: $size;
+    }
+}
+
+@media screen and (min-width: i.$bp-medium) {
+    .sky__container {
+        $size: 1400px;
+        height: $size;
+        width: $size;
+    }
+}
+
+@media screen and (min-width: i.$bp-large) {
+    .sky__container {
+        left: 30%;
+    }
+}

@@ -1,0 +1,60 @@
+@use '../../styles/_index.scss' as i;
+$padding-bottom: 3rem;
+
+.section--hero {
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+    padding: {
+        top: 50vh;
+        right: 1.5rem;
+        bottom: $padding-bottom;
+        left: 3rem;
+    }
+    overflow: hidden;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .timeline {
+        top: 15px;
+        height: calc(100% + #{$padding-bottom});
+    }
+
+    &__content {
+        color: #fff;
+        text-shadow: i.$text-shadow;
+
+        &__text {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 1rem 0;
+            pointer-events: none;
+        }
+
+        &__next {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            height: auto;
+
+            &__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                height: auto;
+                cursor: pointer;
+
+                &__label {
+                    display: block;
+                }
+            }
+        }
+    }
+}
