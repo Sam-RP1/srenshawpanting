@@ -28,10 +28,6 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1rem;
-        margin-bottom: 3.5rem;
     }
 
     &__planet-system {
@@ -41,10 +37,19 @@
         width: $size;
         transform-style: preserve-3d;
         perspective: 800px;
+
+        &:nth-child(even) {
+            margin: -$size -20px 0 auto;
+        }
+        &:nth-child(odd) {
+            margin: -20px auto 0 -20px;
+        }
+        &:first-child {
+            margin: 0 auto 0 -20px;
+        }
     }
 
-    &__planet-container,
-    &__moon-container {
+    &__planet-container {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -52,6 +57,10 @@
     }
 
     &__moon-container {
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        transform-style: preserve-3d;
         pointer-events: none;
 
         &.orbit-1 {
@@ -158,14 +167,15 @@
 
     &__planet {
         &__body {
+            $size: 110px;
             position: absolute;
             top: 50%;
             left: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 110px;
-            height: 110px;
+            width: $size;
+            height: $size;
             border-radius: 100%;
             box-sizing: border-box;
             box-shadow: 0 0 3px 3px #000;
@@ -185,7 +195,7 @@
 
             &__icon {
                 svg {
-                    font-size: 2.75rem;
+                    font-size: 3rem;
                 }
             }
 
@@ -217,18 +227,23 @@
                 &chess {
                     background-color: #6c9d40;
                 }
+
+                &file {
+                    background-color: #ff1322;
+                }
             }
         }
     }
 
     &__moon {
         &__body {
+            $size: 30px;
             position: absolute;
             top: 50%;
             left: 100%;
             display: block;
-            width: 30px;
-            height: 30px;
+            width: $size;
+            height: $size;
             border-radius: 100%;
             box-sizing: border-box;
             box-shadow: 0 0 3px 2px #000;
@@ -287,35 +302,37 @@
 
 @media screen and (min-width: i.$bp-mobile) {
     .connect {
+        &__planet-system {
+            &:nth-child(even) {
+                margin: -160px 0 0 auto;
+            }
+            &:nth-child(odd) {
+                margin: -20px auto 0 0;
+            }
+            &:first-child {
+                margin: 0 auto 0 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-xsmall) {
+    .connect {
         &__planets-container {
-            justify-content: initial;
-            align-items: initial;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
         &__planet-system {
-            &:first-child,
-            &:last-child {
-                margin: 0 auto 0 0;
-            }
-            &:nth-child(2) {
-                margin: -160px 0 0 auto;
-            }
-            &:nth-child(3) {
-                margin: 0px auto 0 0;
-            }
-            &:nth-child(4) {
-                margin: -160px 0 0 auto;
-            }
-            &:nth-child(5) {
-                margin: 0px auto 0 0;
-            }
-            &:nth-child(6) {
-                margin: -160px 0 0 auto;
-            }
-            &:nth-child(7) {
-                margin: 0px auto 0 0;
+            &:nth-child(n) {
+                margin: 0 0 0 0;
             }
         }
+    }
+}
+
+@media screen and (min-width: i.$bp-small) {
+    .connect {
     }
 }
 

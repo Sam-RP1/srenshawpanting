@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import LeaderLine from 'react-leader-line';
+import React from 'react';
 
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
@@ -45,67 +44,6 @@ export const Connect = ({ icons }: ConnectProps): JSX.Element => {
             </div>
         );
     });
-
-    useEffect(() => {
-        const defaultLineProperties = {
-            path: 'fluid',
-            color: '#0080b3',
-            size: 2,
-            startPlug: 'behind',
-            endPlug: 'behind',
-        };
-        const lineArr = [];
-
-        const createLines = () => {
-            const startLine = new LeaderLine(
-                document.getElementById('connect-leader-line-start'),
-                document.getElementById('connect-planet-0'),
-                defaultLineProperties
-            );
-            lineArr.push(startLine);
-
-            const endLine = new LeaderLine(
-                document.getElementById('connect-planet-' + (icons.length - 1)),
-                document.getElementById('connect-leader-line-end'),
-                defaultLineProperties
-            );
-            lineArr.push(endLine);
-
-            for (let i = 0; i < icons.length; i++) {
-                if (i + 1 !== icons.length) {
-                    const line = new LeaderLine(
-                        document.getElementById('connect-planet-' + i),
-                        document.getElementById('connect-planet-' + (i + 1)),
-                        defaultLineProperties
-                    );
-                    lineArr.push(line);
-                }
-            }
-        };
-
-        const repositionLines = () => {
-            for (const line in lineArr) {
-                lineArr[line].position();
-            }
-        };
-
-        const destroyLines = () => {
-            for (const line in lineArr) {
-                lineArr[line].remove();
-            }
-        };
-
-        createLines();
-        repositionLines();
-        window.addEventListener('resize', repositionLines, false);
-        window.addEventListener('scroll', repositionLines, false);
-
-        return () => {
-            window.removeEventListener('resize', repositionLines);
-            window.removeEventListener('scroll', repositionLines);
-            destroyLines();
-        };
-    }, []);
 
     return (
         <Section selector={'connect'} classes={[]}>
