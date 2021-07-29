@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Icons } from '../../lib/interfaces';
 
+// Hook Imports
+import { useScrollTo } from '../../hooks/useScrollTo';
+
 // Component Imports
 import { Container } from '../UI/Container/Container';
 
@@ -54,7 +57,13 @@ export const Header = ({ socials }: HeaderProps): JSX.Element => {
         <header className='header' ref={headerRoot}>
             <Container classes={'header__content'}>
                 <>
-                    <a href='#hero' className='header__logo'>
+                    <a
+                        className='header__logo'
+                        onClick={() => {
+                            closeMenu();
+                            useScrollTo('.section--hero');
+                        }}
+                    >
                         <svg
                             version='1.0'
                             xmlns='http://www.w3.org/2000/svg'
@@ -101,22 +110,42 @@ c116 0 149 4 182 19 84 38 120 119 113 256 l-3 70 -80 0 -80 0 -5 -90 -5 -90
                             <section className='header__nav__menu__links'>
                                 <ul>
                                     <li>
-                                        <a href='about' onClick={() => closeMenu()}>
+                                        <a
+                                            onClick={() => {
+                                                closeMenu();
+                                                useScrollTo('.section--about');
+                                            }}
+                                        >
                                             About
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#portfolio' onClick={() => closeMenu()}>
+                                        <a
+                                            onClick={() => {
+                                                closeMenu();
+                                                useScrollTo('.section--portfolio');
+                                            }}
+                                        >
                                             Portfolio
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#lab' onClick={() => closeMenu()}>
+                                        <a
+                                            onClick={() => {
+                                                closeMenu();
+                                                useScrollTo('.section--lab');
+                                            }}
+                                        >
                                             Lab
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#connect' onClick={() => closeMenu()}>
+                                        <a
+                                            onClick={() => {
+                                                closeMenu();
+                                                useScrollTo('.section--connect');
+                                            }}
+                                        >
                                             Connect
                                         </a>
                                     </li>
