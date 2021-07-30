@@ -15,7 +15,7 @@ module.exports = {
         chunkFilename: 'bundles/[name].bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.tsx', '.ts', '.js', 'css', '.scss'],
     },
     optimization: {
         minimize: true,
@@ -99,7 +99,7 @@ module.exports = {
                         // Without this it derives it from the file extension
                         mimetype: 'application/font-woff',
                         // Output below fonts directory
-                        name: './fonts/[name].[ext]',
+                        name: './assets/fonts/[name].[ext]',
                     },
                 },
             },
@@ -110,6 +110,7 @@ module.exports = {
             template: './src/frontend/pages/index.html',
             filename: './index.html',
             excludeChunks: ['server'],
+            publicPath: './',
         }),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].css',
@@ -118,6 +119,7 @@ module.exports = {
         new CssMinimizerPlugin(),
         new CopyPlugin({
             patterns: [
+                { from: './src/frontend/assets/favicon', to: './assets/favicon' },
                 { from: './src/server/server-prod.js', to: '../server.js' },
                 { from: './src/server/routes', to: '../routes' },
                 { from: './src/server/appdata', to: '../appdata' },

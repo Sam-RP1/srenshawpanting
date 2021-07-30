@@ -5,22 +5,14 @@ import { githubIcon, externalLinkIcon, rightChevronIcon } from '../../lib/icons'
 import { Portfolio as PortfolioCmpnt } from '../../components/Portfolio/Portfolio';
 
 // Load images lazily from server side when deployed, create a spinner for loading
-// eslint-disable-next-line
-const deductionPrev = require('../../assets/portfolio/deduction/img/deduction-min.png');
-// eslint-disable-next-line
-const letterDetonatorPrev = require('../../assets/portfolio/letter-detonator/img/letter-detonator-min.png');
-// eslint-disable-next-line
-const karensBeautyBoxPrev = require('../../assets/portfolio/karensbeautybox/img/karensbeautybox-min.png');
-// eslint-disable-next-line
-const peerReviewPortalPrev = require('../../assets/portfolio/peer-review-portal/img/prp-min.png');
-// eslint-disable-next-line
-const roboticsPrev = require('../../assets/portfolio/robotics/img/robotics.png');
-// eslint-disable-next-line
-const pudhubPrev = require('../../assets/portfolio/portsmouth-unattended-displays/img/pud-min.png');
-// eslint-disable-next-line
-const distPrev = require('../../assets/portfolio/distributed-systems/img/dss-min.png');
-// eslint-disable-next-line
-const litrevPrev = require('../../assets/portfolio/literature-review/img/litrev-min.png');
+import deductionPrev from '../../assets/portfolio/deduction/img/deduction-min.png';
+import letterDetonatorPrev from '../../assets/portfolio/letter-detonator/img/letter-detonator-min.png';
+import karensBeautyBoxPrev from '../../assets/portfolio/karensbeautybox/img/karensbeautybox-min.png';
+import peerReviewPortalPrev from '../../assets/portfolio/peer-review-portal/img/prp-min.png';
+import roboticsPrev from '../../assets/portfolio/robotics/img/robotics.png';
+import pudhubPrev from '../../assets/portfolio/portsmouth-unattended-displays/img/pud-min.png';
+import distPrev from '../../assets/portfolio/distributed-systems/img/dss-min.png';
+import litrevPrev from '../../assets/portfolio/literature-review/img/litrev-min.png';
 
 export const Portfolio = (): JSX.Element => {
     const portfolioContent = [

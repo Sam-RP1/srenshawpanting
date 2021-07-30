@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import './Background.scss';
-import moon from '../../assets/svgs/moontest.svg';
+import moon from '../../assets/svgs/moon.svg';
 import stars from '../../assets/svgs/stars.svg';
 import cloud_1 from '../../assets/svgs/cloud-1.svg';
 import cloud_2 from '../../assets/svgs/cloud-2.svg';
