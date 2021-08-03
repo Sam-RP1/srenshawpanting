@@ -5,15 +5,12 @@
     top: 0;
     left: 0;
     z-index: -100;
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(to bottom, #032550, #041d3b, #07182c, #061424, #020d1a);
     overflow: hidden;
-
-    .parallax {
-        transform-style: preserve-3d;
-    }
 
     &__container {
         $size: 100vh;
@@ -166,16 +163,20 @@
             width: 90%;
         }
     }
+
+    .parallax {
+        transform-style: preserve-3d;
+    }
 }
 
 @media screen and (min-width: i.$bp-xsmall) {
     .sky__container {
-        $size: 130vw;
+        $size: 140vw;
         top: 50%;
-        left: 24%;
+        left: initial;
         height: $size;
         width: $size;
-        @include i.transform(translate(0, -50%) translate3d(0px, 0px, 0px) rotate(0.0001deg));
+        @include i.transform(translate(25%, -50%) translate3d(0px, 0px, 0px) rotate(0.0001deg));
     }
 }
 
@@ -196,7 +197,4 @@
 }
 
 @media screen and (min-width: i.$bp-large) {
-    .sky__container {
-        left: 30%;
-    }
 }
