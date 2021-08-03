@@ -26,5 +26,6 @@ $container-sizes: (
 }
 
 .container {
+    max-width: 1500px;
     @include container-size($container-sizes, i.$breakpoints);
 }
