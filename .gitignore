@@ -2,6 +2,8 @@
 /build
 /src/frontend/assets
 /src/frontend/notes
+/src/server/appdata/portfolio
+/src/server/appdata/media
 /stats.json
 notes.md
 .env
