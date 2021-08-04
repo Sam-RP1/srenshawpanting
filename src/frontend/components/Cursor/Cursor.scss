@@ -1,18 +1,16 @@
 @use '../../styles/_index.scss' as i;
 
+* {
+    cursor: none !important;
+}
+
 .cursor {
-    display: none;
+    display: initial !important;
     pointer-events: none;
     opacity: 1;
     @include i.transition(opacity 150ms ease-out);
 
-    &--down & {
-        &__circle--outer {
-            height: 40px;
-            width: 40px;
-        }
-    }
-
+    &--down &,
     &--hover & {
         &__circle--outer {
             height: 45px;
@@ -43,7 +41,8 @@
         transform: translateX(-50%) translateY(-50%);
 
         &--outer {
-            display: flex;
+            @extend .cursor__circle;
+            display: block;
             height: 30px;
             width: 30px;
             border: 2px solid #fff;
@@ -55,7 +54,8 @@
         }
 
         &--inner {
-            display: flex;
+            @extend .cursor__circle;
+            display: block;
             height: 6px;
             width: 6px;
             border-radius: 100%;
@@ -65,28 +65,14 @@
             @include i.transition(height 150ms ease-out, width 150ms ease-out, background-color 150ms ease-out);
         }
     }
-
-    &__plus {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        stroke: transparent;
-        fill: transparent;
-        mix-blend-mode: normal;
-        transform: translateX(-50%) translateY(-50%);
-        &--area {
-            stroke: transparent;
-        }
-    }
 }
 
-@media screen and (min-width: 576px) {
+@media (hover: none) {
     * {
-        cursor: none !important;
+        cursor: initial !important;
     }
 
     .cursor {
-        display: initial;
+        display: none !important;
     }
 }
