@@ -171,12 +171,12 @@
 
 @media screen and (min-width: i.$bp-xsmall) {
     .sky__container {
-        $size: 140vw;
+        $size: 130vw;
         top: 50%;
         left: initial;
         height: $size;
         width: $size;
-        @include i.transform(translate(25%, -50%) translate3d(0px, 0px, 0px) rotate(0.0001deg));
+        @include i.transform(translate(30%, -50%) translate3d(0px, 0px, 0px) rotate(0.0001deg));
     }
 }
 
@@ -197,4 +197,10 @@
 }
 
 @media screen and (min-width: i.$bp-large) {
+}
+
+@media screen and (min-width: i.$bp-xlarge) {
+    .sky__container {
+        @include i.transform(translate(23%, -50%) translate3d(0px, 0px, 0px) rotate(0.0001deg));
+    }
 }
