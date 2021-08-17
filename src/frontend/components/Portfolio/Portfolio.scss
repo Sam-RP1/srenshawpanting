@@ -218,7 +218,8 @@ $margin: 0.6rem;
     }
 }
 
-//  Breakpoints
+// Media Queries
+// // Breakpoints
 @media screen and (min-width: i.$bp-mobile) {
     $padding: 1.5rem;
 
@@ -420,8 +421,8 @@ $margin: 0.6rem;
     }
 }
 
-// Pointer enabled
-@media (hover) {
+// // Can hover?
+@media (hover: hover) {
     .portfolio__container {
         pointer-events: none;
     }

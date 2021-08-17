@@ -7,9 +7,10 @@ import { useScrollTo } from '../../hooks/useScrollTo';
 // Component Imports
 import { Container } from '../UI/Container/Container';
 
-// Styles
+// Style Imports
 import './Header.scss';
 
+// Type Definitions
 type HeaderProps = {
     socials: Icons;
 };

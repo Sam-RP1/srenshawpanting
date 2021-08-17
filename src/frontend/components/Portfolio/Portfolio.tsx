@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Component Imports
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
 import { Timeline } from '../UI/Timeline/Timeline';
+import { Spinner } from '../UI/Spinner/Spinner';
 
 import { Icon } from '../../lib/interfaces';
 
@@ -34,11 +35,41 @@ type PortfolioProps = {
  * @returns JSX.Element
  */
 export const Portfolio = ({ portfolioContent }: PortfolioProps): JSX.Element => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [images, setImages] = useState(undefined);
     const aspectRatios = ['ar-4', 'ar-1', 'ar-3', 'ar-1', 'ar-4', 'ar-3', 'ar-4', 'ar-2'];
+
+    console.log(portfolioContent[0]);
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/complete
+    // https://stackoverflow.com/questions/43115246/how-to-detect-when-a-image-is-loaded-that-is-provided-via-props-and-change-sta
+    // useEffect(() => {
+    //     if (portfolioContent.img.length !== 0) {
+    //         setIsLoading(false);
+    //         setImages(flickrContent);
+    //     } else {
+    //         setIsLoading(true);
+    //     }
+
+    //     const splide = new Splide('.splide', {
+    //         type: 'slide',
+    //         rewind: 'true', // rewind from 1 to last or last to 1
+    //         height: 295,
+    //         autoHeight: false,
+    //         width: 500,
+    //         autoWidth: false,
+    //         gap: 10,
+    //         arrows: false,
+    //         focus: 'center',
+    //     }).mount();
+
+    //     return () => {
+    //         splide.destroy();
+    //     };
+    // }, [portfolioContent]);
 
     const content = portfolioContent.map(({ id, title, img, taster, tags, buttons }, i) => (
         <div key={id} id={id} className={'panel ' + 'panel--' + aspectRatios[i]}>
-            <div className='panel__image' style={{ backgroundImage: 'url(' + img + ')' }}></div>
+            <div className='panel__image'>{isLoading ? <Spinner /> : <img src={img} />}</div>
             <div className='panel__content'>
                 <h2 className='panel__content__title'>{title}</h2>
 
