@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Exports About Experience File component
+ * @returns JSX.Element
+ */
 export const Experience = (): JSX.Element => {
     return (
         <article className='editor__file'>
@@ -38,6 +42,74 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
+                <span className='string'>{"'2021-Present'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    role<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Formula 1 VPC™ Technical Producer'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    establishment<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Formula 1'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    details<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>
+                    {
+                        "'I am the technical producer for the Formula 1 Virtual Paddock Club™. In my role, I collaborate with producers, hosts, engineers and various media departments to produce behind the scenes and exclusive Formula 1 content for fans, corporate guests and VIPs. As the technical producer, I am responsible for ensuring the Virtual Paddock Club live streams run perfectly. I utilise various software to control the video content, scene transitions, audio balance, live interviews, and all other media content for the live streams. Alongside this, I communicate timings and queues concisely with the producers, hosts and co-hosts when we are live.'"
+                    }
+                </span>
+                ,
+            </p>
+            <p className='editor__file__line indent--8'>{' }'},</p>
+            {/* close obj 1 */}
+
+            {/* open obj 2 */}
+            <p className='editor__file__line indent--8'>{'{ '}</p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    duration<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'2021-Present'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    role<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Team Leader'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    establishment<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Amazon Flex - Morrisons'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    details<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>
+                    {
+                        "'I am a part-time team leader at Morrisons, running and managing their Amazon Flex department. As a team leader, I work in a fast-paced environment that requires my analytical and logistical skills to make sure orders placed by customers through Amazon are assigned, picked, packed and completed to a high quality each hour. At any single time, I am in charge of up to 24 members of staff for which I need to organise, motivate and make sure they have a great time doing their job. The entire team currently consists of 60 members of staff.'"
+                    }
+                </span>
+                ,
+            </p>
+            <p className='editor__file__line indent--8'>{' }'},</p>
+            {/* close obj 2 */}
+
+            {/* open obj 3 */}
+            <p className='editor__file__line indent--8'>{'{ '}</p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    duration<span className='symbol'>:</span>
+                </span>{' '}
                 <span className='string'>{"'2019-Present'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
@@ -64,9 +136,9 @@ export const Experience = (): JSX.Element => {
                 ,
             </p>
             <p className='editor__file__line indent--8'>{' }'},</p>
-            {/* close obj 1 */}
+            {/* close obj 3 */}
 
-            {/* open obj 2 */}
+            {/* open obj 4 */}
             <p className='editor__file__line indent--8'>{'{ '}</p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -98,7 +170,7 @@ export const Experience = (): JSX.Element => {
                 ,
             </p>
             <p className='editor__file__line indent--8'>{' }'},</p>
-            {/* close obj 2 */}
+            {/* close obj 4 */}
 
             {/* close experience array */}
             <p className='editor__file__line indent--4'>{'];'}</p>
