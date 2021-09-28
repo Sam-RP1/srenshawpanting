@@ -1,17 +1,20 @@
 import React, { useEffect, useRef } from 'react';
-import { Icons } from '../../lib/interfaces';
 
-// Hook Imports
+// Hooks
 import { useScrollTo } from '../../hooks/useScrollTo';
 
-// Component Imports
+// Components
 import { Container } from '../UI/Container/Container';
 
-// Style Imports
+// Lib
+import { Icons } from '../../lib/interfaces';
+
+// Styles
 import './Header.scss';
 
-// Type Definitions
+// Type Definition
 type HeaderProps = {
+    btns: string[];
     socials: Icons;
 };
 
@@ -19,7 +22,7 @@ type HeaderProps = {
  * Exports Header component
  * @returns JSX.Element
  */
-export const Header = ({ socials }: HeaderProps): JSX.Element => {
+export const Header = ({ btns, socials }: HeaderProps): JSX.Element => {
     const headerRoot = useRef();
 
     const closeMenu = () => {
@@ -43,6 +46,21 @@ export const Header = ({ socials }: HeaderProps): JSX.Element => {
     useEffect(() => {
         window.addEventListener('scroll', scrolledWindow);
     }, []);
+
+    const btnElems = btns.map((title) => {
+        return (
+            <li key={'header-btn-' + title}>
+                <a
+                    onClick={() => {
+                        closeMenu();
+                        useScrollTo('.section--' + title);
+                    }}
+                >
+                    {title}
+                </a>
+            </li>
+        );
+    });
 
     const socialElems = socials.map(({ id, url, icon }) => {
         return (
@@ -109,48 +127,7 @@ c116 0 149 4 182 19 84 38 120 119 113 256 l-3 70 -80 0 -80 0 -5 -90 -5 -90
 
                         <nav className='header__nav__menu'>
                             <section className='header__nav__menu__links'>
-                                <ul>
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                closeMenu();
-                                                useScrollTo('.section--about');
-                                            }}
-                                        >
-                                            About
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                closeMenu();
-                                                useScrollTo('.section--portfolio');
-                                            }}
-                                        >
-                                            Portfolio
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                closeMenu();
-                                                useScrollTo('.section--lab');
-                                            }}
-                                        >
-                                            Lab
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                closeMenu();
-                                                useScrollTo('.section--connect');
-                                            }}
-                                        >
-                                            Connect
-                                        </a>
-                                    </li>
-                                </ul>
+                                <ul>{btnElems}</ul>
                             </section>
                             <section className='header__nav__menu__socials'>
                                 <ul>{socialElems}</ul>
