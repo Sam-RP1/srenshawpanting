@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import './Background.scss';
 import moon from '../../assets/svgs/moon.svg';
@@ -10,8 +10,6 @@ import cloud_4 from '../../assets/svgs/cloud-4.svg';
 import cloud_5 from '../../assets/svgs/cloud-5.svg';
 
 export const Background = (): JSX.Element => {
-    const [layers, setLayers] = useState([]);
-
     const parallax = (e) => {
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
@@ -19,8 +17,7 @@ export const Background = (): JSX.Element => {
         const centerX = windowWidth / 2;
         const maxTravel = 50;
 
-        layers.forEach((layer) => {
-            console.log(layers);
+        document.querySelectorAll<HTMLElement>('.parallax').forEach((layer) => {
             const depth = layer.getAttribute('data-depth');
 
             const x = -(((e.clientX - centerX) / centerX) * 100) * ((depth * maxTravel) / 100);
@@ -31,14 +28,6 @@ export const Background = (): JSX.Element => {
     };
 
     useEffect(() => {
-        const elems = [];
-
-        document.querySelectorAll<HTMLElement>('.parallax').forEach((elem) => {
-            elems.push(elem);
-        });
-
-        setLayers(elems);
-
         document.addEventListener('mousemove', parallax);
 
         return () => document.removeEventListener('mousemove', parallax);
