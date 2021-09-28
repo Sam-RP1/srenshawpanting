@@ -138,6 +138,7 @@ $bp-custom: 767px;
                             position: relative;
                             display: block;
                             text-align: center;
+                            text-transform: capitalize;
                             width: 100%;
                             letter-spacing: 2px;
                             @include i.font-size(i.$header-font-sizes, i.$breakpoints);
