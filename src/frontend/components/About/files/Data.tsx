@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Exports About Data File component
+ * @returns JSX.Element
+ */
 export const Data = (): JSX.Element => {
     return (
         <article className='editor__file'>
@@ -18,7 +22,7 @@ export const Data = (): JSX.Element => {
                 <span className='obj-key'>
                     age<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'22'"}</span>,
+                <span className='string'>{"'23'"}</span>,
             </p>
             <p className='editor__file__line indent--4'>
                 <span className='obj-key'>

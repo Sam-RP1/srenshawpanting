@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Exports About Education File component
+ * @returns JSX.Element
+ */
 export const Education = (): JSX.Element => {
     return (
         <article className='editor__file'>

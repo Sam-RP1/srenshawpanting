@@ -107,7 +107,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './src/frontend/pages/index.html',
+            template: './src/frontend/html/index.html',
             filename: './index.html',
             excludeChunks: ['server'],
             publicPath: './',

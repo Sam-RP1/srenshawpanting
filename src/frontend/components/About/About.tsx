@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 
+// Components
 import { Section } from '../UI/Section/Section';
 import { Container } from '../UI/Container/Container';
 import { Timeline } from '../UI/Timeline/Timeline';
 
+// About Component Tab Files
 import { Profile } from './files/Profile';
 import { Education } from './files/Education';
 import { Experience } from './files/Experience';
 import { Data } from './files/Data';
 
+// Lib
 import { reactIcon, jsIcon } from '../../lib/icons';
 
+// Styles
 import './About.scss';
 
+/**
+ * Exports About component
+ * @returns JSX.Element
+ */
 export const About = (): JSX.Element => {
     const [openTab, setOpenTab] = useState('Profile.tsx');
 

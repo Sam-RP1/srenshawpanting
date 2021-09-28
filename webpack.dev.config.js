@@ -90,7 +90,7 @@ module.exports = {
             extensions: ['tsx', 'js', 'jsx'],
         }),
         new HtmlWebPackPlugin({
-            template: './src/frontend/pages/index.html',
+            template: './src/frontend/html/index.html',
             filename: './public/index.html',
             excludeChunks: ['server'],
         }),

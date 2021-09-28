@@ -5,6 +5,6 @@ const main = express.Router();
 
 module.exports = main;
 
-main.get('/*', (req, res) => {
+main.get(['/', '/thedeductiongame'], (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

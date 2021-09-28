@@ -1,17 +1,17 @@
 import React from 'react';
 import { Links, Icons } from '../../lib/interfaces';
 
-// Hook Imports
+// Hooks
 import { useScrollTo } from '../../hooks/useScrollTo';
 
-// Component Imports
+// Components
 import { Container } from '../UI/Container/Container';
 import { Tooltip } from '../UI/Tooltip/Tooltip';
 
 // Styles
 import './Footer.scss';
 
-// Types
+// Type Definition
 type FooterProps = {
     links: Links;
     icons: Icons;
