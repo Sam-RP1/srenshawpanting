@@ -1,0 +1,11 @@
+@use '../../styles/_index.scss' as i;
+
+.section--showcase {
+    justify-content: center;
+    padding: {
+        top: 5rem;
+        right: 1.5rem;
+        bottom: 3.75rem;
+        left: 3rem;
+    }
+}
