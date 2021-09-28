@@ -4,6 +4,10 @@ import { Header as HeaderCmpnt } from '../../components/Header/Header';
 
 import { socialIcons } from '../../lib/icons';
 
-export const Header = (): JSX.Element => {
-    return <HeaderCmpnt socials={socialIcons} />;
+type HeaderProps = {
+    btns: string[];
+};
+
+export const Header = ({ btns }: HeaderProps): JSX.Element => {
+    return <HeaderCmpnt btns={btns} socials={socialIcons} />;
 };
