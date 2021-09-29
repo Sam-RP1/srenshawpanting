@@ -19,9 +19,7 @@ import { ProjectsType } from '../../lib/types';
 export const Portfolio = ({ portfolioContent }: ProjectsType): JSX.Element => {
     const [isLoading, setIsLoading] = useState(false);
     const [images, setImages] = useState(undefined);
-    const aspectRatios = ['ar-4', 'ar-1', 'ar-3', 'ar-1', 'ar-4', 'ar-3', 'ar-1', 'ar-4', 'ar-2'];
-
-    console.log(portfolioContent[0]);
+    const aspectRatios = ['ar-16x9', 'ar-4x5', 'ar-4x3', 'ar-16x9', 'ar-16x9', 'ar-4x5', 'ar-4x3', 'ar-16x9', 'ar-4x5'];
 
     const content = portfolioContent.map(
         ({ id, title, portfolio: { thumbnail }, definition, tags, portfolio: { buttons } }, i) => (

@@ -78,10 +78,9 @@ $margin: 0.6rem;
     width: 100%;
     margin-top: 3rem;
 
-    &--ar-1 &,
-    &--ar-2 &,
-    &--ar-3 &,
-    &--ar-4 & {
+    &--ar-4x5 &,
+    &--ar-4x3 &,
+    &--ar-16x9 & {
         &__image {
             $width: calc(100% - #{3 * $padding});
             width: $width;
@@ -99,7 +98,7 @@ $margin: 0.6rem;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        box-shadow: 0px 4px 20px 0px rgb(0 0 0 / 75%);
+        box-shadow: 0px 4px 13px 0px rgb(0 0 0 / 75%);
         overflow: hidden;
 
         img {
@@ -224,10 +223,8 @@ $margin: 0.6rem;
     $padding: 1.5rem;
 
     .panel {
-        &--ar-1 &,
-        &--ar-2 &,
-        &--ar-3 &,
-        &--ar-4 & {
+        &--ar-4x5 &,
+        &--ar-16x9 & {
             &__image {
                 $width: calc(100% - #{4 * $padding});
                 width: $width;
@@ -254,44 +251,22 @@ $margin: 0.6rem;
     $padding: 1.5rem;
 
     .portfolio__container {
-        align-items: center;
+        align-items: flex-start;
     }
 
     .panel {
-        &--ar-1,
-        &--ar-2,
-        &--ar-3,
-        &--ar-4 {
+        &--ar-4x5,
+        &--ar-4x3,
+        &--ar-16x9 {
             $width: 475px;
-            width: $width;
-        }
-        &--ar-1 & {
-            &__image {
-                $width: 330px;
-                width: $width;
-                padding-bottom: calc(#{$width} / 4 * 5);
-            }
+            max-width: $width;
         }
 
-        &--ar-2 & {
+        &--ar-4x5 &,
+        &--ar-4x3 &,
+        &--ar-16x9 & {
             &__image {
-                $width: 330px;
-                width: $width;
-                padding-bottom: calc(#{$width} / 2 * 3);
-            }
-        }
-
-        &--ar-3 & {
-            &__image {
-                $width: 400px;
-                width: $width;
-                padding-bottom: calc(#{$width} / 3 * 2.5);
-            }
-        }
-
-        &--ar-4 & {
-            &__image {
-                $width: 400px;
+                $width: 390px;
                 width: $width;
                 padding-bottom: calc(#{$width} / 16 * 9);
             }
@@ -300,10 +275,36 @@ $margin: 0.6rem;
 }
 
 @media screen and (min-width: i.$bp-small) {
-    .portfolio__container {
-        align-items: initial;
+    #deduction {
+        margin: 0 auto 0 0;
     }
+    #letterdetonator {
+        margin: -2rem -3rem 0 auto;
+    }
+    #karensbeautybox {
+        margin: 2rem auto 0 0;
+    }
+    #peerreviewportal {
+        margin: -2rem -3rem 0 auto;
+    }
+    #pudhub {
+        margin: 2rem auto 0 0;
+    }
+    #robotics {
+        margin: -2rem -3rem 0 auto;
+    }
+    #fred {
+        margin: 2rem auto 0 0;
+    }
+    #distributedsystems {
+        margin: -2rem -3rem 0 auto;
+    }
+    #literaturereview {
+        margin: 2rem auto 0 0;
+    }
+}
 
+@media screen and (min-width: i.$bp-medium) {
     #deduction {
         margin: 0 auto 0 0;
     }
@@ -311,113 +312,164 @@ $margin: 0.6rem;
         margin: -3rem 0 0 auto;
     }
     #karensbeautybox {
-        margin: 1rem auto 0 0;
+        margin: 2rem auto 0 0;
     }
     #peerreviewportal {
         margin: -3rem 0 0 auto;
     }
     #pudhub {
-        margin: 1rem auto 0 0;
+        margin: 2rem auto 0 0;
     }
     #robotics {
         margin: -3rem 0 0 auto;
     }
-    #distributedsystems {
-        margin: 1rem auto 0 0;
+    #fred {
+        margin: 2rem auto 0 0;
     }
-    #literaturereview {
+    #distributedsystems {
         margin: -3rem 0 0 auto;
     }
-}
-
-@media screen and (min-width: i.$bp-medium) {
-    #deduction {
-        margin: 0 auto 0 -4rem;
-    }
-    #letterdetonator {
-        margin: -12rem -4rem 0 auto;
-    }
-    #karensbeautybox {
-        margin: 1rem auto 0 -4rem;
-    }
-    #peerreviewportal {
-        margin: -12rem -4rem 0 auto;
-    }
-    #pudhub {
-        margin: 1rem auto 0 -4rem;
-    }
-    #robotics {
-        margin: -7rem -4rem 0 auto;
-    }
-    #distributedsystems {
-        margin: 1rem auto 0 -4rem;
-    }
     #literaturereview {
-        margin: -10rem -4rem 0 auto;
+        margin: 2rem auto 0 0;
     }
 }
 
 @media screen and (min-width: i.$bp-large) {
+    #deduction {
+        margin: 0 auto 0 0;
+    }
+    #letterdetonator {
+        margin: -13.7rem -4rem 0 auto;
+        z-index: 2;
+    }
+    #karensbeautybox {
+        margin: 3rem auto 0 0;
+    }
+    #peerreviewportal {
+        margin: -13.7rem -4rem 0 auto;
+    }
+    #pudhub {
+        margin: 3rem auto 0 0;
+    }
     #robotics {
-        margin: -2rem -4rem 0 auto;
+        margin: -13.7rem -4rem 0 auto;
+        z-index: 2;
+    }
+    #fred {
+        margin: 3rem auto 0 0;
     }
     #distributedsystems {
-        margin: 12rem -4rem 0 auto;
+        margin: -13.7rem -4rem 0 auto;
+        z-index: 2;
     }
     #literaturereview {
-        margin: -31rem auto 0 -4rem;
+        margin: 3rem auto 0 0;
     }
 }
 
 @media screen and (min-width: 1376px) {
+    .panel {
+        &--ar-4x5 {
+            $width: 430px;
+            max-width: $width;
+        }
+
+        &--ar-4x5 & {
+            &__image {
+                $width: 330px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 4 * 5);
+            }
+        }
+
+        &--ar-4x3 & {
+            &__image {
+                $width: 400px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 4 * 3);
+            }
+        }
+
+        &--ar-16x9 & {
+            &__image {
+                $width: 400px;
+                width: $width;
+                padding-bottom: calc(#{$width} / 16 * 9);
+            }
+        }
+    }
+
+    #deduction {
+        margin: 0 auto 0 -8rem;
+    }
+    #letterdetonator {
+        margin: -14rem -8rem 0 auto;
+        z-index: 3;
+    }
     #karensbeautybox {
-        margin: -8rem auto 0 4rem;
+        margin: -8rem auto 0 auto;
+        z-index: 2;
     }
     #peerreviewportal {
-        margin: -7rem -4rem 0 auto;
+        margin: 3rem -8rem 0 auto;
+        z-index: 3;
     }
     #pudhub {
-        margin: -13rem auto 0 -8rem;
+        margin: -14rem auto 0 -8rem;
+        z-index: 2;
     }
     #robotics {
-        margin: 3rem 4rem 0 auto;
+        margin: 10rem -8rem 0 auto;
+    }
+    #fred {
+        margin: -32rem auto 0 auto;
     }
     #distributedsystems {
-        margin: 5rem -8rem 0 auto;
+        margin: 18rem -4rem 0 auto;
     }
     #literaturereview {
-        margin: -28rem auto 0 -8rem;
+        margin: -26rem auto 0 0;
     }
 }
 
 @media screen and (min-width: i.$bp-xlarge) {
+    .panel {
+        &--ar-4x5 {
+            $width: 475px;
+            max-width: $width;
+        }
+    }
+
     #deduction {
-        margin: 0 auto 0 -12rem;
+        margin: 0 auto 0 -11.8rem;
     }
     #letterdetonator {
-        margin: -12rem -12rem 0 auto;
+        margin: -14rem -12rem 0 auto;
         z-index: 3;
     }
     #karensbeautybox {
-        margin: -12rem auto 0 auto;
+        margin: -14rem auto 0 auto;
         z-index: 2;
     }
     #peerreviewportal {
-        margin: 0 -12rem 0 auto;
+        margin: 1rem -12rem 0 auto;
         z-index: 3;
     }
     #pudhub {
-        margin: -20rem auto 0 auto;
+        margin: -10rem auto 0 auto;
         z-index: 2;
     }
     #robotics {
         margin: -30rem auto 0 -12rem;
     }
+    #fred {
+        margin: 6rem -12rem 0 auto;
+    }
     #distributedsystems {
-        margin: 18rem auto 0 30rem;
+        margin: -15rem auto 0 auto;
     }
     #literaturereview {
-        margin: -21rem auto 0 -12rem;
+        margin: -18rem auto 0 -12rem;
     }
 }
 
@@ -487,7 +539,7 @@ $margin: 0.6rem;
 
         &:hover & {
             &__image {
-                box-shadow: 0px 4px 30px 0px rgb(0 0 0 / 90%);
+                box-shadow: 0px 4px 20px 0px rgb(0 0 0 / 95%);
                 @include i.transform(scale(0.98));
                 transition-delay: 0ms;
             }
