@@ -2,7 +2,7 @@ import { Icon, Icons } from './interfaces';
 
 export type HeroProps = {
     title: string;
-    content?: string;
+    content?: JSX.Element;
     nextItemLabel?: string;
     socials?: Icons;
 };
@@ -35,17 +35,17 @@ export type ProjectsType = {
                 colors: {
                     isThemed: boolean;
                     color_palette: {
-                        darkTheme: {
-                            color: string;
-                            name: string;
+                        dark: {
+                            color?: string;
+                            name?: string;
                         }[];
-                        lightTheme: {
-                            color: string;
-                            name: string;
+                        light: {
+                            color?: string;
+                            name?: string;
                         }[];
                         default: {
-                            color: string;
-                            name: string;
+                            color?: string;
+                            name?: string;
                         }[];
                     };
                 };
