@@ -10,12 +10,25 @@ type ShowcaseProps = {
 
 export const Showcase = ({ data }: ShowcaseProps): JSX.Element => {
     const headerBtns = ['return to home', 'design', 'tech'];
+    const heroContent = (
+        <ul className='showcase__details__list'>
+            <li>
+                <span>Context</span> {data.definition}
+            </li>
+            <li>
+                <span>Role</span> {data.role}
+            </li>
+            <li>
+                <span>Date</span> {data.created}
+            </li>
+        </ul>
+    );
 
     return (
         <>
             <Header btns={headerBtns} />
-            <Hero title={data.title} />
-            <ShowcaseCmpnt />
+            <Hero title={data.title} content={heroContent} />
+            <ShowcaseCmpnt data={data} />
         </>
     );
 };

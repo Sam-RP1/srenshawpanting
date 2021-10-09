@@ -21,11 +21,9 @@ export const Hero = ({ title, content, nextItemLabel, socials }: HeroProps): JSX
                 <SocialStack socials={socials} />
                 <Container classes={'hero'}>
                     <>
-                        <Timeline title={title} megaTitle={true} />
+                        <Timeline title={title} megaTitle={true} leaderLine={true} />
                         <div className='hero__content'>
-                            <div className='hero__content__text'>
-                                <p>{content}</p>
-                            </div>
+                            {content}
                             <div className='hero__content__next'>
                                 <div className='hero__content__next__item' onClick={() => scrollTo()}>
                                     <p className='hero__content__next__item__label'>{nextItemLabel}</p>

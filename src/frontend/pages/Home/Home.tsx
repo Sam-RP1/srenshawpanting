@@ -10,7 +10,12 @@ import { Connect } from '../../containers/Connect/Connect';
 export const Home = (): JSX.Element => {
     const headerBtns = ['about', 'portfolio', 'lab', 'connect'];
     const heroTitle = 'Welcome';
-    const heroContent = "Hi, I'm Sam, a Full Stack Web Developer & Software Engineer";
+    const heroContent = (
+        <div className='hero__content__text'>
+            <p>Hi, I&apos;m Sam, a Full Stack Web Developer & Software Engineer</p>
+        </div>
+    );
+
     const heroNextItemLabel = "Let's get going...";
 
     return (

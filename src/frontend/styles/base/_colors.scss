@@ -1,4 +1,3 @@
-$text-secondary-color: rgba(#fff, 0.85);
 $srp-greys: (
     100: #dee3ea,
     200: #b2bdce,
@@ -12,5 +11,7 @@ $srp-greys: (
 $srp-accent-blue: #0080b3;
 $srp-accent-red: #ff2534;
 $srp-accent-red-gradient: linear-gradient(rgba(255, 37, 52, 1) 0%, rgb(83, 6, 11) 100%);
+$text-primary-color: map-get($srp-greys, 900);
+$text-secondary-color: rgba(#fff, 0.85);
 $text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.7);
 $text-shadow--heavy: 0px 1px 8px rgba(0, 0, 0, 1);
