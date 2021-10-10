@@ -17,43 +17,34 @@ type DesignProps = {
  * @returns JSX.Element
  */
 export const Design = ({ data, colors }: DesignProps): JSX.Element => {
-    const defaultColors = (
-        <div className='default'>
-            {colors.color_palette.default.length > 0 &&
-                colors.color_palette.default.map(({ color, name }, i) => (
-                    <div key={i} className='showcase__design__palette__color'>
-                        <span style={{ backgroundColor: color }}></span>
-                        <p>{name}</p>
-                    </div>
-                ))}
-        </div>
-    );
+    const defaultColors =
+        colors.color_palette.default.length > 0 &&
+        colors.color_palette.default.map(({ color, name }) => (
+            <div key={color + '-default'} className='showcase__design__palette__color'>
+                <span style={{ backgroundColor: color }}></span>
+                <p>{name}</p>
+            </div>
+        ));
 
-    const darkColors = (
-        <div className='dark'>
-            {colors.color_palette.dark.length > 0 &&
-                colors.color_palette.dark.map(({ color, name }, i) => (
-                    <div key={i} className='showcase__design__palette__color'>
-                        <span style={{ backgroundColor: color }}></span>
-                        <p>{name}</p>
-                    </div>
-                ))}
-        </div>
-    );
+    const darkColors =
+        colors.color_palette.dark.length > 0 &&
+        colors.color_palette.dark.map(({ color, name }) => (
+            <div key={color + '-dark'} className='showcase__design__palette__color'>
+                <span style={{ backgroundColor: color }}></span>
+                <p>{name}</p>
+            </div>
+        ));
 
-    const lightColors = (
-        <div className='light'>
-            {colors.color_palette.light.length > 0 &&
-                colors.color_palette.light.map(({ color, name }, i) => (
-                    <div key={i} className='showcase__design__palette__color'>
-                        <span style={{ backgroundColor: color }}></span>
-                        <p>{name}</p>
-                    </div>
-                ))}
-        </div>
-    );
+    const lightColors =
+        colors.color_palette.light.length > 0 &&
+        colors.color_palette.light.map(({ color, name }) => (
+            <div key={color + '-light'} className='showcase__design__palette__color'>
+                <span style={{ backgroundColor: color }}></span>
+                <p>{name}</p>
+            </div>
+        ));
 
-    const [openTab, setOpenTab] = useState('dark');
+    const [openTab, setOpenTab] = useState('default');
     const [tabs, setTabs] = useState([
         { id: 'default', isEnabled: true, list: defaultColors },
         { id: 'dark', isEnabled: true, list: darkColors },
@@ -67,6 +58,8 @@ export const Design = ({ data, colors }: DesignProps): JSX.Element => {
         for (const arr in localTabs) {
             if (colorArrays[localTabs[arr].id].length === 0) {
                 localTabs[arr].isEnabled = false;
+
+                localTabs[arr].id === 'default' ? setOpenTab('dark') : setOpenTab('default');
             }
         }
 
@@ -98,7 +91,7 @@ export const Design = ({ data, colors }: DesignProps): JSX.Element => {
                                     );
                                 })}
                             </div>
-                            <div className='showcase__design__palette__lists'>
+                            <div className='showcase__design__palette__list'>
                                 {tabs.map((tab) => {
                                     const activeList = tab.id === openTab ? tab.list : '';
                                     return activeList;

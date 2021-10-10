@@ -35,8 +35,6 @@
 
 .section--features {
     position: relative;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     padding: {
         top: 1rem;
@@ -51,29 +49,30 @@
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
     height: 100%;
     width: 100%;
+    padding: 0 1.5rem 0 3rem;
 
     &:after {
         content: '';
-        position: absolute;
+        position: relative;
         top: 0;
         height: 100%;
-        width: 75%;
-        left: 50%;
-        @include i.transform(translate3d(-50%, 0, 0));
+        width: 85%;
         background: linear-gradient(
             90deg,
-            rgba(28, 29, 37, 0.05) 0,
-            rgba(28, 29, 37, 0.05) 1px,
+            rgba(28, 29, 37, 0.08) 0,
+            rgba(28, 29, 37, 0.06) 1px,
             transparent 1px,
             transparent calc(50% - 1px),
-            rgba(28, 29, 37, 0.05) calc(50% - 1px),
-            rgba(28, 29, 37, 0.05) 50%,
+            rgba(28, 29, 37, 0.06) calc(50% - 1px),
+            rgba(28, 29, 37, 0.06) 50%,
             transparent 50%,
             transparent calc(100% - 1px),
-            rgba(28, 29, 37, 0.05) calc(100% - 1px),
-            rgba(28, 29, 37, 0.05) 100%
+            rgba(28, 29, 37, 0.06) calc(100% - 1px),
+            rgba(28, 29, 37, 0.06) 100%
         );
     }
 }
@@ -167,6 +166,10 @@
         }
 
         &__palette {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
             &__tabs {
                 display: flex;
                 flex-direction: row;
@@ -218,7 +221,9 @@
                 }
             }
 
-            &__lists {
+            &__list {
+                display: flex;
+                flex-direction: column;
             }
 
             &__color {
@@ -238,7 +243,6 @@
 
                 p {
                     margin-top: 0.25rem;
-                    // text-shadow: i.$text-shadow;
                 }
             }
         }
@@ -250,6 +254,69 @@
         .timeline {
             top: -1rem;
             height: calc(100% + 4rem);
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-mobile-large) {
+    .showcase {
+        &__design {
+            &__palette {
+                &__list {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                }
+
+                &__color {
+                    flex-basis: 50%;
+                    margin: 1.5rem 0 0 0;
+                    padding: 0 8px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-xsmall) {
+    .mask {
+        padding: 0 1.5rem;
+    }
+
+    .showcase {
+        &__design {
+            &__palette {
+                &__list {
+                    justify-content: space-evenly;
+                }
+
+                &__color {
+                    flex-basis: 33%;
+
+                    span {
+                        height: 145px;
+                        width: 145px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: i.$bp-small) {
+    .mask {
+        &:after {
+            width: 71%;
+        }
+    }
+
+    .showcase {
+        &__design {
+            &__palette {
+                &__color {
+                    flex-basis: 25%;
+                }
+            }
         }
     }
 }
