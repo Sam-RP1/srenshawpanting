@@ -5,7 +5,6 @@ import { Container } from '../UI/Container/Container';
 import { Timeline } from '../UI/Timeline/Timeline';
 
 import { HeroProps } from '../../lib/types';
-import { SocialStack } from '../SocialStack/SocialStack';
 
 import './Hero.scss';
 
@@ -17,23 +16,20 @@ export const Hero = ({ title, content, nextItemLabel, socials }: HeroProps): JSX
 
     return (
         <Section selector={'hero'}>
-            <>
-                <SocialStack socials={socials} />
-                <Container classes={'hero'}>
-                    <>
-                        <Timeline title={title} megaTitle={true} leaderLine={true} />
-                        <div className='hero__content'>
-                            {content}
-                            <div className='hero__content__next'>
-                                <div className='hero__content__next__item' onClick={() => scrollTo()}>
-                                    <p className='hero__content__next__item__label'>{nextItemLabel}</p>
-                                    <span className='hero__content__next__item__arrow-down'></span>
-                                </div>
+            <Container classes={'hero'}>
+                <>
+                    <Timeline title={title} megaTitle={true} leaderLine={true} />
+                    <div className='hero__content'>
+                        {content}
+                        <div className='hero__content__next'>
+                            <div className='hero__content__next__item' onClick={() => scrollTo()}>
+                                <p className='hero__content__next__item__label'>{nextItemLabel}</p>
+                                <span className='hero__content__next__item__arrow-down'></span>
                             </div>
                         </div>
-                    </>
-                </Container>
-            </>
+                    </div>
+                </>
+            </Container>
         </Section>
     );
 };
