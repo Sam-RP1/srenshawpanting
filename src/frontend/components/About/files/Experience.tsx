@@ -48,7 +48,7 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     role<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'Formula 1 VPC™ Technical Producer'"}</span>,
+                <span className='string'>{"'Technical Producer'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -62,7 +62,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'I am the technical producer for the Formula 1 Virtual Paddock Club™. In my role, I collaborate with producers, hosts, engineers and various media departments to produce behind the scenes and exclusive Formula 1 content for fans, corporate guests and VIPs. As the technical producer, I am responsible for ensuring the Virtual Paddock Club live streams run perfectly. I utilise various software to control the video content, scene transitions, audio balance, live interviews, and all other media content for the live streams. Alongside this, I communicate timings and queues concisely with the producers, hosts and co-hosts when we are live.'"
+                        "'I am the technical producer for the Formula 1 Virtual Paddock Club™. In my role, I collaborate with producers, hosts, engineers and various media departments to produce behind the scenes and exclusive Formula 1 content for fans, corporate guests and VIPs. As the technical producer, I am responsible for ensuring the Virtual Paddock Club live streams run perfectly. I utilise various software to control the video content, scene transitions, audio balance, live interviews, and all other media content for the live streams. Alongside this, I communicate timings and queues concisely with the producers, hosts and co-hosts when the show is live.'"
                     }
                 </span>
                 ,

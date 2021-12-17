@@ -50,7 +50,7 @@ export const Profile = (): JSX.Element => {
                 {'>'}
             </p>
             <p className='editor__file__line indent--16'>
-                Hi there, I&apos;m Sam, a 22-year-old Full Stack Web Developer and Software Engineer. I&apos;m an
+                Hi there, I&apos;m Sam, a 23-year-old Full Stack Web Developer and Software Engineer. I&apos;m an
                 enthusiastic guy with a passion for the web and its multitude of technologies. I like to compose
                 captivating designs, create smart user interfaces, solve complex problems, squash troublesome bugs,
                 develop rich web experiences and web applications from the ground up.
@@ -109,7 +109,7 @@ export const Profile = (): JSX.Element => {
             <p className='editor__file__line indent--16'>
                 My many professional and personal interests include UI/UX, Web Design, Frontend Development, Backend
                 Development, Full Stack Development, Cloud Computing, Drones, Photography, Fitness, Nutrition, NFL,
-                Chess, Music and FPS/MMO Games.
+                Formula 1, Chess, Music and FPS/MMO Games.
             </p>
             <p className='editor__file__line indent--12'>
                 {'</'}
