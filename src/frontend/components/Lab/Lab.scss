@@ -192,6 +192,7 @@ $margin-top: 1.125rem;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                @include i.userSelect(none);
 
                 svg {
                     font-size: 1rem;
