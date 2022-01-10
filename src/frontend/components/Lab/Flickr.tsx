@@ -65,7 +65,6 @@ export const Flickr = ({ flickrContent }: FlickrProps): JSX.Element => {
                             <li className='splide__slide splide__slide--more' style={{ width: '500px' }}>
                                 <a href={flickrIcon.url} target='__blank' className='splide__slide__content'>
                                     {flickrIcon.icon}
-                                    <p>See more</p>
                                 </a>
                             </li>
                         </ul>
