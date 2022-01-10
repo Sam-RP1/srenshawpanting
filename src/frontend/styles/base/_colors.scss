@@ -11,7 +11,18 @@ $srp-greys: (
 $srp-accent-blue: #0080b3;
 $srp-accent-red: #ff2534;
 $srp-accent-red-gradient: linear-gradient(rgba(255, 37, 52, 1) 0%, rgb(83, 6, 11) 100%);
+
+// text
 $text-primary-color: map-get($srp-greys, 900);
 $text-secondary-color: rgba(#fff, 0.85);
 $text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.7);
 $text-shadow--heavy: 0px 1px 8px rgba(0, 0, 0, 1);
+
+// brand colours
+$github-dark-primary: #0d1117;
+$github-dark-secondary: #161b22;
+$github-dark-border: #21262d;
+$github-dark-titles: #58a6ff;
+$github-dark-text: #c7ccd3;
+$github-dark-tags: rgba(56, 139, 253, 0.15);
+$flickr-pink: #ff0084;
