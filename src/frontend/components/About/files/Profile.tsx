@@ -70,9 +70,9 @@ export const Profile = (): JSX.Element => {
             </p>
             <p className='editor__file__line indent--16'>
                 Throughout the time I have invested in programming and developing I have become experienced and
-                proficient in various languages, frameworks and technologies. The majority of which include HTML, CSS,
-                JS, SASS, React, Redux, Jest, Enzyme, MySQL, NoSQL, Webpack, Node.js, npm, Express.js, Websockets, PWA,
-                SPA, AWS and GCP.
+                proficient in various languages, frameworks and technologies. Some of these include HTML, CSS, JS, SASS,
+                React, Redux, Jest, Enzyme, MySQL, NoSQL, Webpack, Node.js, npm, Express.js, Websockets, PWA, SPA, AWS
+                and GCP.
             </p>
             <p className='editor__file__line indent--12'>
                 {'</'}
