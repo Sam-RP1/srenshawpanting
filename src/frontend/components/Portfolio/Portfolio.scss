@@ -100,6 +100,7 @@ $margin: 0.6rem;
         background-size: cover;
         box-shadow: 0px 4px 13px 0px rgb(0 0 0 / 75%);
         overflow: hidden;
+        @include i.userSelect(none);
 
         img {
             position: absolute;
@@ -141,7 +142,7 @@ $margin: 0.6rem;
             position: relative;
             width: max-content;
             max-width: 100%;
-            margin: 0 0 0.75rem 0;
+            margin: 0 0 0.8rem 0;
             font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: 3px;
@@ -158,8 +159,8 @@ $margin: 0.6rem;
             }
         }
 
-        &__taster {
-            display: block;
+        &__taster,
+        &__definition {
             width: max-content;
             max-width: 100%;
             margin: 0 0 0.8rem 0;
@@ -167,11 +168,15 @@ $margin: 0.6rem;
             text-shadow: i.$text-shadow--heavy;
         }
 
+        &__taster {
+            display: none;
+        }
+
         &__tags {
             display: none;
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 0 0 1.3rem 0;
+            margin: 0 0 1.35rem 0;
 
             p {
                 font-size: 0.85rem;
@@ -192,25 +197,18 @@ $margin: 0.6rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 30px;
-                width: 30px;
-                padding: 0.25rem 3px;
+                height: 32px;
+                width: 32px;
+                padding: 0;
                 margin-left: 0.5rem;
                 background-color: #0080b3;
-                border-radius: 15px;
+                border-radius: 16px;
                 box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 60%), 0 1px 3px 0 rgb(0 0 0 / 60%);
                 overflow: hidden;
                 @include i.font-size(i.$p-font-sizes, i.$breakpoints);
 
                 &:first-of-type {
                     margin-left: 0;
-                }
-
-                span {
-                    max-width: 0;
-                    margin: 2px 0 0 0;
-                    white-space: nowrap;
-                    overflow: hidden;
                 }
             }
         }
@@ -235,8 +233,9 @@ $margin: 0.6rem;
         &__content {
             padding: $padding $padding $padding 0;
 
-            &__taster {
-                margin: 0 0 0.4rem 0;
+            &__taster,
+            &__definition {
+                margin: 0 0 0.2rem 0;
             }
 
             &__tags {
@@ -305,6 +304,18 @@ $margin: 0.6rem;
 }
 
 @media screen and (min-width: i.$bp-medium) {
+    // .panel {
+    //     &__content {
+    //         &__definition {
+    //             display: none;
+    //         }
+
+    //         &__taster {
+    //             display: block;
+    //         }
+    //     }
+    // }
+
     #deduction {
         margin: 0 auto 0 0;
     }
@@ -495,11 +506,12 @@ $margin: 0.6rem;
             &__title {
                 &::after {
                     width: 0%;
-                    @include i.transition(width 450ms ease 750ms);
+                    @include i.transition(width 450ms ease 730ms);
                 }
             }
 
-            &__taster {
+            &__taster,
+            &__definition {
                 opacity: 0;
                 @include i.transform(translate(0, 2rem));
                 @include i.transition(opacity 250ms ease 560ms, transform 400ms ease 560ms);
@@ -514,24 +526,16 @@ $margin: 0.6rem;
             &__buttons a {
                 opacity: 0;
                 @include i.transform(translate(0, 2rem));
-                @include i.transition(
-                    opacity 250ms ease 250ms,
-                    transform 400ms ease 250ms,
-                    width 375ms ease-in-out 450ms
-                );
-
-                span {
-                    @include i.transition(max-width 400ms ease-in-out 0ms, margin 100ms ease-in-out 300ms);
-                }
+                @include i.transition(opacity 250ms ease 250ms, transform 400ms ease 250ms);
 
                 &:hover {
-                    width: 150px;
-                    transition-delay: 0ms;
+                    animation: pulse 800ms infinite;
+                    box-shadow: 0 0 0 0.6em rgba(rgb(0, 0, 0), 0);
 
-                    span {
-                        max-width: 100%;
-                        margin: 2px 5px 0 0;
-                        @include i.transition(max-width 400ms ease-in-out 425ms, margin 100ms ease-in-out 400ms);
+                    @keyframes pulse {
+                        0% {
+                            box-shadow: 0 0 0 0 adjust-hue(i.$srp-accent-red, 0deg);
+                        }
                     }
                 }
             }
@@ -557,13 +561,15 @@ $margin: 0.6rem;
                 }
 
                 &__taster,
+                &__definition,
                 &__tags p {
                     opacity: 1;
                     @include i.transform(translate(0, 0));
                     @include i.transition(opacity 350ms ease, transform 400ms ease);
                 }
 
-                &__taster {
+                &__taster,
+                &__definition {
                     transition-delay: 350ms;
                 }
 
@@ -582,7 +588,6 @@ $margin: 0.6rem;
                         a:nth-child(#{$i}) {
                             @include i.transition(
                                 opacity 350ms ease (475ms + 75 * $i),
-                                width 375ms ease-in-out 450ms,
                                 transform 350ms ease (475ms + 75 * $i)
                             );
                         }
@@ -591,24 +596,6 @@ $margin: 0.6rem;
                     a {
                         opacity: 1;
                         @include i.transform(translate(0, 0rem));
-
-                        span {
-                            @include i.transition(max-width 400ms ease-in-out 0ms, margin 100ms ease-in-out 300ms);
-                        }
-
-                        &:hover {
-                            width: 150px;
-                            transition-delay: 0ms;
-
-                            span {
-                                max-width: 100%;
-                                margin: 2px 5px 0 0;
-                                @include i.transition(
-                                    max-width 400ms ease-in-out 425ms,
-                                    margin 100ms ease-in-out 400ms
-                                );
-                            }
-                        }
                     }
                 }
             }
