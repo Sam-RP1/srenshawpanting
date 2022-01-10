@@ -42,7 +42,7 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2021-Present'"}</span>,
+                <span className='string'>{"'2021/08 - 2021/12'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -62,7 +62,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'I am the technical producer for the Formula 1 Virtual Paddock Club™. In my role, I collaborate with producers, hosts, engineers and various media departments to produce behind the scenes and exclusive Formula 1 content for fans, corporate guests and VIPs. As the technical producer, I am responsible for ensuring the Virtual Paddock Club live streams run perfectly. I utilise various software to control the video content, scene transitions, audio balance, live interviews, and all other media content for the live streams. Alongside this, I communicate timings and queues concisely with the producers, hosts and co-hosts when the show is live.'"
+                        "'In my role, as the technical producer for the Formula 1 Virtual Paddock Club™, I collaborated with producers, hosts, tech engineers and various media departments to produce behind the scenes and exclusive Formula 1 content for fans, corporate guests and VIPs. As the technical producer, I was responsible for ensuring the Virtual Paddock Club™ live shows run perfectly. I utilised various software to control the video content, scene transitions, audio balance, live interviews, and all other media content for the shows. Alongside this, I communicated timings and queues precisely with the producers, hosts and co-hosts when the show was live. I also assisted in coordinating and running interviews separate from the Virtual Paddock Club™ for VIPs and Formula 1 celebrities.'"
                     }
                 </span>
                 ,
@@ -76,7 +76,7 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2021-Present'"}</span>,
+                <span className='string'>{"'2021/02 - Present'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -96,7 +96,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'I am a part-time team leader at Morrisons, running and managing their Amazon Flex department. As a team leader, I work in a fast-paced environment that requires my analytical and logistical skills to make sure orders placed by customers through Amazon are assigned, picked, packed and completed to a high quality each hour. At any single time, I am in charge of up to 24 members of staff for which I need to organise, motivate and make sure they have a great time doing their job. The entire team currently consists of 60 members of staff.'"
+                        "'A part-time team leader at Morrisons, running and managing their Amazon Flex department. As a team leader, I work in a fast-paced environment that requires my analytical and logistical skills to make sure orders placed by customers are assigned, picked, packed and completed to a high quality each hour. At any single time, I am in charge of up to 24 members of staff for which I need to organise, motivate and make sure they have a great time doing their job. The entire team currently consists of 60 members of staff.'"
                     }
                 </span>
                 ,
@@ -110,7 +110,7 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2019-Present'"}</span>,
+                <span className='string'>{"'2019/06 - Present'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -130,7 +130,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'I operate SRP Designs, a business that creates exciting, captivating and meaningful digital experiences for emerging businesses, brands and individual clients alike. SRP Designs offers UI/UX design, web development and web hosting services.'"
+                        "'I operate SRP Designs, a business that creates exciting, captivating and meaningful digital experiences for emerging businesses, brands and individual clients alike. SRP Designs offers UI/UX design, web development, web hosting and media production services.'"
                     }
                 </span>
                 ,
@@ -144,7 +144,7 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2017-2020'"}</span>,
+                <span className='string'>{"'2017/09 - 2020/05'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
