@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { githubIcon, externalLinkIcon, leftChevronIcon, rightChevronIcon } from '../../lib/icons';
+import { externalLinkIcon, starIcon, codeBranchIcon, leftChevronIcon, rightChevronIcon } from '../../lib/icons';
 import { Spinner } from '../UI/Spinner/Spinner';
 
 type GithubProps = {
@@ -13,6 +13,8 @@ type GithubProps = {
         webURL: string;
         description: string;
         tags: Array<string>;
+        stars: number;
+        forks: number;
     }[];
     recentRepos: {
         id: number;
@@ -23,6 +25,8 @@ type GithubProps = {
         webURL: string;
         description: string;
         tags: Array<string>;
+        stars: number;
+        forks: number;
     }[];
 };
 
@@ -40,7 +44,7 @@ export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element
         }
     }, [featuredRepos, recentRepos]);
 
-    const featuredElems = featuredRepos.map(({ id, title, repoURL, webURL, description, tags }) => (
+    const featuredElems = featuredRepos.map(({ id, title, repoURL, webURL, description, tags, stars, forks }) => (
         <div key={'lab-featured-repo-' + id} className='lab__github__panel__repo'>
             <div className='lab__github__panel__repo__name'>
                 {rightChevronIcon.icon}
@@ -53,7 +57,10 @@ export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element
                     </a>
                 )}
                 <a href={repoURL} target='__blank'>
-                    {githubIcon.icon}
+                    {starIcon.icon} {stars}
+                </a>
+                <a href={repoURL} target='__blank'>
+                    {codeBranchIcon.icon} {forks}
                 </a>
             </div>
             <div className='lab__github__panel__repo__description'>
@@ -76,11 +83,11 @@ export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element
             <div className='lab__github__panel__repo__icons'>
                 {webURL !== '' && webURL !== null && (
                     <a href={webURL} target='__blank'>
-                        {externalLinkIcon.icon}
+                        {codeBranchIcon.icon}
                     </a>
                 )}
                 <a href={repoURL} target='__blank'>
-                    {githubIcon.icon}
+                    {starIcon.icon}
                 </a>
             </div>
             <div className='lab__github__panel__repo__description'>
@@ -117,11 +124,7 @@ export const Github = ({ featuredRepos, recentRepos }: GithubProps): JSX.Element
                     {tabs.map(({ id }) => {
                         const isActive = id === openTab ? ' active' : '';
                         return (
-                            <a
-                                key={id}
-                                onClick={() => setOpenTab(id)}
-                                className={'lab__github__panel__tab' + isActive}
-                            >
+                            <a key={id} onClick={() => setOpenTab(id)} className={'lab__github__panel__tab' + isActive}>
                                 <p>{id}</p>
                                 {leftChevronIcon.icon}
                             </a>
