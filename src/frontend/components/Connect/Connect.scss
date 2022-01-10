@@ -1,6 +1,6 @@
 @use '../../styles/_index.scss' as i;
-@use "sass:math";
-@use "sass:map";
+@use 'sass:math';
+@use 'sass:map';
 
 .section--connect {
     justify-content: center;
@@ -221,7 +221,7 @@
                 }
 
                 &flickr {
-                    background-color: #ff0084;
+                    background-color: i.$flickr-pink;
                 }
 
                 &chess {
@@ -332,19 +332,17 @@
 }
 
 @media screen and (min-width: i.$bp-small) {
-    .connect {
-    }
 }
 
 @media (hover) {
-    .connect {
-        &__planet {
-            &__body {
-                &:hover {
-                }
-            }
-        }
-    }
+    // .connect {
+    //     &__planet {
+    //         &__body {
+    //             &:hover {
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 @keyframes orbit {
