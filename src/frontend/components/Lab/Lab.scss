@@ -90,14 +90,11 @@ $margin-top: 1.125rem;
     margin: 6rem 0 5rem 0;
 
     &__panel {
-        $black: #202020;
-        $grey: #dedede;
-
         flex-direction: column;
         width: 100%;
         border-radius: 5px;
         box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 90%), 0px -1px 4px 0px rgb(0 0 0 / 90%);
-        background-color: $black;
+        background-color: i.$github-dark-primary;
         overflow: hidden;
 
         &__tabs {
@@ -115,8 +112,8 @@ $margin-top: 1.125rem;
             height: auto;
             width: 50%;
             padding: 0.5rem 0.75rem;
-            box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 90%);
-            background-color: #101010;
+            box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 40%);
+            background-color: i.$github-dark-secondary;
             overflow: hidden;
             @include i.transition(
                 background-color 300ms cubic-bezier(0.7, 0.045, 0.33, 1),
@@ -135,7 +132,7 @@ $margin-top: 1.125rem;
 
             &.active {
                 box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 90%);
-                background-color: $black;
+                background-color: i.$github-dark-primary;
 
                 svg {
                     @include i.transition(transform 300ms cubic-bezier(0.7, 0.045, 0.33, 1));
@@ -186,7 +183,7 @@ $margin-top: 1.125rem;
             height: auto;
             width: 100%;
             padding: 1rem 0.75rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid i.$github-dark-border;
 
             &__name {
                 display: flex;
@@ -204,6 +201,7 @@ $margin-top: 1.125rem;
                     font-size: 1.25rem;
                     font-weight: 400;
                     margin: 0;
+                    color: i.$github-dark-titles;
                 }
             }
 
@@ -229,7 +227,7 @@ $margin-top: 1.125rem;
             &__description {
                 min-width: 100%;
                 margin: 8px 0 0 0;
-                color: $grey;
+                color: i.$github-dark-text;
             }
 
             &__tags {
@@ -241,10 +239,10 @@ $margin-top: 1.125rem;
 
                 p {
                     font-size: 0.85rem;
-                    color: $black;
+                    color: i.$github-dark-titles;
                     margin: 4px 5px 0 0;
                     padding: 2px 10px 0 10px;
-                    background: #fff;
+                    background: i.$github-dark-tags;
                     border-radius: 10px;
                     box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 40%), 0 1px 3px 0 rgb(0 0 0 / 40%);
                 }
@@ -327,13 +325,19 @@ $margin-top: 1.125rem;
 
                 svg {
                     height: auto;
-                    min-width: 30%;
+                    min-width: 100%;
                 }
 
-                p {
-                    position: absolute;
-                    bottom: 1rem;
-                    color: i.$srp-accent-red;
+                svg path {
+                    @include i.transition(fill 300ms cubic-bezier(0.51, 0.03, 0.21, 1));
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: i.$flickr-pink;
+                        }
+                    }
                 }
             }
         }
@@ -419,25 +423,6 @@ $margin-top: 1.125rem;
 
 // Pointer enabled
 @media (hover) {
-    .lab__flickr {
-        .splide {
-            &__slide__content {
-                // do a more sophisticate animation
-                svg path {
-                    @include i.transition(fill 300ms cubic-bezier(0.51, 0.03, 0.21, 1));
-                }
-
-                &:hover {
-                    svg {
-                        path {
-                            fill: i.$srp-accent-blue;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .lab__github {
         &__panel {
             &__tab {
@@ -480,7 +465,7 @@ $margin-top: 1.125rem;
                             @include i.transform(translate(10px, 0px));
 
                             path {
-                                fill: i.$srp-accent-red;
+                                fill: i.$github-dark-titles;
                             }
                         }
                     }
