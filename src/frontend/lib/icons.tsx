@@ -8,6 +8,8 @@ import {
     faAngleLeft,
     faAngleRight,
     faFileAlt,
+    faCodeBranch,
+    faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faLinkedinIn,
@@ -113,6 +115,18 @@ export const fileIcon: Icon = {
     id: 'file',
     icon: <FontAwesomeIcon icon={faFileAlt} />,
     tooltip: 'CV',
+};
+
+export const codeBranchIcon: Icon = {
+    id: 'codeBranchIcon',
+    icon: <FontAwesomeIcon icon={faCodeBranch} />,
+    tooltip: 'Code Branch',
+};
+
+export const starIcon: Icon = {
+    id: 'star',
+    icon: <FontAwesomeIcon icon={faStar} />,
+    tooltip: 'Star',
 };
 
 export const socialIcons: Icons = [githubIcon, codepenIcon, linkedinIcon, flickrIcon, chessIcon];
