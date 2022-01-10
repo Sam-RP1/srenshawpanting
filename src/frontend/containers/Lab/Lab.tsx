@@ -16,6 +16,8 @@ interface repo {
     webURL: string;
     description: string;
     tags: Array<string>;
+    stars: number;
+    forks: number;
 }
 
 export const Lab = (): JSX.Element => {
@@ -66,6 +68,8 @@ export const Lab = (): JSX.Element => {
                     return a.pushed_at < b.pushed_at ? 1 : a.pushed_at > b.pushed_at ? -1 : 0;
                 });
 
+                console.log(data);
+
                 for (const item of data) {
                     const entry: repo = {
                         id: item.id,
@@ -76,6 +80,8 @@ export const Lab = (): JSX.Element => {
                         webURL: item.homepage,
                         description: item.description,
                         tags: item.topics.sort((a, b) => a.localeCompare(b)),
+                        stars: item.stargazers_count,
+                        forks: item.forks_count,
                     };
                     sortedArr.push(entry);
                 }
