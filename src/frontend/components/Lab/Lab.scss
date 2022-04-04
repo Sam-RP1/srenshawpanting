@@ -145,6 +145,7 @@ $margin-top: 1.125rem;
             }
 
             p {
+                color: i.$github-dark-text;
                 padding-top: 2px;
                 padding-right: 6px;
             }
@@ -174,6 +175,15 @@ $margin-top: 1.125rem;
             flex-direction: column;
         }
 
+        &__repo,
+        &__btn {
+            @include i.transition(background-color 200ms ease 0ms);
+
+            &:hover {
+                background-color: i.$github-dark-secondary;
+            }
+        }
+
         &__repo {
             display: flex;
             flex-direction: row;
@@ -183,6 +193,7 @@ $margin-top: 1.125rem;
             height: auto;
             width: 100%;
             padding: 1rem 0.75rem;
+            background-color: i.$github-dark-primary;
             border-bottom: 1px solid i.$github-dark-border;
 
             &__name {
@@ -247,6 +258,33 @@ $margin-top: 1.125rem;
                     box-shadow: 0 -1px 3px 0 rgb(0 0 0 / 40%), 0 1px 3px 0 rgb(0 0 0 / 40%);
                 }
             }
+
+            &__name {
+                h1,
+                svg {
+                    @include i.transition(transform 250ms cubic-bezier(0.7, 0.045, 0.33, 1));
+                }
+
+                svg path {
+                    @include i.transition(fill 300ms cubic-bezier(0.7, 0.045, 0.33, 1));
+                }
+            }
+
+            &:hover & {
+                &__name {
+                    h1 {
+                        @include i.transform(translate(20px, 0px));
+                    }
+
+                    svg {
+                        @include i.transform(translate(10px, 0px));
+
+                        path {
+                            fill: i.$srp-accent-red;
+                        }
+                    }
+                }
+            }
         }
 
         &__btn {
@@ -255,9 +293,25 @@ $margin-top: 1.125rem;
             justify-content: center;
             width: 100%;
             padding: 1rem 0.75rem;
+            background-color: i.$github-dark-primary;
 
             svg {
                 margin: 3px 0 0 10px;
+                @include i.transition(transform 250ms cubic-bezier(0.7, 0.045, 0.33, 1));
+
+                path {
+                    @include i.transition(fill 300ms cubic-bezier(0.7, 0.045, 0.33, 1));
+                }
+            }
+
+            &:hover {
+                svg {
+                    @include i.transform(translate(10px, 0px));
+
+                    path {
+                        fill: i.$srp-accent-red;
+                    }
+                }
             }
         }
     }
@@ -439,55 +493,6 @@ $margin-top: 1.125rem;
                     svg {
                         @include i.transition(transform 300ms cubic-bezier(0.7, 0.045, 0.33, 1));
                         @include i.transform(translate(0px, 0px));
-                    }
-                }
-            }
-
-            &__repo {
-                &__name {
-                    h1,
-                    svg {
-                        @include i.transition(transform 250ms cubic-bezier(0.7, 0.045, 0.33, 1));
-                    }
-
-                    svg path {
-                        @include i.transition(fill 300ms cubic-bezier(0.7, 0.045, 0.33, 1));
-                    }
-                }
-
-                &:hover & {
-                    &__name {
-                        h1 {
-                            @include i.transform(translate(20px, 0px));
-                        }
-
-                        svg {
-                            @include i.transform(translate(10px, 0px));
-
-                            path {
-                                fill: i.$github-dark-titles;
-                            }
-                        }
-                    }
-                }
-            }
-
-            &__btn {
-                svg {
-                    @include i.transition(transform 250ms cubic-bezier(0.7, 0.045, 0.33, 1));
-                }
-
-                svg path {
-                    @include i.transition(fill 300ms cubic-bezier(0.7, 0.045, 0.33, 1));
-                }
-
-                &:hover {
-                    svg {
-                        @include i.transform(translate(10px, 0px));
-
-                        path {
-                            fill: i.$srp-accent-red;
-                        }
                     }
                 }
             }
