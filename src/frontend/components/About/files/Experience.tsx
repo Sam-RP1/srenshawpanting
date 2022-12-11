@@ -42,19 +42,19 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2021/08 - 2021/12'"}</span>,
+                <span className='string'>{"'2022/01 - Present'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
                     role<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'Technical Producer'"}</span>,
+                <span className='string'>{"'Infrastructure Manager'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
                     establishment<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'Formula 1'"}</span>,
+                <span className='string'>{"'Expert Hosts'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -62,7 +62,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'In my role, as the technical producer for the Formula 1 Virtual Paddock Club™, I collaborated with producers, hosts, tech engineers and various media departments to produce behind the scenes and exclusive Formula 1 content for fans, corporate guests and VIPs. As the technical producer, I was responsible for ensuring the Virtual Paddock Club™ live shows run perfectly. I utilised various software to control the video content, scene transitions, audio balance, live interviews, and all other media content for the shows. Alongside this, I communicated timings and queues precisely with the producers, hosts and co-hosts when the show was live. I also assisted in coordinating and running interviews separate from the Virtual Paddock Club™ for VIPs and Formula 1 celebrities.'"
+                        "'As infrastructure manager, my primary responsibility is to ensure that all necessary IT infrastructure is in place, functioning efficiently and effectively to support our organisation's operations. In addition to overseeing the organisation's IT systems, I also engage in software engineering to develop and maintain systems and applications that support our business. I am also responsible for coordinating and actively managing all aspects of our event logistics, including procuring the necessary contractors, flights, hotels and rental vehicles. I strive to maintain strong positive relationships with contractors and vendors to ensure that all necessary services are provided in a timely and efficient manner.'"
                     }
                 </span>
                 ,
@@ -76,19 +76,19 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2021/02 - Present'"}</span>,
+                <span className='string'>{"'2021/08 - 2022/11'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
                     role<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'Team Leader'"}</span>,
+                <span className='string'>{"'Technical Producer'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
                     establishment<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'Amazon Flex - Morrisons'"}</span>,
+                <span className='string'>{"'Expert Hosts - Formula 1'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -96,7 +96,7 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'A part-time team leader at Morrisons, running and managing their Amazon Flex department. As a team leader, I work in a fast-paced environment that requires my analytical and logistical skills to make sure orders placed by customers are assigned, picked, packed and completed to a high quality each hour. At any single time, I am in charge of up to 24 members of staff for which I need to organise, motivate and make sure they have a great time doing their job. The entire team currently consists of 60 members of staff.'"
+                        "'As the technical producer for the Formula 1 Virtual Paddock Club™, I was responsible for ensuring the smooth operation and high-quality production of multiple live shows from Friday to Sunday of each grand prix for fans, corporate guests and VIPs. I collaborated with producers, hosts, tech engineers, and media departments to create behind-the-scenes and exclusive Formula 1 content that engaged and entertained our audiences. In addition to coordinating the technical aspects of the live shows, I also assisted in organizing and conducting interviews with VIPs and celebrities for the Formula 1 Paddock Club™. In this role, I used various software and tools to control the content, transitions, audio balance, live feeds, and other media elements of both the live shows and interviews.'"
                     }
                 </span>
                 ,
@@ -110,7 +110,41 @@ export const Experience = (): JSX.Element => {
                 <span className='obj-key'>
                     duration<span className='symbol'>:</span>
                 </span>{' '}
-                <span className='string'>{"'2019/06 - Present'"}</span>,
+                <span className='string'>{"'2021/02 - 2022/01'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    role<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Team Leader'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    establishment<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'Morrisons - Amazon Flex'"}</span>,
+            </p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    details<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>
+                    {
+                        "'As a part-time team leader at Morrisons, I played a crucial role in running and managing the stores's Amazon Flex department. In this fast-paced role, I used my analytical and logistical skills to ensure that orders placed by customers were completed to a high standard each hour. At a single time, I was in charge of up to 30 members of staff and was responsible for organizing, motivating, and making sure they each had a positive work environment.'"
+                    }
+                </span>
+                ,
+            </p>
+            <p className='editor__file__line indent--8'>{' }'},</p>
+            {/* close obj 3 */}
+
+            {/* open obj 4 */}
+            <p className='editor__file__line indent--8'>{'{ '}</p>
+            <p className='editor__file__line indent--12'>
+                <span className='obj-key'>
+                    duration<span className='symbol'>:</span>
+                </span>{' '}
+                <span className='string'>{"'2019/06 - 2022/01'"}</span>,
             </p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -130,15 +164,15 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'I operate SRP Designs, a business that creates exciting, captivating and meaningful digital experiences for emerging businesses, brands and individual clients alike. SRP Designs offers UI/UX design, web development, web hosting and media production services.'"
+                        "'SRP Designs was a dynamic business that created engaging, captivating, and meaningful digital experiences for emerging businesses, brands, and individual clients. The services included UI/UX design, web development, web hosting, and media production, all of which were designed to help my clients stand out and succeed in the digital world.'"
                     }
                 </span>
                 ,
             </p>
             <p className='editor__file__line indent--8'>{' }'},</p>
-            {/* close obj 3 */}
+            {/* close obj 4 */}
 
-            {/* open obj 4 */}
+            {/* open obj 5 */}
             <p className='editor__file__line indent--8'>{'{ '}</p>
             <p className='editor__file__line indent--12'>
                 <span className='obj-key'>
@@ -164,13 +198,13 @@ export const Experience = (): JSX.Element => {
                 </span>{' '}
                 <span className='string'>
                     {
-                        "'As a software engineering student, I furthered my proficiency in front-end and back-end development through studying and using numerous frameworks, environments and platforms such as React, Node.js and AWS. As well as, I also gained experience working in teams to collaboratively design, implement, test and deploy applications.'"
+                        "'As a software engineering student, I have developed advanced skills in front-end and back-end development through studying and using various frameworks, environments and platforms such as React, Node.js, and AWS. I have also gained experience working in teams to design, implement, test and deploy applications. Through my coursework and projects, I became proficient in using version control systems such as Git, and I am skilled at collaborating with other developers and writing clear, well-documented code.'"
                     }
                 </span>
                 ,
             </p>
             <p className='editor__file__line indent--8'>{' }'},</p>
-            {/* close obj 4 */}
+            {/* close obj 5 */}
 
             {/* close experience array */}
             <p className='editor__file__line indent--4'>{'];'}</p>
