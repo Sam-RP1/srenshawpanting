@@ -26,8 +26,8 @@ export const About = (): JSX.Element => {
 
     const tabs = [
         { id: 'Profile.tsx', icon: reactIcon.icon, file: <Profile /> },
-        { id: 'Education.tsx', icon: reactIcon.icon, file: <Education /> },
         { id: 'Experience.tsx', icon: reactIcon.icon, file: <Experience /> },
+        { id: 'Education.tsx', icon: reactIcon.icon, file: <Education /> },
         { id: 'Data.js', icon: jsIcon.icon, file: <Data /> },
     ];
 
