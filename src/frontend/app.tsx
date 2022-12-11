@@ -20,7 +20,7 @@ export const App = (): JSX.Element => {
     const heroTitle = 'Welcome';
     const heroContent = (
         <div className='hero__content__text'>
-            <p>Hi, I&apos;m Sam, a Full Stack Web Developer & Software Engineer</p>
+            <p>Hi, I&apos;m Sam, a Full Stack Developer & Software Engineer</p>
         </div>
     );
     const heroNextItemLabel = "Let's get going...";
